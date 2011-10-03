@@ -49,7 +49,7 @@ f[0].header.update('PLANE6','err_sigma')
 f[0].header.update('PLANE7','integral')
 f[0].header.update('PLANE8','integral_error')
 f[0].header.update('CDELT3',1)
-f[0].header.update('CTYPE3','plane')
+f[0].header.update('CTYPE3','FITPAR')
 f[0].header.update('CRVAL3',0)
 f[0].header.update('CRPIX3',1)
 # save your work
