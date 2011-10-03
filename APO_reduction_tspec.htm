@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Language" content="en-us">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link href="prettify.css" type="text/css" rel="stylesheet">
+<link rel="icon" type="image/gif" href="favicon8.ico">
 <script type="text/javascript" src="prettify.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <title>Reducing APO spectra: TripleSpec </title>
@@ -79,18 +80,22 @@ data.  It also rectifies spectral lines to be vertical.
     <li> <code> cp /path/to/bpm.fits . </code> (bad pixel mask)
     <li> <code> task pipeline_jhk=/full/path/to/pipeline_jhk.cl </code> (load pipeline code)
     <li> <code> ls reference_star_filename* | sed 's/\.fits//' > refstarlist </code>
-    <li> <code> pipeline_jhk refstarlist refstarOUTname justcrop=yes background=no combine=no  </code>
+    <li> <code> pipeline_jhk refstarlist refstarOUTname justcrop=yes background=no combine=no rawdir='raw/' procdir='proc/' </code>
     <li> <code> ls starless_image_filename* | sed 's/\.fits//' > starless_imagelist </code>
-    <li> <code> pipeline_jhk starless_imagelist starless_imageOUTname justcrop=yes background=no combine=no  </code>
+    <li> <code> pipeline_jhk starless_imagelist starless_imageOUTname justcrop=yes background=no combine=no rawdir='raw/' procdir='proc/' </code>
     <!--    <li> <code> identify [starless image[JHK]] coordlist=linelists$ohlines.dat  </code> -->
     <li> <code> reidentify sample_id_[JHK] [starless image[JHK]] coordlist=linelists$ohlines.dat nlost=10 ver+ shift=INDEF search=10.0 trace=yes </code> *
     <li> <code> identify [reference star image[JHK]] section="middle column" coordlist="" units=""</code> **
     <li> <code> reidentify [reference star image[JHK]] [reference star image[JHK]] section="middle column" coordlist="" nlost=10 ver+ </code>
     <li> <code> fitcoords [starless image[JHK]] fitname="skylines[JHK]" combine=yes xo=6 yo=2 interactive +</code>
     <li> <code> fitcoords [reference star image[JHK]] fitname="stars[JHK]" combine=yes xo=6 yo=2 interactive +</code>
-    <li> <code> pipeline_jhk refstarlist refstarOUTname </code>
+    <li> <code> pipeline_jhk refstarlist_A refstarOUTname_A procdir='proc/' rawdir='raw/' calibrator=yes magJ=NNN magH=NNN magK=NNN </code>
+    <li> <code> pipeline_jhk refstarlist_B refstarOUTname_B procdir='proc/' rawdir='raw/' calibrator=yes magJ=NNN magH=NNN magK=NNN </code>
+    <!--
+    <li> <code> apall refstarOUTname_[JHK]_combine 
     <li> <code> standard refstarOUTname_[JHK]_combine output="std[JHK]" star_name="[JHK]"  caldir="onedstds$blackbody/" </code>
     <li> <code> sensfunc std[JHK] sens[JHK] </code>
+    -->
     <li> <code> pipeline_jhk objectlist_A objectOUTname_A calibrate=yes </code>  (repeat for each object)
     <li> <code> pipeline_jhk objectlist_B objectOUTname_B calibrate=yes </code>  (repeat for each object)
     <li> extract your spectrum with <code>apall</code> and/or continue analysis some other way <code>  </code>
@@ -123,7 +128,8 @@ spatial direction as "angstroms"
     <li> add orders
 </ul>
 <br>
-<br> DOWNLOAD LINK: <a class="norm" href="apo/pipeline_jhk.cl"> pipeline_jhk.cl </a>
+<br> DOWNLOAD LINK: <a class="norm" href="http://code.google.com/p/aposoftware/source/browse/#hg/reduction/tspec_pipeline"> tspec pipeline </a>
+<br> REPOSITORY LINK: <a class="norm" href="http://code.google.com/p/aposoftware/">aposoftware at googlecode</a>
 <br>
 <br> CODE:
 <br>
