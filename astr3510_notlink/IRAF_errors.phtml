@@ -1,0 +1,71 @@
+
+<phtml>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> Astronomy 3520: IRAF errors </title>
+<body> 
+<head><h1><center> ASTR 3520: Common IRAF/PyRAF errors 2008 </center></h1></head>
+    <table align="center" width=800><tr><td>
+<br>
+<br> If you experience an error not listed here, send it to me.
+<br>
+<br> <h3 id="dispcor"><tt>dispcor</tt></h3>
+<pre>
+Killing IRAF task `dispcor'
+Traceback (innermost last):
+  File "<CL script CL1>", line 1, in <module>
+IrafError: Error running IRAF task dispcor
+IRAF task terminated abnormally
+ERROR (1, "NGC7814_44rspec.fits - Missing reference for aperture 2")
+</pre>
+<br> This error results when you've used a different set of apertures in your 
+<a href="apextract/sample_apextraction.phtml#apall_callamp">calibration lamp extraction </a>
+than you used in your <a href="apextract/sample_apextraction.phtml#apall"> science spectrum
+    extraction </a> OR when you haven't <tt>reidentify</tt>'d a cal lamp extraction with
+more than one spectrum in it (see step 11 of <a href="apextract/sample_apextraction.phtml">the 
+    aperture extraction example</a>.
+<br>
+<br> If you experienced the former error, you need to go back and re-extract,
+then re-identify lines in your cal lamp spectra.  It may be possible to copy
+your wavelength solutions: look in database/id[filename], that's where IRAF
+stores the wavelength solution.
+<br>
+<br>
+<br> <h3> Syntax errors </h3>
+If you get an error that includes the word 'syntax', the first thing to check is that 
+you've loaded the right package.  For whatever command you're trying to use, run:
+<br><tt> help [command] </tt> 
+<br>and look at the name of the command at the top.  It should be something like
+<tt>noao.twodspec.apextract.apall</tt>.  Then, run the commands in order:
+<br><tt> noao
+    <br> twodspec
+    <br> apextract </tt>
+<br> and try again.
+
+
+
+
+<!--<br><h3 id="errors"> Instructions for dealing with IRAF errors on cosmos       </h3>
+  Since the changeover to the new cosmos server, your login.cl files may be
+  incorrect.  They currently have home defined as /raid/home/(username)/etc, but
+  this is no longer correct; you will receive errors saying that iraf could not
+  modify uparm$(taskname).  You should change this by removing the /raid at the
+  front of the path.  This can be done using any <a href="unix_editors.phtml">editor</a>: look
+  for the line "set home = "/raid/home/..." and modify it.  <br>
+
+<br> You can try to re-run mkiraf, which will create a new login.cl for you.
+If you had any settings saved in login.cl, it will overwrite them.  You must
+also go on and change your imdir to <b>"home$images/"</b>.  Search for the line <b>
+#set imtype   "imh"</b> and change it to read <b>set imtype "fits"</b> (remove the # at the beginning of the line).
+<br>
+<br> If you have trouble with <tt>.imh</tt> files showing up instead of <tt>.fits</tt> files:
+<ol> 
+    <li>check to see if your imtype is set correctly with <tt>show imtype</tt>.
+    <li>if it's <tt>imh</tt>, use <tt>set imtype=fits</tt> to fix it
+    <li>you may need to use the <tt>flpr</tt> command to make sure IRAF recognizes the change
+    <li>Find your login.cl file.  Make sure the <tt>set imtype=fits</tt> line is uncommented as in <a href="IRAF.phtml#errors">the directions above</a>.
+</ol>-->
+
+<br><br><br>
+<?php include 'navbar.php';?>
+<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
+</body></phtml>

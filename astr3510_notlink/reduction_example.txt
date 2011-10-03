@@ -1,0 +1,74 @@
+# A pound sign (#) indicates a comment, generally to describe the next line
+# change directories to the observations directory
+cd /home/astr/grad/ginsbura/astr3510/UT_2009-08-27
+# start a log file or append to one that already exists
+.logfile pyraf_log.log append
+# overwrite images automatically
+set clobber=yes
+set imclobber=yes
+# list the contents of the current directory
+ls
+ls DARK/
+ls FLAT/
+ls FLAT/DOME_FLAT/
+ls FLAT/SKY_FLAT/
+# combine the darks of various types
+imcombine DARK/DARK_0.1sec_-20C*.fits DARK_0.1sec_-20C_combine.fits combine=median
+imcombine DARK/DARK_1sec_-20C*.fits DARK_1sec_-20C_combine.fits combine=median
+imcombine DARK/DARK_10sec_-20C*.fits DARK_10sec_-20C_combine.fits combine=median
+
+imcombine FLAT/DOME_FLAT/FLAT_1sec_V_-20C_00* DOME_FLAT_1sec_V_-20C_combine.fits combine=median scale=mode
+imcombine FLAT/SKY_FLAT/FLAT_1sec_V_-20C_0* SKY_FLAT_1sec_V_-20C_combine.fits combine=median scale=mode
+imcombine FLAT/SKY_FLAT/FLAT_10sec_V_-20C_0* SKY_FLAT_10sec_V_-20C_combine.fits combine=median scale=mode
+imarith SKY_FLAT_1sec_V_-20C_combine.fits - DARK_1sec_-20C_combine.fits SKY_FLAT_1sec_DARKSUB.fits
+imarith SKY_FLAT_10sec_V_-20C_combine.fits - DARK_10sec_-20C_combine.fits SKY_FLAT_10sec_DARKSUB.fits
+imarith DOME_FLAT_1sec_V_-20C_combine.fits - DARK_1sec_-20C_combine.fits DOME_FLAT_1sec_DARKSUB.fits
+
+# check out the statistics
+# in particular, look at the MODE of the flats; that's the number you should normalize by
+imstat *.fits
+
+# load noao.imred.generic package, which contains the convenient normflat routine
+imred
+generic
+normflat SKY_FLAT_1sec_DARKSUB.fits SKY_FLAT_1sec_NORM.fits
+normflat SKY_FLAT_10sec_DARKSUB.fits SKY_FLAT_10sec_NORM.fits
+normflat DOME_FLAT_1sec_DARKSUB.fits DOME_FLAT_1sec_NORM.fits
+# view normalized flats in DS9
+!ds9 *NORM.fits -scale limits 0.95 1.05 -match scales &
+
+# make a list of files in the E_Auriga directory
+ls E_Auriga/Science_0.1sec_V_-20C_0*.fits > list_EAur
+# display them
+!ds9 E_Auriga/*.fits &
+# need to edit it to remove bad images (any that are saturated)
+!vim list_EAur 
+
+# make a new directory for the darksub/flat/shifted files
+mkdir Z_Auriga/darksub
+mkdir Z_Auriga/flat
+mkdir Z_Auriga/shifted
+
+# view the Z_Auriga images
+!ds9 Z_Auriga/Science_0.1sec_V_-20C_0* &
+# make list
+ls Z_Auriga/Science_0.1sec_V_-20C_0* > list_ZAur
+# perform the dark subtraction
+imarith @list_ZAur - DARK_0.1sec_-20C_combine.fits @list_ZAur_darksub
+# do a flat correction (divide by flat)
+imarith @list_ZAur_darksub / DOME_FLAT_1sec_NORM.fits @list_ZAur_flat
+# make shift coordinates for Z_Auriga 
+!vim coords_ZAur 
+# align the images
+imalign @list_ZAur_flat Z_Auriga/Science_0.1sec_V_-20C_001.fits coords_ZAur @list_ZAur_shifted bigbox=21 boxsize=11
+# combine the shifted images
+imcombine @list_ZAur_shifted ZAuriga_combined.fits combine=median
+# view the final product
+!ds9 ZAuriga_combined.fits &
+
+
+# Additional resources:
+# http://www.twilightlandscapes.com/IRAFtutorial/
+# http://casa.colorado.edu/~ginsbura/imalign_guide.htm
+# http://casa.colorado.edu/~ginsbura/ds9_imalign.htm
+# http://casa.colorado.edu/~ginsbura/ds9tips.htm

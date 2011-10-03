@@ -1,0 +1,51 @@
+GOALS:
+Learn to use the UNIX command line and the COSMOS computers.  Set up IRAF, the Image Reduction and Analysis Facility.
+
+BASIC UNIX:
+Note that ALL commands in unix are case-sensitive.
+1. Open a terminal.  The > prompt is called the "command line prompt".
+2. Type 'ls' and press enter (press enter after all commands).  'ls' is short for LiSt; it lists the contents of the current directory
+3. Type 'man ls'.  'man' is short for manual and will display help for a command.  It is not always helpful, though.
+4. Type 'cd Desktop', then 'ls'.  You will Change Directories to the Desktop directory and list its contents.  It may be empty.
+5. Type 'nedit test.txt &'.  'nedit' is a graphical text editor.  This command will open a new file test.txt on your desktop.  The '&' is necessary to open the editor "in the background" - if you do the command without '&', you will not be able to enter any more commands at the command line until you close nedit.
+6. Make whatever edits you like, save the file, then close it.
+7. Type 'rm test.txt'.  This will ReMove the file.
+
+IMAGE VIEWING:
+Astronomical images are stored in .fits format.  These are two-dimensional arrays of numbers representing (usually) the sky brightness.  They are therefore monochromatic.  We use DS9 to view these images and make color images.
+1. Type 'ds9 /home/shared/astr3510/crabnebula.fits &'.  If you don't want to type all of that text, try using the 'tab' key at various points along the way.  This shortcut is known as "tab completion".
+2. Play with the "transfer function" by right-clicking on the image and moving your mouse around.  Horizontal controls the "bias" or the zero-point, vertical controls the contrast.
+3. Change the scaling under the scale menu.  Try MinMax, 99.5%, and zscale.
+
+STARTING IRAF:
+IRAF has its own special command line.
+1. Type 'pwd'.  It will print your Present Working Directory.
+2. If you are not in your home directory, type 'cd ~'.
+3. Type 'mkdir iraf' to MaKe a DIRectory.
+4. Type 'cd iraf'
+5. Type 'mkiraf'.  If you are asked to "Initialize uparm" answer 'n'.
+6. Type 'pyraf'.
+
+---- ASSIGNMENT ENDS HERE ----
+
+Additional resources:
+Expanded introduction to the command line: http://www.physics.ubc.ca/mbelab/computer/linux-intro/html/  
+Examples done on cosmos: http://casa.colorado.edu/~benderan/teaching/astr3510/unix.pdf
+
+Advanced usage:
+Command history searching is a very nice feature.  To enable it, add these two lines to your .cshrc:
+bindkey ^[[A history-search-backward
+bindkey ^[[B history-search-forward
+^[[A, ^[[B are written by pressing <ctrl-v> and then the <up> and <down> keys, respectively
+
+There are much more powerful, but somewhat more difficult-to-learn editors:
+nedit - very simple terminal-based editor
+emacs - very powerful editor, easy to learn at first
+vi - very powerful editor, hard to learn at first but has syntax very similar to the unix shell
+
+GREP is used to grab only lines containing certain text, e.g. grep fits list.txt
+Stream editor SED: http://sparky.rice.edu/~hartigan/sed.html
+Another magical device AWK: http://sparky.rice.edu/~hartigan/awk.html
+
+If you don't like csh, you can use the command 'chsh' to switch to bash.
+
