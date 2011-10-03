@@ -1,0 +1,3 @@
+AuthType Basic
+AuthName "Password Required for BGPS users or other collaborators"
+AuthUserFile /home/origins/ginsbura/passwords

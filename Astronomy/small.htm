@@ -1,0 +1,270 @@
+<html>
+
+<head>
+<!--<meta http-equiv="Content-Language" content="en-us">
+<link rel="stylesheet" type="text/css" href="style.css">-->
+<title>Shock Model Fits</title>
+</head>
+
+<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">
+
+
+
+<script language="JavaScript">
+<!--
+
+var database = [
+			[20.0,30.0,1.5,.02,0.276978,2.76978e-06,0.0017505,2.76978e-06,1.62032e-06,8.14317e-06,0.0268115,1.39e-07,0.0864173,0.0537338,0.0357302,0.000191115,5.81655e-05,0.0025759,2.69777e-07,2.17428e-07,4.43165e-05,6.09353e-05,0.0220946,1.73665e-06,0,0.00707403,0.0052155,0.00398018,0.00150676],
+			[20.0,30.0,1.5,.05,0.276923,0,0.000429231,0,5.01231e-07,2.76369e-06,0.00916615,4.55e-07,0.0357231,0.0263077,0.0175846,6.64615e-05,1.93846e-05,0.00158954,6.70154e-08,5.4e-08,1.38462e-05,1.93846e-05,0.00777046,1.45108e-06,0,0.002484,0.001836,0.00139569,0.00139846],
+			[20.0,30.0,1.5,.10,0.278218,0,0.000126589,0,1.63592e-07,1.02384e-06,0.00367248,1.01e-06,0.0172217,0.0132432,0.00890297,2.78218e-05,8.34653e-06,0.00106836,2.97693e-08,2.38711e-08,5.56436e-06,8.34653e-06,0.00340539,1.00158e-06,0,0.00108505,0.00080405,0.000609297,0.00114904],
+];
+
+var dbnames = [
+[ 0,   1,   2,     3,    4,        5,       6,      7,       8,     9,      10,      11,       12,    13,    14,      15,      16,       17,     18,      19,    20,      21,      22,       23,      24,    25,      26,       27,      28],
+["VS","B","DENZ","PART","HB4861","Fe5160","N5200","Fe5262","O5577","N5755","O6300","HA6563","N6583","S6716","S6731","Fe7155","Fe7172","Ca7291","O7320","O7330","Fe7390","Fe7452","Fe8619","C8730","Fe8888","Fe8894","Fe9054","Fe9229","C9850"]
+];
+
+var ratiodb = [["S6716","HA6563"],["S6731","HA6563"],["O6300","HA6563"],["S6716","S6731"],["S6716","O6300"],["S6731","O6300"]];
+var listofchi = new Array();
+var HAflux = new Array();
+
+//set all HA = 1 because the value it currently has is true flux, everything else is by ratio
+for (x in database) {
+	HAflux[x]=database[x][11];
+	database[x][11]=1;
+}
+
+function chisquare(measured,modeled,sigma) {
+	if(sigma!=0){var chi=Math.pow((measured-modeled)/sigma,2);}
+	else{var chi=0;}
+	return chi;
+}
+
+
+function sortfunc(a,b){
+  if (a[0]<b[0]) return -1;
+  if (a[0]>b[0]) return 1;
+  return 0;
+}
+
+function testmodel3(datarray,modeldata) {
+	var chi=0,	N=0, flag=0, sigma=0;
+	var model_ratio, measured_ratio;
+	var model_data = new Array(), measured_data = new Array();
+	var x=0, y=0, z=0, zz=0, yy=0;
+	for (x in ratiodb) {
+		for (y in dbnames[1]) {
+			if (ratiodb[x][flag]==dbnames[1][y]) {	
+//				document.getElementById('Output').innerHTML+=("<br>ratiodb[x][flag]= " + ratiodb[x][flag] + " flag " + flag + "  y: " + y);
+				model_data[flag]=modeldata[dbnames[0][y]];
+				flag++;
+				for (yy in dbnames[1]) {
+					if (ratiodb[x][flag]==dbnames[1][yy]) {	
+//						document.getElementById('Output').innerHTML+=("<br>ratiodb[x][flag]= " + ratiodb[x][flag] + " flag " + flag + "  yy: " + yy);
+						model_data[flag]=modeldata[dbnames[0][yy]];
+						flag++;
+					}
+				}
+			}
+		}
+		flag=0;
+		for (z in datarray) {
+			if (ratiodb[x][flag]==datarray[z][0]) {	
+				measured_data[flag]=datarray[z][1];
+				sigma+=datarray[z][2]-0;
+//				document.getElementById('Output').innerHTML+=("<br>measured_data[flag]= " + measured_data[flag] + " flag " + flag + " sigma " + sigma);
+				flag++;
+				for (zz in datarray) {
+					if (ratiodb[x][flag]==datarray[zz][0]) {	
+						measured_data[flag]=datarray[zz][1];
+						sigma+=datarray[zz][2]-0;
+						flag++;
+					}
+				}
+			}
+		}
+		if (flag > 1) {
+			N=N+1;
+			measured_ratio=measured_data[0]/measured_data[1];
+			model_ratio=model_data[0]/model_data[1];
+			chi+=chisquare(measured_ratio,model_ratio,sigma);
+//			document.getElementById('Output').innerHTML+=("<br>x: " + x + " chi = " + chi + " measuredrat = " + measured_ratio + " modelrat= " + model_ratio + " sigma = " + sigma);		
+		}
+		flag=0;
+		sigma=0;
+	}
+	if (N > 0){	chired=chi/(N);	}
+	else {	chired = 1000;	}
+//	document.getElementById('Output').innerHTML+=("<br>Chi: " + chi + "  chired: " + chired + " N: " + N);			
+	return chired;	
+}
+
+
+function testmodel2(datarray,modeldata) {
+	var chi=0, N=0;
+	for (x in datarray) {
+		for (y in dbnames[1]) {
+			if (datarray[x][0]==dbnames[1][y] && datarray[x][2]!=0) {				
+				chi+=chisquare(datarray[x][1],modeldata[dbnames[0][y]],datarray[x][2]);
+				N=N+1;	
+			}
+		}
+	}
+	//Reduced Chi values are only valid if the number of fitted points is > 2
+	if (N > 2){
+		chired=chi/(N-2);
+	}
+	else {
+		chired = 1000;
+	}
+	return chired;
+}
+
+
+
+function handler2(inputdata) {
+	var datarray = new Array();
+	var list = inputdata.data.value.match(/.*\n/g);
+	var x=0, r=0;
+
+//loop for input processing.  Each line is split along tabs.  You could use different separator values.... in fact I will
+//change '\t' to [\s,], which should mean "either whitespace or a comma"
+	for (x in list) {
+		datarray[x]=list[x].split(/\s+/);
+	}	
+	
+	
+	//for each line in the database, i.e. each model, run testmodel2, which calculates chi-squared for the given model
+	for (r in database)	{
+		listofchi[r]=[testmodel3(datarray,database[r]),r];
+	}
+	
+	//sort by chi squared value to determine which are the best
+    listofchi.sort(sortfunc);		
+
+//	for (x in listofchi) {
+//		document.getElementById('Output').innerHTML+=("<br>X: " + listofchi[x]);
+//	}
+
+	//print to the output table below
+	document.getElementById('model1').innerHTML=("<td>"+database[listofchi[0][1]][0]+"</td><td>"+database[listofchi[0][1]][1]+"</td><td>"+database[listofchi[0][1]][2]+"</td><td>"+database[listofchi[0][1]][3]+"</td><td>"+listofchi[0][0]+"</td><td>"+database[listofchi[0][1]][22]/(database[listofchi[0][1]][13]+database[listofchi[0][1]][14])+"</td>");
+	document.getElementById('model2').innerHTML=("<td>"+database[listofchi[1][1]][0]+"</td><td>"+database[listofchi[1][1]][1]+"</td><td>"+database[listofchi[1][1]][2]+"</td><td>"+database[listofchi[1][1]][3]+"</td><td>"+listofchi[1][0]+"</td><td>"+database[listofchi[1][1]][22]/(database[listofchi[1][1]][13]+database[listofchi[1][1]][14])+"</td>");
+	document.getElementById('model3').innerHTML=("<td>"+database[listofchi[2][1]][0]+"</td><td>"+database[listofchi[2][1]][1]+"</td><td>"+database[listofchi[2][1]][2]+"</td><td>"+database[listofchi[2][1]][3]+"</td><td>"+listofchi[2][0]+"</td><td>"+database[listofchi[2][1]][22]/(database[listofchi[2][1]][13]+database[listofchi[2][1]][14])+"</td>");
+	document.getElementById('model4').innerHTML=("<td>"+database[listofchi[3][1]][0]+"</td><td>"+database[listofchi[3][1]][1]+"</td><td>"+database[listofchi[3][1]][2]+"</td><td>"+database[listofchi[3][1]][3]+"</td><td>"+listofchi[3][0]+"</td><td>"+database[listofchi[3][1]][22]/(database[listofchi[3][1]][13]+database[listofchi[3][1]][14])+"</td>");
+	document.getElementById('model5').innerHTML=("<td>"+database[listofchi[4][1]][0]+"</td><td>"+database[listofchi[4][1]][1]+"</td><td>"+database[listofchi[4][1]][2]+"</td><td>"+database[listofchi[4][1]][3]+"</td><td>"+listofchi[4][0]+"</td><td>"+database[listofchi[4][1]][22]/(database[listofchi[4][1]][13]+database[listofchi[4][1]][14])+"</td>");
+
+
+    return false;
+}	
+
+function redcor(form) {
+	C=form.C.value;
+	var datarray = new Array();
+	var corr = new Array();
+	var list = form.data.value.match(/.*\n/g);
+	for (x in list) {
+		datarray[x]=list[x].split('\t');
+	}	
+	newlist="";
+	
+	for (x in list) {
+		L=1e-4*datarray[x][0].match(/\d+/g);
+		y=1/L-1.82;
+		a=1+0.17699*y-0.50447*y*y-0.0247*y*y*y+0.72085*y*y*y*y+0.01979*Math.pow(y,5)-0.7753*Math.pow(y,6)+0.32999*Math.pow(y,7);
+		b=1.41338*y+2.28305*y*y+1.07233*y*y*y-5.38434*Math.pow(y,4)-0.62251*Math.pow(y,5)+5.3026*Math.pow(y,6)-2.09002*Math.pow(y,7);
+		Rv=3.1;
+		Av = 3.1 * C * (.61 + .24 * C);
+		corr[x]=datarray[x][1]*Math.pow(10,(Av*(a+b/Rv)));
+		if (datarray[x][0]==dbnames[1][11]) { HA = corr[x];}
+	}
+
+	for (x in list) {
+		newratio=corr[x]/HA;
+		newlist+=datarray[x][0]+"\t"+newratio+"\t"+datarray[x][2]+"\n";
+	}
+
+	form.data.value=newlist;
+
+	return false;
+}
+
+
+function alertfunc() {
+	alert("FUNC!");
+}
+
+// --> 
+</script>
+
+
+<p>Input measured values below</p>
+Input must be ratios to H alpha.  Halpha must stay as 1, though its variance won't affect the results.  It is important that
+the same "Line" names be kept because they are used within the program both to match lines to the database and to calculate reddening.
+The data must be tab separated.  The easiest way to manipulate it is probably using Excel: copying and pasting from Excel
+will give you tab separated values.  The lines listed below are those currently in the database, others can be added if necessary.
+
+
+<br><br><form name=boxin>
+Line	Ratio to HA	Var<br>
+<textarea name=data rows=30 cols=60>
+HB4861	0	0
+Fe5160	0	0
+N5200	0	0
+Fe5262    	0	0
+O5577    	0	0
+N5755    	0	0
+O6300  	0	0
+HA6563  	1	0
+N6583	0	0
+S6716    	0	0
+S6731    	0	0
+Fe7155    	0	0
+Fe7172    	0	0
+Ca7291    	0	0
+O7320    	0	0
+O7330    	0	0
+Fe7390    	0	0
+Fe7452    	0	0
+Fe8619    	0	0
+C8730    	0	0
+Fe8888    	0	0
+Fe8894    	0	0
+Fe9054    	0	0
+Fe9229    	0	0
+C9850	0	0
+</textarea>
+<input type=button value ="Submit Data" onclick = "return handler2(this.form)">
+
+<br>
+Input C, the logarithmic extinction of H-Beta, here. 
+It will apply the reddening correction using Cardelli, Clayton, Mathis (1989)'s formula and modify the values you put in the above table<br>
+
+<input type=text name=C size=10 maxlength=10> <input type=button value="Reddening Correct" onclick="redcor(this.form)">
+</form>
+
+
+<br><p>
+The 5 best models are:
+<br><table>
+<tr> <td>Speed</td><td>Magnetic Field</td><td>Density</td><td>Ionization Fraction</td><td>Chi Squared</td><td>Predicted [Fe II] 8619/[S II]</td></tr>
+<tr id=tablehead> </tr>
+<tr id=model1> </tr>
+<tr id=model2> </tr>
+<tr id=model3> </tr>
+<tr id=model4> </tr>
+<tr id=model5> </tr>
+</table>
+<span id=Output></span>
+<br>
+<span id=Output2></span>
+<br><br>
+<!--onsubmit = "return handler(this)"    -->
+<br><br><p>
+References:
+(for conversion between C and A_V) Kaler and Lutz, <b>PASP 97:700</b>, 1985<br>
+(for reddening law) Cardelli, Clayton, and Mathis, <b>ApJ 345:245</b>, 1989<br>
+(for E(B-V) to E(beta-alpha) comparison) Gebel, <b>ApJ 153:743</b> 1968 (eqn 2)<br>
+
+
+</body>
+</html>

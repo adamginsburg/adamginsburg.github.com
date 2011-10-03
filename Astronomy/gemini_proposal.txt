@@ -1,0 +1,139 @@
+NOAO:
+username: keflavich
+password: 123456
+
+
+Title:
+
+Dust emission from P Cygni's Nebula
+
+
+Abstract:
+
+We propose to observe the circumstellar LBV nebula around P Cygni to search for
+emission from cool dust.  Observations of the [Fe II] 1.64\um emission line
+using a coronagraph have revealed the the emission nebula is clumpy throughout.  
+Other LBV nebulae with [Fe II] emission also tend to have warm dust, and a 
+measurement of the dust in P Cygni's nebula will provide a direct constraint on 
+the mass lost in the eruption event in 1600.  
+
+
+Science Justification:
+
+
+Luminous Blue Variables (LBVs) represent a short stage in the evolution of the
+most massive stars.  Their ejectae may be responsible for the shapes of the
+light curves of Type II supernovae (e.g. Smith and McCray 2007) and could be
+the explanation of the ring nebula around SN 1987A (Smith 2007).  LBV shell
+ejection events are the most energetic events in a main sequence star's
+lifetime, sometimes involving energy expenditures just shy of supernovae
+(Smith 2006).  
+
+Because P Cygni has no known binary companion, in contrast to Eta Carinae which
+has a very clear 5.54 year periodicity that implies the presence of a
+companion, it may provide a more pure laboratory for the study of LBV ejectae.
+
+Recent observations of P Cygni in the near-IR [Fe II] 1.64\um line have
+displayed an inner portion of the nebula in greater detail than has been
+possible in optical observations. They revealed a clumpy, asymmetric structure
+that, contrary to expectations from slit spectroscopy (Smith and Hartigan
+2006), is not limb-brightened.  The bright inner nebula has a spatial extent of
+$\sim$20" ($\sim$.12 pc, assuming a distance of 1.7 kpc). These 
+observations imply that P Cygni's nebula is not a hollow shell but a clumpy, at 
+least partly filled blob with only partial spherical symmetry.
+
+Smith and Hartigan measured a shell width of $\sim$.017pc under the 
+assumption that
+the nebula is simply a hollow shell, which implies that clumps will be 
+simimately that size.  The dust we expect to observe is therefore 
+constrained to small clumps or filaments, so it will be faint.  Assuming a 
+distance of $10^{17.3}$ cm from the star, the expected dust temperature is 
+$\sim$70K, giving a blackbody peak around 40\um.
+
+QUESTION (as in, delete this paragraph from proposal):
+[What temperature do we REALLY expect?  Cloudy suggests 68K before I put in any
+grains, but then gave me temperatures $\sim$180-250K with Orion grain 
+abundances
+input.  I can talk to John about this, though... it's a simple calculation, but 
+I'm missing some piece of it]
+
+This [Fe II] emission line is a good tracer of shock-excited emission, and the
+line's strength suggests significant variations in density in a vaguely
+point-symmetric, concentric structure.  In all other LBV nebulae with [Fe II]
+emission, warm dust emission is also seen (REF?).  P Cygni, as the nearest
+unobscured LBV, has been the motivator for the current models of LBV evolution
+(Smith, Vink, and de Koter 2004), but dust emission has not yet been observed
+in its nebula.  The measured gas mass of .1 solar masses (Smith and Hartigan, 
+2006) suggests a dust mass of .001 solar masses, which would be consistent with 
+some known LBVs but is on the low end of the mass-loss spectrum (Clark 2003).
+
+A measurement of the dust emission from P Cygni's nebula will provide
+constraints on physical quantities, i.e. mass and kinetic energy, of the
+ejected shell that is presumed to have come from P Cygni's eruption in 1600.  
+
+While previous optical observations of nebulosity around P Cygni reveal a rich
+ejection history from the star (Barlow et al 1994, Boumis et al 2006, Meaburn 
+et al 2004, Meaburn et al 2000), they do not directly measure kinematic 
+properties of these ejecta and therefore tell little about the processes 
+involved in the ejection.  They have also been mostly unable to image the 
+ejected nebula from the 1600 event, which will likely be the most observable 
+region in the 20\um images.  Adaptive Optics observations of the innermost 
+portion of P Cygni's nebula were limited by a 1" field of view (Chesneau et al 
+2000).
+
+Determinations of the circumstellar material's kinematic properties are
+necessary to constrain models of the ejection mechanism.  In particular, Eta
+Carinae's eruption in the 1840s is proposed to have been from a hydrodynamic
+explosion (Smith and Townsend 2007).  It is unclear whether P Cygni's multiple
+ejectae were ejected in similar hydrodynamic-driven expulsions or
+radiation-driven mass loss events.  
+
+\begin{references}
+\par Barlow, M.J., Drew, J.E., Meaburn, J., Massey, R.M., 1994, MNRAS, 268, L29
+\par Boumis, P., Meaburn, J., Redman, M.P., Mavromatakis, F., 2006, A\&A, 457, 
+L13
+\par Chesneau, O., Roche, M., Boccaletti, A., Abe, L., Moutou, C., Charbonnier, 
+F., Aime, C., Lanteri, H., Vaklil, F., 2000, A\&A Supplement Series, 144, 523
+\par Clark, J.S., Egan, M.P., Crowther, P.A., Mizuno, D.R., Larionov, V.M., 
+Arkaharov, A., 2003, A\&A, 412, 185
+\par Meaburn, J., Boumis, P., Redman, M.P., Lopez, J.A., Mavromatakis, F., 
+2004, A\&A, 422, 603
+\par Meaburn, J., O'Connor, J.A., Lopez, J.A., Bryce, M., Redman, M.P., 
+Noriega-Crespo, A. 2000, MNRAS, 318, 561
+\par Smith, N., Hartigan, P., 2006, APJ, 638, 1045
+\par Smith, N., 2001, ASP Conference Series, 233, 125S
+\end{references}
+
+
+Experimental Design:
+
+Images of P Cygni's nebula in the Qa (Q'?) filter are requested in order to 
+observe cool thermal dust emission.  Two separate observations, centered 
+$\sim$5" from the central star and on opposite sides, will be required so 
+that the 15" chop does not overlap with the nebula.
+
+Imaging in Qa (Q'?) has two significant advantages over other bands.  First, 
+the longer wavelength will sample the dust at a point closer to its blackbody 
+peak.  Second, the contribution of the stellar photosphere and free-free 
+emission from its stellar wind both drop at longer wavelengths.
+
+PI Nathan Smith has attempted detections of dust in P Cygni's nebula using 3m
+telescopes at 10\um, but has not observed it.  A larger aperture operating at
+longer wavelengths is needed to detect the thin, cold layer of dust that is
+expected.  The resolution of an 8m telescope is also required because the dust 
+is expected to be in thin, filamentary structures that are washed out in images 
+from smaller telescopes.
+
+
+Technical Description:
+
+P Cygni's nebula will be observed with two separate pointings, offset 5" in RA 
+from the star in opposite directions, in the Qa (Q'?) filter.  In order to 
+achieve a S/N ratio of $\sim$10, assuming a surface brightness of 10 mJy / 
+sq arcsec, a 120 minute exposure with chop/nod (50% of time on source) will be 
+required.  
+
+
+
+
+

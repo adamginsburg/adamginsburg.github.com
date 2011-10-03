@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Only Jonathan Williams and John Bally allowed"
+AuthUserFile /home/origins/ginsbura/passwords
+Require user bally jwilliams

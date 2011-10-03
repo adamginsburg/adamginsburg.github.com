@@ -1,0 +1,121 @@
+
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> Astronomy 3510: IRAF quick tips </title>
+   <style type="text/css">
+       tt {
+           color: yellow
+       }
+       body {
+           font-size:12px
+       }
+   </style>
+<body> 
+<head><h1><center> ASTR 3510: IRAF quick tips</center></h1></head>
+    <table align="center" width=800><tr><td>
+<br>
+<br> For hints on using DS9 without IRAF, check out <a href="http://casa.colorado.edu/~ginsbura/ds9tips.htm">Adam's DS9 tips page</a>
+<br> Also check out my <a href="http://casa.colorado.edu/~ginsbura/imalign_guide.htm">IMALIGN guide</a>
+<!--<br> And my <a href="tools/FITtofits.cl">FIT to fits script</a> (to use: <tt> cl &lt; FITtofits.cl </tt>)-->
+<!--<br> <a href="http://www.ifa.hawaii.edu/~joshw/IRAFtutorial/IRAFintro_06.html"> Josh Walawender's Guide to Spectral Line reduction</a>-->
+<br> <a href="http://www.twilightlandscapes.com/IRAFtutorial/">Josh Walawender's IRAF tutorial</a>
+<br>
+<!--<br><h3 id="errors"> <a href="IRAF_errors.phtml">Instructions for dealing with IRAF errors on cosmos</a>       </h3>
+  Since the changeover to the new cosmos server, your login.cl files may be
+  incorrect.  They currently have home defined as /raid/home/(username)/etc, but
+  this is no longer correct; you will receive errors saying that iraf could not
+  modify uparm$(taskname).  You should change this by removing the /raid at the
+  front of the path.  This can be done using any <a href="unix_editors.phtml">editor</a>: look
+  for the line "set home = "/raid/home/..." and modify it.  <br>
+
+<br> You can try to re-run mkiraf, which will create a new login.cl for you.
+If you had any settings saved in login.cl, it will overwrite them.  You must
+also go on and change your imdir to <b>"home$images/"</b>.  Search for the line <b>
+#set imtype   "imh"</b> and change it to read <b>set imtype "fits"</b> (remove the # at the beginning of the line).
+<br>
+<br> If you have trouble with <tt>.imh</tt> files showing up instead of <tt>.fits</tt> files:
+<ol> 
+    <li>check to see if your imtype is set correctly with <tt>show imtype</tt>.
+    <li>if it's <tt>imh</tt>, use <tt>set imtype=fits</tt> to fix it
+    <li>you may need to use the <tt>flpr</tt> command to make sure IRAF recognizes the change
+    <li>Find your login.cl file.  Make sure the <tt>set imtype=fits</tt> line is uncommented as in <a href="IRAF.phtml#errors">the directions above</a>.
+</ol>-->
+
+<br><h3 id="quicktips"> IRAF quick tips</h3>
+-If you see errors that involve "uparm" or "unable to write...":
+<br>&nbsp;-try to <b>logout</b> of the cl and log back in; make sure you're in the directory with your login.cl file
+<br>&nbsp;-make sure your login.cl has been edited as per <a href="IRAF.phtml#errors">the directions above</a>
+<br>
+<br>-If you have problems with <b>imexam</b> and cursor behavior:
+<br>&nbsp;-restart DS9, try again
+<br>&nbsp;-restart DS9, <b>logout</b> of the cl and log back in
+<br>&nbsp;-get frustrated, call or <a href="mailto:adam.ginsburg@colorado.edu">e-mail</a> Adam, see if he gets frustrated
+<br>
+<br>-Using IRAF graphics terminals:
+<br>&nbsp;-q quits; a quit and re-enter solves most problems
+<br>&nbsp;-? displays help in the terminal.  Don't forget to quit out of the help when you're done
+<br>&nbsp;-:(command) allows "colon commands" that can be quite powerful (see, e.g., "wcs" in <b>imexam</b>)
+<br>
+<br>-A <tt>syntax error</tt> in IRAF generally means you have not loaded the requisite package.
+<br>&nbsp; -if you don't know what package that is, use the <tt>help</tt> command (e.g. <tt>help temden</tt>)
+<br>
+
+<br>
+<br> <h3 id="guider"> Matching Guider Images to Science Images </h3>
+ Instead of going through each individual file's header, I recommend using this command:
+<br> <tt>imhead proc-*.fits[0] lo+ | grep -E "Pixel\ file\|UTTIME"</tt> 
+<br> in the <tt>ecam</tt> directory, and the command 
+<br> <tt>imhead e*.fits lo+ | grep -E "Pixel\ file\|UTC-OBS"</tt>
+<br> in the science directory for the selected night in order to list the file
+names and exposure start times for each file.  You can then write the output of
+these commands to a file by appening a redirect to the
+end of the command, e.g. <br><tt> imhead e*.fits lo+ | grep -E "Pixel\ file\|UTC-OBS" &gt; filename.txt </tt>.  
+<br> Once you have found the necessary files, copy them to your directory.  
+<br> If you are using DIS instead of Echelle, replace <tt>e*.fits</tt> with <tt>d*.fits</tt>.
+<br>
+<br> <h5>If you're curious about what those commands mean, read on.</h5>  You should already be familiar with the imhead command, which with the <tt>long</tt>
+option enabled prints the full header.  The <tt>[0]</tt> appended to the end of
+the filename chooses the first extension in the fits image.  A fits file is
+capable of holding many extensions, i.e. many images, in one file.  In the case
+of the Echelle guider camera, the proc-[something].fits files have the slit
+superimposed on the sky image as the first extension, and the slit mask image as
+the second extension.  
+<br> The grep command outputs all lines containing a regular expression from its input.  A regular expression is a special pattern matching expression.
+In this case, we have <tt>"Pixel\ file\|UTC-OBS"</tt>, which means we are searching for lines with the string <tt>Pixel file</tt> or <tt>UTC-OBS</tt>.
+The backslash before the space <a href="http://xkcd.com/234/">escapes</a> the space so that IRAF doesn't think you are giving it another command.  Similarly,
+we must escape the or operator | (though I'm not entirely certain why - this is not standard behavior).  The -E option tells grep that we are using 
+an extended regular expression, which is what allows the use of the | symbol.  
+
+<br>
+<br> <h3 id="atscript"> Using @ Symbols in commands </h3>
+Most IRAF commands only work on a single file at a time.  To run a command on many files at once, 
+you can make a list of files, and then run a command on that list.  For example,
+<br><tt><pre> !ls *.DARK.fits &gt; darklist 
+    imhead @darklist </pre></tt>
+<br>
+<br> For a more advanced usage, try something like this:
+<br><tt> <pre> !ls *.DARK.fits &gt; darklist
+    imcombine @darklist darkcomb.fits
+    !ls ngc*.fits &gt; sourcelist
+    !sed 's/\.fits/.darksub.fits/' sourcelist &gt; darksublist
+    imarith @sourcelist - darkcomb.fits @darksublist</pre></tt>
+
+<br> <h3 id="detail"> Detailed explanation of individual commands </h3>
+<br id="imarith"> <tt>imarith [file1] [operation] [file2 or number] [outputfile]</tt> performs the designated mathematical operation on the desired files 
+<br id="flatcombine"> <tt> flatcombine [filelist] output=[outfile] </tt> is a flat-specific version of imcombine.  It defaults to "average" with "avsigclip", or average sigma clipping, to remove outliers from the set of images.
+<br id="text2mask"> <tt> text2mask text=[textfile] mask=[outfile] </tt> generates a bad pixel mask.  In the case of the APO Echelle, they tell us exactly what bad pixel mask to use.  
+<br id="ccdproc"> <tt> ccdproc [filename] fixfile=[fixfilename] biassec=[range] trimsec=[range] order=[ordernum] niterate=[niter]</tt> Automated CCD processing package uses a bad pixel mask (fixfilename) to eliminate bad pixels and a bias segment to determine what the chip bias is and remove it.  trimsec specifies a range to remove from the image.  The ordernum and niterate parameters are for fitting the bias from the small "overscan" regions used to determine it. 
+<br id="apall"> <tt> apall [filename] reference=[refspec] </tt> uses the reference spectrum specified to extract apertures from the 2D echelle image.  With the parameters used here, it does not automatically find new apertures, but will recenter and (except for the quartz lamp) resize the apertures.Most of the parameters specified are used for tracing the aperture and are not strictle necessary, but are included here because they were suggested in the APO Echelle Reduction guide
+<br id="ecreidentify"> <tt> ecreidentify [filename] reference=[refspec] </tt> uses the reference spectrum with identified lines to identify the wavelengths of the extracted apertures.  ecreidentify is only necessary here if ThAr lamps other than those provided are going to be used; in this example it is not used.
+<br id="magnify"> <tt> magnify [filename] [outname] xmag=[nx] ymag=[ny] </tt> simply magnifies the image by some factor while conserving flux.  This is used to reduce aliasing that results from the narrow apertures - see the echelle reduction guide.
+<br id="refspectra"> <tt> respectra [filename] reference=[refname] </tt> adds the reference spectrum to the header file of a target file.  This step is necessary to use dispcor
+<br id="dispcor"> <tt> dispcor [in] [out] </tt> applies the dispersion correction specified in the reference spectrum, i.e. it changes units from pixels to wavelength
+<br id="scombine"> <tt> scombine [in] [out] combine=[combtype] </tt> attempts to combine all of the individual spectral orders into a single spectrum using either sum, average, or median combine.  However, what we REALLY want is a "max" combine that will take the maximum of the two spectra at each point, and I don't know how to do that yet.
+<br id="hedit"> <tt> hedit [filename] [parameter] [value] add=[y/n] </tt> modifies the header of a fits file.  It is a very simple process to do this, but hedit preserves the fits format (which affects how different programs - e.g. ds9 - read and display the file) when making edits and prevents you from overwriting key parameters.  We use "DISPAXIS 1 add+" to say "change the value of DISPAXIS to 1, and add the parameter DISPAXIS if it does not exist".  DISPAXIS=1 means the X axis.  You can see in the echelle images that the x axis is the wavelength axis and the y axis is the "order" axis.
+
+
+
+<br><br><hr><br>
+<?php include 'navbar.php';?>
+<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
+</body></html>

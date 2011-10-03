@@ -1,0 +1,498 @@
+;----------------------------------------------------------------------------
+;
+; Revision History
+;
+;  1.0  SBeland 03/02/04 VRESET and VBIASGATE are on the clock driver DB37
+;       connector on pins 18 and 19 (instead of the second video processor 
+;       board which we don't have)
+;  1.1  MDrosback 04-21-04 Changed Offset on video processor to account for
+;       grounded differential outputs (used value of 1.65 V taken from H1RG 
+;       manual)
+;  1.2  See H1RGApril27.waveforms for previous version; changing OFFSET back to
+;       672, changing voltages to match what RSC controller reads
+;  1.3  Modified to match Schubnell's H2IR8.waveforms file (SBeland 06/05)
+;  1.4  Modified for 16 channels, 2 video boards.  GINS August-September 2007
+;
+;----------------------------------------------------------------------------
+;
+;
+; Miscellaneous definitions
+VID0       EQU     $000000    ; Video board select = 0
+VID1       EQU     $001000    ; Video board select = 1 GINS 9/12/07
+CLK2       EQU     $002000    ; Select bottom of clock driver board 
+CLK3       EQU     $003000    ; Select top of clock driver board
+
+;SXMIT      EQU     $00F040    ; Transmit 2 pixels from two video boards
+; on the sci_grade chip, changing from 2 to 1 channel changes the bias
+;SXMIT2     EQU     $00F040    ; Transmit 2 pixels from two video boards ;commented out 9/11/07 GINS
+SXMIT1     EQU     $00F000    ; Transmit 1 pixel from one video board  
+SXMIT2     EQU     $00F041    ;0000 0100 0001 -> 000001 000001
+SXMIT3     EQU     $00F082    ;0000 1000 0010 -> 000010 000010 
+SXMIT4     EQU     $00F0C3    ;0000 1100 0011 -> 000011 000011
+SXMIT5     EQU     $00F104    ;0001 0000 0100 -> 000100 000100
+SXMIT6     EQU     $00F145    ;0001 0100 0101 -> 000101 000101
+SXMIT7     EQU     $00F186    ;0001 1000 0110 -> 000110 000110
+SXMIT8     EQU     $00F1C7    ;0001 1100 0111 -> 000111 000111
+SXMIT9     EQU     $00F208    ;0010 0000 1000 -> 001000 001000
+SXMIT10     EQU     $00F249    ;0010 0100 1001 -> 001001 001001
+SXMIT11     EQU     $00F28A    ;0010 1000 1010 -> 001010 001010
+SXMIT12     EQU     $00F2CB    ;0010 1100 1011 -> 001011 001011
+SXMIT13     EQU     $00F30C    ;0011 0000 1100 -> 001100 001100
+SXMIT14     EQU     $00F34D    ;0011 0100 1101 -> 001101 001101
+SXMIT15     EQU     $00F38E    ;0011 1000 1110 -> 001110 001110
+SXMIT16     EQU     $00F3CF    ;0011 1100 1111 -> 001111 001111
+SXMITAL     EQU     $00F3C0    ; Transmit 16 channels/pixels from 2 video boards   Adam 8/24/07 
+
+DLY0       EQU     $000000    ; no delay
+DLY1       EQU     $8F0000    ; = 5 microsec 
+DLYS       EQU     $050000    ; Serial command delay time = 200 nanosec
+
+; Define switch state bits for CLK2 = "bottom" of clock board = channels 0 to 11
+FSYNCB     EQU     1      ; Frame Sync
+LSYNCB     EQU     2      ; Line Sync
+VCLK       EQU     4      ; Vertical Clock
+HCLK       EQU     8      ; Horizontal (fast pixel) Clock
+RESETEN    EQU     $10    ; Reset enable
+READEN     EQU     $20    ; Read enable
+TSTCLK     EQU     $40    ; Test signal for integrator latch
+ 
+; Define switch state bits for CLK3 = "top" of clock board = channels 12 to 23
+MAINRESETB EQU     1      ; Reset the serial register to default values
+CSB        EQU     2      ; Serial Chip Select Bar
+DATACLK    EQU     4      ; Serial Data Clock
+DATAIN     EQU     8      ; Serial Data In (serial)
+
+; Voltage tables
+VIDEOmax   EQU     3.3317 ; Maximum clock voltage, should be 3.3 volts for H1RG.
+CLKmax     EQU     3.3317 ; Maximum video board DC bias voltage, should be 3.3 volts.
+VSOURCE    EQU     2.05   ; Source load voltage on the ARC46 video board
+CLK_HI     EQU     3.10   ; High clock voltage
+CLK_LO     EQU     0.10   ; Low clock voltage
+CLK_ZERO   EQU     0.00   ; Zero volts for power-on sequence
+; A/D converter voltage reference
+;ADREF      EQU     1.75   ; Between 0 and 2.5 volts. 2.5 = min. gain (buffered mode)
+ADREF      EQU     1.70   ; Between 0 and 2.5 volts. 2.5 = min. gain testing buffered mode 01/29/2007
+COMPIN     EQU     3.20   ; Comparison-in? 3.2 volts added by GINS
+
+; The ARC46 video board is strapped for unipolar DC bias outputs. 
+;   The rail voltage is VIDEOmax set by a reference resistor. 
+VDD        EQU     3.30   ; Digital positive power supply, was 3.28
+VDDA       EQU     3.28   ; Analog positive power supply, was 3.28
+CELLDRAIN  EQU     0.0    ; pixel source-follower drain node, was 0.2 (RSC said 0.0)
+DRAIN      EQU     0.0    ; output source-follower drain node, was 0.0
+VBIASPOWER EQU     3.28   ; was 3.28 pixel source-follower source node, was 3.28
+DSUB       EQU     0.35   ; was 2.20 Detector substrate voltage, was 0.4 
+VRESET     EQU     0.10   ; was 0.40 Detector reset voltage. was 0.15 
+VBIASGATE  EQU     2.20   ; was 2.4 pixel source-follower bias voltage--was 2.3
+                          ; was 3.0, was 2.2 (Apr 27)
+VBIAS7     EQU     0.00   ; voltage used for the complement inputs (SBeland Aug05)
+						  ; NOT USED 9/13/07
+
+
+; Video processor offset values
+;OFFSET		EQU	$2b0	; unbuffered value
+;OFFSET		EQU	$30f	; buffered value ENG chip  (SB 04-07-23)
+;OFFSET		EQU	$2E1	; unbuffered with ADREF=1.75 (ENG chip)
+;OFFSET		EQU	$362	; buffered value SCI chip  
+;OFFSET1CH	EQU	$348	; unbuffered value SCI chip  (1 channel TEST)
+;OFFSET2CH	EQU	$331	; unbuffered value SCI chip  (2 channels DEFAULT)
+;OFFSET1CH	EQU	$36C	; unbuffered value SCI chip  (March 15/06 SBeland)
+;OFFSET2CH	EQU	$342	; unbuffered value SCI chip  (March 15/06 SBeland)
+OFFSET1CH	EQU	$32D	; buffered value SCI chip  (March 05/07 SBeland)
+OFFSET2CH	EQU	$331	; buffered value SCI chip (TEST 01/28/2007)
+OFFSET2CHA	EQU	$458	; unbuffered value SCI chip  (2 channels DEFAULT)
+OFFSET2CHB	EQU	$2B0	; unbuffered value SCI chip  (2 channels DEFAULT)
+;Although the values below are meant for 16 channel, they are left at 
+;the values for 2 channel for now - we need to experiment to find how these
+;deviate from the assumed default (GINS 9/11/07)
+OFFSET     EQU     OFFSET2CH
+OFFSET0    EQU     OFFSET2CH
+OFFSET1    EQU     OFFSET2CH
+OFFSET2    EQU     OFFSET
+OFFSET3    EQU     OFFSET
+OFFSET4    EQU     OFFSET
+OFFSET5    EQU     OFFSET
+OFFSET6    EQU     OFFSET
+OFFSET7    EQU     OFFSET
+OFFSET8    EQU     OFFSET
+OFFSET9    EQU     OFFSET
+OFFSET10   EQU     OFFSET
+OFFSET11   EQU     OFFSET
+OFFSET12   EQU     OFFSET
+OFFSET13   EQU     OFFSET
+OFFSET14   EQU     OFFSET
+OFFSET15   EQU     OFFSET
+OFFSET3CH    EQU     OFFSET
+OFFSET4CH    EQU     OFFSET
+OFFSET5CH    EQU     OFFSET
+OFFSET6CH    EQU     OFFSET
+OFFSET7CH    EQU     OFFSET
+OFFSET8CH    EQU     OFFSET
+OFFSET9CH    EQU     OFFSET
+OFFSET10CH   EQU     OFFSET
+OFFSET11CH   EQU     OFFSET
+OFFSET12CH   EQU     OFFSET
+OFFSET13CH   EQU     OFFSET
+OFFSET14CH   EQU     OFFSET
+OFFSET15CH   EQU     OFFSET
+OFFSET16CH   EQU     OFFSET
+
+; Copy of the clocking bit definition for easy reference
+;    DC    CLK2+DELAY+FSYNCB+LSYNCB+VCLK+HCLK+RESETEN+READEN
+;    DC    CLK3+DELAY+MAINRESETB+CSB+DATACLK+DATAIN
+
+FRAME_INIT
+    DC    END_FRAME_INIT-FRAME_INIT-1
+    DC    CLK2+$880000+FSYNCB+LSYNCB+0000+0000+0000000+000000 ; HCLK low (MS added 6-3-04)
+    DC    CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+0000000+000000    ; Pulse FSYNCB low (5us)
+    DC    CLK2+DLY1+000000+LSYNCB+0000+0000+0000000+000000
+    DC    CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+0000000+000000
+END_FRAME_INIT
+
+CLOCK_ROW
+    DC    END_CLOCK_ROW-CLOCK_ROW-1
+    DC    CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN    ; 
+    DC    CLK2+DLY1+FSYNCB+000000+VCLK+0000+0000000+READEN    ; Pulse LSYNC low
+    DC    CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN    ;   and VCLK high
+END_CLOCK_ROW
+
+; pulse VCLK high to generater FRAMECHK pulse at end of read
+OVERCLOCK_ROW
+    DC    END_OVERCLOCK_ROW-OVERCLOCK_ROW-1
+    DC    CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN    ; Bring READEN low
+    DC    CLK2+DLY1+FSYNCB+LSYNCB+VCLK+0000+0000000+000000    ; Pulse VCLK high
+    DC    CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+000000
+    DC    CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+0000000+000000
+END_OVERCLOCK_ROW
+
+RESET_ROW
+    DC    END_RESET_ROW-RESET_ROW-1
+    DC    CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+RESETEN+000000    ; Pulse LSYNCB low,
+    DC    CLK2+DLY1+FSYNCB+000000+VCLK+0000+RESETEN+000000    ;   VCLK high, keeping
+    DC    CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+RESETEN+000000    ;   RESETEN high
+END_RESET_ROW
+
+; Here is an alternative syntax for the same thing
+
+; Video processor bit definitions
+;    Bit #3 = Move A/D data to FIFO  (high going edge)
+;    Bit #2 = A/D Convert            (low going edge to start conversion)
+;    Bit #1 = Reset Integrator       (=0 to reset)
+;    Bit #0 = Integrate              (=0 to integrate)
+
+;;Gins's note to self:  first two hexadecimal bits (first byte, 8 most significant bits)
+;;are the delay in ns / 40 (e.g. a value of 10, or A, would mean 400 ns)
+CLK_COL_AND_READ
+    DC    END_CLK_COL_AND_READ-CLK_COL_AND_READ-1
+    DC    CLK2+$2D0000+FSYNCB+LSYNCB+0000+0000+0000000+READEN    ; keep HCLK low (1800ns)
+    DC    CLK2+$040000+FSYNCB+LSYNCB+0000+HCLK+0000000+READEN    ; HCLK high (160ns) doesn't change pixels
+    DC    VID0+$050000+%0101               ; Reset integrator (200ns)
+;    DC    VID0+$2D0000+%0111               ; Settling time (1800ns)
+    DC    VID0+$200000+%0111               ; Settling time (1800ns) ;Gins modded 9/19/07
+;    DC    VID0+$4B0000+%0110               ; Integrate (3000ns)
+    DC    VID0+$200000+%0110               ; Integrate (3000ns) ;Gins modded 9/19/07
+    DC    VID0+$0A0000+%0111               ; Settling time (400ns)
+    DC    VID0+$020000+%0011               ; Start A/D conversion
+    DC    VID0+$2E0000+%0111               ; A/D conversion time (1840ns)
+    DC    VID0+$000000+%1111               ; A/D data--> FIFO
+    ;ADDED GINS 9/12/07
+    DC    VID1+$050000+%0101               ; Reset integrator (200ns)
+;    DC    VID1+$2D0000+%0111               ; Settling time (1800ns) 
+    DC    VID1+$200000+%0111               ; Settling time (1800ns) ;Gins modded 9/19/07
+;    DC    VID1+$4B0000+%0110               ; Integrate (3000ns)
+    DC    VID1+$200000+%0110               ; Integrate (3000ns) ;Gins modded 9/19/07
+    DC    VID1+$0A0000+%0111               ; Settling time (400ns)
+    DC    VID1+$020000+%0011               ; Start A/D conversion
+    DC    VID1+$2E0000+%0111               ; A/D conversion time (1840ns)
+    DC    VID1+$000000+%1111               ; A/D data--> FIFO
+    ;END ADDED 9/12/07
+    DC    CLK2+$050000+FSYNCB+LSYNCB+0000+HCLK+0000000+READEN  ; HCLK High (200ns delay for A/D)
+CXMIT    DC    SXMITAL                            ; Transmit all 16 pixels ??? (GINS 8/28/07,9/11/07)
+    DC    VID0+$050000+%0111               ; Settling time (200ns was 400)
+    DC    VID1+$050000+%0111               ; Settling time (200ns was 400) ;ADDED GINS 9/12/07
+    DC    CLK2+$040000+FSYNCB+LSYNCB+0000+0000+0000000+READEN   ; clock to next pixel (160ns)
+END_CLK_COL_AND_READ
+
+
+; Advance the pixel clock without A/D conversions at the beginning of each line
+FIRST_HCLKS
+    DC    END_FIRST_HCLKS-FIRST_HCLKS-1
+    DC    CLK2+$8F0000+FSYNCB+LSYNCB+0000+HCLK+0000000+READEN    ; Cycle HCLK
+    DC    CLK2+$8F0000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+    DC    CLK2+$8F0000+FSYNCB+LSYNCB+0000+HCLK+0000000+READEN
+    DC    CLK2+$000000+FSYNCB+LSYNCB+0000+0000+0000000+READEN    ; clocks 1st real pixel
+END_FIRST_HCLKS
+
+; Bring HCLK low at the end of each line
+LAST_HCLKS
+    DC    END_LAST_HCLKS-LAST_HCLKS-1
+    DC    CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+END_LAST_HCLKS
+
+; Match the nominal pixel clocking (5 us)
+CLOCK_ONLY
+   DC END_CLOCK_ONLY-CLOCK_ONLY-1
+   DC CLK2+DLY1+FSYNCB+LSYNCB+0000+HCLK+RESETEN+000000   ; Cycle HCLK
+   DC CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+RESETEN+000000
+END_CLOCK_ONLY
+
+; HCLK for clearing, faster than usual
+FAST_CLOCK_ONLY
+    DC    END_FAST_CLOCK_ONLY-FAST_CLOCK_ONLY-1
+    DC    CLK2+$180000+FSYNCB+LSYNCB+0000+HCLK+RESETEN+000000 ; Cycle HCLK 
+    DC    CLK2+$180000+FSYNCB+LSYNCB+0000+0000+RESETEN+000000 ;
+END_FAST_CLOCK_ONLY
+
+; the SLOW_CLOCK_ONLY is used by the RESET_ARRAY routine in tim.asm ONLY
+SLOW_CLOCK_ONLY
+    DC    END_SLOW_CLOCK_ONLY-SLOW_CLOCK_ONLY-1
+    DC    CLK2+$3F0000+FSYNCB+LSYNCB+0000+HCLK+RESETEN+000000 ; Cycle HCLK 
+    DC    CLK2+$580000+FSYNCB+LSYNCB+0000+0000+RESETEN+000000 ;
+END_SLOW_CLOCK_ONLY
+
+; Take RESETEN low at end of reset  (MS 6-3-04 added)
+RESETEN_LOW
+    DC    END_RESETEN_LOW-RESETEN_LOW-1
+    DC    CLK2+$000000+FSYNCB+LSYNCB+0000+0000+0000000+000000
+    DC    CLK2+$000000+FSYNCB+LSYNCB+0000+0000+0000000+000000
+END_RESETEN_LOW
+
+
+; The remaining commands are for the serial interface
+CSB_LOW    DC    END_CSB_LOW-CSB_LOW-1
+    DC    CLK3+DLYS+MAINRESETB+CSB+0000000+000000    ; hold CSB high for a little while
+    DC    CLK3+DLYS+MAINRESETB+000+0000000+000000    ; CSB low = serial 
+;   DC    CLK3+DLYS+MAINRESETB+000+0000000+000000    ; CSB low = serial 
+END_CSB_LOW
+
+CSB_HIGH
+    DC    END_CSB_HIGH-CSB_HIGH-1
+    DC    CLK3+DLYS+MAINRESETB+000+0000000+000000    ; hold CSB low for a little while
+    DC    CLK3+DLYS+MAINRESETB+CSB+0000000+000000    ; then set CSB high
+    DC    CLK3+DLYS+MAINRESETB+CSB+0000000+000000    ; Added extra high - SBeland June2304
+;   DC    CLK3+DLYS+MAINRESETB+CSB+0000000+000000    ; 
+END_CSB_HIGH
+
+DATACLK_HIGH
+   DC END_DATACLK_HIGH-DATACLK_HIGH-1
+   DC CLK3+DLYS+MAINRESETB+000+DATACLK+000000 ; DATACLK high
+   DC CLK3+DLY0+MAINRESETB+000+DATACLK+000000 ; DATACLK high
+END_DATACLK_HIGH
+
+CLOCK_SERIAL_ONE
+    DC    END_CLOCK_SERIAL_ONE-CLOCK_SERIAL_ONE-1
+;   DC    CLK3+DLYS+MAINRESETB+000+DATACLK+DATAIN    ; CSB low, DATAIN high, DATACLK high
+;   DC    CLK3+DLYS+MAINRESETB+000+0000000+DATAIN    ; CSB low, DATAIN high, DATACLK low
+    DC    CLK3+DLYS+MAINRESETB+000+0000000+DATAIN    ; CSB low, DATAIN high, DATACLK low
+    DC    CLK3+DLYS+MAINRESETB+000+DATACLK+DATAIN    ; CSB low, DATAIN high, DATACLK high
+    DC    CLK3+DLYS+MAINRESETB+000+0000000+DATAIN    ; CSB low, DATAIN high, DATACLK low
+END_CLOCK_SERIAL_ONE
+
+CLOCK_SERIAL_ZERO
+    DC    END_CLOCK_SERIAL_ZERO-CLOCK_SERIAL_ZERO-1
+;   DC    CLK3+DLYS+MAINRESETB+000+DATACLK+000000    ; CSB low, DATAIN low, DATACLK high
+;   DC    CLK3+DLYS+MAINRESETB+000+0000000+000000    ; CSB low, DATAIN low, DATACLK low
+    DC    CLK3+DLYS+MAINRESETB+000+0000000+000000    ; CSB low, DATAIN low, DATACLK low
+    DC    CLK3+DLYS+MAINRESETB+000+DATACLK+000000    ; CSB low, DATAIN low, DATACLK high
+    DC    CLK3+DLYS+MAINRESETB+000+0000000+000000    ; CSB low, DATAIN low, DATACLK low
+END_CLOCK_SERIAL_ZERO
+
+; Reset all the serial command bits to default values
+RESET_SERIAL
+    DC    END_RESET_SERIAL-RESET_SERIAL-1
+    DC    CLK3+DLYS+0000000000+CSB        ; MAINRESETB low for >200 nanosec
+    DC    CLK3+DLYS+0000000000+CSB
+;   DC    CLK3+DLY0+MAINRESETB+CSB
+    DC    CLK3+DLYS+MAINRESETB+CSB
+    DC    CLK3+DLYS+MAINRESETB+CSB    ; added this line for MAINRESETB low for ~200 nanosec
+                                            ; SBeland 6-22-04 (verified on oscilloscope)
+END_RESET_SERIAL
+
+; This is the initialization of the Bias/clock voltages completed during the 
+; "Power Up" sequence in Voodoo, odds are default positions
+; Clocking voltage settings
+DACS    DC    END_DACS-DACS-1
+    DC    $2A0080                ; DAC = unbuffered mode
+	;;CVI = Convert to Integer
+    DC    $200100+@CVI(CLK_HI/CLKmax*255)    ; Pin #1, FSYNCB
+    DC    $200200+@CVI(CLK_LO/CLKmax*255)
+    DC    $200400+@CVI(CLK_HI/CLKmax*255)    ; Pin #2, LSYNCB
+    DC    $200800+@CVI(CLK_LO/CLKmax*255)
+    DC    $202000+@CVI(CLK_HI/CLKmax*255)    ; Pin #3, VCLK
+    DC    $204000+@CVI(CLK_LO/CLKmax*255)    
+    DC    $208000+@CVI(CLK_HI/CLKmax*255)    ; Pin #4, HCLK
+    DC    $210000+@CVI(CLK_LO/CLKmax*255)
+    DC    $220100+@CVI(CLK_HI/CLKmax*255)    ; Pin #5, RESETEN
+    DC    $220200+@CVI(CLK_LO/CLKmax*255)
+    DC    $220400+@CVI(CLK_HI/CLKmax*255)    ; Pin #6, READEN
+    DC    $220800+@CVI(CLK_LO/CLKmax*255)
+
+    DC    $222000+@CVI(CLK_ZERO/CLKmax*255)  ; Pin #7
+    DC    $224000+@CVI(CLK_ZERO/CLKmax*255)    
+    DC    $228000+@CVI(CLK_ZERO/CLKmax*255)  ; Pin #8
+    DC    $230000+@CVI(CLK_ZERO/CLKmax*255)
+    DC    $240100+@CVI(CLK_ZERO/CLKmax*255)  ; Pin #9
+    DC    $240200+@CVI(CLK_ZERO/CLKmax*255)
+    DC    $240400+@CVI(CLK_ZERO/CLKmax*255)  ; Pin #10
+    DC    $240800+@CVI(CLK_ZERO/CLKmax*255)
+    DC    $242000+@CVI(CLK_ZERO/CLKmax*255)  ; Pin #11
+    DC    $244000+@CVI(CLK_ZERO/CLKmax*255)
+    DC    $248000+@CVI(CLK_ZERO/CLKmax*255)  ; Pin #12
+    DC    $250000+@CVI(CLK_ZERO/CLKmax*255)
+
+    DC    $260100+@CVI(CLK_HI/CLKmax*255)    ; Pin #13, MAINRESETB
+    DC    $260200+@CVI(CLK_LO/CLKmax*255)
+    DC    $260400+@CVI(CLK_HI/CLKmax*255)    ; Pin #14, CSB
+    DC    $260800+@CVI(CLK_LO/CLKmax*255)
+    DC    $262000+@CVI(CLK_HI/CLKmax*255)    ; Pin #15, DATACLK
+    DC    $264000+@CVI(CLK_LO/CLKmax*255)
+    DC    $268000+@CVI(CLK_HI/CLKmax*255)    ; Pin #16, DATAIN
+    DC    $270000+@CVI(CLK_LO/CLKmax*255)
+
+    DC    $280100+@CVI(CLK_ZERO/CLKmax*255)  ; Pin #17
+    DC    $280200+@CVI(CLK_ZERO/CLKmax*255)
+
+; Added voltages on the Clock Driver pins 18 and 19 (Rev 1.0)
+;; Commented out 9/11/07 GINS: these are no longer connected to the clock board
+; They are now pins 33 (VBIASGATE) and 17 (VRESET) on the second ARC46 Video
+; Board
+;    DC    $280400+@CVI(VRESET/CLKmax*255)    ; Pin #18, VRESET
+;    DC    $280800+@CVI(VRESET/CLKmax*255)    ; 
+;    DC    $282000+@CVI(VBIASGATE/CLKmax*255) ; Pin #19, VBIASGATE
+;    DC    $284000+@CVI(VBIASGATE/CLKmax*255) ; 
+    
+    ;;GINS
+;    DC    $280300+@CVI(CSB_shield/CLKmax*255) ; Could be Pin 29, CSB-shield?
+;    DC    $280400+@CVI(CSB_shield/CLKmax*255) ; Could be Pin 30, CSB-shield?
+
+    DC    $288000+@CVI(CLK_ZERO/CLKmax*255)  ; Pin #33
+    DC    $290000+@CVI(CLK_ZERO/CLKmax*255)
+    DC    $2A0100+@CVI(CLK_ZERO/CLKmax*255)  ; Pin #34
+    DC    $2A0200+@CVI(CLK_ZERO/CLKmax*255)
+    DC    $2A0400+@CVI(CLK_ZERO/CLKmax*255)  ; Pin #35
+    DC    $2A0800+@CVI(CLK_ZERO/CLKmax*255)
+    DC    $2A2000+@CVI(CLK_ZERO/CLKmax*255)  ; Pin #36
+    DC    $2A4000+@CVI(CLK_ZERO/CLKmax*255)
+    DC    $2A8000+@CVI(CLK_ZERO/CLKmax*255)  ; Pin #37
+    DC    $2B0000+@CVI(CLK_ZERO/CLKmax*255)
+
+; A/D gain (reference voltage)
+    DC    $0c0000+@CVI((ADREF+VIDEOmax)/(2.0*VIDEOmax)*4095)
+    DC    $1C0000+@CVI((ADREF+VIDEOmax)/(2.0*VIDEOmax)*4095)
+    DC    $2C0000+@CVI((ADREF+VIDEOmax)/(2.0*VIDEOmax)*4095)
+    DC    $3C0000+@CVI((ADREF+VIDEOmax)/(2.0*VIDEOmax)*4095)
+    DC    $0C3003  ; added to test the slow and fast integrator resistance SBeland 01/29/2007
+
+; Bipolar +/-5 volts output voltages, on the 15 pin DB output connector
+; ARC46 Video Board 0 - DB 50 pins 14, 31, 15, 32, (34) GINS 9/12/07
+; These 4 pins can be -5 to 0, 0 to 5, or -5 to 5
+    DC    $0d0000+@CVI((VDD+VIDEOmax)/(2.0*VIDEOmax)*4095)       ; Video Board 0 Pin 32 VDD GINS 9/12/07
+    DC    $0d4000+@CVI((VDDA+VIDEOmax)/(2.0*VIDEOmax)*4095)      ; Video Board 0 Pin 15 VDDA GINS 9/12/07
+    DC    $0D8000+@CVI((CELLDRAIN+VIDEOmax)/(2.0*VIDEOmax)*4095) ; Video Board 0 Pin 31 CELLDRAIN GINS 9/12/07
+    DC    $0dc000+@CVI((DRAIN+VIDEOmax)/(2.0*VIDEOmax)*4095)        ; Video Board 0 Pin 14 DRAIN GINS 9/12/07
+    ;NOTE THAT PIN 34 IS GNDA - don't run current into ground!
+    ;;GINS'S NOTE TO SELF:
+    ;;0CC000 = 0000 1100 1100 0000 0000 0000
+    ;;004000 = 0000 0000 0100 0000 0000 0000 
+    ;;004000<<8 = 0100 0000 0000 0000 0000 0000 = $400000
+
+; Unipolar 0 to 5 volts output voltages, video board #1 OLD SETTINGS
+; BIPOLAR +/- 5 volts on DB50, video board 1
+    DC    $1cc000+@CVI((VBIASPOWER+VIDEOmax)/(2.0*VIDEOmax)*4095)   ; Video Board 1 Pin 16 VBIASPOWER
+    DC    $1d0000+@CVI((DSUB+VIDEOmax)/(2.0*VIDEOmax)*4095)         ; Video Board 1 Pin 32 DSUB ; Should this have power * 2 because it's a ?
+    DC    $1C4000+@CVI((VRESET+VIDEOmax)/(2.0*VIDEOmax)*4095)    ; Video Board 1 Pin 17, VRESET
+    DC    $1C8000+@CVI((VBIASGATE+VIDEOmax)/(2.0*VIDEOmax)*4095) ; Video Board 1 Pin 33, VBIASGATE
+	DC    $1dc000+@CVI((COMPIN+VIDEOmax)/(2.0*VIDEOmax)*4095) ; Video Board 1 Pin 14 COMPIN
+
+
+;;;GUESSING AT CORRECT OFFSETS/PIN CONFIGURATION    
+;    DC    $0C0000+@CVI((ADREF+VIDEOmax)/(2*VIDEOmax*4095)) ;0000 1100 is
+;    already defined by a reference volate above
+;    DC    $0C4000+@CVI((ADREF+VIDEOmax)/(2*VIDEOmax*4095)) 
+
+; We assume that the 8-channel IR video board ARC46 is being used, that it 
+;  provides the source voltage for H1RG, that JP11 has a jumper installed
+;  from pins #1 to 2, and that the source load resistors R10 and R21 are 
+;  installed in all eight channels. 
+;    DC    $0dc000+@CVI(VSOURCE/VIDEOmax*4095)        ; P2, Pin #7
+
+; For the new version of the fanout board (8/23/2005), the BIAS7 is used
+; as the complement voltages (COMP7 and COMP15).
+;    DC    $0dc000+@CVI(VBIAS7/VIDEOmax*4095)        ; P2, Pin #7
+
+; Unipolar 0 to 5 volts output voltages, video board #1
+;   Commented out for Revision 1.0
+;    DC    $1d0000+@CVI(VRESET/VIDEOmax*4095)        ; P2, Pin #4
+;    DC    $1d4000+@CVI(VBIASGATE/VIDEOmax*4095)        ; P2, Pin #5
+
+; Video processor offset voltages (DB25? GINS)
+OFFS0    DC    $0e0000+OFFSET0     ; Output #0 - Board #0
+OFFS1    DC    $0e4000+OFFSET1     ; Output #1
+OFFS2    DC    $0e8000+OFFSET2     ; Output #2
+OFFS3    DC    $0ec000+OFFSET3     ; Output #3
+OFFS4    DC    $0f0000+OFFSET4     ; Output #4
+OFFS5    DC    $0f4000+OFFSET5     ; Output #5
+OFFS6    DC    $0f8000+OFFSET6     ; Output #6
+OFFS7    DC    $0fc000+OFFSET7     ; Output #7
+
+OFFS8    DC    $1e0000+OFFSET8     ; Output #0 - Board #1
+OFFS9    DC    $1e4000+OFFSET9     ; Output #1
+OFFSA    DC    $1e8000+OFFSET10    ; Output #2
+OFFSB    DC    $1ec000+OFFSET11    ; Output #3
+OFFSC    DC    $1f0000+OFFSET12    ; Output #4
+OFFSD    DC    $1f4000+OFFSET13    ; Output #5
+OFFSE    DC    $1f8000+OFFSET14    ; Output #6
+OFFSF    DC    $1fc000+OFFSET15    ; Output #7
+
+END_DACS
+
+
+SXMITV1 DC      SXMIT1                  ; keep it in memory (Sbeland)
+SXMITV2 DC      SXMIT2                  ; keep it in memory (Sbeland)
+SXMITV3 DC      SXMIT3                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV4 DC      SXMIT4                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV5 DC      SXMIT5                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV6 DC      SXMIT6                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV7 DC      SXMIT7                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV8 DC      SXMIT8                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV9 DC      SXMIT9                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV10 DC      SXMIT10                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV11 DC      SXMIT11                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV12 DC      SXMIT12                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV13 DC      SXMIT13                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV14 DC      SXMIT14                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV15 DC      SXMIT15                  ; keep it in memory (Sbeland) ;ADDED 9/11/07 GINS
+SXMITV16 DC      SXMIT16                  ; keep it in memory (Sbeland) ;ADDED 8/28/07 GINS
+OFFV1   DC      OFFSET1CH               ; keep it in memory (Sbeland)
+OFFV2   DC      OFFSET2CH               ; keep it in memory (Sbeland)
+OFFV3   DC      OFFSET3CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV4   DC      OFFSET4CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV5   DC      OFFSET5CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV6   DC      OFFSET6CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV7   DC      OFFSET7CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV8   DC      OFFSET8CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV9   DC      OFFSET9CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV10   DC      OFFSET10CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV11   DC      OFFSET11CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV12   DC      OFFSET12CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV13   DC      OFFSET13CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV14   DC      OFFSET14CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV15   DC      OFFSET15CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFV16   DC      OFFSET16CH               ; keep it in memory (Sbeland)  ; ADDED 9/11/07 GINS
+OFFD0   DC      $0e0000
+OFFD1   DC      $0e4000
+OFFD2   DC      $0e8000
+OFFD3   DC      $0ec000
+OFFD4   DC      $0f0000
+OFFD5   DC      $0f4000
+OFFD6   DC      $0f8000
+OFFD7   DC      $0fc000
+OFFD8   DC      $1e0000
+OFFD9   DC      $1e4000
+OFFDA   DC      $1e8000
+OFFDB   DC      $1ec000
+OFFDC   DC      $1f0000
+OFFDD   DC      $1f4000
+OFFDE   DC      $1f8000
+OFFDF   DC      $1fc000
+

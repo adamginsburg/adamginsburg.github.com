@@ -1,0 +1,60 @@
+#hmenu CoreTools
+
+#input parameter for the capital-C command
+param circlerad
+radius entry "Choose a radius (in pixels) for the circle to extract: " 3
+end
+    
+# this will show under the analysis menu when correctly loaded.  It will use the
+# first region in the regions list as input for annulusextract.ds9.  
+Cube Annulus Extract
+*
+menu
+/media/sda4/work/CFHT99FP/annulusextractds9.py $filename $regions(include,physical) | $plot
+
+# NOTE: replaces normal "c" behavior, which is to print the cursor position in
+# the analysis command log window
+# Passes the cursor coordinates as the center of a 3 pixel circle with the
+# current file name and creates the core-extracted relative flux vs velocity
+# plot
+Cube Point Annulus
+*
+bind c
+/media/sda4/work/CFHT99FP/annulusextractds9.py $filename circle($x,$y,3) | $plot
+
+#same as above, except prompts the user to select a radius
+Cube Point Annulus (set radius)
+*
+bind C
+$param(circlerad);/media/sda4/work/CFHT99FP/annulusextractds9.py $filename circle($x,$y,$radius) | $plot
+
+#Centroid Test
+Centroid Test
+* 
+bind x
+/media/sda4/work/CFHT99FP/centroid.py $filename circle($x,$y,5) | $text
+
+
+# Sample tests for DS9 analysis tools.  Feel free to try them, I don't remember
+# what they do but they certainly helped me figure out how to do some of the
+# above tasks
+# Another something
+# *
+# bind c
+# echo $x $y $data $bitpix $regions | $text
+# 
+# Test regions $regions
+# *
+# menu
+# echo "$regions(source,,) regions(background,,)" | $text
+# 
+# Test $filename $regions
+# *.fits
+# menu
+#  echo $which $marker | $text
+# 
+# 
+#     Test $filename $regions()
+#     *.fits
+#     menu
+#     echo "$filename[$regions()]" | $text

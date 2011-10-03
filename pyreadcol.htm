@@ -1,0 +1,46 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" type="image/gif" href="favicon8.ico">
+<link href="prettify.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="prettify.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>readcol in python</title>
+</head>
+<?php 
+$page="pyreadcol.htm";
+include 'tracker.php';?>
+<body onload="prettyPrint()"> 
+<table align="center" width=800><tr><td>
+<h1> Readcol </h1>
+<h3>This code is now hosted at <a class='norm'
+    href="http://code.google.com/p/agpy/source/browse/trunk/readcol.py">the
+    agpy google code site</a></h3>
+<br> Reading columns of ASCII text is one of the most basic functions a programmer
+can need.  For example, reading the output of a FORTRAN code.
+<br>
+<br> IDL has the flexible and powerful <a
+    href="idlastro.gsfc.nasa.gov/ftp/pro/misc/readcol.pro">readcol.pro</a> from
+Goddard Space Flight Center's astrolib.  Python has no equivalent, as far as I
+can tell.  This code is meant to be the pythong equivalent of readcol.
+<br>
+<br> I don't claim that it's perfectly flexible at the moment, but it's fast,
+and I'm willing to work to improve it.  Originally I had used readline() but
+this is terribly slow for large files; now readlines() is used.  See below.
+</tr></td>
+<tr><td>
+
+<code class="prettyprint">
+<? readfile("python/readcol.py"); ?>
+</code>
+
+
+<center>
+<br><br><hr>
+<br>
+<?php include 'navbar.php';?>
+</body>
+</html>
+

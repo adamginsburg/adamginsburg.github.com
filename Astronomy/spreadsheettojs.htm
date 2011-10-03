@@ -1,0 +1,46 @@
+
+<title>Spreadsheet to JS Converter</title>
+<script language = javascript>
+
+
+function
+formatData(e)
+{
+// Excel sometimes adds quotes where none were entered
+// so clear those
+e=e.replace(/"/g,"");
+
+// this script uses tab delimited data
+// or use /,/g as the regex for comma separated values (csv)
+e = e.replace(/ +/g, ',');
+
+// this just handles each new line and does a little formatting
+// so it's "neat" when you paste it into your html/js file
+e = e.replace(/[\n\r]/g, '],\n\t\t\t[');
+
+return "var spreadsheetData = [\n\t\t\t[" + e + "]\n];";
+
+}
+
+function
+handler(f)
+{
+f.data.value = formatData(f.data.value);
+return false;
+
+}
+
+
+</script>
+
+<body>
+<center>
+<h1>Spreadsheet to JS Converter</h1>
+<form name=exchanger onsubmit = "return handler(this)">
+<textarea name=data rows = 24 cols = 100></textarea>
+<br><br>
+<input type=submit value = Convert onclick = "return handler(this.form)">
+</form>
+<span id=hello>hi</span>
+</center>
+</body>

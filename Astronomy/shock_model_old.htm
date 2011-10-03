@@ -1,0 +1,155 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>New Page 1</title>
+</head>
+
+<body>
+
+
+
+<!--<form name=datain >
+FeII8619 <input type=text name=FeII8619 size=10 maxlength=10> Variance <input type=text name=Var8619 size=10 maxlength=10> <span id=out1></span> <br>
+SII6717  <input type=text name=SII6717 size=10 maxlength=10>  Variance <input type=text name=Var6717 size=10 maxlength=10><span id=out4></span><br>
+SII6731 <input type=text name=SII6731 size=10 maxlength=10>   Variance <input type=text name=Var6731 size=10 maxlength=10><span id=out5></span><br>
+OI6300 <input type=text name=OI6300 size=10 maxlength=10>     Variance <input type=text name=Var6300 size=10 maxlength=10><span id=out6></span><br>
+OI6363  <input type=text name=OI6363 size=10 maxlength=10>    Variance <input type=text name=Var6363 size=10 maxlength=10><span id=out7></span><br>
+HA <input type=text name=HA size=10 maxlength=10> 			  Variance <input type=text name=VarHA size=10 maxlength=10><span id=out8></span><br>
+HB <input type=text name=HB size=10 maxlength=10> 			  Variance <input type=text name=VarHB size=10 maxlength=10><span id=out9></span><br>
+CI9850 <input type=text name=CI9850 size=10 maxlength=10>     Variance <input type=text name=Var9850 size=10 maxlength=10><span id=out10></span><br>
+Fe5160 <input type=text name=Fe5160 size=10 maxlength=10>     Variance <input type=text name=Var5160 size=10 maxlength=10><br>
+N5200  <input type=text name=N5200  size=10 maxlength=10>     Variance <input type=text name=Var5200 size=10 maxlength=10><br>
+Fe5262 <input type=text name=Fe5262 size=10 maxlength=10>     Variance <input type=text name=Var5262 size=10 maxlength=10><br>
+O5577  <input type=text name=O5577  size=10 maxlength=10>     Variance <input type=text name=Var5577 size=10 maxlength=10><br>
+N5755  <input type=text name=N5755  size=10 maxlength=10>     Variance <input type=text name=Var5755 size=10 maxlength=10><br>
+N6583  <input type=text name=N6583  size=10 maxlength=10>     Variance <input type=text name=Var6583 size=10 maxlength=10><br>
+Fe7155 <input type=text name=Fe7155 size=10 maxlength=10>     Variance <input type=text name=Var7155 size=10 maxlength=10><br>
+Fe7172 <input type=text name=Fe7172 size=10 maxlength=10>     Variance <input type=text name=Var7172 size=10 maxlength=10><br>
+Ca7291 <input type=text name=Ca7291 size=10 maxlength=10>     Variance <input type=text name=Var7291 size=10 maxlength=10><br>
+O7320  <input type=text name=O7320  size=10 maxlength=10>     Variance <input type=text name=Var7320 size=10 maxlength=10><br>
+O7330  <input type=text name=O7330  size=10 maxlength=10>     Variance <input type=text name=Var7330 size=10 maxlength=10><br>
+Fe7390 <input type=text name=Fe7390 size=10 maxlength=10>     Variance <input type=text name=Var7390 size=10 maxlength=10><br>
+Fe7452 <input type=text name=Fe7452 size=10 maxlength=10>     Variance <input type=text name=Var7452 size=10 maxlength=10><br>
+C8730  <input type=text name=C8730  size=10 maxlength=10>     Variance <input type=text name=Var8730 size=10 maxlength=10><br>
+Fe8888 <input type=text name=Fe8888 size=10 maxlength=10>     Variance <input type=text name=Var8888 size=10 maxlength=10><br>
+Fe8894 <input type=text name=Fe8894 size=10 maxlength=10>     Variance <input type=text name=Var8894 size=10 maxlength=10><br>
+Fe9054 <input type=text name=Fe9054 size=10 maxlength=10>     Variance <input type=text name=Var9054 size=10 maxlength=10><br>
+Fe9229 <input type=text name=Fe9229 size=10 maxlength=10>     Variance <input type=text name=Var9229 size=10 maxlength=10><br>
+<br>
+<input type=button value = "Get best model" onclick = "handler(this.form)">
+</form>-->
+
+function handler(inputdata) {
+//	alert("handler called");
+	var temp;
+	document.getElementById('Output').innerHTML=inputdata.FeII8619;
+	document.getElementById('Output').innerHTML+="<br> feiivalue";
+	document.getElementById('Output').innerHTML+=inputdata.FeII8619.value;
+	document.getElementById('Output').innerHTML+="<br> inputdata";
+	document.getElementById('Output').innerHTML+=inputdata;
+	document.getElementById('Output').innerHTML+="<br> x values ";
+	for (x in database)	{
+		listofchi[x]=[testmodel(inputdata,database[x]),x];
+	}
+	document.getElementById('Output').innerHTML+=x;
+	document.getElementById('Output').innerHTML+="<br> loX ";		
+    listofchi.sort(sortfunc);		
+   	document.getElementById('Output').innerHTML+=listofchi[1][1];
+//	document.getElementById('Output').innerHTML="The 5 best models are:<br><table>";
+	document.getElementById('model1').innerHTML="<td>";
+	document.getElementById('model1').innerHTML+=database[listofchi[0][1]][0];
+	document.getElementById('model1').innerHTML+="</td><td>";
+	document.getElementById('model1').innerHTML+=database[listofchi[0][1]][1];
+	document.getElementById('model1').innerHTML+="</td><td>";
+	document.getElementById('model1').innerHTML+=database[listofchi[0][1]][2];
+	document.getElementById('model1').innerHTML+="</td><td>";
+	document.getElementById('model1').innerHTML+=database[listofchi[0][1]][3];
+	document.getElementById('model1').innerHTML+="</td>";	
+
+	document.getElementById('model2').innerHTML="<td>";
+	document.getElementById('model2').innerHTML+=database[listofchi[1][1]][0];
+	document.getElementById('model2').innerHTML+="</td><td>";
+	document.getElementById('model2').innerHTML+=database[listofchi[1][1]][1];
+	document.getElementById('model2').innerHTML+="</td><td>";
+	document.getElementById('model2').innerHTML+=database[listofchi[1][1]][2];
+	document.getElementById('model2').innerHTML+="</td><td>";
+	document.getElementById('model2').innerHTML+=database[listofchi[1][1]][3];
+	document.getElementById('model2').innerHTML+="</td>";
+	
+	document.getElementById('model3').innerHTML="<td>";
+	document.getElementById('model3').innerHTML+=database[listofchi[2][1]][0];
+	document.getElementById('model3').innerHTML+="</td><td>";
+	document.getElementById('model3').innerHTML+=database[listofchi[2][1]][1];
+	document.getElementById('model3').innerHTML+="</td><td>";
+	document.getElementById('model3').innerHTML+=database[listofchi[2][1]][2];
+	document.getElementById('model3').innerHTML+="</td><td>";
+	document.getElementById('model3').innerHTML+=database[listofchi[2][1]][3];
+	document.getElementById('model3').innerHTML+="</td>";
+	
+	document.getElementById('model4').innerHTML="<td>";
+	document.getElementById('model4').innerHTML+=database[listofchi[3][1]][0];
+	document.getElementById('model4').innerHTML+="</td><td>";
+	document.getElementById('model4').innerHTML+=database[listofchi[3][1]][1];
+	document.getElementById('model4').innerHTML+="</td><td>";
+	document.getElementById('model4').innerHTML+=database[listofchi[3][1]][2];
+	document.getElementById('model4').innerHTML+="</td><td>";
+	document.getElementById('model4').innerHTML+=database[listofchi[3][1]][3];
+	document.getElementById('model4').innerHTML+="</td>";
+
+	document.getElementById('model5').innerHTML="<td>";
+	document.getElementById('model5').innerHTML+=database[listofchi[4][1]][0];
+	document.getElementById('model5').innerHTML+="</td><td>";
+	document.getElementById('model5').innerHTML+=database[listofchi[4][1]][1];
+	document.getElementById('model5').innerHTML+="</td><td>";
+	document.getElementById('model5').innerHTML+=database[listofchi[4][1]][2];
+	document.getElementById('model5').innerHTML+="</td><td>";
+	document.getElementById('model5').innerHTML+=database[listofchi[4][1]][3];
+	document.getElementById('model5').innerHTML+="</td>";
+
+	return false;
+}
+
+
+function testmodel(inputdata,modeldata) {
+	document.getElementById('Output2').innerHTML=inputdata.SII6717.value;
+	document.getElementById('Output2').innerHTML+="<br>chi:";
+	document.getElementById('Output2').innerHTML+=chisquare(inputdata.FeII8619.value,modeldata[23],inputdata.Var8619.value);
+	var chi = chisquare(inputdata.FeII8619.value,modeldata[23],inputdata.Var8619.value);
+	chi+=chisquare(inputdata.HA.value,modeldata[12],inputdata.VarHA.value);
+	chi+=chisquare(inputdata.SII6717.value,modeldata[14],inputdata.Var6717.value);
+	chi+=chisquare(inputdata.SII6731.value,modeldata[15],inputdata.Var6731.value);
+	chi+=chisquare(inputdata.OI6300.value,modeldata[10],inputdata.Var6300.value);
+	chi+=chisquare(inputdata.OI6363.value,modeldata[11],inputdata.Var6363.value);
+	chi+=chisquare(inputdata.CI9850.value,modeldata[29],inputdata.Var9850.value);
+/*	chi+=chisquare(inputdata.Fe5160.value,modeldata[5],inputdata.Var5160.value);	
+	chi+=chisquare(inputdata.N5200.value,modeldata[6],inputdata.Var5200.value);	
+	chi+=chisquare(inputdata.Fe5262.value,modeldata[7],inputdata.Var5262.value);	
+	chi+=chisquare(inputdata.O5577.value,modeldata[8],inputdata.Var5577.value);	
+	chi+=chisquare(inputdata.N5755.value,modeldata[9],inputdata.Var5755.value);	
+	chi+=chisquare(inputdata.N6583.value,modeldata[13],inputdata.Var6583.value);	
+	chi+=chisquare(inputdata.Fe7155.value,modeldata[16],inputdata.Var7155.value);	
+	chi+=chisquare(inputdata.Fe7172.value,modeldata[17],inputdata.Var7172.value);	
+	chi+=chisquare(inputdata.Ca7291.value,modeldata[18],inputdata.Var7291.value);	
+	chi+=chisquare(inputdata.O7320.value,modeldata[19],inputdata.Var7320.value);	
+	chi+=chisquare(inputdata.O7330.value,modeldata[20],inputdata.Var7330.value);	
+	chi+=chisquare(inputdata.Fe7390.value,modeldata[21],inputdata.Var7390.value);	
+	chi+=chisquare(inputdata.Fe7452.value,modeldata[22],inputdata.Var7452.value);	
+	chi+=chisquare(inputdata.Fe8619.value,modeldata[23],inputdata.Var8619.value);	
+	chi+=chisquare(inputdata.C8730.value,modeldata[24],inputdata.Var8730.value);	
+	chi+=chisquare(inputdata.Fe8888.value,modeldata[25],inputdata.Var8888.value);	
+	chi+=chisquare(inputdata.Fe8894.value,modeldata[26],inputdata.Var8894.value);	
+	chi+=chisquare(inputdata.Fe9054.value,modeldata[27],inputdata.Var9054.value);	
+	chi+=chisquare(inputdata.Fe9229.value,modeldata[28],inputdata.Var9229.value);	*/
+	return chi;
+}
+
+				if (flag==0) {flag=1; alert(datarray[x][1]+" md "+modeldata[dbnames[0][y]]+" da "+datarray[x][2]);}
+document.getElementById('Output').innerHTML+=("<br>x: " + x + "     corr: "  + corr[x] + "  newratio: " + newratio);
+
+</body>
+
+</html>

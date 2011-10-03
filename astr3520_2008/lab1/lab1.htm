@@ -1,0 +1,79 @@
+<html>
+<!--<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">-->
+<link rel="stylesheet" type="text/css" href="../style.css">
+<!--<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">-->
+<title> Astronomy 3520: Lab 1 </title>
+<body> 
+    <?php 
+    $page="lab1.htm";
+    include '../tracker.php';?>
+		<head><h1><center> ASTR 3520: Lab 1</center></h1></head>
+    <table align="center" width=800><tr><td>
+                <a href="http://casa.colorado.edu/~ginsbura/imalign_guide.htm">IMALIGN guide</a>
+    My short script / solution:
+    <pre>
+        cl &lt; FITtofits.cl
+        !rm *.FIT
+        imhead *.fits
+        imcombine flat_4sec_HA_2x2.000000* flat_4s_HA_comb.fits combine=median
+        imcombine flat_20sec_HA.000000* flat_20s_HA_comb.fits combine=median
+        imcombine dark_4m_2x2.000000* proc/dark_4m_2x2_comb.fits combine=median
+        imcombine dark_20s* proc/dark20s_comb.fits combine=median
+        imcombine dark_4m.* proc/dark_4m_comb.fits combine=median
+        imcombine dark_4sec_2x2.000000* proc/dark_4s_2x2_comb.fits combine=median
+        ls ngc6888_4m_Ha_[1-3].fits &gt; ngc6888_1x1.txt
+        !cat ngc6888_1x1.txt | sed 's/.fits/_align.fits/' &gt; ngc6888_1x1_align.txt
+        imalign @ngc6888_1x1.txt ngc6888_4m_Ha_1.fits sourcelist.txt @ngc6888_1x1_align.txt shifts=shiftlist.txt
+        imcombine ngc6888_*align.fits proc/ngc6888_1x1_comb.fits combine=median
+        imarith ngc6888_4m_Ha_1.fits - proc/dark_4m_comb.fits ngc6888_4m_Ha_1_darksub.fits
+        imarith ngc6888_4m_Ha_2.fits - proc/dark_4m_comb.fits ngc6888_4m_Ha_2_darksub.fits
+        imarith ngc6888_4m_Ha_3.fits - proc/dark_4m_comb.fits ngc6888_4m_Ha_3_darksub.fits
+        imarith proc/flat_20s_HA_comb.fits - proc/dark20s_comb.fits proc/flat_20s_Ha_darksub.fits
+        imstat proc/flat_20s_Ha_darksub.fits
+        imarith proc/flat_20s_Ha_darksub.fits / 394.3 proc/flat_20s_Ha_norm.fits
+        imarith ngc6888_4m_Ha_1_darksub.fits / proc/flat_20s_Ha_norm.fits ngc6888_4m_Ha_1_flat.fits
+        imarith ngc6888_4m_Ha_2_darksub.fits / proc/flat_20s_Ha_norm.fits ngc6888_4m_Ha_2_flat.fits
+        imarith ngc6888_4m_Ha_3_darksub.fits / proc/flat_20s_Ha_norm.fits ngc6888_4m_Ha_3_flat.fits
+        edit ngc6888_1x1.txt
+        !ds9 `cat ngc6888_1x1.txt` &amp;
+        edit sourcelist.txt
+        edit shiftlist.txt
+        imalign @ngc6888_1x1.txt ngc6888_4m_Ha_1_flat.fits sourcelist.txt @ngc6888_1x1_align.txt shifts=shiftlist.txt
+        imcombine @ngc6888_1x1_align.txt proc/ngc6888_1x1_comb.fits combine=median
+        imarith ngc6888_4m_Ha_4_2x2.fits - proc/dark_4m_2x2_comb.fits ngc6888_4m_Ha_4_2x2_darksub.fits
+        imarith proc/flat_4s_HA_2x2_comb.fits - proc/dark_4s_2x2_comb.fits proc/flat_4s_2x2_darksub.fits
+        imarith ngc6888_4m_Ha_4_2x2_darksub.fits / proc/flat_4s_2x2_darksub.fits ngc6888_4m_Ha_4_2x2_flat.fits
+        imarith irc10240_4m_Ha.fits - proc/dark_4m_comb.fits irc10240_4m_Ha_darksub.fits
+        imarith irc10240_4m_Ha_darksub.fits / proc/flat_20s_Ha_norm.fits irc10240_4m_Ha_flat.fits
+        mkdir intermediate
+        !mv *_align.fits intermediate/
+        !mv *_darksub.fits intermediate/
+        mv ngc6888_4m_Ha_4_2x2_flat.fits proc/
+        mv irc10240_4m_Ha_flat.fits proc/
+        !mv *_flat.fits intermediate/
+        imarith ngc6888_4m_OIII_1.fits - proc/dark_4m_comb.fits ngc6888_4m_OIII_1_darksub.fits
+        imarith ngc6888_4m_OIII_2.fits - proc/dark_4m_comb.fits ngc6888_4m_OIII_2_darksub.fits
+        imarith ngc6888_4m_OIII_3.fits - proc/dark_4m_comb.fits ngc6888_4m_OIII_3_darksub.fits
+        !ds9 *_darksub.fits &amp;
+        !vim ngc6888.reg
+        ls ngc6888*OIII*darksub.fits &gt; ngc6888_OIII_darksub.txt
+        !cp ngc6888_OIII_darksub.txt ngc6888_OIII_align.txt
+        edit ngc6888_OIII_align.txt
+        imalign @ngc6888_OIII_darksub.txt ngc6888_4m_Ha_1_flat.fits sourcelist.txt @ngc6888_OIII_align.txt shifts=shiftlist_OIII.txt
+        imalign @ngc6888_OIII_darksub.txt proc/ngc6888_1x1_comb.fits sourcelist.txt @ngc6888_OIII_align.txt shifts=shiftlist_OIII.txt
+        imalign @ngc6888_OIII_darksub.txt ngc6888_4m_Ha_1.fits sourcelist.txt @ngc6888_OIII_align.txt shifts=shiftlist_OIII.txt
+        !ds9 *_align.fits &
+        imcombine *_align.fits proc/ngc6888_OIII_comb.fits combine=median
+    </pre>
+
+
+
+
+<br><br><br>
+<?php include 'navbar.php';?>
+<br> <font size=1>Created 10/8/07 by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> (adam.ginsburg@colorado.edu)</font>
+
+</body>
+</html>
+

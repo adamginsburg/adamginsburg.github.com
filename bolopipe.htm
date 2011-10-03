@@ -1,0 +1,105 @@
+
+
+
+ag_pointing.pro:  function prepare_map,ra,dec,$
+ag_pointing.pro:  ; I just feel that the pointing function should be independent
+ave_baseline.pro:  function skysubtract,timestream,atm_model
+ave_baseline.pro:  function ave_baseline,bpairs=bpairs,array=array,do_average=do_average,flags=flags,verbose=verbose
+ave_baseline.pro:  function bolopairs,minlen=minlen,maxlen=maxlen,bolo_params=bolo_params
+bolopairs.pro:  function bolopairs,file=file,minlen=minlen,maxlen=maxlen,bolo_params=bolo_params
+bolopairs.pro:          else message,'Error in function bolopairs: must either specify bolo_params or a file'
+calculate_flags.pro:  function calculate_flags,acb,bp=bp,flags=flags,badbolos=badbolos,preflagged=preflagged,flagbadtime=flagbadtime,do_deglitch=do_deglitch,reflag=reflag
+clean.pro:  function clean,im,ker,mdl=mdl,gain=gain,maxiter=maxiter,chkiter=chkiter,verbose=verbose,model=model
+cut_prefix.pro:  function cut_prefix,filename
+deconv_map.pro:  function deconv_map, map_in, pixsize=pixsize, covar = covar, deconv = deconv
+deconv_translate.pro:  function clean,im,ker,mdl=mdl,gain=gain,maxiter=maxiter,chkiter=chkiter,verbose=verbose,model=model
+deglitch.pro:  ; computed over all of glitchy_data.  The function returns a vector 
+deglitch.pro:  function deglitch, glitchy_data, goodmask, step = step, $
+deline.pro:  function deline, bolo_array, sample_interval, goodbolos, deglitch=deglitch, lines=lines
+exponent_sub.pro:  function exponent_sub, timestream, scans_info=scans_info, flags=flags, bolo_params=bolo_params,$
+exponent_sub.pro:                                  ; b for the curvefit function
+exponent_sub.pro:                        function_name='boloexp')
+fftconvol.pro:  function fftconvol,fft1,fft2
+flagging.pro:  function calculate_flags,acb,bp=bp,flags=flags,badbolos=badbolos,preflagged=preflagged,$
+flagging.pro:  function psd_calc_flags,psd_avebolo=psd_avebolo,psd_avescan=psd_avescan,bad_scans=bad_scans,bad_bolos=bad_bolos,preflagged=preflagged
+flagging.pro:  function badscans_to_flags,flags,scans_info,bad_scans
+flagging.pro:  function flag_between_scans,timestream,scans_info,flags=flags
+flagging.pro:  function flag_scan_starts,timestream,scans_info=scans_info,flags=flags,start_fraction=start_fraction
+flagging.pro:  function find_bad_scans,timestream,scans_info,flags=flags,n_sig=n_sig
+flagging.pro:  function stddevaxis,x,dimension=dimension,nan=nan,_extra=extra 
+flatfielding.pro:  function poly_sub_by_scans,timestream,scans_info,flags=flags
+flatfielding.pro:  function poly_sub,input_ts,sigmareject=sigmareject,threshold=threshold
+flatfielding.pro:  function bolo_flat,timestream,scan_model=scan_model,scale_coeffs=scale_coeffs,scale_ts=scale_ts,_extra=extra
+flatfielding.pro:  function sgfiltfunc,scanspeed=scanspeed,beam=beam,tvary_factor=tvary_factor,sample_interval=sample_interval
+flatfielding.pro:  function relsens_flat_by_scans,timestream,scans_info,flags=flags,_extra=extra
+flatfielding.pro:  function relsens_flat,timestream,_extra=extra
+flatfielding.pro:  function dc_calibrate_by_scans,ac_bolos,dc_bolos,scans_info,flags=flags,_extra=extra
+flatfielding.pro:  function dc_calibrate,ac_bolos,dc_bolos,_extra=extra
+fname_core.pro:  function fname_core,filename
+highlev_iter.pro:  forward_function map2ts
+highlev_iter.pro:  forward_function prepare_files
+highlev_iter.pro:  forward_function flatfielding
+highlev_iter.pro:  forward_function sky_subtraction
+highlev_iter.pro:  forward_function do_sky_subtraction
+highlev_iter.pro:  function map2ts,mapstruct,filelist,out=out,niter=niter,doplotting=doplotting,domaxent=domaxent,dopositive=dopositive
+highlev_iter.pro:  function prepare_files,thefiles,workingdir
+hogbom_clean.pro:  function hogbom_clean,im,ker,mdl=mdl,gain=gain,maxiter=maxiter,chkiter=chkiter,verbose=verbose,model=model
+image_deconvolve.pro:  function image_decon_func, imagein, gradient
+image_deconvolve.pro:           signmat = fix(residual GT 0) - fix(residual LT 0)  ; sign function
+image_deconvolve.pro:  function image_deconvolve,datain,psfin,sigmain,guess=guess, $
+my_pca_calc.pro:  function single_pca_comp,timestream,n_comp
+my_psd_calc.pro:  forward_function fix_bad_values
+my_psd_calc.pro:  function all_psds,timestream,scans_info,flags=flags,bolo_params=bolo_params,sample_interval=sample_interval,threshold=threshold,$
+my_psd_calc.pro:  function fix_bad_values,timestream,threshold=threshold
+norm_deconv_map.pro:  function deconv_map, map_in, pixsize=pixsize, covar = covar, deconv = deconv
+old_ave_baseline.pro:  ; calls the function 'bolopairs' to acquire a list of bolometer baseline pairs
+old_ave_baseline.pro:  function skysubtract,timestream,atm_model
+old_ave_baseline.pro:  function ave_baseline,varname=varname,bpairs=bpairs,array=array,minlen=minlen,maxlen=maxlen,do_average=do_average,flags=flags
+plot_ts.pro:  function logscale,data
+pointing_rewrite.pro:  ; evaluate a function to get back a timestream:
+relsens_cal.pro:  function relsen_cal,timestream,scanspeed=scanspeed,beam=beam
+short_map_ncdf_wrapper.pro:  function $
+sky_subtraction.pro:  function sky_subtraction_wrapper,ac_bolos,minlen=minlen,bolo_params=bolo_params,flags=flags,median_sky=median_sky,_extra=extra
+ts_to_map.pro:  function ts_to_map,blank_map_size,inds,data
+ag_pointing.pro:pro read_ra_dec_jd,filename,ra,dec,jd,source_epoch,lst,rotang,beam_loc,array_params,pa
+ag_pointing.pro:pro correct_ab_nut,jd,ra,dec
+ag_pointing.pro:pro apply_distortion_map,phi,theta,rotang,array_params,pa,beam_loc_file=beam_loc_file,badbolos=badbolos,bolo_params=bolo_params
+ag_pointing.pro:pro make_the_pointing_now,filename,beam_loc_file=beam_loc_file,ra=ra,dec=dec,badbolos=badbolos,bolo_params=bolo_params
+ag_pointing.pro:pro do_the_pointing,ra,dec,jd,source_epoch,lst,rotang,array_params,pa,beam_loc_file=beam_loc_file,badbolos=badbolos,bolo_params=bolo_params
+ag_pointing_old.pro:pro read_ra_dec_jd,filename,ra,dec,jd,source_epoch,lst,rotang,beam_loc,array_params,pa
+ag_pointing_old.pro:pro correct_ab_nut,jd,ra,dec
+ag_pointing_old.pro:pro apply_distortion_map,phi,theta,rotang,array_params,pa,beam_loc_file=beam_loc_file,badbolos=badbolos,bolo_params=bolo_params
+ag_pointing_old.pro:pro make_the_pointing_now,filename,beam_loc_file=beam_loc_file,ra=ra,dec=dec,badbolos=badbolos,bolo_params=bolo_params
+ag_pointing_old.pro:pro do_the_pointing,ra,dec,jd,source_epoch,lst,rotang,array_params,pa,beam_loc_file=beam_loc_file,badbolos=badbolos,bolo_params=bolo_params
+all_precleans.pro:pro do_relsens_cal,filelist
+all_precleans.pro:pro do_smoothts, filelist
+all_precleans.pro:pro save_iter,filelist,outmap,workingdir,iternum,maxiter
+all_precleans.pro:pro do_preclean,thefiles,workingdir
+all_precleans.pro:pro find_ra_dec,filelist
+ave_baseline.pro:pro baseline_wrapper,filename,outfilename=outfilename,varname=varname,bpairs=bpairs,outvarname=outvarname,minlen=minlen,maxlen=maxlen,atmos_model=atmos_model,median_sky=median_sky
+do_flagging.pro:pro do_flagging,filelist,_extra=ex
+flagging.pro:pro do_flagging,filelist,do_psd=do_psd,_extra=ex
+flagging.pro:pro flagging_wrapper,ac_bolos=ac_bolos,scans_info=scans_info,flags=flags,bolo_params=bolo_params,$
+flagging.pro:pro remove_bad_bolos,bad_bolos=bad_bolos,good_bolos=good_bolos,flags=flags,$
+flatfielding.pro:pro do_flatfield,filelist,doplotting=doplotting
+highlev_iter.pro:pro highlev_iter,filelist,outmap,workingdir=workingdir,niter=niter,dosmooth=dosmooth,smoothts=smoothts,$
+highlev_iter.pro:pro find_ra_dec,filelist
+highlev_iter.pro:pro do_pca_subtraction,filelist,n_comp
+highlev_iter.pro:pro do_smoothts, filelist
+highlev_iter.pro:pro save_iter,filelist,outmap,workingdir,iternum,maxiter
+mem_iter.pro:pro mem_iter,filelist,outmap,workingdir=workingdir,niter=niter,$
+mem_iter_pc.pro:pro mem_iter_pc,filelist,outmap,workingdir=workingdir,niter=niter,$
+my_pca_calc.pro:pro pca_subtract,timestream,n_comp,lower_n=lower_n,corr_part=corr_part,uncorr_part=uncorr_part
+ncdf_new_variable.pro:pro ncdf_new_variable, ncdf_file, newvarname, newvar, dims_like, attribute=attribute,verbose=verbose
+old_ave_baseline.pro:pro baseline_wrapper,filename,varname=varname,bpairs=bpairs,_extras=_extras
+plot_ts.pro:pro plot_ts,filename,bolonum,doraw=doraw,iter0=iter0,domap=domap
+plot_ts.pro:pro plot_scan,filename,scannum,doraw=doraw,iter0=iter0,domap=domap
+plot_ts.pro:pro compare_iters,filename,iters,bolonum,scannum,doraw=doraw,iter0=iter0,domap=domap,overplot=overplot
+plot_ts.pro:pro waterfall,filename,psd=psd
+plot_ts.pro:pro compare_mean_psds,filename
+read_all_files_into_uberts.pro:pro read_all_files_into_uberts,filelist,ac_bolos=ac_bolos,dc_bolos=dc_bolos,flags=flags,bolo_params=bolo_params, $
+read_ncdf_vars.pro:pro read_ncdf_vars,filename,ac_bolos=ac_bolos,dc_bolos=dc_bolos,flags=flags,bolo_params=bolo_params, $
+readall_pc.pro:pro readall_pc,filelist,ac_bolos=ac_bolos,dc_bolos=dc_bolos,flags=flags,bolo_params=bolo_params, $
+sky_subtraction.pro:pro do_sky_subtraction,filelist,minlen=minlen,iternum=iternum,dosmooth=dosmooth,median_sky=median_sky,doplotting=doplotting
+subtract_median.pro:pro subtract_median, filename, outfilename,smoothwidth=smoothwidth,autoflag=autoflag
+test_deconv_map.pro:pro test_deconv_map,searchterm

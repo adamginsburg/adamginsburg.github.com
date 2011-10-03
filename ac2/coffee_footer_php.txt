@@ -1,0 +1,36 @@
+<? // If check-form _was_ submitted, display this instead:
+  } elseif (isset($_POST["submitcheck"])) {
+  echo 'Loading article list manager...<br>';
+  echo '<META HTTP-EQUIV=Refresh CONTENT="1;'.$listManager.'">';
+ 
+// If submit-form _was_ submitted, display this instead:
+} elseif (isset($_POST["submit"])) {
+  $minlength = 5;
+  $result=exec('/Users/adam/Sites/ac2/force_runcoffee.py &> /Users/adam/logs/ac2/astrocoffee.log'); 
+  echo "<p> Result of runcoffee command: ";
+  echo $result; 
+  echo "<p>You submitted ".$article.".</p>";
+ 
+  if (strlen($article)>$minlength) {
+    $f = fopen($paperFile,"a") or die("can't open file: ".$paperFile);
+    fwrite($f, "\n".$article);
+    fclose($f);
+    echo "<p>Your sumission was successfully added to the list. </p>";
+    echo "<p>Thanks for advancing knowledge!</p>";
+    echo "<p>It may be several minutes before the main page is updated.</p>";
+    date_default_timezone_set('MST/-7.0');
+    $str4log = date(DATE_ATOM)."	".$article."	".$ipOfSubmitter;
+    $f2 = fopen($logFile,"a") or die("can`t open file: ".$logFile);
+    fwrite($f2, $str4log."\n");
+    fclose($f2);
+    $nullRet = `python runcoffee.py > /dev/null &`;
+  } else {
+    echo "This is shorter than the minimum valid string length (".$minlength.").";
+    echo "Thus your submission was not added to the papers list.";
+  }
+ 
+} else {
+  echo "you should not have reached this point!";
+}
+?>
+<p><a href="astro_coffee.php">Go back</a> to the main page.</p>

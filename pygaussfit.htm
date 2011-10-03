@@ -1,0 +1,55 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<link href="prettify.css" type="text/css" rel="stylesheet">
+<link rel="icon" type="image/gif" href="favicon8.ico">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="prettify.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Gaussian Fitting in Python</title>
+</head>
+<?php 
+$page="pygaussfit.htm";
+include 'tracker.php';?>
+<body onload="prettyPrint()"> 
+<table align="center" width=800><tr><td>
+<center>
+<h1> Two-dimensional Gaussian fitting in Python </h1>
+<br>See also <a href="http://www.scipy.org/Cookbook/FittingData" class="norm">SciPy's Data Fitting article</a>
+<br>and <a href="pygausscollapse.htm" class="norm">Collapsing a data cube with gaussian fits</a>
+<br>
+<br> This code is also hosted at <a class="norm" 
+href="http://code.google.com/p/agpy/source/browse/trunk/agpy/gaussfitter.py">
+the agpy google code site</a>
+<br>
+</center>
+
+</td></tr>
+</table>
+<pre class="prettyprint">
+<? readfile("python/gaussfitter.py"); ?>
+</pre>
+<!-- ?php
+$current_path=ini_get("include_path");
+ini_set("include_path","$current_path:/opt/local/PEAR:/opt/local/PEAR/lib");
+require_once "Text/Highlighter.php";
+$hlPY =& Text_Highlighter::factory("PYTHON");
+
+$myFile = "python/gaussfitter.py";
+$fh = fopen($myFile, 'r');
+$theData = fread($fh, filesize($myFile));
+fclose($fh);
+
+echo $hlPY->highlight($theData);
+? -->
+
+<table align="center" width=800>
+<center>
+  <tr> <td>
+<br><br><hr>
+<br>
+<?php include 'navbar.php';?>
+</body>
+</html>
+

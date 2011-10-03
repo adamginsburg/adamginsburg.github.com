@@ -1,0 +1,112 @@
+
+/* ---- Ginsburg's Stylesheet ---- */
+/* Wow, I'm awesome */
+
+/* Default Style */
+body {
+	background-color: black;
+	color: white;
+	font-style: normal;
+	font-family: "Times New Roman";
+	font-size:15px;
+}
+
+td {
+    background-color: black;
+    color: white;
+    font-style: normal;
+   	font-family: "Times New Roman";
+	font-size:15px;
+}
+
+p {
+    background-color: black;
+    color: white;
+    font-style: normal;
+	font-family: "Times New Roman";
+	font-size:15px;
+}
+
+div {
+    background-color: black;
+    color: white;
+	font-family: "Times New Roman";
+	font-style: normal;
+	font-size:15px;
+}
+
+h2 {
+		font-size:25px;
+		text-align:center;
+}
+
+tt { color:yellow } 
+
+
+/* Link Style */
+a:link		{ color:white }
+a:visited	{ color:white} }
+/* a:visited	{ color:blue }*/
+a:active	{ color:cyan }
+a:hover		{ color:cyan }
+a {text-decoration: none; }
+
+
+/* custom link styles */
+/* I don't think it should be possible to view my stylesheet from the 'net, but if you can, these are fun */
+a.hidden:link		{ color:white }
+a.hidden:visited	{ color:white }
+a.hidden:hover		{ color:white }
+a.hidden:active		{ color:white }
+
+a.emph:tt {color:yellow}
+
+a.big:link		{ color:cyan ;
+				font-weight:bold ;
+				font-size:30px ;}
+a.big:visited	{ color:cyan ;
+				font-weight:bold ;
+				font-size:30px ;}
+a.big:hover		{ color:#FF3300; 
+				font-weight:bold ;
+				font-size:30px ;}
+a.big:active	{ color:#FF3300; 
+				font-weight:bold ;
+				font-size:30px ;}
+a.big {text-decoration: underline;}				
+
+a.norm:link		{ color:cyan ;}
+a.norm:visited	{ color:cyan ;}
+a.norm:hover		{ color:#FF3300;}
+a.norm:active	{ color:#FF3300; }
+/*a.norm {text-decoration: underline;}		*/
+
+/* Custom classes */
+.sidebar {
+    font-size: 15px;
+}
+
+.sectionHeader {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-indent: 125px;
+}
+
+.divider {
+    background-color: black;
+    width: 1px;
+}
+
+.divider2 {
+    background-color: black;
+}
+
+.white {
+    color: white;
+    font-style: italic;
+}
+
+.white2 {
+    color: white;
+}

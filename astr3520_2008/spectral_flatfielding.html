@@ -1,0 +1,163 @@
+<html>
+<!--<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">-->
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> Astronomy 3520: Spectral Flatfielding </title>
+<script language="javascript">
+<!--
+function click(imname,imsrc) {
+    document[imname].
+	onclick = "click2(" + imname + "," + document[imname].src + ")";
+    document[imname].src = imsrc;
+    document[imname].width = 800;
+}
+function click2(imname,imsrc) {
+    document[imname].
+	onclick = "click(" + imname + "," + document[imname].src + ")";
+    document[imname].src = imsrc;
+    document[imname].width = "";
+}
+function toggle(myself,first,second) {
+    var re = new RegExp(first)
+    document[myself].src =  (document[myself].src.match(re)) ? second : first;
+    document[myself].width = (document[myself].width==100) ? 800:100;
+}
+    -->
+</script>
+<body> 
+<head><h1><center> ASTR 3520 Spectral Flatfielding</center></h1></head>
+<?php include 'tracker.php';?>
+<table align="center" width=800><tr><td>
+Spectral flatfielding using IRAF.
+<ol><tt>
+    <li> standard [VEGA_SPEC] [VEGA_SPEC]_std star_name="hr7001" airmass=1.0 exptime=90.0 mag=0.0 magband=V teff=A0 caldir="/usr/local/iraf/iraf/noao/lib/onedstds/bstdscal/" 
+    <li> sensfunc [VEGA_SPEC]_std [VEGA_SPEC]_sens interactive=yes
+    <li> calibrate [SCIENCE_SPEC] [SCIENCE_SPEC]_calibrated sensitivity=[VEGA_SPEC]_sens extinct=no flux=yes exptime=240 airmass=1.0 fnu=yes
+</tt></ol>
+<br>The above are:
+<br>SCIENCE_SPEC: aperture-extracted, dispersion-corrected science spectrum
+<br>VEGA_SPEC: aperture-extracted, dispersion-corrected standard star spectrum
+<br>
+<br>Variables:
+<ul>
+    <li><tt>exptime</tt>: the exposure time in the standard spectrum (for the <tt>standard</tt> command) or the science spectrum (for the <tt>calibrate</tt> command)
+    <li><tt>starname</tt>: the name of the star that corresponds to a name in the spectrophotometric standards catalog.  HR 7001 = Vega
+</ul>
+<br>
+<br> Details:
+<br> <ol> <li> <tt> standard </tt> [interactive]
+    <br> The <tt> standard </tt> function compares your spectrum of a known
+    standard star to the NOAO database version of that spectrum.  Your goal in
+    this interactive code is to select smooth regions of the spectrum across
+    the spectrum to fit with a curve.  You should draw many small boxes and
+    carefully avoid absorption lines.
+    <li> <tt> sensfunc </tt> [interactive]
+    <br> Uses the fit you made in <tt> standard </tt> to create a sensitivity 
+    calibration.  Necessary to get your flux into real flux units.
+    <li> <tt> calibrate </tt>
+    <br> Applies the calibrations you computed with <tt> standard </tt> and
+    <tt> sensfunc</tt>.
+<br><br><hr><br>
+<?php include 'navbar.php';?>
+</body></html>
+
+
+<!--
+<h2 id=apall>Extracting your Aperture</h2>
+<br><img border="0" src="thumbs/apall_frame1_tn.jpg"
+    onclick="toggle('apall_frame1','thumbs/apall_frame1_tn.jpg','apall_frame1.jpg')"
+    name="apall_frame1"> 
+    <br>Selecting your aperture
+<br><img border="0"
+    src="thumbs/apall_frame2_zoom_tn.jpg"
+    onclick="toggle('apall_frame2_zoom','thumbs/apall_frame2_zoom_tn.jpg','apall_frame2_zoom.jpg')"
+    name="apall_frame2_zoom"> 
+    <br>Selecting your aperture:
+zoomed in.  Make sure you include the whole thing, and fit the background using <tt>b</tt>.  When you are through, press <tt>q</tt>
+<br><img border="0"
+    src="thumbs/apall_fit1_tn.jpg"
+    onclick="toggle('apall_fit1','thumbs/apall_fit1_tn.jpg','apall_fit1.jpg')"
+    name="apall_fit1"> 
+    <br>The next step is fitting the aperture
+trace
+<br><img border="0"
+    src="thumbs/apall_fit2_loworderresidual_tn.jpg" onclick="toggle('apall_fit2_loworderresidual','thumbs/apall_fit2_loworderresidual_tn.jpg','apall_fit2_loworderresidual.jpg')" name="apall_fit2_loworderresidual"> 
+                <br>Look at the
+residual for that attempt (use <tt>j</tt> to get residual plots)
+<br><img border="0"
+    src="thumbs/apall_fit3_4thorderresidual_tn.jpg"
+    onclick="toggle('apall_fit3_4thorderresidual','thumbs/apall_fit3_4thorderresidual_tn.jpg','apall_fit3_4thorderresidual.jpg')"
+    name="apall_fit3_4thorderresidual"> 
+    <br>As you go
+to higher orders (using the command <tt>:order n</tt> where n is an integer), the residual pattern changes
+<br><img border="0"
+    src="thumbs/apall_fit4_5thorderresidual_tn.jpg"
+    onclick="toggle('apall_fit4_5thorderresidual','thumbs/apall_fit4_5thorderresidual_tn.jpg','apall_fit4_5thorderresidual.jpg')"
+    name="apall_fit4_5thorderresidual">
+    <br>
+Finally, a residual pattern that appears relatively random - this is your goal
+<br><img border="0"
+    src="thumbs/apall_fit5_5thorderchebfit_tn.jpg"
+    onclick="toggle('apall_fit5_5thorderchebfit','thumbs/apall_fit5_5thorderchebfit_tn.jpg','apall_fit5_5thorderchebfit.jpg')"
+    name="apall_fit5_5thorderchebfit">
+    <br>
+You can tell the fit is fairly good
+<br><img border="0"
+    src="thumbs/apall_fit6_2ndordersplinefit_tn.jpg"
+    onclick="toggle('apall_fit6_2ndordersplinefit','thumbs/apall_fit6_2ndordersplinefit_tn.jpg','apall_fit6_2ndordersplinefit.jpg')"
+    name="apall_fit6_2ndordersplinefit">
+    <br>
+A 2nd order spline fit is about as good as a 5th order Chebyshev polynomial in this case, but either choice is OK
+<br><img border="0"
+    src="thumbs/apall_fit7_nonlinearcomponent_tn.jpg"
+    onclick="toggle('apall_fit7_nonlinearcomponent','thumbs/apall_fit7_nonlinearcomponent_tn.jpg','apall_fit7_nonlinearcomponent.jpg')"
+    name="apall_fit7_nonlinearcomponent">
+    <br>
+This shows the fit divided by the linear part of the fit to show you nonlinear components.  When you're through press <tt>q</tt>
+
+<h2 id=identify>Identifying Calibration Lamp Lines</h2>
+<img src="thumbs/identify_success_tn.jpg"
+    onclick="toggle('identify_success','thumbs/identify_success_tn.jpg','identify_success.jpg')"
+    name="identify_success"
+    border="0"><br>My successful line identification. (compare to <a
+    href="http://www.noao.edu/cgi-bin/tharatlas/runit_spec?w1=6000&w2=7000&maxlines=all&source=henear&plot=on&list=on">the
+    NOAO spectrum corresponding to my fit</a>, the resemblance is excellent)
+<br>Don't get discouraged - it took me nearly an hour of dozens of iterations to
+complete this successfully.   You should use the IRAF HeNeAr linelist <tt>linelist$henear.dat</tt> instead of the
+SBO line list.
+<br>A few tips:
+<br>&nbsp;1. Fit few points at first using <tt>m</tt>
+<br>&nbsp;2. quickly fit using <tt>f</tt> and check with <tt>q,l</tt> in the identified lines.
+<br>&nbsp;3. If the fit doesn't look right, use <tt>i</tt> to initialize and start over
+<br>&nbsp;4. Use a 2nd-order polynomial, not a spline
+<br>&nbsp;5. ***When comparing to SBO plots, zoom in fairly deep.  The SBO plots are scaled very poorly
+<br>&nbsp; If the SBO plots fail for you, try <a href="http://www.noao.edu/kpno/specatlas/henear/henear.html">the Kitt Peak spectral atlas</a>
+<br><img
+    src="thumbs/identify_success_fit_tn.jpg"
+    onclick="toggle('identify_success_fit','thumbs/identify_success_fit_tn.jpg','identify_success_fit.jpg')"
+    name="identify_success_fit" border="0">
+    <br>
+		You want your fit to be approximately linear. 
+<br><img
+    src="thumbs/identify_success_residuals_tn.jpg"
+    onclick="toggle('identify_success_residuals','thumbs/identify_success_residuals_tn.jpg','identify_success_residuals.jpg')"
+    name="identify_success_residuals" border="0">
+    <br>
+		Your residuals should look approximately like noise.  If you recognize a
+		pattern, you should use a higher order fit.  You can delete outliers
+		that will mess up the fit using <tt>d</tt>
+
+		<h2 id=extracted>Extracted spectra</h2>
+
+		<br><img border="0" src="thumbs/pcyg_uncal_tn.jpg" onclick="toggle('pcyg_uncal','thumbs/pcyg_uncal_tn.jpg','pcyg_uncal.jpg')" name="pcyg_uncal">
+                <br>Before dispersion correction (<tt>dispcor</tt>)
+		<br><img border="0" src="thumbs/pcyg.calspec_tn.jpg" onclick="toggle('pcyg.calspec','thumbs/pcyg.calspec_tn.jpg','pcyg.calspec.jpg')" name="pcyg.calspec">
+                <br>After dispersion correction using the correct lamp
+		<br><img border="0" src="thumbs/pcyg_zoom_tn.jpg" onclick="toggle('pcyg_zoom','thumbs/pcyg_zoom_tn.jpg','pcyg_zoom.jpg')" name="pcyg_zoom">
+                <br>Zoomed in on H-alpha
+		<br>
+		<br> There is still significant instrument response that has to be flat-fielded out.  That is currently reserved for another exercise.
+
+<br><br><br><a class="special" href="../index.html">ASTR3520 home</a>
+<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
+-->

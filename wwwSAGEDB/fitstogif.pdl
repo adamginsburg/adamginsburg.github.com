@@ -1,0 +1,44 @@
+#!/usr/bin/perldl
+use PDL::Graphics::PGPLOT;
+use PDL::Graphics::LUT;
+
+use PDL::Graphics::PGPLOT::Window;
+
+for $i (`ls J*.fits`) { 
+chomp($i);
+$outname = $i;
+$outname =~ s/fits/gif\/gif/;
+$outname =~ s/asky.*fits/.fits/;
+chomp($outname);
+$temp = rfits($i);
+if ($i =~ /mcps/) {
+$x1=$y1=122;
+$x2=$y2=129;
+} elsif ($i =~ /a[JHK]/) {
+		$x1=$y1=24;
+		$x2=$y2=29;
+
+} else {
+$x1=$y1=93;
+$x2=$y2=99;
+}
+$title = "MCPS I" if $i =~ /mcps/;
+$title = "2MASS J" if $i =~ /aJ/;
+$title = "2MASS H" if $i =~ /aH/;
+$title = "2MASS K" if $i =~ /aK/;
+$title = "IRAC 3.6" if $i =~ /ch1/;
+$title = "IRAC 4.5" if $i =~ /ch2/;
+$title = "IRAC 5.8" if $i =~ /ch3/;
+$title = "IRAC 8.0" if $i =~ /ch4/;
+$title = "MIPS 24" if $i =~ /mips24/;
+$title = "MIPS 70" if $i =~ /mips70/;
+$title = "MIPS 160" if $i =~ /mips160/;
+print "OUTPUT: $outname\n";
+$win=pgwin($outname);
+$win->ctab(lut_data('rainbow'));
+$win->imag($temp,{ITF=>LOG,AXIS=>,TITLE=>$title});
+$win->hold();
+$win->arrow($x1,$y1,$x2,$y2,{COLOR=>WHITE,ARROW=>{FS=>1,VENT=>.3}});
+$win->close();
+}
+

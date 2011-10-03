@@ -1,0 +1,79 @@
+
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> Astronomy 3520: IRAF quick tips </title>
+<body> 
+<!--		<?php include 'tracker.php';?>-->
+<head><h1><center> ASTR 3520: IRAF quick tips</center></h1></head>
+<br>
+<br> For hints on using DS9 without IRAF, check out <a href="http://casa.colorado.edu/~ginsbura/ds9tips.htm">Adam's DS9 tips page</a>
+<br>
+<br><h3 id="errors"> Instructions for dealing with IRAF errors on cosmos       </h3>
+  Since the changeover to the new cosmos server, your login.cl files may be
+  incorrect.  They currently have home defined as /raid/home/(username)/etc, but
+  this is no longer correct; you will receive errors saying that iraf could not
+  modify uparm$(taskname).  You should change this by removing the /raid at the
+  front of the path.  This can be done using any <a href="unix_editors.html">editor</a>: look
+  for the line "set home = "/raid/home/..." and modify it.  <br>
+
+<br> You can try to re-run mkiraf, which will create a new login.cl for you.
+If you had any settings saved in login.cl, it will overwrite them.  You must
+also go on and change your imdir to <b>"home$images/"</b>.  Search for the line <b>
+#set imtype   "imh"</b> and change it to read <b>set imtype "fits"</b> (remove the # at the beginning of the line).
+<br>
+<br> If you have trouble with <tt>.imh</tt> files showing up instead of <tt>.fits</tt> files:
+<ol> 
+    <li>check to see if your imtype is set correctly with <tt>show imtype</tt>.
+    <li>if it's <tt>imh</tt>, use <tt>set imtype=fits</tt> to fix it
+    <li>you may need to use the <tt>flpr</tt> command to make sure IRAF recognizes the change
+    <li>Find your login.cl file.  Make sure the <tt>set imtype=fits</tt> line is uncommented as in <a href="IRAF.html#errors">the directions above</a>.
+</ol>
+
+<br><h3 id="quicktips"> IRAF quick tips</h3>
+-If you see errors that involve "uparm" or "unable to write...":
+<br>&nbsp;-try to <b>logout</b> of the cl and log back in; make sure you're in the directory with your login.cl file
+<br>&nbsp;-make sure your login.cl has been edited as per <a href="IRAF.html#errors">the directions above</a>
+<br>
+<br>-If you have problems with <b>imexam</b> and cursor behavior:
+<br>&nbsp;-restart DS9, try again
+<br>&nbsp;-restart DS9, <b>logout</b> of the cl and log back in
+<br>&nbsp;-get frustrated, call or <a href="mailto:adam.ginsburg@colorado.edu">e-mail</a> Adam, see if he gets frustrated
+<br>
+<br>-Using IRAF graphics terminals:
+<br>&nbsp;-q quits; a quit and re-enter solves most problems
+<br>&nbsp;-? displays help in the terminal.  Don't forget to quit out of the help when you're done
+<br>&nbsp;-:(command) allows "colon commands" that can be quite powerful (see, e.g., "wcs" in <b>imexam</b>)
+<br>
+<br>-A <tt>syntax error</tt> in IRAF generally means you have not loaded the requisite package.
+<br>&nbsp; -if you don't know what package that is, use the <tt>help</tt> command (e.g. <tt>help temden</tt>)
+<br>
+
+<br>
+<br> <h3 id="guider"> Matching Guider Images to Science Images </h3>
+ Instead of going through each individual file's header, I recommend using this command:
+<br> <tt>imhead proc-*.fits[0] lo+ | grep -E "Pixel\ file\|UTTIME"</tt> 
+<br> in the <tt>ecam</tt> directory, and the command 
+<br> <tt>imhead e*.fits lo+ | grep -E "Pixel\ file\|UTC-OBS"</tt>
+<br> in the science directory for the selected night in order to list the file
+names and exposure start times for each file.  You can then write the output of
+these commands to a file by appening a redirect to the
+end of the command, e.g. <br><tt> imhead e*.fits lo+ | grep -E "Pixel\ file\|UTC-OBS" > filename.txt </tt>.  
+<br> Once you have found the necessary files, copy them to your directory.  
+<br> If you are using DIS instead of Echelle, replace <tt>e*.fits</tt> with <tt>d*.fits</tt>.
+<br>
+<br> <h5>If you're curious about what those commands mean, read on.</h5>  You should already be familiar with the imhead command, which with the <tt>long</tt>
+option enabled prints the full header.  The <tt>[0]</tt> appended to the end of
+the filename chooses the first extension in the fits image.  A fits file is
+capable of holding many extensions, i.e. many images, in one file.  In the case
+of the Echelle guider camera, the proc-[something].fits files have the slit
+superimposed on the sky image as the first extension, and the slit mask image as
+the second extension.  
+<br> The grep command outputs all lines containing a regular expression from its input.  A regular expression is a special pattern matching expression.
+In this case, we have <tt>"Pixel\ file\|UTC-OBS"</tt>, which means we are searching for lines with the string <tt>Pixel file</tt> or <tt>UTC-OBS</tt>.
+The backslash before the space <a href="http://xkcd.com/234/">escapes</a> the space so that IRAF doesn't think you are giving it another command.  Similarly,
+we must escape the or operator | (though I'm not entirely certain why - this is not standard behavior).  The -E option tells grep that we are using 
+an extended regular expression, which is what allows the use of the | symbol.  
+
+<br><br><br><a class="special" href="index.html">ASTR3520 home</a>
+<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
+</body></html>

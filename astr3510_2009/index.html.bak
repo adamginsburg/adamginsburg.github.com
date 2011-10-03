@@ -1,0 +1,34 @@
+<html>
+<!--<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">-->
+<link rel="stylesheet" type="text/css" href="style.css">
+<!--<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">-->
+<title> Astronomy 3510: Observation and Instrumentation I: Imaging </title>
+<body> 
+		<head><h1><center> ASTR 3510: Observations: Imaging Home</center></h1></head>
+<!--		<center><font size="2"> Think an observational page needs some images?  Send me recommendations.</font>
+<br> <center><h3> Office Hours:</h3>
+                By appointment, or 11-12 MW in C329 for Adam and 2-3 PM WR in C323A for John.  Adam's e-mail addresses are adam.ginsburg@colorado.edu and keflavich@gmail.com.-->
+<center>
+    <table align="center" width=800><tr><td>
+<hr>
+<center>
+ <h3><a href="observing.htm" class="special">Observing Signup Page</a></h3>
+ <h3><a href="calendar.html" class="special">Course Calendar</a></h3>
+ <h3><a href="labs.html" class="special">Labs</a></h3>
+ <h3><a href="handouts.html" class="special">Handouts</a></h3>
+ <h3><a href="homeworks.html" class="special">Homeworks</a></h3>
+<hr>
+
+<?php include 'navbar.php';?>
+<br>
+
+<small>
+<br>  Created 8/25/09 by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> (adam.ginsburg@colorado.edu)
+<br> Class taught by <a href="http://casa.colorado.edu/~bally/">John Bally</a>
+</small>
+
+</body>
+</html>
+
+

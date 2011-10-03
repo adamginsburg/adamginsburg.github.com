@@ -1,0 +1,45 @@
+Descriptive Title
+Galactic Center Seminar - Class Observations of positronium sources near the Galactic Center
+
+Principle Investigator
+Adam
+Ginsburg
+
+Q3
+
+Observers:
+Adam Ginsburg
+John Bally
+
+Untrained Observers:
+Sam Skillman
+Devin Silvia
+Jason Henning
+Ting
+Juthika
+Peter Robinson
+Phil Armitage
+
+Collaborators:
+Jeremy Darling
+
+Contact Information:
+
+Half Nights or Hours Requested:
+Two half nights out of:
+First half July 1 - July 20
+
+Instruments:
+TripleSpec
+
+Scientific Justification:
+Positronium has never been observed in its Balmer transition lines.  The most 
+likely point sources for positronium are near the Galactic Center and are 
+thought to be compact objects traveling through dense molecular clouds.  To date,
+only weak upper limits on the Paschen-gamma line have been obtained; with TripleSpec
+we will be able to take observations nearly an order of magnitude more sensitive
+of both the Paschen-gamma and Hydrogen-alpha lines of the positronium atom.
+
+Our three targets will be the Great Annihilator, GROJ1655-40, and GRS1758-258
+
+

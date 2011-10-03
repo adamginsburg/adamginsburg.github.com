@@ -1,0 +1,3 @@
+Array:	/Users/adam/Sites/3520site/lab3web/sample_apextraction.html: 2008/08/20 09:02:33 MDT	http://localhost/3520site/lab3.html	Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.1) Gecko/2008070206 Firefox/3.0.1	 RemoteAddr:::1 RemoteHost:	
+Array:	/Users/adam/Sites/3520site/lab3web/sample_apextraction.html: 2008/08/20 09:04:16 MDT	http://localhost/3520site/lab3.html	Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.1) Gecko/2008070206 Firefox/3.0.1	 RemoteAddr:::1 RemoteHost:	
+Array:	/Users/adam/Sites/3520site/lab3web/sample_apextraction.html: 2008/08/20 09:04:19 MDT	http://localhost/3520site/lab3.html	Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.1) Gecko/2008070206 Firefox/3.0.1	 RemoteAddr:::1 RemoteHost:	

@@ -1,0 +1,32 @@
+<?php
+
+//
+// 
+// If you see this text in your browser, it means PHP scripts are not
+// enabled on this web server.  Consult the internet or your local system
+// administrator to enable PHP scripting.
+//
+//
+
+$paperFile = "papers";
+$logFile = "dregs.log";
+$listManager = "listmanager.php";
+$article = $_POST["article"];
+$ipOfSubmitter=$_SERVER["REMOTE_ADDR"];
+ 
+if ((!isset($_POST["submit"])) and (!isset($_POST["submitcheck"])))  
+  { // if page is not submitted, show the form
+  ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Astro-ph Coffee at Boulder</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+<meta name="keywords" content="astro-ph, arxiv, astronomy, Boulder, coffee" />
+<meta name="author" content="Boulder Astronomy" />-->
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+
+<body>

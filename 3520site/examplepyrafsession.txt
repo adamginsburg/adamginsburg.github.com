@@ -1,0 +1,188 @@
+adam@adam-laptop:~/observations/example$ pyraf
+setting terminal type to xgterm...
+
+
+
+
+
+
+
+
+
+
+    NOAO PC-IRAF Revision 2.12.2a-EXPORT Wed Jul 14 20:45:34 MST 2004
+    This is the EXPORT version of PC-IRAF V2.12 supporting most PC systems.
+
+    Welcome to IRAF.  To list the available commands, type ? or ??.  To get
+    detailed information about a command, type `help command'.   To  run  a
+    command  or  load  a  package,  type  its name.   Type  `bye' to exit a
+    package, or `logout' to get out of the CL.   Type `news'  to  find  out
+    what is new in the version of the system you are using.   The following
+    commands or packages are currently defined:
+
+clpackage/:
+ apropos/       dimsum/         ifocas/         noao/           stsdas/
+ clpackage/     eis/            images/         obsolete/       system/
+ color/         esowfi/         language/       plot/           tables/
+ crutil/        fitsutil/       lists/          proto/          user/
+ ctio/          gemini/         mscred/         rvsao/          utilities/
+ dataio/        gmisc/          mxtools/        softools/       xccdred/
+ dbms/          guiapps/        nmisc/          stecf/          xdimsum/
+PyRAF 1.4 (2007Jun15) Copyright (c) 2002 AURA
+Python 2.5.1 Copyright (c) 2001-2007 Python Software Foundation.
+Python/CL command line wrapper
+  .help describes executive commands
+--> noao
+--> imred
+imred/:
+ argus/         ctioslit/       hydra/          kpnocoude/      vtel/
+ bias/          dtoi/           iids/           kpnoslit/
+ ccdred/        echelle/        irred/          quadred/
+ crutil/        generic/        irs/            specred/
+--> ccdred
+ccdred/:
+ badpiximage    ccdlist         combine         mkillumcor      setinstrument
+ ccdgroups      ccdmask         darkcombine     mkillumflat     zerocombine
+ ccdhedit       ccdproc         flatcombine     mkskycor
+ ccdinstrument  ccdtest         mkfringecor     mkskyflat
+--> echelle
+echelle/:
+ apall          aprecenter      demos           sarith          specplot
+ apdefault@     apresize        deredden        scombine        specshift
+ apedit         apscatter       dispcor         scopy           splot
+ apfind         apsum           dopcor          sensfunc        standard
+ apfit          aptrace         ecidentify      setairmass
+ apflatten      bplot           ecreidentify    setjd
+ apmask         calibrate       refspectra      sflip
+ apnormalize    continuum       sapertures      slist
+--> ccdproc evega.0039.fits ccdtype="" zerocor=no darkcor=no flatcor=no fixfile="echmask.pl" biassec="[2100:2128,2:2027]" trimsec="[21:2048,1:2048]" order=3 niterate=3 int-
+--> hedit evega.0039.fits DISPAXIS 1 add+
+evega.0039.fits,DISPAXIS (magnify -> 1): 
+evega.0039.fits,DISPAXIS: magnify -> 1
+update evega.0039.fits ? (yes): 
+evega.0039.fits updated
+--> magnify evega.0039.fits evega.0039.rs.fits xmag=1 ymag=4
+
+evega.0039.rs.fits
+  Magnify image evega.0039.fits to image evega.0039.rs.fits.
+  Interpolation is linear.
+  Boundary extension is nearest.
+  Output coordinates in terms of input coordinates:
+    x1 =         1., x2 =      2048., dx =         1.
+    y1 =         1., y2 =      2048., dy =       0.25
+--> apall evega.0039.rs.fits references=JBrefspec.fits interactive- find- recenter+ resize+ edit- trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3
+--> imarith evega.0039.rs.ec.fits / eQuartzSUM.rs.ec.fits evega.0039.rs.ec.flat.fits
+--> refspectra evega.0039.rs.ec.flat.fits answer="yes" references="JBtharspec.ec" sort="" group=""
+[evega.0039.rs.ec.flat] refspec1='JBtharspec.ec'   --> 
+--> dispcor evega.0039.rs.ec.flat.fits evega.0039.rs.ec.dispcor.fits
+evega.0039.rs.ec.flat.fits: REFSPEC1 = 'JBtharspec.ec 1.'
+evega.0039.rs.ec.dispcor.fits: ap = 1, w1 = 10025.71, w2 = 10290.58, dw = 0.129394, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 2, w1 =  9849.84, w2 = 10110.06, dw = 0.127123, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 3, w1 = 9680.032, w2 = 9935.762, dw = 0.124929, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 4, w1 =  9515.98, w2 = 9767.373, dw =  0.12281, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 5, w1 = 9357.396, w2 = 9604.596, dw = 0.120762, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 6, w1 = 9204.011, w2 = 9447.156, dw = 0.118781, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 7, w1 = 9055.575, w2 = 9294.795, dw = 0.116864, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 8, w1 =  8911.85, w2 =  9147.27, dw = 0.115007, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 9, w1 = 8772.617, w2 = 9004.356, dw = 0.113209, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 10, w1 = 8637.668, w2 = 8865.838, dw = 0.111466, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 11, w1 = 8506.808, w2 = 8731.519, dw = 0.109776, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 12, w1 = 8379.854, w2 = 8601.208, dw = 0.108136, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 13, w1 = 8256.634, w2 =  8474.73, dw = 0.106544, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 14, w1 = 8136.986, w2 = 8351.919, dw = 0.104999, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 15, w1 = 8020.756, w2 = 8232.616, dw = 0.103498, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 16, w1 =   7907.8, w2 = 8116.673, dw = 0.102039, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 17, w1 = 7797.982, w2 = 8003.952, dw =  0.10062, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 18, w1 = 7691.172, w2 = 7894.318, dw = 0.099241, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 19, w1 = 7587.249, w2 = 7787.648, dw = 0.097899, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 20, w1 = 7486.098, w2 = 7683.822, dw = 0.096592, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 21, w1 = 7387.608, w2 = 7582.728, dw =  0.09532, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 22, w1 = 7291.676, w2 =  7484.26, dw = 0.094081, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 23, w1 = 7198.204, w2 = 7388.317, dw = 0.092874, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 24, w1 = 7107.099, w2 = 7294.803, dw = 0.091697, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 25, w1 = 7018.271, w2 = 7203.627, dw =  0.09055, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 26, w1 = 6931.636, w2 = 7114.702, dw = 0.089431, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 27, w1 = 6847.115, w2 = 7027.946, dw =  0.08834, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 28, w1 =  6764.63, w2 =  6943.28, dw = 0.087274, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 29, w1 = 6684.109, w2 = 6860.631, dw = 0.086234, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 30, w1 = 6605.482, w2 = 6779.926, dw = 0.085219, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 31, w1 = 6528.684, w2 = 6701.098, dw = 0.084227, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 32, w1 = 6453.652, w2 = 6624.082, dw = 0.083258, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 33, w1 = 6380.325, w2 = 6548.816, dw = 0.082312, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 34, w1 = 6308.645, w2 = 6475.242, dw = 0.081386, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 35, w1 = 6238.559, w2 = 6403.303, dw = 0.080481, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 36, w1 = 6170.013, w2 = 6332.945, dw = 0.079596, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 37, w1 = 6102.957, w2 = 6264.117, dw =  0.07873, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 38, w1 = 6037.343, w2 = 6196.769, dw = 0.077883, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 39, w1 = 5973.125, w2 = 6130.854, dw = 0.077054, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 40, w1 = 5910.259, w2 = 6066.327, dw = 0.076242, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 41, w1 = 5848.703, w2 = 6003.144, dw = 0.075447, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 42, w1 = 5788.416, w2 = 5941.264, dw = 0.074669, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 43, w1 =  5729.36, w2 = 5880.647, dw = 0.073906, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 44, w1 = 5671.497, w2 = 5821.254, dw = 0.073159, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 45, w1 = 5614.791, w2 =  5763.05, dw = 0.072427, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 46, w1 = 5559.207, w2 = 5705.998, dw =  0.07171, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 47, w1 = 5504.714, w2 = 5650.064, dw = 0.071007, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 48, w1 = 5451.279, w2 = 5595.218, dw = 0.070317, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 49, w1 = 5398.872, w2 = 5541.425, dw =  0.06964, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 50, w1 = 5347.462, w2 = 5488.658, dw = 0.068977, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 51, w1 = 5297.023, w2 = 5436.886, dw = 0.068326, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 52, w1 = 5247.527, w2 = 5386.082, dw = 0.067687, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 53, w1 = 5198.947, w2 = 5336.219, dw =  0.06706, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 54, w1 = 5151.259, w2 = 5287.272, dw = 0.066445, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 55, w1 = 5104.438, w2 = 5239.214, dw =  0.06584, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 56, w1 = 5058.461, w2 = 5192.022, dw = 0.065247, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 57, w1 = 5013.304, w2 = 5145.673, dw = 0.064665, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 58, w1 = 4968.947, w2 = 5100.144, dw = 0.064092, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 59, w1 = 4925.369, w2 = 5055.415, dw =  0.06353, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 60, w1 = 4882.548, w2 = 5011.463, dw = 0.062978, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 61, w1 = 4840.465, w2 = 4968.269, dw = 0.062435, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 62, w1 = 4799.102, w2 = 4925.814, dw = 0.061901, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 63, w1 = 4758.441, w2 = 4884.079, dw = 0.061377, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 64, w1 = 4718.462, w2 = 4843.045, dw = 0.060861, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 65, w1 =  4679.15, w2 = 4802.695, dw = 0.060354, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 66, w1 = 4640.488, w2 = 4763.012, dw = 0.059855, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 67, w1 =  4602.46, w2 =  4723.98, dw = 0.059365, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 68, w1 =  4565.05, w2 = 4685.582, dw = 0.058883, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 69, w1 = 4528.243, w2 = 4647.805, dw = 0.058408, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 70, w1 = 4492.026, w2 = 4610.631, dw = 0.057941, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 71, w1 = 4456.384, w2 = 4574.048, dw = 0.057482, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 72, w1 = 4421.302, w2 = 4538.041, dw = 0.057029, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 73, w1 =  4386.77, w2 = 4502.597, dw = 0.056584, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 74, w1 = 4352.772, w2 = 4467.703, dw = 0.056146, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 75, w1 = 4319.298, w2 = 4433.346, dw = 0.055715, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 76, w1 = 4286.335, w2 = 4399.513, dw =  0.05529, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 77, w1 = 4253.871, w2 = 4366.193, dw = 0.054871, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 78, w1 = 4221.896, w2 = 4333.374, dw = 0.054459, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 79, w1 = 4190.398, w2 = 4301.046, dw = 0.054054, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 80, w1 = 4159.367, w2 = 4269.196, dw = 0.053654, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 81, w1 = 4128.792, w2 = 4237.815, dw =  0.05326, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 82, w1 = 4098.664, w2 = 4206.892, dw = 0.052872, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 83, w1 = 4068.972, w2 = 4176.418, dw = 0.052489, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 84, w1 = 4039.708, w2 = 4146.382, dw = 0.052112, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 85, w1 = 4010.862, w2 = 4116.776, dw = 0.051741, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 86, w1 = 3982.425, w2 = 4087.589, dw = 0.051375, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 87, w1 = 3954.389, w2 = 4058.814, dw = 0.051014, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 88, w1 = 3926.745, w2 = 4030.442, dw = 0.050658, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 89, w1 = 3899.485, w2 = 4002.464, dw = 0.050307, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 90, w1 = 3872.601, w2 = 3974.872, dw = 0.049961, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 91, w1 = 3846.086, w2 = 3947.658, dw =  0.04962, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 92, w1 = 3819.931, w2 = 3920.814, dw = 0.049283, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 93, w1 =  3794.13, w2 = 3894.333, dw = 0.048951, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 94, w1 = 3768.676, w2 = 3868.208, dw = 0.048624, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 95, w1 =  3743.56, w2 = 3842.432, dw = 0.048301, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 96, w1 = 3718.778, w2 = 3816.997, dw = 0.047982, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 97, w1 = 3694.322, w2 = 3791.897, dw = 0.047667, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 98, w1 = 3670.186, w2 = 3767.126, dw = 0.047357, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 99, w1 = 3646.363, w2 = 3742.676, dw = 0.047051, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 100, w1 = 3622.848, w2 = 3718.542, dw = 0.046748, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 101, w1 = 3599.634, w2 = 3694.717, dw =  0.04645, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 102, w1 = 3576.716, w2 = 3671.197, dw = 0.046155, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 103, w1 = 3554.089, w2 = 3647.974, dw = 0.045865, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 104, w1 = 3531.746, w2 = 3625.043, dw = 0.045578, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 105, w1 = 3509.682, w2 = 3602.399, dw = 0.045294, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 106, w1 = 3487.893, w2 = 3580.037, dw = 0.045014, nw = 2048
+evega.0039.rs.ec.dispcor.fits: ap = 107, w1 = 3466.373, w2 = 3557.951, dw = 0.044738, nw = 2048
+--> 
+
+

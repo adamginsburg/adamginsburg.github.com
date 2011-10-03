@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="prettify.css" type="text/css" rel="stylesheet">
+<link rel="icon" type="image/gif" href="favicon8.ico">
+<script type="text/javascript" src="prettify.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CO properties</title>
+</head>
+<?php 
+$page="COproperties.htm";
+include 'tracker.php';?>
+<body onload="prettyPrint()"> 
+<table align="center" width=800><tr><td>
+<center>
+<h1> CO </h1>
+<br>
+
+</center></tr></td>
+<tr><td>
+
+References:
+<br><a class="norm" href="http://physics.nist.gov/PhysRefData/MolSpec/Diatomic/Html/Tables/CO.html"> NIST CO constants </a>
+<br><a class="norm" href="http://www.strw.leidenuniv.nl/~moldata/datafiles/13co.dat">Leiden Molecular Database </a>
+<br>(ncr below is computed assuming T=20K, it varies by ~10-20% for temperatures ranging from 5-50K)
+<br><a class="norm" href="http://authors.library.caltech.edu/6967/">Dissociation energy ~ 9.77 eV</a>
+<br>  
+<br><h3> <a class=norm href="Astronomy/column_derivation.pdf">[PDF] Derivation of the total column of a dipole molecule assuming LTE</a> </h3>
+<br>
+
+<center>
+
+
+<table align=center width=800>
+    <th><td>12CO 1-0</td><td>13CO 1-0</td><td>12CO 2-1</td><td>13CO 2-1</td><td>12CO 3-2</td><td>13CO 3-2</td></th>
+    <tr><td>Frequency (GHz)      </td><td>115.271202 </td><td> 110.201370 </td><td> 230.5380 </td><td> 220.3986765 </td><td> 345.7959899 </td><td> 330.5879601 </td></tr>
+    <tr><td>Aul (1/s)            </td><td> 7.203e-8 </td><td> 6.294e-08 </td><td> 6.910e-7 </td><td> 6.038e-7 </td><td> 2.497e-6 </td><td> 2.181e-6 </td></tr>
+    <tr><td>Eu (K)               </td><td> 5.5      </td><td> 5.29      </td><td> 16.6     </td><td> 15.87    </td><td> 33.2     </td><td> 31.73    </td></tr>
+    <tr><td>ncr (cm<sup>-3</sup>)</td><td> 1.1e3    </td><td> 1.9e3     </td><td> 6.7e3    </td><td> 9.2e3    </td><td> 2.1e4    </td><td> 3.1e4    </td></tr>
+
+</table>
+<br><hr><br>
+<table align=center width=800>
+    <th><td>CO </td><td> 13CO </td><td> C18O </td></th>
+    <tr><td>B0 (GHz) </td><td> 57.63596828 </td><td> 55.1010138 </td><td> 54.8914238 </td></tr>
+    <tr><td><a href="http://physics.nist.gov/PhysRefData/MolSpec/Diatomic/Html/sec2.html">&mu;<sub>r</sub></a></td>
+      <td>6.857143  </td><td>7.1724137</td><td>7.20... </td></tr>
+    <tr><td>&mu;<sub>e</sub> (dipole moment)</td><td>0.112&plusmn;0.005<sup>1</sup>, 0.1222<sup>2</sup>, 1225<sup>3</sup></td><td>-</td><td>-</td></tr>
+    <tr><td> X/12CO </td><td> 1 </td><td> 89 (solar) 60-70 elsewhere </td><td> 600? </td></tr>
+</table>
+<br>
+<br>
+<table>
+  <th><td> References: </td></th>
+  <tr><td>1</td><td><a class="norm" href="http://link.aip.org/link/JCPSA6/v28/i3/p427/s1">Burrus, C.A. "Stark Effect from 1.1 to 2.6 Millimeters Wavelength : PH3, PD3, DI, and CO" J. Chem. Phys. 28, 427, 1958</a></td></tr>
+  <tr><td>2</td><td><a class="norm" href="http://adsabs.harvard.edu/abs/1975JMoSp..55..490M">Muenter, J.S., "Electric dipole moment of carbon monoxide", J. Mol. Spectrosc., 1975, 55, 490.</a> (via <a href="http://webbook.nist.gov/cgi/cbook.cgi?ID=C630080&Mask=1000#ref-43">NIST</a>)     </td></tr>
+  <tr><td>3</td><td><a class="norm" href="http://adsabs.harvard.edu/abs/1994ApJS...95..535G">Goorvitch, D. "Infrared CO line for the X 1 Sigma(+) state", ApJS 95,535</a></td></tr>
+  <tr><td>4</td><td><a class="norm" href="http://books.google.com/books?id=9KHw6R8rQEMC&lpg=PR1&ots=EG3fswOgGs&dq=rohlfs%20wilson%20huttemeister&pg=PR1#v=onepage&q&f=false">Wilson, T.L., Rohlfs, K., Huttemeister, S., "Tools of Radio Astronomy", 5th ed., 2009, page 396</a></td></tr>
+</table>
+
+
+<img src='Astronomy/CO_columnconversion_vs_tex.png' width=800>
+A plot of the conversion from (optically thin) <sup>12</sup>CO intensity to
+total H<sub>2</sub> column versus excitation temperature for the lowest three
+transitions assuming CO/H<sub>2</sub> = 10<sup>-4</sup>.  <sup>13</sup>CO is
+shown assuming the same abundance so that relative shapes can be compared; the
+<sup>13</sup>CO values should be scaled up by a factor of 60-89 depending on
+whose value you use.
+
+<img src='Astronomy/fractional_level_population.png' width=800>
+The fractional level population of each level plotted for a variety of
+temperatures.  Between about 5 and 25K, the J=1 state is the most populated.  
+
+<img src='Astronomy/fractional_level_population_vs_temp.png' width=800>
+The fractional level population of the lowest 4 levels plotted as a function of
+temperature.  Only the J=0 state is monotonically populated with temperature.
+
+<br><br><hr>
+</table>
+<br>
+<?php include 'navbar.php';?>
+</body>
+</html>
+

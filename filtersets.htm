@@ -1,0 +1,341 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="stylesheet" type="text/css" class="norm" href="style.css">
+<link rel="icon" type="image/gif" href="favicon8.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="keywords" content="Spitzer, 2MASS, UBVi Filter Specifications / Spectral Responses / Zero Magnitude Fluxes">
+<title>Bandpasses (Spitzer, 2MASS, optical, submm)</title>
+</head>
+<?php 
+$page="filtersets.htm";
+include 'tracker.php';?>
+
+
+
+
+<head><center> <h1> SPITZER, 2MASS, optical filtersets / bandpasses </center></h1> </head>
+<table align="center" width=800><tr><td>
+      Similar pages: 
+    <br><a href="http://staff.gemini.edu/~kvolk/magnitude.html"
+      class="norm"> Kevin Volk's Magnitude Tool </a>
+  <br><a class=norm href=http://spiff.rit.edu/classes/phys440/lectures/filters/filters.html>A lecture on filters (includes Johnsons/Cousins bandpasses)</a>
+  <br><a class=norm href=http://www.gemini.edu/?q=node/11119>Gemini Observatory Flux-Magnitude Tool</a>
+
+  <br>
+  <br>
+
+<br><a class="norm"  href="http://ssc.spitzer.caltech.edu/mips/MIPSfiltsumm.txt"> MIPS Spectral Response Tables / Bandpass Definitions</a>
+<br><a class="norm" href="http://ssc.spitzer.caltech.edu/mips/calib/"> MIPS Zero-Magnitude Flux </a>
+<table align="center"  border>
+<tr><th>Band</th> <th> wavelength range</th> <th> efficiencies </th> <th> frequency range</th> <th> bandwidth </th> <th>Zero-magnitude Flux (Jy) </th></tr>
+<tr><td>24um (23.675) <td> 20.335 - 29.462 </td><td> .5-.5</td><td> 1.4753e13 - 1.01826e13  </td><td> 4.5703e12  </td>          <td> 7.17 &plusmn; .11 </td>      </tr>
+<tr><td>70um (71.42) </td><td> 60.92681 - 80.58062 </td><td> .5-.5</td><td> 4.92392e12 - 3.72298e12  </td><td> 1.201e12  </td> <td> .778 &plusmn; .0119 </td>      </tr>
+<tr><td>160um (155.9) </td><td> 139.8042 - 188.16 </td><td> .5-.5</td><td> 2.14586e12 - 1.59439e12  </td><td> 5.51471e11  </td><td> .16 &plusmn; .00245 </td>      </tr>
+</table>
+        <br>
+<a class="norm" href="http://ssc.spitzer.caltech.edu/irac/spectral_response.html"> IRAC Spectral Response Tables / Bandpass Definitions</a>
+<br>Approximate IRAC bandpasses:  
+<table align="center"  border>
+    <tr><th>Band</th> <th> wavelength range</th> <th> efficiencies </th> <th> frequency range</th> <th> bandwidth </th><th>Zero-magnitude Flux (Jy) </th></tr>
+    <tr><td>3.6um</td> <td> 3.179 - 3.955 </td><td> (.2-.2)   <td> 9.43692985e13 -   7.58533502e13 </td> <td> 1.85159483e13  </td><td> 280.9 &plusmn; 4.1 </td></tr>
+    <tr><td>4.5um</td> <td> 3.955 - 5.015 </td><td> (.25-.25) <td> 7.58533502e13 -   5.98205384e13 </td> <td> 1.60328118e13  </td><td> 179.7 &plusmn; 2.6 </td></tr>
+    <tr><td>5.8um</td> <td> 5.015 - 6.442 </td><td> (.07-.07) <td> 5.98205384e13 -   4.65693884e13 </td> <td> 1.32511500e13  </td><td> 115.0 &plusmn; 1.7 </td></tr>
+    <tr><td>8.0um</td> <td> 6.442 - 9.343 </td><td> (.15-.15) <td> 4.65693884e13 -   3.21096008e13 </td> <td> 1.44597876e13  </td><td> 64.13 &plusmn; .94 </td></tr>
+</table>
+<br>
+<a class='norm' href="http://www.ipac.caltech.edu/2mass/releases/allsky/doc/sec6_4a.html"> 2MASS Spectral Reponse, Bandpass Definition, Zero-Magnitude Fluxes </a>
+<br> 2MASS Isophotal Bandpasses and Fluxes-for-0-magnitude from <a class="norm" href="http://adsabs.harvard.edu/cgi-bin/nph-bib_query?bibcode=2003AJ....126.1090C&amp;db_key=AST&amp;high=405b94897116039">Cohen et al. (2003)</a>
+<table border>
+    <tr><th>Band</th><th>Lambda (&micro;m) </th><th>Bandwidth (&micro;m)</th><th>Bandwidth (Hz)</th> <th>&lambda; min - &lambda; max (&eta; ~.2)</th><th> frequency range</th><th>Fnu - 0 mag (Jy)</th><th>Flambda - 0 mag (W cm<sup>-2</sup> &micro;m<sup>-1</sup>)</th></tr>
+<tr><th>J</th><td>1.235 &plusmn; 0.006</td><td>0.162 &plusmn; 0.001</td>            <td>3.18641512e+13</td><td>  1.105-1.349 </td> <td> 2.71493213e+14 - 2.22386953e+14</td>  <td>1594 &plusmn; 27.8</td><td>3.129E-13 &plusmn; 5.464E-15</td></tr>
+<tr><th>H</th><td>1.662 &plusmn; 0.009</td><td>0.251 &plusmn; 0.002</td>            <td>2.72604448e+13</td><td>  1.504-1.709 </td> <td> 1.99468085e+14 - 1.75541252e+14</td>   <td>1024 &plusmn; 20.0</td><td>1.133E-13 &plusmn; 2.212E-15</td></tr>
+<tr><th>K<sub>s</sub></th><td>2.159 &plusmn; 0.011</td><td>0.262 &plusmn; 0.002</td><td>1.68623175e+13</td><td>  1.989-2.316 </td> <td> 1.50829563e+14 - 1.29533679e+14</td>   <td>666.7 &plusmn; 12.6</td><td>4.283E-14 &plusmn; 8.053E-16</td></tr>
+</table>
+<a class="norm" href="http://www.ifa.hawaii.edu/~tokunaga/filterSpecs.html">Mauna Kea NIR filters</a>
+
+<br>
+<br>
+<br><a class="norm" href="http://wise2.ipac.caltech.edu/docs/release/prelim/expsup/sec4_3g.html"> WISE instrumental zero point, etc. </a>
+<br><a class="norm" href="http://adsabs.harvard.edu/abs/2011ApJ...735..112J">WISE paper with zero-mag fluxes</a>
+<table border=+1>
+<tr>
+<th width="46">Band</th><th width="102">wavelength (&micro;)</th><th width="105">magnitude</th></tr>
+<tr>
+<th>W1</th><th>3.4</th><td>20.730</td></tr>
+
+<tr>
+<th>W2</th><th>4.6</th><td>19.567</td></tr>
+<tr>
+<th>W3</th><th>12</th><td>17.600</td></tr>
+<tr>
+<th>W4</th><th>22</th><td>12.980</td></tr>
+</table>
+
+<a class="norm" href="http://iopscience.iop.org/0004-637X/735/2/112/apj_735_2_112.tables.html"><i>WISE</i> Zero Magnitude Attributes</a>
+<table class="display_table">
+<colgroup span="1">
+<col align="left" span="1"/>
+<col align="center" span="1"/>
+<col align="center" span="1"/>
+<col align="center" span="1"/>
+<col align="char" char="." span="1"/>
+<col align="center" span="1"/>
+<col align="center" span="1"/>
+<col align="char" char="." span="1"/>
+<col align="char" char="." span="1"/>
+<col align="center" span="1"/>
+</colgroup>
+<thead>
+<tr>
+<th align="left" rowspan="1" colspan="1">Band</th>
+<th align="center" rowspan="1" colspan="1">In-Band</th>
+<th align="center" rowspan="1" colspan="1">Bw</th>
+<th align="center" rowspan="1" colspan="1">
+<i>F</i>
+<sub>&#x03BB;</sub>(iso)</th>
+<th align="center" rowspan="1" colspan="1">&#x03BB;(iso)</th>
+<th align="center" rowspan="1" colspan="1">Bw</th>
+<th align="center" rowspan="1" colspan="1">&#x03BD;(iso)</th>
+<th align="center" rowspan="1" colspan="1">
+<i>F</i>
+<sub>&#x03BD;</sub>(iso)</th>
+<th align="center" rowspan="1" colspan="1">
+<i>F</i>*<sub>&#x03BD;</sub>(iso)</th>
+<th align="center" rowspan="1" colspan="1">AB mag</th>
+</tr>
+<tr>
+<th align="left" rowspan="1" colspan="1"/>
+<th align="center" rowspan="1" colspan="1">W cm<sup>&#x2013;2</sup>
+</th>
+<th align="center" rowspan="1" colspan="1">&#x03BC;m</th>
+<th align="center" rowspan="1" colspan="1">W cm<sup>&#x2013;2</sup>&#x03BC;m<sup>&#x2013;1</sup>
+</th>
+<th align="center" rowspan="1" colspan="1">&#x03BC;m</th>
+<th align="center" rowspan="1" colspan="1">Hz</th>
+<th align="center" rowspan="1" colspan="1">Hz</th>
+<th align="center" rowspan="1" colspan="1">Jy</th>
+<th align="center" rowspan="1" colspan="1">Jy</th>
+<th align="center" rowspan="1" colspan="1"/>
+</tr>
+<tr>
+<th align="left" rowspan="1" colspan="1"/>
+<th align="center" rowspan="1" colspan="1">Unc(InBd)</th>
+<th align="center" rowspan="1" colspan="1">Unc(Bw)</th>
+<th align="center" rowspan="1" colspan="1">Unc(<i>F</i>
+<sub>&#x03BB;</sub>)</th>
+<th align="center" rowspan="1" colspan="1">Unc(&#x03BB;)</th>
+<th align="center" rowspan="1" colspan="1">Unc(Bw)</th>
+<th align="center" rowspan="1" colspan="1">Unc(&#x03BD;)</th>
+<th align="center" rowspan="1" colspan="1">Unc(<i>F</i>
+<sub>&#x03BD;</sub>)</th>
+<th align="center" rowspan="1" colspan="1">Unc(<i>F</i>
+<sub>&#x03BD;</sub>)</th>
+<th align="center" rowspan="1" colspan="1"/>
+</tr>
+<tr>
+<th align="left" rowspan="1" colspan="1"/>
+<th align="center" rowspan="1" colspan="1">W cm<sup>&#x2013;2</sup>
+</th>
+<th align="center" rowspan="1" colspan="1">&#x03BC;m</th>
+<th align="center" rowspan="1" colspan="1">W cm<sup>&#x2013;2</sup>&#x03BC;m<sup>&#x2013;1</sup>
+</th>
+<th align="center" rowspan="1" colspan="1">&#x03BC;m</th>
+<th align="center" rowspan="1" colspan="1">Hz</th>
+<th align="center" rowspan="1" colspan="1">Hz</th>
+<th align="center" rowspan="1" colspan="1">Jy</th>
+<th align="center" rowspan="1" colspan="1">Jy</th>
+<th align="center" rowspan="1" colspan="1"/>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="1" colspan="1">W1</td>
+<td rowspan="1" colspan="1">5.4188E&#x2013;15</td>
+<td rowspan="1" colspan="1">6.6256E&#x2013;01</td>
+<td rowspan="1" colspan="1">8.1787E&#x2013;15</td>
+<td rowspan="1" colspan="1">3.3526</td>
+<td rowspan="1" colspan="1">1.7506E+13</td>
+<td rowspan="1" colspan="1">8.8560E+13</td>
+<td rowspan="1" colspan="1">309.540</td>
+<td rowspan="1" colspan="1">306.682</td>
+<td rowspan="1" colspan="1">2.699</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1"/>
+<td rowspan="1" colspan="1">7.9666E&#x2013;17</td>
+<td rowspan="1" colspan="1">1.2168E&#x2013;03</td>
+<td rowspan="1" colspan="1">1.2118E&#x2013;16</td>
+<td rowspan="1" colspan="1">0.0132</td>
+<td rowspan="1" colspan="1">3.0407E+10</td>
+<td rowspan="1" colspan="1">7.2306E+11</td>
+<td rowspan="1" colspan="1">4.582</td>
+<td rowspan="1" colspan="1">4.600</td>
+<td rowspan="1" colspan="1"/>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">W2</td>
+<td rowspan="1" colspan="1">2.5172E&#x2013;15</td>
+<td rowspan="1" colspan="1">1.0423E+00</td>
+<td rowspan="1" colspan="1">2.4150E&#x2013;15</td>
+<td rowspan="1" colspan="1">4.6028</td>
+<td rowspan="1" colspan="1">1.4653E+13</td>
+<td rowspan="1" colspan="1">6.4451E+13</td>
+<td rowspan="1" colspan="1">171.787</td>
+<td rowspan="1" colspan="1">170.663</td>
+<td rowspan="1" colspan="1">3.339</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1"/>
+<td rowspan="1" colspan="1">3.6858E&#x2013;17</td>
+<td rowspan="1" colspan="1">1.0982E&#x2013;03</td>
+<td rowspan="1" colspan="1">3.5454E&#x2013;17</td>
+<td rowspan="1" colspan="1">0.0168</td>
+<td rowspan="1" colspan="1">1.1759E+10</td>
+<td rowspan="1" colspan="1">5.0629E+11</td>
+<td rowspan="1" colspan="1">2.516</td>
+<td rowspan="1" colspan="1">2.600</td>
+<td rowspan="1" colspan="1"/>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">W3</td>
+<td rowspan="1" colspan="1">3.5878E&#x2013;16</td>
+<td rowspan="1" colspan="1">5.5069E+00</td>
+<td rowspan="1" colspan="1">6.5151E&#x2013;17</td>
+<td rowspan="1" colspan="1">11.5608</td>
+<td rowspan="1" colspan="1">1.1327E+13</td>
+<td rowspan="1" colspan="1">2.6753E+13</td>
+<td rowspan="1" colspan="1">31.674</td>
+<td rowspan="1" colspan="1">29.045</td>
+<td rowspan="1" colspan="1">5.174</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1"/>
+<td rowspan="1" colspan="1">5.3306E&#x2013;18</td>
+<td rowspan="1" colspan="1">1.6942E&#x2013;02</td>
+<td rowspan="1" colspan="1">9.8851E&#x2013;19</td>
+<td rowspan="1" colspan="1">0.0446</td>
+<td rowspan="1" colspan="1">8.5791E+09</td>
+<td rowspan="1" colspan="1">1.9731E+11</td>
+<td rowspan="1" colspan="1">0.450</td>
+<td rowspan="1" colspan="1">0.436</td>
+<td rowspan="1" colspan="1"/>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">W4</td>
+<td rowspan="1" colspan="1">2.0876E&#x2013;17</td>
+<td rowspan="1" colspan="1">4.1013E+00</td>
+<td rowspan="1" colspan="1">5.0901E&#x2013;18</td>
+<td rowspan="1" colspan="1">22.0883</td>
+<td rowspan="1" colspan="1">2.4961E+12</td>
+<td rowspan="1" colspan="1">1.3456E+13</td>
+<td rowspan="1" colspan="1">8.363</td>
+<td rowspan="1" colspan="1">8.284</td>
+<td rowspan="1" colspan="1">6.620</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1"/>
+<td rowspan="1" colspan="1">3.7888E&#x2013;19</td>
+<td rowspan="1" colspan="1">4.4812E&#x2013;02</td>
+<td rowspan="1" colspan="1">1.0783E&#x2013;19</td>
+<td rowspan="1" colspan="1">0.1184</td>
+<td rowspan="1" colspan="1">4.0207E+09</td>
+<td rowspan="1" colspan="1">1.0049E+11</td>
+<td rowspan="1" colspan="1">0.293f</td>
+<td rowspan="1" colspan="1">0.290</td>
+<td rowspan="1" colspan="1"/>
+</tr>
+</tbody>
+</table>
+<div class="table_footer">
+<div class="footnote">
+
+
+
+
+<br>
+<br> <a class='norm' href='Astronomy/mcps_filters.txt'> MCPS Filter Spectral Response (approximate) </a> Reference: D. Zaritsky, private communication
+<br> <a class="norm" href='Astronomy/mcps_filters.png'> Plots of UBVI spectral response </a>
+<br> 
+<br> I don't have a reference for the UBVi zero-magnitude fluxes.  
+<br>
+<br> (update 5/25/09) <a class='norm' href="http://www.astro.utoronto.ca/~patton/astro/mags.html"> An excellent reference for optical magnitudes </a>
+<br>
+
+<table border>
+<tr><th>Band</th><th>Lambda (&micro;m) </th><th>Bandwidth (&micro;m)</th><th> l min - l max (eta = .4)</th><th>frequency range</th><th>Bandwidth (Hz)</th><th>Fnu - 0 mag (Jy)</th></tr>
+<tr><th>Johnson U</th><td>.375</td><td>0.060 </td><td> .335 - .395  </td> <td> 8.95522388e+14 - 7.59493671e+14 </td>  <td> 1.28000000e+14  </td> <td> 1823  </td></tr>
+<tr><th>Johnson B</th><td>.430</td><td>0.110 </td><td> .390 - .500  </td> <td> 7.69230769e+14 - 6.00000000e+14 </td>  <td> 1.78474851e+14  </td> <td> 4130  </td></tr>
+<tr><th>Johnson V</th><td>.530</td><td>0.090 </td><td> .500 - .590  </td> <td> 6.00000000e+14 - 5.08474576e+14 </td>  <td> 9.61196155e+13  </td> <td> 3781  </td></tr>
+<tr><th>Gunn I   </th><td>.860</td><td>0.140 </td><td> .750 - .990  </td> <td> 4.00000000e+14 - 3.03030303e+14 </td>  <td> 5.67874527e+13  </td> <td> 2635  </td></tr>
+</table>
+
+<a class='norm' href="http://home.fnal.gov/~annis/astrophys/filters/filters.html"> SDSS filters </a>
+<a class='norm' href="http://www.sdss.org/dr6/instruments/imager/#filters"> SDSS filters (SDSS page) </a>
+<a class='norm' href="http://www.stsci.edu/hst/nicmos/tools/conversion_help.html"> NICMOS filters </a>
+<!--<table border>
+<tr><th>Band</th><th>Lambda (&micro;m) </th><th>FWHM Bandwidth (&micro;m)</th><th> l min - l max (eta = 0.5 * max)</th><th>frequency range</th><th>Bandwidth (Hz)</th><th>Fnu - 0 mag (Jy)</th></tr>
+<tr><th>SDSS u</th><td>.355</td><td>0.060 </td><td> .326 - .390  </td> <td> 8.95522388e+14 - 7.59493671e+14 </td>  <td> 1.28000000e+14  </td> <td> 1823  </td></tr>-->
+<!--<tr><th>SDSS g</th><td>.430</td><td>0.110 </td><td> .390 - .500  </td> <td> 7.69230769e+14 - 6.00000000e+14 </td>  <td> 1.78474851e+14  </td> <td> 4130  </td></tr>-->
+<!--<tr><th>SDSS r</th><td>.530</td><td>0.090 </td><td> .500 - .590  </td> <td> 6.00000000e+14 - 5.08474576e+14 </td>  <td> 9.61196155e+13  </td> <td> 3781  </td></tr>-->
+<!--<tr><th>SDSS i</th><td>.860</td><td>0.140 </td><td> .750 - .990  </td> <td> 4.00000000e+14 - 3.03030303e+14 </td>  <td> 5.67874527e+13  </td> <td> 2635  </td></tr>-->
+<!--<tr><th>SDSS z</th><td>.860</td><td>0.140 </td><td> .750 - .990  </td> <td> 4.00000000e+14 - 3.03030303e+14 </td>  <td> 5.67874527e+13  </td> <td> 2635  </td></tr>-->
+<!--</table>-->
+
+<!--<table align="center" width=800><tr><td>-->
+<br><a class="norm" href="http://ssc.spitzer.caltech.edu/irac/calib/"> IRAC Zero-Magnitude Flux Densities</a>
+<br><a class="norm" href="http://ssc.spitzer.caltech.edu/tools/starpet/">Spitzer Flux Conversion Tool</a>
+
+<br>
+<br>IRAS: <a class="norm" href="http://irsa.ipac.caltech.edu/IRASdocs/iras_mission.html">IRAS Instrument Summary / Spectral Response</a>
+
+<table border>
+<tr align="center">  <th><b>Center<br />Wavelength</b></th>  <th><b># working<br />detectors</b></th>  <th><b>FOV<br />(arcmin)</b></th>  <th><b>Bandpass<br />(&#181;m)</b></th> 
+<th><b> Bandpass (Hz) </b></th><th><b>Bandwidth (hz)</b><th><b>Detector<br />Material</b></th>  <th><b>Average 10-sigma<br />Sensitivity (Jy)</b></th></tr>
+<tr align="center">  <td>12</td>  <td>16</td>  <td>.75 x 4.5</td>  <td>8.5 - 15</td>  <td>   3.52941176e+13 - 2.00000000e+13 </td>  <td> 1.52941176e+13 </td>  <td>Si:As</td>  <td>0.7</td>               </tr>
+<tr align="center">  <td>25</td>  <td>13</td>  <td>.75 x 4.6</td>  <td>19 - 30</td>   <td>   1.57894737e+13 - 1.00000000e+13 </td>  <td> 5.78947368e+12 </td>  <td>Si:Sb</td>  <td>0.65</td>               </tr>
+<tr align="center">  <td>60</td>  <td>15</td>  <td>1.5 x 4.7</td>  <td>40  -  80</td> <td>   7.50000000e+12 - 3.75000000e+12 </td>  <td> 3.75000000e+12 </td>  <td>Ge:Ga</td>  <td>0.85</td>             </tr>
+<tr align="center">  <td>100</td>  <td>13</td>  <td>3.0 x 5.0</td>  <td>83  - 120</td><td>   3.61445783e+12 - 2.50000000e+12 </td>  <td> 1.11445783e+12 </td>  <td>Ge:Ga</td>  <td>3.0</td>             </tr>
+</table>
+ 
+<br>
+<br>
+MSX: <a class="norm" href="http://irsa.ipac.caltech.edu/applications/MSX/MSX/imageDescriptions.htm">MSX Bandpass Description</a> 
+<table border>
+    <tr>    <th>Band</th>    <th>Active Columns</th>    <th>Isophotal Wavelength</th>   <th>Isophotal Frequency</th> <th>50% peak Intensity</th> <th>50% peak (&nu;, Hz)</th>   <th>Isophotal Bandwidth (&mu;m)</th>  
+<th> Bandwidth (Hz) </th>       <th>0 mag Flux</th>    <th>Absolute Photometric Accuracy</th>    <th>Radiance Accuracy</th></tr>
+<tr>    <td>A</td>    <td>8</td>    <td>8.28</td>   <td>3.62068e13</td>  <td>6.8 -10.8</td>  <td> 2.77586e13-4.40871e13  </td>  <td>3.36</td>    <td> 1.47027935e+13   </td>  <td>58.55</td>    <td>5%</td>    <td>9%</td></tr>
+<tr>    <td>C</td>    <td>4</td>    <td>12.13</td>  <td>2.4715e13 </td>  <td>11.1-13.2</td>  <td> 2.27115e13-2.70083e13  </td>  <td>1.72</td>  <td> 3.50693810e+12   </td>  <td>26.51</td>    <td>3%</td>    <td>8%</td></tr>
+<tr>    <td>D</td>    <td>4</td>    <td>14.65</td>  <td>2.04636e13</td>  <td>13.5-15.9</td>  <td> 1.88549e13-2.22068e13  </td>  <td>2.23</td>  <td> 3.11710096e+12   </td>  <td>18.29</td>    <td>4%</td>    <td>9%</td></tr>
+<tr>    <td>E</td>    <td>2</td>    <td>21.34</td>  <td>1.40484e13</td>  <td>18.2-25.1</td>  <td> 1.19439e13-1.64721e13  </td>  <td>6.24</td>  <td> 4.11071165e+12   </td>  <td>8.75</td>    <td>6%</td>    <td>15%</td></tr>
+</table>
+
+<br>
+<br>[ <a class="norm" href="http://xxx.lanl.gov/abs/astro-ph/9809122">SCUBA array description</a> ]
+<br>[ <a class="norm" href="http://irsa.ipac.caltech.edu/data/BOLOCAM_GPS/">BGPS @ IPAC</a> ] [ <a class=norm href="filters/bolocam_passband.txt"> text passband</a> ]
+<br>[ <a class="norm" href="http://www.mpifr-bonn.mpg.de/div/bolometer/spectra/MAMBO-2.html"> MAMBO </a> ] [<a class=norm href="filters/mambo-2.dat"> text passband </a> ]
+<br>[ <a class="norm" href="http://www.mpifr-bonn.mpg.de/div/bolometer/spectra/spectralresponse.html">MAMBO I, MAMBO II, & SIMBA</a> ]
+<br>Note that the central frequency reported is the effective central frequency for
+&alpha; = 3.5 or &beta;=1.5.  For different central frequencies and a detailed
+analysis, see the <a
+    href="http://irsa.ipac.caltech.edu/data/BOLOCAM_GPS/bgps_methods.pdf"
+    class="norm"> BGPS methods paper </a>.  Also, the high-frequency cutoff for MAMBO is slow and therefore
+poorly constrained.
+<table border>
+<tr><th>Band</th>   <th>Central Wavelength (&mu;m)</th>    <th>50% peak transmission (&mu;m)</th>    <th>Bandwidth (&mu;m)</th>  
+    <th> Central frequency (GHz) </th> <th> 50% peak transmission (GHz)</th> <th> Bandwidth (GHz) </th>       </tr>
+<tr><td>Bolocam 1.1mm</td> <td>1105.4</td> <td> 1018.4-1200.0 </td> <td>181.6</td> <td>271.4</td><td>250.0 - 294.6</td><td>44.6</td></tr>
+<tr><td>MAMBO 1.2mm</td> <td>1142.9</td> <td> 1000-1491 </td> <td>491</td> <td>262.5</td><td>201.2 - 300(5)</td><td>99(5)</td></tr>
+</table>
+
+<br>
+<br> HERSCHEL: upcoming
+<br> <a href="http://herschel.esac.esa.int/Docs/SPIRE/html/spire_om.html"> SPIRE manual </a>
+<br> <a href="https://nhscsci.ipac.caltech.edu/sc/index.php/Pacs/FilterCurves"> PACS filter curves </a>
+
+
+<br><br><br>
+<?php include 'navbar.php';?>
+</tr></td></table>
+
+</html>

@@ -1,0 +1,347 @@
+% original TeX version by sombody
+% 2002 Dec 12: LaTeX conversion by Amy Mioduszewski
+% 2002 Dec 12: Minor format changes by Amy Mioduszewski and Greg Taylor
+% 2002 Dec 13: Fixes by Amy in response to Richard Porcas comments
+% 2002 Dec 18: More minor fixes by Amy in response to Patrick Charlot
+% 2002 Dec 31: More minor changes by Amy re: Mike Garret plus improved
+%              underlining
+% 2003 Jan 18: More minor improvments to the underlining by Amy
+% 2003 Jul 21-22: Added student info, rapid response science by Jim U.
+% 2003 Aug 28: Some cleanup by Greg in response to Patrick Charlot
+%
+% This is the VLBI proposal cover sheet.  It is highly recommended 
+% that you make a copy of this before editing.
+% Lines beginning with ``%'' give instructions as to what to fill in
+% or replace on immediately following lines.
+%
+% COVER SHEET, FRONT SIDE
+%
+
+%\documentclass[10pt]{article}
+%\documentclass[preprint]{aastex}
+\documentclass[11pt, preprint]{aastex}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[left=1.75cm,top=3cm,right=2cm,bottom=.25cm,nohead,nofoot]{geometry}
+\pagestyle{plain}
+\def\unter#1{\hbox to #1{\hrulefill}}
+\def\arcmin{$^\prime$}
+\def\arcsec{$^{\prime\prime}$}
+\newcommand{\formaldehyde}{H\ensuremath{_2}CO}
+\newcommand{\hh}{H\ensuremath{_2}}
+\newcommand{\oneone}{\ensuremath{1_{10}-1_{11}}}
+\newcommand{\twotwo}{\ensuremath{2_{11}-2_{12}}}
+\newcommand{\percc}{\ensuremath{\textrm{cm}^{-3}}}
+\newcommand{\percms}{\ensuremath{\textrm{cm}^{-3}}}
+
+\def\Figure#1#2#3#4{
+\begin{figure}[htb]
+  \epsscale{#4}
+  \plotone{#1}
+  \caption{#2}
+  \label{#3}
+\end{figure}
+}
+\def\FigureTwo#1#2#3#4#5{
+\begin{figure}[htb]
+\epsscale{#5}
+\plottwo{#1}{#2}
+\caption{#3}
+\label{#4}
+\end{figure}
+}
+
+
+\usepackage{natbib}  % Requires natbib.sty, available from http://ads.harvard.edu/pubs/bibtex/astronat/
+\citestyle{aa}
+\bibliographystyle{/Users/adam/papers/latexfiles/apj_w_etal}
+
+
+\begin{document}
+
+\normalsize
+
+The distribution of dense molecular material on galactic scales is a necessary
+component in understanding the evolution of molecular clouds and galactic star
+formation rates.  While it is possible to explore the question of how
+efficiently molecular clouds collapse into prestellar cores on galactic scales
+in other galaxies and for small samples within the Milky Way, it has not been
+possible to explore the details of cloud collapse in a nearby, unbiased sample
+until recently.  We will use total mass estimates from the dust continuum in
+combination with an estimate of the mass in high-density regions from
+formaldehyde (\formaldehyde) 2cm absorption measurements to acquire an estimate
+of the dense mass fraction in an unbiased sample of millimeter continuum
+sources at different galactocentric radii.  
+
+\formaldehyde\ can be used to measure the density in high-density regions.
+Because of a collisional selection effect, above its critical density
+\formaldehyde\ preferentially overpopulates the lower states of the \oneone\
+through $5_{14}-5_{15}$ transitions.  These lines are cooled to excitation
+temperatures lower than the CMB and can therefore be seen in absorption against
+the CMB.  The \oneone/\twotwo\ absorption line ratio is very sensitive to
+density of \hh\ at densities larger than $\sim10^{3.5}\ \percc$, allowing
+measurements of the density to within $\sim 0.1$ dex with little sensitivity to
+gas kinetic temperature; when density is `measured' with criticial density
+based tracers the estimate can be off by as much as 2 orders of magnitude.  The
+absorption line depth will be approximately proportional to the column of
+\formaldehyde\ at the measured density, and therefore a simple geometric
+scaling argument can be used to determine a size scale, $r = X_{\formaldehyde\
+}^{-1} N(\formaldehyde) / n(\hh)$, where $X_{\formaldehyde}$ is the ratio of
+\formaldehyde/\hh, which is typically $\sim10^{-9}$.  The density this ratio
+will measure is heavily weighted towards high-density regions; the optical
+depth curves shown in figure \ref{fig:densratio} are the approximate weighting
+functions.
+
+We can acquire mass estimates with the Bolocam Galactic Plane Survey
+\citep[BGPS,][]{aguirre2009}, which is a 1.1mm survey of the Galactic plane
+($-.5<b<.5$ over most of the plane) conducted at the Caltech Submillimeter
+Observatory.  It includes a catalog of $\sim$8000 sources and flux
+measurements.  The majority of the objects detected in the BGPS are thought to
+be ``clumps'', intermediate between high-density prestellar cores and moderate
+density Giant Molecular Clouds, with mean densities ranging from $10^2$ to
+$10^4$ \percc.  A subsample of these sources have been followed up with NH$_3$
+1-1 and 2-2 inversion transition observations, giving an accurate measure of
+the gas temperature in the dense gas.
+% Assuming dust kinetic
+% temperatures of 20K, the survey is complete to objects of mean density
+% $N_{H_2}\gtrsim10^3\percms$ out to 3 kpc, and $N_{H_2}>\sim10^{2.3}\percms$ out
+% to 12 kpc.
+
+%We use 1.1mm continuum measurements from the Bolocam Galactic Plane Survey
+%\citep[BGPS,][]{aguirre2009}, which covered the first quadrant of the Galactic
+%plane in the range $-0.5 < b < 0.5$, to acquire total gas mass estimates for
+%our list of target sources. 
+
+Millimeter continuum emission is an excellent optically-thin tracer of dust
+emission.  Being optically thin, dust measurements at millimeter frequencies
+are sensitive to the entire mass of molecular clouds, unlike molecular line
+tracers like CO which become optically thick at relatively low column
+densities.  Mass estimates from dust are therefore robust mass estimates of
+molecular clumps and cores, but continuum tells little about the physical
+properties of the star forming regions.  
+
+With a size scale and density calculated from the \formaldehyde\ lines we can
+compute the mass at the measured density, which should be a proxy for the
+fraction of gas in prestellar cores.  We already have an estimate of the total
+gas mass from the 1.1mm continuum.  The fraction of mass in dense regions will
+constrain the time scale and efficiency with which molecular clouds collapse into
+substructure that will form stars.  
+
+For BGPS sources with a large fraction of dense gas, high-resolution followup
+with interferometer arrays will be a good way to characterize this fraction
+more precisely, but a survey of a large number of BGPS sources with
+interferometers is technically infeasible.  A single BGPS source would take
+$\sim$ 1 night to acquire good sensitivity to all of the dense gas in close-by
+star forming regions, whereas a similar measurement with the GBT can be done in
+5 minutes.  
+
+% The \formaldehyde\ 2(12)-2(11) / 1(11)-1(10) line ratio is a sensitive estimator of the
+% molecular gas (H$_2$) density and is robust to variations in abundance.
+% \citet{mangum2008,mangum1993} have performed detailed studies of \formaldehyde\ as a
+% densitometer, and have developed a grid of models covering a wide range of
+% temperatures and densities that can be used to translate an optical depth
+% measurement in the two \formaldehyde\ transitions to a number density of H$_2$ (figure \ref{fig:h2codens}).
+% Uncertainties in the density measurement with no knowledge of the background
+% continuum or kinetic temperature are only a factor of $\sim$2.  With knowledge
+% of the background continuum and the local kinetic temperature, the density
+% measurements become limited by measurement uncertainty at $\sim20\%$, assuming
+% the large velocity gradient model used remains valid.  The method was confirmed
+% using a sample of star forming galaxies in \citet{mangum2008}, but we will check 
+% the validity of the method within the galaxy by looking at a few well-studied and
+% understood sources (see sample section below).
+
+% With a significant sample of sources at known distances with known densities, 
+% we will be able to measure the gas mass and dust mass independently and
+% therefore be able to measure the dust-to-gas ratio.  We will still have to
+% assume a kinetic temperature, which can affect the dust mass measurement, but
+% this can be resolved by other observations (e.g. NH$_3$ inversion transitions).
+% We will also have to assume a source size, but since this size will be the same
+% for the dust and gas measurements, it will not introduce any additional bias.
+
+% Our long term plan is to extend this survey with Arecibo and GBT beam-matched
+% observations of all BGPS sources within the range of Arecibo.  This complete
+% sample of accurately measured masses and densities will serve as a calibration
+% sample for the rest of the BGPS catalog by providing a stronger constraint on
+% the dust/gas mass ratio.  It will also present the best-measured mass catalog
+% from which a core/clump mass function can be determined.  Our survey will present
+% an essential calibration for all millimeter Galactic plane surveys, including
+% the JCMT SCUBA II, Herschel Hi-Gal, and APEX Atlasgal surveys, which combined
+% will amount to thousands of hours of observing time on world-class telescopes.  
+
+Furthermore, obtaining a comprehensive data set for \formaldehyde in dense clumps
+across the galactic plane with allow calibration of \formaldehyde as a densitometer on
+galactic scales.  \citet{mangum2008} have used \formaldehyde as a densitometer in a
+large survey of nearby galaxies, detecting both transitions in five galaxies.
+Using the ratio of the \oneone\ and \twotwo\ lines, they obtain a galaxy-wide
+``density'' measurement of order $n(\hh)\approx10^5\percc$.  While these are
+starburst galaxies with high average densities, the meaning of a ``galactic
+average'' density determined from molecular absorption lines (which come from
+clumpy media) is uncertain at best.  By using H$_2$CO to determine densities
+across a broad sample of sources found with the BGPS survey, we can calibrate
+Mangum et al.'s observations to obtain a more rigorous meaning for their
+galactic average densities.  The star forming environment of BGPS clumps will
+not be the same as the galaxies in the Mangum survey, but some clumps will
+probably show similar environments, e.g., those closer to the Galactic Center.
+By obtaining observations in different Galactic environments, we can determine
+how metallicity and the local interstellar radiation field affect star formation...
+
+% \Figure{darling2008_h2co_density}{\formaldehyde\ density measurements of star
+% forming galaxies from LVG models \citep{mangum2008}.  The thick vertical bars represent the ratio
+% between the \oneone\ and \twotwo\ transitions.  Dashed curved
+% lines represent the intensities of the 6cm line.  The absorbed background is
+% assumed to be the CMB.  The kinetic temperature is 40K.}{fig:h2codens}{0.4}
+% \Figure{rosolowsky2009_densityvsdist}{Estimated BGPS source densities from the
+% dust continuum as a function of distance.  Velocities for this sample were
+% measured with the NH$_3$(1,1) and (2,2) inversion transitions in the $l=31$
+% field.  Each source is represented twice. Plus signs represent the near
+% distance, diamonds represent the far distance.  }{fig:densdist}{0.4}
+\Figure{nh_vs_lineratio_10and40K}{The 6cm/2cm line ratio (solid) from large
+velocity gradient (LVG) modeling as a function of density assuming T=10K (blue)
+and 40K (green) and abundance of $10^{-9} \hh$.  The ratio provides only a weak
+constraint on density for low densities without additional information, but for
+these densities the optical depth (dashed, 10K blue, 40K green) of the \twotwo\
+line is extremely low and it will not be seen.  Optical depth is plotted
+assuming a filling factor of 1.}{fig:densratio}{0.5}
+
+{\bf THE SAMPLE:}
+In our pilot sample, there was only 1 clear non-detection out of 25 observed
+sources, and the nondetection provided a strong limit on the source density
+because it was detected by Arecibo...
+
+Our sample will be selected from BGPS sources in the range l=32 to 75 and l=170
+to l=212 in order to cover the range coincident with that availabe to the
+Arecibo radio telescope.  We will select a sample of 300 sources from bright,
+active complexes containing HII regions, quiescent infrared dark clouds,
+filamentary structures, and other object classes in between.  The pilot survey
+was limited to UCHII regions, which represent a late stage in the star formation
+process.
+
+%\citet{araya2002} performed a survey of 21 Galactic HII regions in the
+%\formaldehyde\ 6cm ($\nu_0 = 4.8296594$ GHz) absorption line with the Arecibo
+%telescope.  \formaldehyde\ absorption was detected in all of these sources with
+%high S/N in 5 minutes per pointing.  Only a single \formaldehyde\ absorption
+%line was detected in each source, whereas along most lines of sight in the
+%inner galactic plane $^{13}$CO is seen in emission at multiple velocities
+%\citep{jackson2006}.  This is probably an indication that \formaldehyde\ is
+%only associated with the dense gas that we also expect to dominate the mass
+%measurement in a BGPS source.
+%
+%\citet{araya2004} surveyed an additional 15 sources with known weak 6cm continuum
+%emission and found absorption against the CMB in all 15 with the same 5 minute 
+%exposure time.  We include this sample as a more representative sample of the
+%BGPS because we do not expect all BGPS sources to contain HII regions. 
+
+We select this sample to take advantage of simultaneous Arecibo observations so
+that we may do beam-matched observations of the two \formaldehyde\ transitions
+to be certain we are sampling the same population of sources.  The GBT and
+Arecibo beams are well-matched at these two transitions.  The Arecibo beam at
+4.8 GHz and the GBT beam at 14.48 GHz are both $ \sim$52\arcsec .  Beam
+matching guarantees that we are sampling the same sightline and is therefore
+essential to the success of the survey in the inner Galactic plane, where the
+source density is very high.  The GBT is the essential instrument for this
+project both because of the beam size and the sensitivity - a large sample
+would be impractical with other large telescopes that have much lower
+efficiencies in Ku band.  
+
+%This initial sample will serve as an initial science sample and a proof of
+%concept; a future study will take full advantage of the BGPS to make an
+%unbiased selection of millimeter sources within Arecibo's observing range.
+
+%Herschel's beam at 520 microns is 30.6",
+%and the HiGal guaranteed time mission will be performing a Galactic plane
+%survey similar to the BGPS in the first few years of the mission.  
+
+% ... [this paragraph is probably unnecessary but it's somewhat interesting] ...
+% \citet{dickel1996} made precise density measurements of arcsecond-scale
+% features within W3(OH).  However, at arcsecond scales there are many reasonable
+% methods to measure densities, and variations in \formaldehyde\ column due to freezeout
+% are possible confusing factors.  \citet{dickel1986} performed calculations of
+% density and abundance as a function of the 2cm/6cm optical depth ratio, but so
+% far their work has only been applied on small scales to VLA observations.  The
+% VLA will be without a U-band receiver until the end of EVLA commissioning, so
+% additional high spatial resolution observations of the 2cm transition will have
+% to wait.
+% ...
+
+% Some of our 26 sources, e.g. G34.26+.15, are very well-studied in multiple
+% molecular transitions and millimeter continuum.  These sources will provide a
+% test sample which we can use to confirm the validity of the density
+% and dense mass fraction measurements.  
+
+% In a future study, we will do beam-matched observations with GBT and Arecibo of
+% the \citet{reid2009} sample of cores with very accurate distances to remove the
+% distance as a possible ambiguity.  We have chosen the Araya sample in this study
+% because one transition has already been observed in these sources.
+
+% Once the technique is proved, we will use it on all sources available to both
+% Arecibo and GBT in the BGPS sample ($\sim$ 500-1000 sources?).  This accurate
+% sample will provide a direct measurement of the cloud/clump/core mass function.
+
+
+{\bf TECHNICAL JUSTIFICATION}
+
+{\it RFI:} The range 14.285-14.835 GHz  is regulated to avoid interference because of
+the presence of the formaldehyde line we will be observing.
+
+{\it Instrument:} We will use the GBT Ku-band spectrometer with 4 spectral windows
+centered at 14.488479 (\formaldehyde), 14.1315 (H77$\alpha$), 14.693
+(H76$\alpha$), and 15.2846 (H75$\alpha$) GHz using both polarizations (no
+cross-products) with a bandwidth of 12.5 MHz, a channel width of 3.058 kHz, and
+9-level sampling.  We will operate in nodding mode.
+
+{\it Resonances:}  None of our target spectral lines fall near the two Ku band 
+resonances at 12.875 $\pm0.0081$ and 12.885 $\pm0.0071$ GHz.
+
+{\it Time:} Our sensitivity depends both on the strength of the continuum source and
+the strength of the absorption feature.  We assume the continuum source is the
+CMB, which provides a lower limit to the continuum source strength that will be
+exceeded when an HII region provides the continuum.
+
+In a 5 minute exposure (5 on - no off is required with the two-beam Ku
+receiver) with the GBT spectrometer at 14.488479 GHz using two polarizations
+(no cross-products) with a channel with of 3.058 kHz (.064 km/s) assuming a
+system temperature of 30K (75th percentile) we will achieve an RMS sensitivity
+of 20.80 mK (10.89 mJy), which translates to an optical depth of the
+\formaldehyde\ \twotwo\ line of 0.008.  The high spectral resolution is not
+necessary for the stated goal of measuring the density but will be useful for
+measuring the line profile, which may prove useful in comparison with other
+line profiles for our high S/N observations.  The data can be resampled in
+post-processing to 1 km/s  resolution to yield an RMS sensitivity of 5.20 mK or
+$\tau=0.002$.  
+
+%The faintest object detected in the \citet{araya2004} survey had optical depth
+%(assuming absorption against the CMB) $\sim 0.03$ ($T\sim-82$mK), but the
+%majority were detected at higher significance.  In the HII sample
+%\citep{araya2004}, the smallest signal was five times higher at $\sim$20 mJy.
+
+The \oneone/\twotwo\ ratio varies from $\sim 1$ at densities $\gtrsim10^5$ \percc\ to 14
+around $10^3$ \percc.  Therefore the 2cm line may be as much as $\sim10x$ weaker than
+the 6cm line.  At densities down to this limit, we should still detect the 2cm
+line at $>5\sigma$ in the majority of sources and have at least marginal
+detections in the weakest sources.  Above densities $\sim10^{5.5}$, the \twotwo\ line goes
+into emission, so that the line ratio remains a densitometer up to ....??
+
+
+We will also observe the 75-77 recombination lines of H, He, and C, which will
+require no additional time but will provide information about the evolutionary
+state of the sources (is a massive star present?) and will provide a measure of
+the metallicity in HII regions via electron temperatures.  The 12.5 MHz
+bandpasses will be placed halfway between the H and He recombination lines,
+which places the lines at $\sim1/3$ and 2/3 of the way across the bandpass.  In
+the pilot survey, we found that this bandwidth was enough to access continuum
+on either side of the lines for baseline subtraction.
+
+Total time including overheads will be 15 minutes for startup  + ( 10 minutes
+per pointing/focus observation ) * (4 pointing/focus observations over 4 hours
+using Strategy C, which recommends focus observations once per hour) + 10
+minutes to observe a nearby calibrator + ( 5 minutes per scan + average 1
+minute slew time + scan reset between pointings ) * 26 sources = 3.8 hours.  We
+therefore request 4 hours of observing time for this proposal.  All sources are
+within 2 hours of each other in RA, so only one observing session is required.
+
+{\vspace{-3.5mm}
+\bibliography{H2CO_large}
+}
+
+\end{document}
+

@@ -1,0 +1,164 @@
+<html>
+<!--<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/phtml; charset=windows-1252">-->
+<link rel="stylesheet" type="text/css" href="style.css">
+<!--<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">-->
+<title> Astronomy 3510: Lab 3 </title>
+<body> 
+<head><h1><center> ASTR 3510: Lab 3</center></h1></head>
+<center>
+    <table align="center" width=800><tr><td>
+<center>
+    <br> The assignment: <a class="norm" href="handouts/Lab_3.doc">Lab 3</a>   
+<br>
+<br>
+<pre> DATA:
+10/07/2009 (Tweak):
+/home/shared/astr3510/jupiter/reduced/10_07_2009/Jupiter_B_.1_1_out.fits
+/home/shared/astr3510/jupiter/reduced/10_07_2009/Jupiter_R_.25_combine.fits
+/home/shared/astr3510/jupiter/reduced/10_07_2009/Jupiter_v_.1_combine.fits
+
+10/14/2009 (Tweak):
+/home/shared/astr3510/jupiter/reduced/10_14_2009/Jupiter_Ha_1_COMBINE_FINAL.fits
+/home/shared/astr3510/jupiter/reduced/10_14_2009/Jupiter_Hb_2_COMBINE.fits
+/home/shared/astr3510/jupiter/reduced/10_14_2009/Jupiter_O2_1_COMBINE.fits
+
+10/16/2009 (Evil League of Evil - not reduced):
+
+10/17/2009 (Dinesh, Drew, Matty):
+/home/shared/astr3510/jupiter/reduced/10_17_2009/HAreduced.fits
+/home/shared/astr3510/jupiter/reduced/10_17_2009/Hbfinalreduced.fits
+/home/shared/astr3510/jupiter/reduced/10_17_2009/HBreduced.fits
+/home/shared/astr3510/jupiter/reduced/10_17_2009/O3reduced.fits
+
+10/19/2009 (Evil League of Evil - not reduced):
+
+
+
+</pre>
+<br> 
+<br> For efficiency's sake, I'd like each group to reduce your own data.  Please combine images
+in each band following the directions below, then I will copy the reduced data into the shared 
+directories so that you can each extract positions and measure fluxes from them.  
+<br>
+<br> Groups that observed standard stars, please reduce those images as well.  
+<br>
+<br> All groups need to hand in text files listing the date/time and pixel offset of the
+moon for each moon for each reduced image OR pixel offsets for each moon for each unreduced
+image.  This needs to be done by Thursday so that all groups have time to make time-position 
+plots.
+<br>
+<br><h3> Combining Images </h3>
+<br> In order to get the maximum S/N when measuring moon positions, you should 
+combine adjacent exposures.  <!-- However, if your seeing blurs are not blurs, but 
+are in fact a combination of a couple resolved seeing-lensed views of a source, 
+combining will not increase the S/N.  In this case, you should try to 
+<a href="#extract">extract</a> each position separately. -->
+<br> <img src="jupiter_examples/seeing.png" width=400>
+<br> To get the best possible photometric measurement, you should try to combine images.
+However, combining won't work if you have an offset!
+<br> <img src="jupiter_examples/offset.png" width=600>
+<br> To fix this offset, you need to use <a href="http://casa.colorado.edu/~ginsbura/ds9_imalign.htm">imalign</a>.  More detailed instructions
+are available from the command <tt> help imalign </tt> or from <a href="http://www.twilightlandscapes.com/IRAFtutorial/IRAFintro_05.html#G">
+Josh Walawender's</a> IRAF tutorial.
+</center>
+<br> Follow the linked instructions, like I have:
+<br><br><pre>
+cd /your/working/directory/replace/these/words/
+cp /home/shared/astr3510/jupiter/2009-10-19/Jupiter_HA_0.8sec_* .
+ls Jupiter_HA_0.8sec_* &gt; <a href="jupiter_examples/jupiter_HAlist_align.txt">jupiter_HAlist.txt </a>
+ls Jupiter_HA_0.8sec_* | sed 's/\(Jupiter.*\)\.fits/\1_align.fits/ &gt; <a href="jupiter_examples/jupiter_HAlist_align.txt">jupiter_HAlist_align.txt </a>
+imalign @jupiter_HAlist.txt Jupiter_HA_0.8sec_30.fits <a href="moons_HA.reg">moons_HA.reg</a> @jupiter_HAlist_align.txt boxsize=21 bigbox=41
+</pre>
+<br>
+ <br> You may have to play with boxsize / bigbox to get all of the images to shift correctly.  Alternately you can
+pass in a shifts file.
+<br> <img src="jupiter_examples/boxsize.png">
+<br> The 'sed' line is not necessary for you to follow exactly - you just need to make a text file with full names
+of each output file.  Both the input and output file need to have the same number of filenames in them.
+<br>
+<br> To summarize the above commands, you want to:
+<ol> 
+ <li> Dark subtract and flat-field your images
+ <li> Make a text file listing the dark-subtracted, flat-fielded images
+ <li> Make another text file listing the same images with a different suffix - e.g. _align - as your output file list.
+ <li> Run the imalign command.  If imalign fails, try making the boxes larger.
+ If it STILL fails, try making a shifts file as described <a
+ href="http://casa.colorado.edu/~ginsbura/ds9_imalign.htm">here</a>, and then
+ from there ask me.
+</ol>
+<br>
+<br> If you use imhead, you should get output that looks something like this:
+<br><pre>
+--&gt; imhead *.fits
+Jupiter_HA_0.8sec_30.fits[2048,506][real]: SCIENCE
+Jupiter_HA_0.8sec_30_align.fits[2039,496][real]: SCIENCE
+</pre>
+<br> i.e. the aligned image should be smaller.
+<br> Now, you can easily use <tt>imcombine</tt>:
+<pre>
+imcombine @jupiter_HAlist_align.txt Jupiter_HA_combined.fits combine=median
+</pre>
+<br> Then <tt>imstat</tt> should show you that you've done something right:
+<br><pre>
+#               IMAGE                                  NPIX      MEAN    STDDEV       MIN       MAX
+ Jupiter_HA_0.8sec_30_align.fits[500:520,100:120]       441     1325.       15.     1264.     1366.
+ Jupiter_HA_combined.fits[500:520,100:120]              441     1323.     2.508     1316.     1330.
+</pre>
+<br> Then, go in with <tt>imexam</tt> and the <tt>a</tt> and <tt>r</tt> keys to measure fluxes.
+
+<center>
+<br>
+<br><h3 name="extract"> Extracting Moon Positions </h3>
+<br>There are a few methods to extract the positions of the moons from an image.  The simplest is to use the projection tool in ds9 and then estimate positions "by eye".
+<br>
+<img src="jupiter_examples/make_projection.png" width=600>
+<br>
+<br> Draw a projection like this one so that you include all of the signal from the moons without too much noise from flux-free pixels.
+<br>
+<br> <img src="jupiter_examples/projection.png" width=600> 
+<br>
+<br> The projection should look like this.  Unfortunately, the ds9 plotter isn't great, so you should save the data and put it into IDL 
+or some other plotter.
+<br>
+<br> <img src="jupiter_examples/saveprojection.png" width=600>
+<br>
+<br> This will create a data file with the pixel number in the first column and the value in the second column.
+You can either plot this and hunt for peaks or try to do something more advanced in an interactive data analysis program such as IDL.  Either way,
+you should make sure to do this for EVERY image you've taken to minimize errors from seeing.  You should also try to estimate your errors.
+<br>
+<br> The more sophisticated methods include fitting gaussians to the moons and taking the second derivative of the Jupiter emission profile and
+"unsharp masking" in the image plane by smoothing and subtracting.  You could also unsharp mask in the fourier plane.
+<br>
+<br> If you're using IDL, you can grab the readcol program from /home/shared/astr3510/idl/readcol.pro on cosmos, then load in the data by doing:
+</center>
+<pre>
+readcol,'data1.dat',x1,y1  ; read data files into the x1,y1 array
+readcol,'data2.dat',x2,y2
+plot,x1,alog10(y1),/ys,/xs  ; plot in logscale because jupiter is so bright
+cursor,x,y ; read the coordinates of your next click
+print,x,y ; print out those coordinates
+</pre>
+<br>
+<pre> Example output file:
+# positions are given in pixel units
+# Jupiter's center is measured as halfway between the zero points on either side
+Jupiter  Moon1  Moon2  Moon3
+326      63     686    786
+446      186    807    911
+</pre>
+<br>
+<pre>A reduced file will look like:
+moon1 moon2 moon3
+-263  360   460
+-260  361   465
+</pre>
+<br>
+<br>
+<hr>
+<br>
+
+<?php include 'navbar.php';?>
+<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
+</body></html>
+

@@ -1,0 +1,29 @@
+<html>
+<!--<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">-->
+<link rel="stylesheet" type="text/css" href="style.css">
+<!--<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">-->
+<title> Astronomy 3520: Lab 4 </title>
+<body> 
+<head><h1><center> ASTR 3520: Lab 4</center></h1></head>
+<!--<?php include 'tracker.php';?>-->
+<center>
+    <br> The assignment: <a class="norm" href="Lab4.pdf">Lab 4: Ionized Nebulae</a>    
+    <br> You should follow <a href="http://www.ifa.hawaii.edu/~joshw/IRAFtutorial/index.html">Josh Walawender's IRAF tutorial</a>
+    up through the <a href="lab3web/sample_apextraction.html">line identification</a> section, at which point you should check 
+    out the <a href="lab3web/sample_apextraction.html">helpful tips on <tt>apall</tt> and <tt> identify</tt></a> page.
+    <br>
+    <br> The above should have looked quite familiar since it's identical to lab 3.  From here, things change.
+    <br> You can't simply use Vega to flat field in this case - if you do, you'll be multiplying your spectral 
+    lines by a blackbody, which is not the same at all wavelengths.  You could potentially flat field by using
+    the Planetary Nebula's central star if you know its temperature and have good enough signal to noise.  
+    Otherwise, you'll probably need to correct for atmospheric and interstellar reddening by comparing line ratios 
+    (e.g. H-alpha/H-beta).
+    <br> To identify the lines at different wavelengths, 
+    <a href="http://www.ifa.hawaii.edu/~joshw/classes/nebular_lines.html">Josh Walawender's Nebular Line List</a>
+    will prove helpful.  So will the IRAF task <tt><a href="http://iraf.net/irafhelp.php?val=nebular.temden&help=Help+Page">temden</a></tt>.
+<br><br><br><a class="special" href="index.html">ASTR3520 home</a>
+<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
+</body></html>
+
+

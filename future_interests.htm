@@ -1,0 +1,125 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="stylesheet" type="text/css" class="norm" href="style.css">
+<link rel="icon" type="image/gif" href="favicon8.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Astronomy - Future Interests</title>
+</head>
+<?php 
+$page="future_interests.htm";
+include 'tracker.php';?>
+
+<center><h2>Future interests / potential projects</h2>
+<table align="center" width=800><tr><td>
+            <h3> Science </h3>
+
+    I find the creation of black holes to be an extremely interesting process.
+    SN 2006gy, whether or not it formed a black hole, is an awesome source
+    (literally inspiring awe), and I like both the idea that it was a single
+    supermassive star (a loose term in context) like Eta Carinae and a
+    more-than-massive star formed from collisions to be ~100's of solar masses
+    (e.g. 
+<a class="norm" href="http://cdsads.u-strasbg.fr/cgi-bin/nph-data_query?bibcode=2007Natur.450..388P&db_key=AST&link_type=ABSTRACT&high=468150f14401005">
+    Portegies Zwart et al. 2007</a>).  I could easily become very interested in
+<a href="http://cdsads.u-strasbg.fr/abs/2007ASPC..363..280S">stellar
+    collisions</a>, if convinced that they are as common as claimed.  Update:
+SN 2006gy has been a hot topic lately, and the most common scenario is no
+longer the supermassive collisionally-formed star mentioned in that paper, but
+the paper is still quite interesting and the new ideas are even more
+interesting.
+    <br>
+    <hr>
+    <a href="outreach.htm"><h3> Outreach </h3></a>
+    In general, I like sharing pretty pictures with the community, which is the
+    most basic level of outreach.  Some of my images can be seen at <a
+        class="norm" href="http://picasaweb.google.com/keflavich/L111"> L111
+    </a> , <a class="norm" href="http://picasaweb.google.com/keflavich/W345">
+    W345 </a>, and the NRAO Photo Contest winner and related at <a class="norm"
+    href="http://picasaweb.google.com/keflavich/GC"> GC </a>
+    <br>
+    <br> However, that's not enough.  Ideally, an outreach project should allow
+    the community to interact, understand how astronomers work, and develop a
+    deeper interest in the topic.
+    <br>
+    <br> One interesting idea would be the creation of a 
+    <a class="norm" href="game_idea.htm">flash game</a> that could provide
+    useful scientific results.  I'll probably never make that, but it's a fun
+    idea.
+    <br>
+    <!--    <br> Some of my other outreach activity is recorded on my <a class="norm" href="talks.htm">talks page</a>.-->
+    <br>
+    <hr>
+            <h3> Software</h3>
+
+     Through my work on the <a class="norm" href="http://sage.stsci.edu/">SAGE
+         survey</a>, I have also become interested in developing data
+     processing software.  I wrote my own scripts using <a class="norm"
+         href="http://pdl.perl.org">the Perl Data Language</a> to display
+     combinations of spectral energy distributions and cutout images, sort
+     through databases searching for a combination of parameters, and
+     interpolate individual velocity cut images at a number of position angles
+     into a complete data cube.  I use Python instead of PDL now because it's
+     better supported and (somewhat) easier to install.
+    <br>
+    <br> <a class="norm" href="software.htm">My codes</a> are not particularly
+    fast, but they weren't too difficult to write and allow me to analyze large
+    data sets with little difficulty.
+    <br>
+<!--    <br> I believe data cube analysis and visualization is going to be extremely important for research in the 
+    near future, particularly with the power of ALMA and the EVLA that will be available in a few years.  
+    Fabry-Perot instruments are also capable of producing velocity cubes that can, in some cases, represent
+    3-dimensional shapes.  3d stuff also looks cool.
+    <br>-->
+    <br> Data analysis and reduction tools are
+    presently somewhat antiquated.  Command line tools like IRAF and AIPS are
+    tremendously powerful, but have rather obtuse interfaces.  Python's wrapper
+    for IRAF, pyraf, has partially remedied the problem for IRAF, and CASA will
+    presumably do the same for radio reduction software (although in beta, its
+    graphics are slow).  However, past the reduction stage, analysis is not
+    always intuitive.  Graphical analysis tools are useful and getting better,
+    <a class="norm" href="ds9tips.htm">DS9</a> is a wonderful tool that is
+    underutilized by the majority of astronomers who know little of its
+    capabilities past simple image display.  The folks at CFA who support it are 
+    also very helpful and responsive.  <a class="norm"
+        href="http://star-www.dur.ac.uk/~pdraper/gaia/gaia.html">GAIA</a>, part
+    of the UK's <a class="norm"
+        href="http://www.jach.hawaii.edu/software/starlink/download.html">Starlink</a>
+    package, is a powerful data-cube analysis tool that allows instantaneous
+    extraction of the third axis at any point on the image.  
+    <br>
+    <br>The UK group has excellent
+    support even for their unfunded, unsupported software - I think they're a wonderful
+    example of what astronomical computing SHOULD be but isn't.  Most astronomers aren't
+    very good with computers, so a well-funded and competent support group can greatly
+    enhance their efficiency.
+    <br>
+    <br> The problems in the near future are going to be an excess of data.
+    With ALMA's coverage of far too many spectral lines, there is no simple
+    solution: they need to be identified somehow.  However, for data sets that
+    will come out of Pan-STARRs and (if funded) the LSST, hunting through the
+    archives will be inefficient or impossible.  Scripting in perl, python, or
+    whatever language is available may be the most efficent way to get through
+    the data once the raw images have already been processed through some sort
+    of source extraction algorithm.  
+    <br>
+    <br> Thankfully, the excess of data will probably make scientific verification much simpler, and there will be
+    no image reduction required for the extremely large-scale surveys (I don't
+    know if I really believe that).  Because the work of a researcher can be
+    reduced to analysis only, science goals will be achieved more efficiently.
+    <br>
+    <br> Computer simulation and modeling is also becoming more efficient, and it seems that modeling groups have had
+    problems of excess data for over a decade.  I hope, though, that the smaller scale models (e.g. DUSTY, STARBURST99,
+    2DUST, and their ilk) can be wrapped and made more useable by the general community.  As they stand, any of these
+    codes has a very steep learning curve and requries a very specialized understanding to use effectively.
+    <br>
+    <br> Maybe I'm interested in astronomical computing.
+    <br> 
+    <hr>
+    <br>
+
+<?php include 'navbar.php';?>
+</body>
+
+</html>

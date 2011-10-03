@@ -1,0 +1,154 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" type="image/gif" href="favicon8.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>IMALIGN using DS9</title>
+</head>
+<?php 
+$page="imalign_guide.htm";
+include 'tracker.php';?>
+<script language="javascript">
+    <!--
+    function click(imname,imsrc) {
+        document[imname].
+            onclick = "click2(" + imname + "," + document[imname].src + ")";
+        document[imname].src = imsrc;
+        document[imname].width = 800;
+    }
+    function click2(imname,imsrc) {
+        document[imname].
+            onclick = "click(" + imname + "," + document[imname].src + ")";
+        document[imname].src = imsrc;
+        document[imname].width = "";
+    }
+    function toggle(myself,first,second) {
+    //    image=myself.getElementsByTagName('img')[0];
+    //    image.src =(image.src == first) ? second:first;
+        var re = new RegExp(first)
+        document[myself].src =  (document[myself].src.match(re)) ? "images/ds9/" + second : "images/ds9/thumbs/" + first;
+    //    document[myself].src =  (document[myself].src == first) ? first : second;
+        document[myself].width = (document[myself].width==100) ? 800:100;
+    //    myself.src = (myself.src == first) ? second:first;
+    //    return true;
+    }
+    -->
+</script>
+    <body>
+    <center>
+    <table align="center" width=800><tr><td>
+        <h2> DS9 and IMALIGN </h2>
+        It can be much easier to use DS9 than <a class="astro" href="imalign_guide.htm">IMEXAM </a> when preparing files for imalign.
+        <br>
+        <br>Click the links below to expand them
+<!--        <br><small>If you're not using Firefox or a similarly compliant browser, this page will not work properly
+    (it uses a deprecated tag for HTML preformatting)</small>-->
+    </tr></table>
+    <br>
+    <br>
+    <table align="center" width=800 rules=groups frame=hsides border=2>
+        <tbody><tr><td>
+
+
+                    <ol> <li> <div id="pickstarslink" style='display: inline'>
+                        <a href=# onClick="javascript: pickstars.style.display='inline'; pickstarslink.style.display='none'; return false;"> 
+                         Pick your stars </a>
+                    </div>
+                    <div id='pickstars' style='display: none'>
+                        <a href=# onClick="javascript: pickstars.style.display='none'; pickstarslink.style.display='inline'; return false;"> 
+                        Pick your stars </a>
+                        <ol type=a><li>Use the DS9 regions tool: <code>Edit:Pointer</code>
+                            <li>Select the arrow point (or a point of your choice): <code>Regions:Shape:Arrow Point</code>
+                            <br><img src="images/ds9/thumbs/ds9_pickregion_tn.jpg" width=100
+                            onclick="toggle('ds9_pickregion','ds9_pickregion_tn.jpg','ds9_pickregion.jpg')" name="ds9_pickregion"> 
+                            <li> Click on a selection of non-saturated but bright point sources (stars)
+                            <br><img src="images/ds9/thumbs/ds9_IDstars_tn.jpg" width=100
+                            onclick="toggle('ds9_IDstars','ds9_IDstars_tn.jpg','ds9_IDstars.jpg')" name="ds9_IDstars"> 
+                        </ol>
+                    </div>
+
+                    <li> <div id="outstarlistlink" style='display: inline'>
+                        <a href=# onClick="javascript: outstarlist.style.display='inline'; outstarlistlink.style.display='none'; return false;"> 
+                         Output your star list to a text file </a>
+                    </div>
+                    <div id='outstarlist' style='display: none'>
+                        <a href=# onClick="javascript: outstarlist.style.display='none'; outstarlistlink.style.display='inline'; return false;"> 
+                            Output your star list to a text file </a>
+                        <ol type=a><li>Change the output format for the DS9 Region File: <code>Regions:File Format:X Y</code>
+                            <li>Change the file coordinate system: <code>Regions:File Coordinate System:Image</code>
+                            <br><img src="images/ds9/thumbs/ds9_region_coords_tn.jpg" width=100
+                            onclick="toggle('ds9_region_coords','ds9_region_coords_tn.jpg','ds9_region_coords.jpg')" name="ds9_region_coords"> 
+                            <li>Save the region file: <code>Regions:Save Regions...</code>
+                            <br> (e.g. starcoords.txt)
+                        </ol>
+                    </div>
+
+
+                    <li> <div id="relshiftslink" style='display: inline'>
+                        <a href=# onClick="javascript: relshifts.style.display='inline'; relshiftslink.style.display='none'; return false;"> 
+                         Find relative shifts between images </a>
+                        </div>
+                    <div id='relshifts' style='display: none'>
+                        <a href=# onClick="javascript: relshifts.style.display='none'; relshiftslink.style.display='inline'; return false;"> 
+                            Find relative shifts between images </a>
+                        <ol type=a><li> Load all of your images into DS9 (either <code>Frame:New Frame</code> and <code>File:Open</code> or 
+                            <code> ds9 ngc6888_4m_Ha_[0-3].fits &amp; </code> )
+                            <li> Load regions (<code>Regions:Load Regions...</code>) or select all, copy, and paste
+                            <li> Tab key or <code>Frame:Next</code> to switch between frames
+                            <li> Create a Ruler region (<code>Regions:Shape:Ruler</code>), draw it between a star and the point region
+                            associated with that star
+                            <br><img src="images/ds9/thumbs/ds9_ruler_tn.jpg" width=100
+                            onclick="toggle('ds9_ruler','ds9_ruler_tn.jpg','ds9_ruler.jpg')" name="ds9_ruler"> 
+                            <li> Double-click the ruler and find its X,Y dimensions 
+                            <li> Record delta-X and delta-Y from the ruler.  Remember that you want the signs that match REF-IMAGE
+                            and that the shifts only have to be accurate to within a few (about 5) pixels
+                            <br> (e.g. shiftlist.txt)
+                            <li> Copy and paste all regions, modify your ruler region, and repeat the previous two steps for each image
+                        </ol>
+                        <br>Alternatively, just use the 'c' key to find the coordinates of your cursor and write that to the 'Coordinates' screen
+                        in DS9.  You can then put that into a file and do (ref-coordinate) for each line using awk:
+                        <br><code> awk '{printf("%5i %5i", refx-$1, refy-$2)}' ds9coordlist &gt; shiftlist.txt </code>
+                        <br><br>
+                    </div>
+
+                        <li> <div id="runimalignlink" style='display: inline'>
+                        <a href=# onClick="javascript: runimalign.style.display='inline'; runimalignlink.style.display='none'; return false;"> 
+                         Run imalign </a>
+                        </div>
+                        <div id='runimalign' style='display: none'>
+                        <a href=# onClick="javascript: runimalign.style.display='none'; runimalignlink.style.display='inline'; return false;"> 
+                            Run imalign </a>
+                        <ol type=a><li> Make the fits input/output lists
+                            <br> e.g. <code>ls target1_[1-3].fits &gt; inlist.txt</code>
+                            <br><code>cat inlist.txt | sed 's/.fits/_align.fits/' &gt; outlist.txt</code>
+                            <li> Run imalign:
+                            <br><code width=80>imalign @inlist.txt target1_1.fits starcoords.txt @outlist.txt shifts=shiftlist.txt</code>
+<!--                            <br><br>(for BGPS team)
+<br><code width=80>imcentroid @inlist.txt target1_1.fits starcoords.txt shifts=shiftlist.txt </code> -->
+                        </ol>
+                        </div>
+
+<!--                        <li> <div id="convtoradeclink" style='display: inline'>
+                        <a href=# onClick="javascript: convtoradec.style.display='inline'; convtoradeclink.style.display='none'; return false;"> 
+                         (for BGPS reductions) Convert x/y offsets to RA/Dec offsets </a>
+                        </div>
+                        <div id='convtoradec' style='display: none'>
+                        <a href=# onClick="javascript: convtoradec.style.display='none'; convtoradeclink.style.display='inline'; return false;"> 
+                            (for BGPS reductions) Convert x/y offsets to RA/Dec offsets </a>
+                        <ol type=a>
+                            <li> Copy output of imcentroid into a file: either copy text off screen, or
+                            <br><code width=80>imcentroid @inlist.txt target1_1.fits starcoords.txt shifts=shiftlist.txt  &gt; imcentroidoutput.txt </code>
+                            <li> Load up IDL with Adam's irafcoords_to_radecoff.pro in the path
+                            <li> Run the code: 
+                            <br><code width=80>irafcoords_to_radecoff,'imcentroidoutput.txt','field_shifts.txt'</code>
+                        </ol>
+                    </div> -->
+            <br>
+            </td></tr>
+        </table>
+        <br>
+    <?php include 'navbar.php';?>
+    </body>
+</html>

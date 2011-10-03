@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" type="image/gif" href="favicon8.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Rice University Astrophysics P491 project / Senior Thesis</title>
+</head>
+<?php 
+$page="ricethesis.htm";
+include 'tracker.php';?>
+<script language="javascript">
+<!--
+function click(imname,imsrc) {
+    document[imname].
+onclick = "click2(" + imname + "," + document[imname].src + ")";
+    document[imname].src = imsrc;
+    document[imname].width = 800;
+}
+function click2(imname,imsrc) {
+    document[imname].
+onclick = "click(" + imname + "," + document[imname].src + ")";
+    document[imname].src = imsrc;
+    document[imname].width = "";
+}
+function toggle(myself,first,second) {
+//    image=myself.getElementsByTagName('img')[0];
+//    image.src =(image.src == first) ? second:first;
+    var re = new RegExp(first)
+    document[myself].src =  (document[myself].src.match(re)) ? "p491/" + second : "p491/thumbs/" + first;
+    document[myself].width = (document[myself].width==100) ? 800:100;
+//    myself.src = (myself.src == first) ? second:first;
+//    return true;
+}
+    -->
+</script>
+
+<p align="center"><h2> Undergraduate Senior Thesis under <a class="norm" href="http://sparky.rice.edu/~hartigan/">Pat Hartigan</a></p></h2>
+<table align="center" width=800><tr><td>
+<p align="center"><a href="Astronomy/measurements.xls" class="norm">HH34 measurements as of 
+3/20/06</a></p>
+
+<p align="center"><a href="Astronomy/shock_model.htm" class="norm">Shock Model fits page</a></p>
+
+<br> My senior thesis project involved a little bit of programming work on a FORTRAN 77 code
+that modeled emission lines from shocks.  I cannot include that here because I only modified
+the code in a small way and did not write it; I don't believe it has been released under any
+completely free license.
+<br> My greater contribution was a script that modified the parameter file used as input for
+the shock model, ran the code, and extracted the relevant data.  I created a database of a
+variety of line ratios corresponding to different temperature, density, and other physical
+conditions within a shock region (e.g. a Herbig Haro object).
+<br> Some samples of the results of my work:
+<center>
+<br><img src="p491/thumbs/figure_tn.gif" 
+    onclick="toggle('figure','figure_tn.gif','figure.gif')" 
+    name="figure"> <br> Dominant [Fe II] lines for a variety of physical conditions
+<br><img src="p491/thumbs/feiilevels_tn.jpg" 
+    onclick="toggle('feiilevels','feiilevels_tn.jpg','feiilevels.jpg')" 
+    name="feiilevels"> <br>A sample Fe energy level diagram with numbers indicating
+the "line number" in the code.
+<br><img src="p491/thumbs/ratio17.93to25.99_tn.gif" 
+    onclick="toggle('ratio17.93to25.99','ratio17.93to25.99_tn.gif','ratio17.93to25.99.gif')"
+    name="ratio17.93to25.99"><br>
+A plot of the ratio of two lines for a variety of temperatures over a range of number densities.
+<br><img src="p491/thumbs/tempcut10000broke_tn.gif" 
+    onclick="toggle('tempcut10000broke','tempcut10000broke_tn.gif','tempcut10000broke.gif')"
+    name="tempcut10000broke"><br>
+This, and those below it, show the strongest lines and indirectly the line ratios at a given 
+temperature for a range of number densities
+<br><img src="p491/thumbs/tempcut2000_tn.gif" 
+    onclick="toggle('tempcut2000','tempcut2000_tn.gif','tempcut2000.gif')"
+    name="tempcut2000"><br>
+<br><img src="p491/thumbs/tempcut3000broke_tn.gif" 
+    onclick="toggle('tempcut3000broke','tempcut3000broke_tn.gif','tempcut3000broke.gif')"
+    name="tempcut3000broke"><br>
+<br><img src="p491/thumbs/tempcut5000_tn.gif" 
+    onclick="toggle('tempcut5000','tempcut5000_tn.gif','tempcut5000.gif')"
+    name="tempcut5000"><br>
+
+
+<h2> Powerpoint Presentations </h2>
+<a class="norm" href="Astronomy/Ginsburg%20-%20FeII%20presentation%202.ppt">[Fe 
+II] Project - Presentation 
+11/28/05</a></p>
+<a href="Astronomy/FeII%20Emission%20Lines%20in%20Shocks.ppt" class="norm">
+[Fe II] Project - Presentation 10/24/05</a> </p>
+<a href="Astronomy/Ginsburg%20-%20FeII%20presentation%203.ppt" class="norm"> [Fe II] Project - 
+Presentation 3/6/06</a></p>
+<a class="norm" href="Astronomy/Ginsburg%20-%20FeII%20Final%20Presentation.ppt">
+[Fe II] Project - Presentation 4/29/06</a></p>
+<a href="Astronomy/rurs%20poster.ppt" class="norm">[Fe II] Project - RURS poster</a></p>
+<a href="Astronomy/rurs%20poster%20small.ppt" class="norm">[Fe II] Project - RURS poster 
+(34x46 and updated)</a></p>
+<a href="Astronomy/measurements.xls" class="norm">(excel spreadsheet) HH34 measurements as of 
+3/20/06</a></p>
+
+<a href="Astronomy/shock_model.htm" class="norm">(defunct) Shock Model fits page</a></p>
+
+<br>
+<?php include 'navbar.php';?>
+</html>
+

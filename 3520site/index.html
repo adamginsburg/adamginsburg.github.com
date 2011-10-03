@@ -1,0 +1,159 @@
+<html>
+<!--<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">-->
+<link rel="stylesheet" type="text/css" href="style.css">
+<!--<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">-->
+<title> Astronomy 3520: Observation and Instrumentation II: Spectroscopy </title>
+<body> 
+		<head><h1><center> ASTR 3520: Observational Spectroscopy Home</center></h1></head>
+<!--		<center><font size="2"> Think an observational page needs some images?  Send me recommendations.</font>
+<br> <center><h3> Office Hours:</h3>
+                By appointment, or 11-12 MW in C329 for Adam and 2-3 PM WR in C323A for John.  Adam's e-mail addresses are adam.ginsburg@colorado.edu and keflavich@gmail.com.-->
+<center>
+<br> 
+<!--<?php include 'tracker.php';?>-->
+<br> <img src="fieldtrip/class_vla.jpg" title="Astronomy 3520 class of 2007 at the Very Large Array" >
+<br>
+ <h3><a href="observing.htm" class="special">Observing Page</a></h3>
+ <h3><a href="fieldtrip.html" class="special">Field Trip Page</a></h3>
+ <br>
+<br> <h3> Assignments: </h3>
+<p><a href="HW1.pdf" class="norm">Homework 1</a>, the <a href="IMAGES/hw1_images.tar">images
+		for homework 1</a> in a .tar file, the <a
+		href="http://www.ifa.hawaii.edu/~joshw/IRAFtutorial/index.html">IRAF
+		Tutorial by Josh Walawender</a>, and the <a
+		href="http://www.nofs.navy.mil/data/FchPix/cfra.html">USNO Finder Chart
+		Service</a>
+<br>&nbsp;&nbsp; <a href="hw1_answerkey.pdf">Answers to HW1 Analysis Questions</a>
+<br>
+<br> <a href="Lab2.pdf" class="norm">Homework 2 (lab) </a> and the <a
+                href="http://www.ifa.hawaii.edu/~joshw/classes/sbo_fits.html">FIT to fits conversion</a>
+             for <a href="spectrometer.html">SBO 24"</a> spectra, plus <a href="unix.html#sed">understanding sed</a>
+		<br> Spectral Data Reduction: <a href="http://www.ifa.hawaii.edu/~joshw/classes/nebular_lines.html">Nebular Line List</a>,
+                <a href="http://www.ifa.hawaii.edu/~joshw/IRAFtutorial/IRAFintro_06.html">Spectroscopic Data Reduction Tutorial</a>,
+                <a href="http://physics.nist.gov/PhysRefData/ASD/lines_form.html">NIST Atomic Spectral Line Database</a>
+		<br>
+                <br> <a class="norm" href="lab3.html">Lab 3 webpage</a>  (now a separate page to ease navigation)
+		<br> <a class="norm" href="lab4.html">Lab 4: Ionized Nebulae </a> (ditto lab 3)
+                <br> <a  href="lab3-4signup.html">Lab 3 and 4 star and PN signup</a>
+                <br> <a href="spectrometer.html">SBO Spectrometer Tips</a>
+		<br>
+                <br> Semester Project Links:
+                <br> <a class="norm" href="Proposal_semester_project.pdf">Semester Project Proposal</a>
+                <br> <a class="norm" href="exposuretime.pdf">Exposure Time Calculation Guide</a>
+                <br> <a class="norm" href="IRAF.html#guider">How to get the right guider images</a>
+                <br> <a class="norm" href="http://www.apo.nmsu.edu/arc35m/Instruments/ARCES/images/echelle_data_reduction_guide.pdf">APO Echelle Data Reduction Guide</a>
+                <br> <a href="apoechelle.html">My guide to APO Echelle Data Reduction</a> with contributions from Julie Thorburn and John Barentine
+                <br>
+                <br> Optional Homeworks:
+                <br> <a href="homework/Home_2.pdf">Blackbodies, flux from an object, and the hydrogen spectrum</a>
+                <br> <a href="homework/hw4.pdf">Ionized Nebulae</a>
+                <br> <a href="homework/hw5.pdf">Radio Telescope Basics</a>
+                <!--<br><br><h3>  Semester Project:</h3>
+  The labs are designed to prepare you for your semester project, for which you
+  will be submitting an observing proposal, doing the observations, and then
+  writing a paper and presenting it to the class.  While the observations will
+  be carried out in groups, individual contributions are going to be part of the
+  grading criteria. <br>-->
+
+
+ <h4> Lectures and handouts: </h4>  <a href="ASTR3520_07_1.ppt">Super-Lecture</a>
+ <br> <a href="ASTR3520_sept11lecture_spectra.pdf">Adam's Lecture 9/11</a>
+ <br> <a href="astr3520_lectureSept13.2007.pdf">Adam's Lecture 9/13</a>
+ <br> <a href="Syllabus.pdf"> Syllabus </a>
+ <br> <a href="Radio_Astronomy.ppt">Radio Astronomy Lecture</a>
+<br><h4>Site index:</h4>
+<a href="IRAF.html#errors">Help with IRAF errors</a>
+<br><a href="IRAF.html#quicktips">IRAF quick tips</a>
+<br><a href="unix.html">UNIX intro</a>
+<br><a href="unix_editors.html">UNIX editors intro</a>
+<br><a href="remote_login.html">Remote Login instructions</a>
+<br><a href="spectrometer.html">SBO 24" spectrometer information</a>
+ <h3><a href="observing.htm" class="special">Observing Page</a></h3>
+		<!--<br> <a href="IMAGES/"> Images Directory </a>-->
+<!--<h3>  Homework Policy:</h3>
+
+  Since the labs are to be done as groups, each group only needs to turn in one
+copy of each lab.  However, it is essential that you each learn all of the
+important steps outlined in the labs, so please don't allow just one person to
+do the work.  For homework 1, please turn in individual copies - you don't need
+any group effort to complete that assignment, and it should be straightforward
+enough to accomplish individually.  <br>-->
+<!--
+<br><h2 id="IRAF">  IRAF Notes:</h2><h3> Instructions for dealing with IRAF errors on cosmos       </h3>
+  Since the changeover to the new cosmos server, your login.cl files may be
+  incorrect.  They currently have home defined as /raid/home/(username)/etc, but
+  this is no longer correct; you will receive errors saying that iraf could not
+  modify uparm$(taskname).  You should change this by removing the /raid at the
+  front of the path.  This can be done using any <a href="unix_editors.html">editor</a>: look
+  for the line "set home = "/raid/home/..." and modify it.  <br>
+
+<br> You can try to re-run mkiraf, which will create a new login.cl for you.
+If you had any settings saved in login.cl, it will overwrite them.  You must
+also go on and change your imdir to <b>"home$images/"</b>.  Search for the line <b>
+#set imtype   "imh"</b> and change it to read <b>set imtype "fits"</b> (remove the # at the beginning of the line).
+<br>-->
+<!--<br> You can also simply enter this command at the command prompt in whichever
+directory your login.cl is located:
+<br> sed -i 's:/raid/home:/home:' login.cl
+<br> sed is a unix command that allows you to replace text (and a few other
+operations) by searching for complicated regular expressions (i.e. patterns of
+text).  It is a powerful tool, and along with awk can save you a lot of time if
+you have to, for example, rename a lot of files.  <br> -->
+<!--<br><h3> Data from the SBO 24" telescope spectrometer </h3>
+ To transfer data from the 24" telescope to your home directory, use the program
+ "WinSCP".  Login to cosmos.colorado.edu with your normal username and password.
+<br> The software at SBO saves the fits files generated as .fit files.  <a
+		href="http://www.ifa.hawaii.edu/~joshw/classes/sbo_fits.html">Josh
+		Walawender's</a> solution also changes the stored variable type to
+            signed (+/-) integer.-->
+<!--, but I prefer to do things on a single line if possible.  Another method:
+<br> ls *.FIT | sed 's/\(*\).FIT$/mv \1.FIT \1.fits/' | bash
+<br> This command works by listing all .FIT files (ls *.FIT), <a
+		href="http://en.wikipedia.org/wiki/Pipeline_%28software%29">piping</a>
+that output to the <a href="http://en.wikipedia.org/wiki/Sed">stream editor
+		sed</a>, which creates the command "mv (filename).FIT (filename).fits"
+for each file.  The final pipe to bash executes the command; you could
+substitute any shell (e.g. csh) here.
+<br> Another option is: 
+<br>ls *.FIT | sed -e p -e 's/FIT$/fits/' | xargs -i -n2 mv-->
+<br>
+<br><h3>UNIX help:</h3> <br>For those who are not familiar
+with unix, I have created a brief <a href="unix_editors.html">introduction to unix
+		editors</a> page and am working on a very brief and general <a
+		href="unix.html">introduction to unix and the command line</a> page.  
+If you want to <a href="remote_login.html">login remotely</a>, make sure you have a good internet 
+connection and, at least for the time being, a unix machine (macs are OK, windows are not).
+<a href="mailto:adam.ginsburg@colorado.edu">E-mail Adam</a> if you have any questions! 
+<br>
+<br> <h3> External Links (pilfered from <a href="http://casa.colorado.edu/~benderan/teaching/astr3510/">Amy Bender's ASTR 3510 page</a>): </h3>
+<p><a Href="http://http://cleardarksky.com/c/SomBoschObCOkey.html">SBO Clear Sky Clock</a></p>
+<p><a HREF="http://lyra.colorado.edu/sbo/">SBO Website</a></p>
+<p><a HREF="http://iraf.noao.edu/docs/docmain.html">IRAF Project Website Documentation</a>
+<p><a HREF="http://www.iraf.net">IRAF.net</a> is a more comprehensive resource with a searchable archive of previous IRAF questions.  It is now also a forum.
+<p><a HREF="http://adswww.harvard.edu/">NASA Astrophysics Data Service </a>
+<p><a href="http://arxiv.org/archive/astro-ph/">Astro-ph (arxiv.org)</a>
+
+<p><a HREF="http://imagiware.com/astro/skycalendar.cgi">Astronomical Sky Calendar</a></p>
+<p><a href="http://stdatu.stsci.edu/cgi-bin/dss_form">STScI Digitized Sky Survey Retrieval Form</a></p>
+<p><a href="http://simbad.u-strasbg.fr/simbad/">SIMBAD Astronomical Database</a></p>
+<p><a href="http://nedwww.ipac.caltech.edu/">NASA/IPAC Extragalactic Database</a></p>
+<p><a href="http://irsa.ipac.caltech.edu/">NASA/IPAC Infrared Science Archive</a> includes Digital Sky Survey, Sloan DSS, and 2MASS (infrared) finder charts</p>
+<br><h4>Site index:</h4>
+<a href="IRAF.html#errors">Help with IRAF errors</a>
+<br><a href="IRAF.html#quicktips">IRAF quick tips</a>
+<br><a href="unix.html">UNIX intro</a>
+<br><a href="unix_editors.html">UNIX editors intro</a>
+<br><a href="remote_login.html">Remote Login instructions</a>
+<br><a href="spectrometer.html">SBO 24" spectrometer information</a>
+ <h3><a href="observing.htm" class="special">Observing Page</a></h3><br>
+<br>
+<br>
+<br> <p> Created 9/5/07 by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> (adam.ginsburg@colorado.edu)
+
+<br> Class taught by <a href="http://casa.colorado.edu/~bally/">John Bally</a>
+
+</body>
+</html>
+
+

@@ -1,0 +1,47 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" type="image/gif" href="favicon8.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Editing Postscript Files</title>
+</head>
+<?php 
+$page="editingps.htm";
+include 'tracker.php';?>
+<body>
+<table align="center" width=800><tr><td>
+    <h1> Editing Postscript </h1>
+    It might seem odd to want to edit a postscript file - which is generally an image - 
+    via a text interface, but it can be quite useful and is not terribly difficult.
+    It came as a surprise to me when I discovered that postscript is actually human-
+    readable, but except for the image binary sections, it is.
+    <br>
+    <br>
+    For the example, we'll use the DS9-generated postscript <a class="norm" href="images/ds9dustmapps.ps">image</a>
+    from the <a class="norm" href="ds9tips.htm#coordgrid">DS9 Tips Page</a>.
+    <br>
+    <br> To simply remove the colorbar, delete lines 347-393.  This is the first image section of the postscript, I
+    identified it as the colorbar by noting that it is much smaller than the other image section.  Now we know that
+    DS9 chooses to draw the colorbar first.  Lines 333-346 should also be deleted as they are setup commands for the
+    colorbar.
+    <br>
+    <br>
+    The next - and for me final - step is to tighten the bounding box 
+    so that the ps file does not include extra
+    whitespace.  
+    <br>
+    <br> The original bounding box is:
+    <tt> %%BoundingBox: 36 226 576 566</tt>
+    <br>I found that the bounding box parameters 
+    <tt>  %%BoundingBox: 120 256 455 555 </tt> worked well via a simple process guess-and-check using ghostview.
+    <br>
+    <br> I found <a class="norm" href="images/ds9dustmapmodps.ps">the results</a> to be significantly nicer than
+    the original DS9-generated image.
+    <br>
+
+        <br><hr><br>
+<?php include 'navbar.php';?>
+    </body>
+</html>

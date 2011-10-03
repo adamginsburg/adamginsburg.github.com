@@ -1,0 +1,20 @@
+ls *_ch4_* | sed 's/\(SSTISAGE1C_J[0-9.-]*\)_glm_mosaic_ch4_sage1_2s.\(.*\)/mv & \1_irac_ch4.\2/' | bash
+ls *_ch3_* | sed 's/\(SSTISAGE1C_J[0-9.-]*\)_glm_mosaic_ch3_sage1_2s.\(.*\)/mv & \1_irac_ch3.\2/' | bash
+ls *_ch2_* | sed 's/\(SSTISAGE1C_J[0-9.-]*\)_glm_mosaic_ch2_sage1_2s.\(.*\)/mv & \1_irac_ch2.\2/' | bash
+ls *_ch1_* | sed 's/\(SSTISAGE1C_J[0-9.-]*\)_glm_mosaic_ch1_sage1_2s.\(.*\)/mv & \1_irac_ch1.\2/' | bash
+ls *mips70* | sed 's/\(SSTISAGE1C_J[0-9.-]*\)_sage_mips70_mipsenh_21jun06.cal.\(.*\)/mv & \1_mips70.\2/' | less
+ls *mips160* | sed 's/\(SSTISAGE1C_J[0-9.-]*\)_sage_mips160_mipsenh_21jun06.cal.fill_gap.modsub.\(.*\)/mv & \1_mips160.\2/' | less
+ls *mips24* | sed 's/\(SSTISAGE1C_J[0-9.-]*\)_sage_mips24_montage32_rot_22jun06.cal.\(.*\)/mv & \1_mips24.\2/' | less
+ls | grep .*_a[JHK].* | sed 's/\(J[0-9.-]*\)_a\([JHK]\).\(.*\)/mv & SSTISAGE1C_\1_2MASS_\2.\3/' | less
+
+
+sed -i bup 's/_glm_mosaic_ch4_sage1_2s/_irac_ch4/g' *.php
+sed -i bup 's/_glm_mosaic_ch3_sage1_2s/_irac_ch3/g' *.php
+sed -i bup 's/_glm_mosaic_ch2_sage1_2s/_irac_ch2/g' *.php
+sed -i bup 's/_glm_mosaic_ch1_sage1_2s/_irac_ch1/g' *.php
+sed -i bup 's/_sage_mips70_mipsenh_21jun06.cal/_mips70/g'  *.php
+sed -i bup 's/_sage_mips160_mipsenh_21jun06.cal.fill_gap.modsub/_mips160/g'  *.php
+sed -i bup 's/_sage_mips24_montage32_rot_22jun06.cal/_mips24/g'  *.php
+sed -i bup 's/_a\([JHK]\)/_2MASS_\1/g'  *.php
+
+

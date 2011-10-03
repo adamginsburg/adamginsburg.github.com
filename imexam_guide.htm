@@ -1,0 +1,55 @@
+
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" type="image/gif" href="favicon8.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>IMALIGN guide</title>
+</head>
+<?php 
+$page="imalign_guide.htm";
+include 'tracker.php';?>
+<script language="javascript">
+    <!--
+    function click(imname,imsrc) {
+        document[imname].
+            onclick = "click2(" + imname + "," + document[imname].src + ")";
+        document[imname].src = imsrc;
+        document[imname].width = 800;
+    }
+    function click2(imname,imsrc) {
+        document[imname].
+            onclick = "click(" + imname + "," + document[imname].src + ")";
+        document[imname].src = imsrc;
+        document[imname].width = "";
+    }
+    function toggle(myself,first,second) {
+    //    image=myself.getElementsByTagName('img')[0];
+    //    image.src =(image.src == first) ? second:first;
+        var re = new RegExp(first)
+        document[myself].src =  (document[myself].src.match(re)) ? "images/" + second : "images/thumbs/" + first;
+    //    document[myself].src =  (document[myself].src == first) ? first : second;
+        document[myself].width = (document[myself].width==100) ? 800:100;
+    //    myself.src = (myself.src == first) ? second:first;
+    //    return true;
+    }
+    -->
+</script>
+IMALIGN is a powerful but potentially annoying tool.
+<table align="center" width=800><tr>
+        <th>Step</th> <th>How to</th> <th> Trick with DS9</th> </tr>
+    <hr><tr><td>Select a reference image</td>
+        <td> Your reference image should be the smallest of your images if they are different sizes</td></tr>
+    <tr><td>Select stars in reference image</td>
+        <td>Use <tt>display</tt> to display an image in DS9, then use <tt>imexamine</tt> with the <tt>a,r</tt>, or <tt>x</tt> 
+            keys to find star coordinates in pixel position </td>
+
+
+
+
+        <hr><br>
+<?php include 'navbar.php';?>
+    </body>
+</html>

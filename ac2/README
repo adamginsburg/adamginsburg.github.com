@@ -1,0 +1,106 @@
+------------------------------------ 
+Introduction to the astroph.py suite
+------------------------------------ 
+ASTROPH.PY and the accompanying files are designed to generate a
+freestanding, maintenance-free web site for listing Arxiv.org files
+(or other URLs), as seen at coffee.astro.Boulder.edu.  A PHP-enabled web 
+site lists submitted articles, has an input form for submitting 
+additional articles of interest, and upon submission the site 
+automatically updates the PHP code.  Items can be subsequently 
+deleted from the list using a password-protected PHP text editor.
+
+
+Astroph.py was created at UC Los Angeles by Ian J. Crossfield and
+Nathaniel Ross.  Re-use or modification is allowed and encouraged, so
+long as proper acknowledgement is made to the original authors and
+institution.
+
+
+-----------------------------
+History:
+-----------------------------
+2010-02-11 09:41 IJC: v0.4  -- First edition w/documentation.
+2010-02-12 13:05 IJC: v0.41 -- Corrected "nexthursday" bug.
+
+---------------------------
+Contents:
+---------------------------
+Files needed to run your own astro-ph web server:
+
+runcoffee.py            --- generate HTML pages from a list of IDs/URLs
+astroph.py              --- Python module used by runcoffee.py
+coffee_*.txt            --- Header/footer for generating HTML & PHP
+astro_coffee_sample.php --- sample main web page
+listmanager.php         --- Password-protected site to edit ID list file.
+papers                  --- ASCII file list of paper IDs/URLs
+dregs.log               --- Logfile for submissions
+
+---------------------------
+Requirements & Installation
+---------------------------
+1) You need a web server with PHP and Python scripting enabled.
+Plenty of web resources exist to guide you through configuration of
+your particular web server.
+
+2) Copy the astroph.py files to your server's directory for public web
+resources.
+
+4) Set permissions. The *.php files, papers, and dregs.log will all be
+continually updated, and so need to have read/write access enabled
+(chmod 666).  You will want to update the *.txt files to customize
+your page, but after that they only need read access enabled (chmod
+444), as do the *.py files.
+
+5) Open the file "listmanager.php" in your favorite text editor.  Set
+the username and password variables at the top of the file to whatever
+you want.
+
+5) At this point, everything should be set up.  Open a terminal window
+to the appropriate directory, and type './runcoffee.py'.  After about
+a minute (see below for an explanation for the delay) the script
+should exit.  Type 'ls -lart', and you should see two new files,
+"astro_coffee.php" and "astro_coffee_temp.php".  
+
+6) Open a web browser, point it to
+'http://yourserver/astro_coffee.php', and the page should pop up.  A
+file "astro_coffee_sample.php" is also included as an example of the
+general format to expect for the file.
+
+
+-----------------------------
+The guts -- How does it work?
+-----------------------------
+Astroph.py invokes a few fairly basic python commands for URL
+retrieval, file I/O, and string manipulation, all wrapped up in a
+colorful HTML/PHP candy shell -- see the source code for more details.
+The PHP handles form submission and processing, and calls the
+underlying Python script that collects data from web pages and writes
+new HTML/PHP code.
+
+As currently implemented (v0.3) page updates can take several minutes,
+because a 30-second pause is inserted between retrieval of each
+submission's info.  This is to prevent sites from recognizing the
+script as a rampaging robot.
+
+
+------------------------------------
+Future revisions:
+------------------------------------
+Anyone with a mind toward improvements is welcome to attempt
+implementation of the following, or other, desired future features.
+As always, keep the original authors in the loop.
+
+-- smarter handling of IO, file permissions, and general web security
+
+-- Preprint objects should have a standardized structure and constructor.
+
+-- "getinfo" subfunctions for other web pages (ADS, Arxiv.org URLs, etc.)
+
+-- A locally generated article information database, so that articles'
+   data don't have to be re-loaded from the web each time the script
+   is run.
+
+-- Scripts should check for duplicate submissions
+
+-- Options for sorting by, e.g., web submission date, paper submission
+   date, type, etc.

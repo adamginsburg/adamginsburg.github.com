@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title>ASTR 3510: Observing Sign-Up</title>           
+   <style type="text/css">
+		   body {
+	background-color: black;
+	color: white;
+	font-style: normal;
+	font-family: "Times New Roman";
+	font-size:15px;
+		   }
+
+    span.left  {float:left;  text-align:left;  width:49%;}
+    span.right {float:right; text-align:right; width:49%;}
+
+    h1,h2      {text-align:center; font-weight:bold;}
+    h1         {color:#cc0000;}
+    h2         {font-style:italic;}
+    span.ugrad {color:#0000ff; font-weight:bold;}
+    span.grad  {color:#ff0000; font-weight:bold;}
+    span.other {color:#ff0000; font-weight:bold;}
+    span.note  {color:#0000FF; font-weight:bold;font-size:medium;}
+	td.time   {border:1px solid #ffffff; text-align:center}
+	td.cal    {border:1px solid #ffffff; height:150px}
+    th         {text-align:center; padding:5px; border:1px solid #ffffff;
+                width:150px;}
+    tr.top     {vertical-align:top; border: 1px solid #ffffff}
+		a:link		{ color:yellow }
+		a:visited	{ color:yellow} 
+		a:visited	{ color:#FFCC00 }
+		a:active	{ color:cyan }
+		a:hover		{ color:cyan }
+		a {text-decoration: none; }
+  </style>
+</head>
+
+
+<body>
+
+  <p>&nbsp;</p>
+  <h1> ASTR 3510<br/>Observing Sign-Up Page </h1>	
+  <p>&nbsp;</p>
+
+    <table align="center" width=800><tr><td>
+  <center>
+
+  <p><span class="note">Please only sign up one group per night unless the groups discuss and choose to split the night early/late.</span></p>
+                <br> <a href="spectrometer.html">Spectrometer Tips</a>
+  <hr/>
+
+  <div><br/><br/></div>
+  <form method="post" action="cgi-bin/read_names.pl">      
+    <table>
+      <tr>
+        <td style="width:15%">Select Night:</td>
+        <td style="width:10%"><select name="month">
+                <!--<option>September</option>-->
+                              <option>September</option>
+                              <option>October</option>
+                              <option>November</option>
+                              <option>December</option>
+                              </select></td>
+        <td style="width:75%"><select name="day">
+<!--#exec cgi="cgi-bin/daysofmonth.pl"-->
+                              </select></td>
+      </tr>
+
+      <tr>
+        <td>Observers' Names:</td>
+        <td colspan="2">
+            <input type="text" name="name" size="75" maxlength="100"
+                   value="Enter a comma separated list of group members or your group number."/>
+        </td>
+      </tr>
+      <!--
+       <tr>
+        <td>Time Slot:</td>
+        <td><select name="time">
+            <option>Early</option>
+            <option>Middle</option>
+            <option>Late</option>
+            <option>Meet with Fabio</option>
+	    <option> </option>
+            </select></td>
+      </tr>
+      -->
+      <tr>
+
+        <td>Start Time:</td>
+        <td><input type="text;charset=utf-8" name="time" size="15" maxlength="20"
+                   value="5:30 PM"/></td>
+        <!--<td><select name="starttime">-->
+<!--
+        <td><select name="time">
+            <option>5.00 p.m.</option>
+            <option>5.30 p.m.</option>
+            <option>6.00 p.m.</option>
+            <option>6.30 p.m.</option>
+            <option>7.00 p.m.</option>
+            <option>7.30 p.m.</option>
+
+            <option>8.00 p.m.</option>
+            <option>8.30 p.m.</option>
+            <option>9.00 p.m.</option>
+            <option>9.30 p.m.</option>
+            <option>10.00 p.m.</option>
+            <option>10.30 p.m.</option>
+
+            <option>11.00 p.m.</option>
+            <option>11.30 p.m.</option>
+            <option>12.00 a.m.</option>
+            <option>12.30 a.m.</option>
+            <option>1.00 a.m.</option>
+            <option>1.30 a.m.</option>
+
+            <option>2.00 a.m.</option>
+            <option>2.30 a.m.</option>
+            <option>3.00 a.m.</option>
+            <option>3.30 a.m.</option>
+            <option>4.00 a.m.</option>
+            <option>4.30 a.m.</option>
+            <option>5.00 a.m.</option>
+            <option>5.30 a.m.</option>
+            <option>6.00 a.m.</option>
+            <option>6.30 a.m.</option>
+            <option>7.00 a.m.</option>
+            <option>7.30 a.m.</option>
+            <option>8.00 a.m.</option>
+            <option>9.30 a.m.</option>
+            <option>8.00 a.m.</option>
+            <option>10.30 a.m.</option>
+            <option>8.00 a.m.</option>
+            <option>8.30 a.m.</option>
+            <option>8.00 a.m.</option>
+            <option>8.30 a.m.</option>
+            </select></td>
+      </tr>
+      -->
+      <!--
+     <tr>
+        <td>Stop Time:</td>
+        <td><select name="stoptime">
+
+            <option>12.30 a.m.</option>
+            <option>1.00 a.m.</option>
+            <option>1.30 a.m.</option>
+            <option>2.00 a.m.</option>
+            <option>2.30 a.m.</option>
+            <option>3.00 a.m.</option>
+
+            <option>3.30 a.m.</option>
+            <option>4.00 a.m.</option>
+            <option>4.30 a.m.</option>
+            <option>5.00 a.m.</option>
+            <option>5.30 a.m.</option>
+            <option>6.00 a.m.</option>
+
+	    <option>6.30 a.m.</option>
+            <option>7.00 a.m.</option>
+            <option>6.30 p.m.</option>
+            <option>7.00 p.m.</option>
+            <option>7.30 p.m.</option>
+            <option>8.00 p.m.</option>
+            <option>8.30 p.m.</option>
+            <option>9.00 p.m.</option>
+
+            <option>9.30 p.m.</option>
+            <option>10.00 p.m.</option>
+            <option>10.30 p.m.</option>
+            <option>11.00 p.m.</option>
+            <option>11.30 p.m.</option>
+            <option>12.00 a.m.</option>
+
+            </select></td>
+      </tr>
+	  -->
+      <tr>
+        <td>Class/Function:</td>
+        <td><select name="function">
+            <option>ASTR 3510</option>
+            <option>Other</option>
+
+            </select></td>
+        <td><input type="text;charset=utf-8" name="other" size="40" maxlength="50"
+                   value="Please specify task / lab number here"/></td>
+      </tr>
+    </table>
+
+    <div>
+      <br/>
+      <input type="submit" name="option" value="Sign Up"/>
+      <input type="reset"/>
+
+    </div>
+  </form>
+  <br>
+
+<div align="center">
+<a href=http://cleardarksky.com/c/SomBoschObCOkey.html>
+<img src="http://cleardarksky.com/csk/getcsk.php?id=SomBoschObCO" width="664" height="242"></a>
+
+
+<p class="center">The above image is a prediction for observing
+conditions at SBO based on a computer model.  Click on the image for
+more detailed info.</p>
+
+<p class="center"><a href="http://www.crh.noaa.gov/ifps/MapClick.php?CityName=Boulder&state=CO&site=bou">NWS Weather Forecast</a> for Boulder</p>
+
+<!--<br> The <a href="calendar.html">signup page</a> is now available.-->
+<!--<br> <a target="_blank" href="http://www.google.com/calendar/render?cid=k2dou8djofhi2pr2ojg3kmfgok%40group.calendar.google.com">Google Calendar for Observing Sign Up</a>
+<br> If you do not have a gmail account, you can access the culink calendar via
+<a href="http://culink.colorado.edu">culink.colorado.edu</a> by selecting calendar, click "Options", select the calendar
+menu, press "Subscribe", and search for user Adam Ginsburg.  You have editing
+access to this calendar.  You can also e-mail Adam and he will update both calendars as soon as possible<br>-->
+
+  
+  <p>&nbsp;</p>
+  <!--
+  <div style="text-align:center;">
+    <table style="border: 1px solid #000000; margin:auto; border-collapse:collapse; text-align:left;">
+      <tr>
+        <th></th>
+        <th>Early Time Slot</th>
+        <th>Middle Time Slot</th>
+        <th>Late Time Slot</th>
+      </tr>
+      <tr>
+        <td class="time">Checkout / Lab 1</td>
+        <td class="time">6:00 - 8:00</td>
+        <td class="time">8:00 - 10:00</td>
+        <td class="time">10:00 - 12:00</td>
+      </tr>
+    </table>
+  </div>
+  -->
+  <p>&nbsp;</p>
+  <p> Please email 
+      <a href="mailto:adam.ginsburg@colorado.edu?subject=Observing Sign-Up Problem/Change">
+      Adam Ginsburg</a> if you have any problems using this form, or if you 
+      would like to free up a night that you have previously
+      reserved.
+  </p>
+
+  <p> The names of students observing for class will be shown in 
+      <span class="ugrad">blue</span>. The names of any other 
+      observers and of students observing for fun will be shown in 
+      <span class="other">red</span>. If you are observing for fun,
+      please select 'Other' under 'Class/Function'.
+  </p>
+
+  <p> <em>ASTR 3510 students observing for classwork have priority 
+      over all other observers.</em> If a student group needs to observe 
+      during a time slot otherwise reserved by a lower priority user, please 
+      email <a href="mailto:adam.ginsburg@colorado.edu?subject=Observing Sign-Up Priority Conflict">Adam</a>
+      and he will manually change the calendar and notify the other observers
+      that they have been bumped.  The observing calendar is shown below with 
+      today's date highlighted in yellow.
+  </p>
+
+   
+  <hr/>
+
+  <div style="text-align:center">
+<?php include 'navbar.php';?>
+      <!--    <a href="../index.htm">Adam Ginsburg's home page (will remain until ASTR 3510 page has been created)</a>-->
+  </div>
+
+<!--#exec cgi="cgi-bin/make_calendar.pl"-->
+
+
+
+  <hr/>
+  <div>
+    <span class="left">
+
+      written by: Brian Keeney
+      modified by: <a class="hidden" href="http://casa.colorado.edu/~ginsbura/">
+      Adam Ginsburg</a><br/>
+  <!--      last modified: September 6, 2007-->
+  last modified: August 25, 2009
+    </span>
+
+  </div>
+    
+</body>
+</html>
+
+

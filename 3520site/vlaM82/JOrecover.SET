@@ -1,0 +1,35 @@
+Observer.Id             AB1260
+Observer.Name           Bally, J
+Observer.OfficePhone    3034925786
+Observer.PhoneDuringObs 7202310796
+Observer.EMail          bally@casa.colorado.edu
+Observer.Address(1)     
+Observer.Address(2)     
+Observer.Address(3)     
+Observer.Address(4)     
+Observer.AipsId         167
+Observer.SpecialInstructions(1)             
+Observer.SpecialInstructions(2) 
+Observer.SpecialInstructions(3) 
+Observer.SpecialInstructions(4) 
+ArrayConfiguration  B
+ShadowingLimit      25.0
+LocalSiderealDay    61123
+LocalSiderealTime   074923
+Azimuth             180.00
+Elevation           45.00
+RightAscension      
+Declination         
+SolarAngSepLimit    0.2617993877991494
+PlanetAngSepLimit   0.08726646259971647
+PlanetAngSepLimit   0.08726646259971647
+LeapSeconds               33.
+Mode.Continuum      YES
+Mode.Line           NO
+Mode.PhasedArray    NO
+Mode.SingleDish     NO
+Mode.PhaseTracking  NO
+Mode.PM             NO
+UsePT               NO
+J2000CalNames       YES
+WriteStopTimes      NO

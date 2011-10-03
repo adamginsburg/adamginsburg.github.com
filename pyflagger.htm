@@ -1,0 +1,47 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<link href="prettify.css" type="text/css" rel="stylesheet">
+<link rel="icon" type="image/gif" href="favicon8.ico">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="prettify.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Interactive Flagging in Python</title>
+</head>
+<?php 
+$page="pyflagger.htm";
+include 'tracker.php';?>
+<body onload="prettyPrint()"> 
+<table align="center" width=800><tr><td>
+<center>
+<h1> Interactive data flagging in Python </h1>
+<br> I can't claim this is really well-done or pretty, but it works and
+includes a LOT of different functionality.  It's pretty neat.  Through the
+magic of python, I was able to write this in ~1 week.
+</center>
+
+<pre class="prettyprint">
+<? readfile("python/pyflagger.py";) ?>
+</pre>
+<!-- ?php
+$current_path=ini_get("include_path");
+ini_set("include_path","$current_path:/opt/local/PEAR:/opt/local/PEAR/lib");
+require_once "Text/Highlighter.php";
+$hlPY =& Text_Highlighter::factory("PYTHON");
+
+$myFile = "python/gaussfitter.py";
+$fh = fopen($myFile, 'r');
+$theData = fread($fh, filesize($myFile));
+fclose($fh);
+
+echo $hlPY->highlight($theData);
+? -->
+
+<center>
+<br><br><hr>
+<br>
+<?php include 'navbar.php';?>
+</body>
+</html>
+

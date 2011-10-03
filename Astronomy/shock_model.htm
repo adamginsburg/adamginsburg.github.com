@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<!--<meta http-equiv="Content-Language" content="en-us">
+<link rel="stylesheet" type="text/css" href="../style.css">-->
+<title>Shock Model Fits</title>
+</head>
+
+<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">
+
+
+
+
+<a href="../scripts/websmfit.pl" class=big> Go here </a><br><br><br>
+
+
+
+<p>Input measured values below</p>
+Input must be ratios to H alpha.  Halpha must stay as 1, though its variance won't affect the results.  It is important that
+the same "Line" names be kept because they are used within the program both to match lines to the database and to calculate reddening.
+The data must be tab separated.  The easiest way to manipulate it is probably using Excel: copying and pasting from Excel
+will give you tab separated values.  The lines listed below are those currently in the database, others can be added if necessary.
+<br><br>
+
+<br><br><form name=boxin method="POST">
+Line	Ratio to HA	Var<br>
+<textarea name=data rows=30 cols=60>
+HB4861	0	0
+Fe5160	0	0
+N5200	0	0
+Fe5262    	0	0
+O5577    	0	0
+N5755    	0	0
+O6300  	0	0
+HA6563  	1	0
+N6583	0	0
+S6716    	0	0
+S6731    	0	0
+Fe7155    	0	0
+Fe7172    	0	0
+Ca7291    	0	0
+O7320    	0	0
+O7330    	0	0
+Fe7390    	0	0
+Fe7452    	0	0
+Fe8619    	0	0
+C8730    	0	0
+Fe8888    	0	0
+Fe8894    	0	0
+Fe9054    	0	0
+Fe9229    	0	0
+C9850	0	0
+</textarea>
+<input type=button value ="Submit Data" action="../scripts/websmfit.pl">
+
+<br>
+Input C, the logarithmic extinction of H-Beta, here. 
+It will apply the reddening correction using Cardelli, Clayton, Mathis (1989)'s formula and modify the values you put in the above table<br>
+
+<input type=text name=C size=10 maxlength=10> <input type=button value="Reddening Correct" onclick="redcor(this.form)">
+</form>
+
+
+<br><p>
+The 5 best models are:
+<br><table>
+<tr> <td>Speed</td><td>Magnetic Field</td><td>Density</td><td>Ionization Fraction</td><td>Chi Squared</td><td>Predicted [Fe II] 8619/[S II]</td></tr>
+<tr id=tablehead> </tr>
+<tr id=model1> </tr>
+<tr id=model2> </tr>
+<tr id=model3> </tr>
+<tr id=model4> </tr>
+<tr id=model5> </tr>
+</table>
+<span id=Output></span>
+<br>
+<span id=Output2></span>
+<br><br>
+<!--onsubmit = "return handler(this)"    -->
+<br><br><p>
+References:
+(for conversion between C and A_V) Kaler and Lutz, <b>PASP 97:700</b>, 1985<br>
+(for reddening law) Cardelli, Clayton, and Mathis, <b>ApJ 345:245</b>, 1989<br>
+(for E(B-V) to E(beta-alpha) comparison) Gebel, <b>ApJ 153:743</b> 1968 (eqn 2)<br>
+
+
+</body>
+</html>

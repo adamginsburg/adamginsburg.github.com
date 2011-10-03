@@ -1,0 +1,84 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" type="image/gif" href="favicon8.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>W5 Outflows</title>
+</head>
+<?php 
+$page="w5spectra.htm";
+include 'tracker.php';?>
+<script language="javascript">
+<!--
+function click(imname,imsrc) {
+    document[imname].onclick = "click2(" + imname + "," + document[imname].src + ")";
+    document[imname].src = imsrc;
+    document[imname].width = 800;
+}
+function click2(imname,imsrc) {
+    document[imname].onclick = "click(" + imname + "," + document[imname].src + ")";
+    document[imname].src = imsrc;
+    document[imname].width = "";
+}
+function toggle_jcmt(myself,first,second) {
+    var re = new RegExp(first)
+    document[myself].src =  (document[myself].src.match(re)) ? "images/jcmt/" + second : "images/jcmt/thumbs/" + first;
+}
+function toggle_w5(myself,first,second) {
+    var re = new RegExp(first)
+    document[myself].src =  (document[myself].src.match(re)) ? "images/w5/" + second : "images/w5/thumbs/" + first;
+}
+    -->
+</script>
+
+<center>
+<h1> W5 Spectra </h1>
+</center>
+<table align="center" width=800><tr><td>
+<br><br><hr>
+<br>
+<pre>
+Collaboration:
+    University of Colorado:
+        Adam Ginsburg
+        John Bally
+        Cara Battersby
+    University of Hawaii:
+        Jonathan Williams
+<!--        Chris Beaumont
+    University of Exeter:
+        Chris Brunt-->
+</pre>
+
+<a class="norm" href="w5/w5outflows.pdf"> W5 Outflows Paper </a>
+
+<br>
+<br> Contours overlaid on NEWFIRM H2, Spitzer IRAC 8 micron, MIPS 24 micron,
+and BGPS 1.1mm grayscale images are shown below.  The H2, 8 micron, and 24 micron
+images are displayed from 0 to 2.5 ???, 700 to 15000, and 650 to 5000 MJy/sr in
+inverse log scale, and the BGPS from -0.1 to 1.0 Jy/beam in linear scale. 
+<br>
+<br> The contours are red and blue shifted emission corresponding to their
+colors.  The velocities integrated over are listed in the image titles.  The
+contours are at levels
+.5,1,1.5,2,3,4,5,6,8,10,12,14,16,18,20,25,30,35,40,45,50,60,70,80,90,100 K
+km/s.
+<br>
+<br> The red and blue X's mark the approximate locations of the outflows, which
+do not always correspond to the peak of the integrated emission.  The orange X's
+and labels identify likely candidates for the outflow sources; most are associated
+with 8 and 24 micron point sources.
+<br>
+<br>
+</table>
+
+<? readfile("outflowimagetable.htm"); ?>
+
+
+<table align="center" width=800><tr><td>
+<br><br><hr><br>
+<?php include 'navbar.php';?>
+</td></tr></table>
+

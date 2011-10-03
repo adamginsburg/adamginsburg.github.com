@@ -1,0 +1,76 @@
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="prettify.css" type="text/css" rel="stylesheet">
+<link rel="icon" type="image/gif" href="favicon8.ico">
+<script type="text/javascript" src="prettify.js"></script>
+<title> IDL codes </title>
+<body onload="prettyPrint()"> 
+    <?php
+$page="idl.htm";
+    include 'tracker.php';?>
+<head><h1><center> (mostly simple) IDL codes </center></h1></head>
+<br>
+<table align="center" width=800><tr><td>
+<br> <a href="clean.htm" class="norm">Hogbom Clean</a>            
+<br> <a href="corrfit.htm" class="norm"> Cross-correlation alignment / offset calcuation </a>
+<br><br>
+<br> IDL is not great at doing things along axes.  For example, in python, if you wanted the standard deviation along
+one axis of a 2D array, you would write <tt> std(x,axis=1) </tt> or better yet <tt> x.std(axis=1) </tt>.  In IDL, to achieve
+similar functionality, I needed to write this code (syntax highlighting uses <a href="http://code.google.com/p/google-code-prettify/">
+Google Code Prettify</a> which is not IDL-compatible).  However, IDL 8.0 allows to you do std(array,dim=1) now.
+<pre class="prettyprint">
+; stddevaxis
+; takes an n-dimensional array in variable 'x' and returns the
+; standard deviation along the axis specified by 'dimension'
+; should be equivalent to Python's std(x,axis=n)
+; OPTIONS:
+;   NAN allows you to specify that NAN values should be ignored
+;   _extra parameters can be passed to stddev if a 1-d array is passed
+;       or the usual stddev is desired
+function stddevaxis,x,dimension=dimension,nan=nan,_extra=extra 
+    if keyword_set(dimension) then begin
+        dimsize = size(x,/dim)
+        dimmean = total(x,dimension,nan=nan) / float(dimsize[dimension-1])
+        dimvar = total( (x - dimmean#replicate(1,dimsize[dimension-1]))^2 ,dimension,nan=nan)$
+            / float(dimsize[dimension-1])
+        dimstd = sqrt(dimvar)
+        return,dimstd
+    endif else return,stddev(x,nan=nan,_extra=extra)
+    end
+</pre>
+
+<hr>
+<?php include 'navbar.php';?>
+</body>
+</html>
+
+<!--< ?  php
+#$current_path=ini_get("include_path");
+#ini_set("include_path","$current_path:/opt/local/PEAR:/opt/local/PEAR/lib");
+#require_once "Text/Highlighter.php";
+#$hlPY =& Text_Highlighter::factory("IDL");
+#
+#$myFile = "idl/stddevaxis.pro";
+#$fh = fopen($myFile, 'r');
+#$theData = fread($fh, filesize($myFile));
+#fclose($fh);
+#
+#echo $hlPY->highlight($theData);
+#?>-->
+#
+#<!--
+#<pre>
+# <tt> 
+#function stddevaxis,x,dimension=dimension,nan=nan,_extra=extra 
+#    if keyword_set(dimension) then begin
+#        dimsize = size(x,/dim)
+#        dimmean = total(x,dimension,nan=nan) / float(dimsize[dimension-1])
+#        dimvar = total( (x - dimmean#replicate(1,dimsize[dimension-1]))^2 ,dimension,nan=nan)$
+#            / float(dimsize[dimension-1])
+#        dimstd = sqrt(dimvar)
+#        return,dimstd
+#    endif else return,stddev(x,nan=nan,_extra=extra)
+#end
+</tt>
+</pre>
+-->
