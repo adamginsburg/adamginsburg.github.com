@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Language" content="en-us">
 <link href="prettify.css" type="text/css" rel="stylesheet">
-<link rel="icon" type="image/gif" href="favicon8.ico">
 <link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript" src="prettify.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
@@ -20,16 +19,17 @@ include 'tracker.php';?>
 <br>and <a href="pygausscollapse.htm" class="norm">Collapsing a data cube with gaussian fits</a>
 <br>
 <br> This code is also hosted at <a class="norm" 
-href="http://code.google.com/p/agpy/source/browse/trunk/agpy/gaussfitter.py">
+href="http://code.google.com/p/agpy/source/browse/trunk/gaussfitter.py">
 the agpy google code site</a>
 <br>
 </center>
 
 </td></tr>
-</table>
+<tr><td>
 <pre class="prettyprint">
 <? readfile("python/gaussfitter.py"); ?>
 </pre>
+</td></tr>
 <!-- ?php
 $current_path=ini_get("include_path");
 ini_set("include_path","$current_path:/opt/local/PEAR:/opt/local/PEAR/lib");
@@ -44,7 +44,6 @@ fclose($fh);
 echo $hlPY->highlight($theData);
 ? -->
 
-<table align="center" width=800>
 <center>
   <tr> <td>
 <br><br><hr>

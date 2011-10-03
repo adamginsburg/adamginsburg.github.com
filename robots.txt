@@ -2,13 +2,4 @@ User-agent: *
 Disallow: /w5.htm
 Disallow: /pcygni.htm
 Disallow: /gc.htm
-Disallow: /h2co/
-Disallow: /carma/
-Disallow: /Bennett/
-Disallow: /summer1120/
-Disallow: /summer1120/Week1/
-Disallow: /summer1120/Week2/
-Disallow: /summer1120/Week3/
-Disallow: /summer1120/Week4/
-Disallow: /summer1120/Week5/
 
