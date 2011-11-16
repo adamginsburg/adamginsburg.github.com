@@ -116,6 +116,11 @@ a.special:visited {color:#FF6611}
 a.special:hover {color:#FF3322}
 a.special:active {color:#FF3322}
 
+a.offwhite:link		{ color:#DDDDDD ;}
+a.offwhite:visited	{ color:#DDDDDD ;}
+a.offwhite:hover		{ color:#FF3300;}
+a.offwhite:active	{ color:#FF3300; }
+
 a.norm:link		{ color:cyan ;}
 a.norm:visited	{ color:cyan ;}
 a.norm:hover		{ color:#FF3300;}
