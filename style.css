@@ -49,7 +49,7 @@ p.navbar {
     font-size:   15px;
 }
 
-a.navbar:link	 { color:white ;}
+a.navbar:link	 { color:white ; text-shadow:none}
 a.navbar:visited { color:white ;}
 a.navbar:hover	 { color:grey; } /* font-weight: bold;} */
 a.navbar:active	 { color:grey; } /* font-weight: bold;} */
@@ -72,15 +72,15 @@ tt {color:#55ECA9}
 
 
 /* Link Style */
-a:link		{ color:white }
-a:visited	{ color:white} }
+a:link		{ color:white; text-shadow: grey 0.0px 0.0px 2px  }
+a:visited	{ color:white }
 /* a:visited	{ color:blue }*/
-a:active	{ color:cyan }
+a:active	{ color:cyan; text-shadow: none }
 a:hover		{ color:cyan }
 a {text-decoration: none; }
 
 /* ASTR3520_site Link Style */
-a.astro:link		{ color:#66FF77 }
+a.astro:link		{ color:#66FF77; text-shadow: none }
 a.astro:visited	{ color:#44DDBB }
 /* a:visited	{ color:blue }*/
 a.astro:active	{ color:#3344DD }
@@ -92,14 +92,15 @@ code {color:#66DD88}
 
 /* custom link styles */
 /* I don't think it should be possible to view my stylesheet from the 'net, but if you can, these are fun */
-a.hidden:link		{ color:white }
+a.hidden:link		{ color:white; text-shadow: none }
 a.hidden:visited	{ color:white }
 a.hidden:hover		{ color:white }
 a.hidden:active		{ color:white }
 
-a.big:link		{ color:cyan ;
-				font-weight:bold ;
-				font-size:30px ;}
+a.big:link		{ color:cyan;
+                          text-shadow: none;
+			  font-weight:bold ;
+			  font-size:30px ;}
 a.big:visited	{ color:cyan ;
 				font-weight:bold ;
 				font-size:30px ;}
@@ -111,17 +112,18 @@ a.big:active	{ color:#FF3300;
 				font-size:30px ;}
 a.big {text-decoration: underline;}				
 
-a.special:link {color:#FF6611;}
+a.special:link {color:#FF6611; text-shadow:none;}
 a.special:visited {color:#FF6611}
 a.special:hover {color:#FF3322}
 a.special:active {color:#FF3322}
 
-a.offwhite:link		{ color:#DDDDDD ;}
+a.offwhite:link		{ color:#DDDDDD;
+                          text-shadow: #999999 0px 0px 2px; }
 a.offwhite:visited	{ color:#DDDDDD ;}
 a.offwhite:hover		{ color:#FF3300;}
 a.offwhite:active	{ color:#FF3300; }
 
-a.norm:link		{ color:cyan ;}
+a.norm:link		{ color:cyan ; text-shadow: none; }
 a.norm:visited	{ color:cyan ;}
 a.norm:hover		{ color:#FF3300;}
 a.norm:active	{ color:#FF3300; }
@@ -159,14 +161,14 @@ a.norm:active	{ color:#FF3300; }
 
 /* custom link styles */
 /* I don't think it should be possible to view my stylesheet from the 'net, but if you can, these are fun */
-a.hidden:link		{ color:white }
+a.hidden:link		{ color:white; text-shadow:none }
 a.hidden:visited	{ color:white }
 a.hidden:hover		{ color:white }
 a.hidden:active		{ color:white }
 
 a.emph:tt {color:yellow}
 
-a.big:link		{ color:cyan ;
+a.big:link		{ color:cyan ; text-shadow:none;
 				font-weight:bold ;
 				font-size:30px ;}
 a.big:visited	{ color:cyan ;
@@ -180,7 +182,7 @@ a.big:active	{ color:#FF3300;
 				font-size:30px ;}
 a.big {text-decoration: underline;}				
 
-a.norm:link		{ color:cyan ;}
+a.norm:link		{ color:cyan; text-shadow:none;}
 a.norm:visited	{ color:cyan ;}
 a.norm:hover		{ color:#FF3300;}
 a.norm:active	{ color:#FF3300; }
