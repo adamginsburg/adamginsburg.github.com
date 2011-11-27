@@ -49,11 +49,6 @@ p.navbar {
     font-size:   15px;
 }
 
-a.navbar:link	 { color:white ; text-shadow:none}
-a.navbar:visited { color:white ;}
-a.navbar:hover	 { color:grey; } /* font-weight: bold;} */
-a.navbar:active	 { color:grey; } /* font-weight: bold;} */
-
 div {
     background-color: black;
     color: white;
@@ -78,6 +73,12 @@ a:visited	{ color:white }
 a:active	{ color:cyan; text-shadow: none }
 a:hover		{ color:cyan }
 a {text-decoration: none; }
+
+a.navbar:link	 { color:#AAAAFF; text-shadow:none}
+a.navbar:visited { color:#AAAAFF; text-shadow: #4444FF 0.0px 0.0px 2px}
+a.navbar:hover	 { color:grey; } /* font-weight: bold;} */
+a.navbar:active	 { color:grey; } /* font-weight: bold;} */
+
 
 /* ASTR3520_site Link Style */
 a.astro:link		{ color:#66FF77; text-shadow: none }

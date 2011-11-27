@@ -1,0 +1,26 @@
+# exclusion list for s3 syncing
+# sync command:
+# s3cmd sync --acl-public --guess-mime-type --skip-existing --exclude-from s3exclude ./ s3://www.adamgginsburg.com/
+s3exclude
+wordpress
+wordpress/*
+phpdug
+phpdug/*
+_vti_log
+_vti_log/*
+.hg
+.hg/*
+bad
+bad/*
+cutouts
+cutouts/*
+h2co
+h2co/*
+idl
+idl/*
+proposals
+proposals/*
+w5
+w5/*
+wwwSAGEDB
+wwwSAGEDB/*
