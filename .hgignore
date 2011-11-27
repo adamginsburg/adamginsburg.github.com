@@ -34,6 +34,7 @@ wordpress
 phpdug
 highlighter
 *swp*
+*pem
 
 syntax:regexp
 ipython_log.py.*
