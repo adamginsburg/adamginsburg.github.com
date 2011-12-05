@@ -1,7 +1,4 @@
 User-agent: *
-Disallow: /w5.htm
-Disallow: /pcygni.htm
-Disallow: /gc.htm
 Disallow: /h2co/
 Disallow: /carma/
 Disallow: /Bennett/
