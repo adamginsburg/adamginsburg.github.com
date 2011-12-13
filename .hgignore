@@ -35,6 +35,7 @@ phpdug
 highlighter
 *swp*
 *pem
+phparsed
 
 syntax:regexp
 ipython_log.py.*

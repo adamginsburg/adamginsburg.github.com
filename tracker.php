@@ -1,12 +1,15 @@
 <?php
 #		echo "Tracking!";
 #		echo "Version: " . phpversion();
-#		$isset = date_default_timezone_set('America/Denver');
+		$isset = date_default_timezone_set('America/Denver');
 #		echo "Timezone is set...".$isset;
 if ( is_writeable('trackdb.htm'))
 {
 		$db = fopen('trackdb.htm','a');
 #		echo $db;
+        #$date.timezone = 'American/Denver';
+        #Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'America/Denver' for 'MST/-7.0/no DST' instead in /Users/adam/Sites/tracker.php on line 11
+        #
 		$thedate = date('Y/m/d H:i:s T');
 #		echo $thedate;
                 if (ereg("Slurp",$_SERVER['HTTP_USER_AGENT']) ||
