@@ -2525,3 +2525,85 @@ Array:	/Users/adam/Sites/3520site/index.html: 2008/11/08 19:15:49 MST		Mozilla/5
 Array:	/Users/adam/Sites/3520site/remote_login.html: 2008/11/08 19:15:57 MST	http://localhost/3520site/	Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.3) Gecko/2008092414 Firefox/3.0.3	 RemoteAddr:::1 RemoteHost:	
 Array:	/Users/adam/Sites/3520site/fieldtrip.html: 2008/11/08 19:16:08 MST	http://localhost/3520site/	Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.3) Gecko/2008092414 Firefox/3.0.3	 RemoteAddr:::1 RemoteHost:	
 Array:	/Users/adam/Sites/3520site/index.html: 2008/11/09 01:43:09 MST	http://localhost/cv.htm	Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.3) Gecko/2008092414 Firefox/3.0.3	 RemoteAddr:::1 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/index.html: 2012/03/05 10:33:27 MST	http://eta.colorado.edu/teaching.htm	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/spectrometer.html: 2012/03/05 14:31:28 MST	http://eta.colorado.edu/3520site/index.html	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/IRAF.html: 2012/03/05 14:31:48 MST	http://eta.colorado.edu/3520site/index.html	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab4.html: 2012/03/05 14:37:13 MST	http://eta.colorado.edu/3520site/index.html	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/unix.html: 2012/03/05 14:39:24 MST	http://eta.colorado.edu/3520site/index.html	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/unix_editors.html: 2012/03/05 14:42:37 MST	http://eta.colorado.edu/3520site/index.html	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab3-4signup.html: 2012/03/05 14:46:34 MST	http://eta.colorado.edu/3520site/index.html	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/remote_login.html: 2012/03/05 14:52:27 MST	http://eta.colorado.edu/3520site/index.html	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab3.html: 2012/03/05 14:57:35 MST	http://eta.colorado.edu/3520site/index.html	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.html: 2012/03/05 15:00:51 MST	http://eta.colorado.edu/3520site/index.html	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/fieldtrip.html: 2012/03/05 15:06:34 MST	http://eta.colorado.edu/3520site/index.html	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.htm: 2012/03/05 15:17:51 MST	http://eta.colorado.edu/3520site/	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/tracker.php: 2012/03/05 15:20:10 MST	http://eta.colorado.edu/3520site/	Mozilla/5.0 (compatible; heritrix/1.14.3 +http://www.accelobot.com)	 RemoteAddr:173.193.190.244 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/index.html: 2012/03/28 06:59:46 MDT		EC2LinkFinder	 RemoteAddr:107.22.17.229 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/index.html: 2012/03/29 12:26:47 MDT		EC2LinkFinder	 RemoteAddr:23.20.240.200 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/fieldtrip.html: 2012/03/29 12:32:27 MDT		EC2LinkFinder	 RemoteAddr:23.20.240.200 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/unix.html: 2012/03/29 12:32:37 MDT		EC2LinkFinder	 RemoteAddr:23.20.240.200 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab3.html: 2012/03/29 12:32:38 MDT		EC2LinkFinder	 RemoteAddr:23.20.240.200 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab4.html: 2012/03/29 12:32:40 MDT		EC2LinkFinder	 RemoteAddr:23.20.240.200 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab3-4signup.html: 2012/03/29 12:32:41 MDT		EC2LinkFinder	 RemoteAddr:23.20.240.200 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/IRAF.html: 2012/03/29 12:32:47 MDT		EC2LinkFinder	 RemoteAddr:23.20.240.200 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.html: 2012/03/29 12:32:48 MDT		EC2LinkFinder	 RemoteAddr:23.20.240.200 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/unix_editors.html: 2012/03/29 12:33:26 MDT		EC2LinkFinder	 RemoteAddr:23.20.240.200 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/remote_login.html: 2012/03/29 12:33:27 MDT		EC2LinkFinder	 RemoteAddr:23.20.240.200 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.htm: 2012/03/29 12:33:54 MDT		EC2LinkFinder	 RemoteAddr:23.20.240.200 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.htm: 2012/04/01 10:40:43 MDT		GSLFbot	 RemoteAddr:23.20.144.70 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.html: 2012/04/01 10:40:45 MDT		GSLFbot	 RemoteAddr:23.20.144.70 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/fieldtrip.html: 2012/04/01 10:40:57 MDT		GSLFbot	 RemoteAddr:23.20.144.70 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/index.html: 2012/04/01 10:41:03 MDT		GSLFbot	 RemoteAddr:23.20.144.70 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab3-4signup.html: 2012/04/01 10:41:04 MDT		GSLFbot	 RemoteAddr:23.20.144.70 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab4.html: 2012/04/01 10:41:08 MDT		GSLFbot	 RemoteAddr:23.20.144.70 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/remote_login.html: 2012/04/01 10:41:13 MDT		GSLFbot	 RemoteAddr:23.20.144.70 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/tracker.php: 2012/04/01 10:41:22 MDT		GSLFbot	 RemoteAddr:23.20.144.70 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/unix.html: 2012/04/01 10:41:23 MDT		GSLFbot	 RemoteAddr:23.20.144.70 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/index.html: 2012/04/03 11:11:10 MDT		GSLFbot	 RemoteAddr:50.17.146.69 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/fieldtrip.html: 2012/04/03 11:14:21 MDT		GSLFbot	 RemoteAddr:50.17.146.69 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/spectrometer.html: 2012/04/03 11:14:27 MDT		GSLFbot	 RemoteAddr:50.17.146.69 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/unix.html: 2012/04/03 11:14:28 MDT		GSLFbot	 RemoteAddr:50.17.146.69 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab3.html: 2012/04/03 11:14:29 MDT		GSLFbot	 RemoteAddr:50.17.146.69 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab4.html: 2012/04/03 11:14:30 MDT		GSLFbot	 RemoteAddr:50.17.146.69 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/IRAF.html: 2012/04/03 11:14:36 MDT		GSLFbot	 RemoteAddr:50.17.146.69 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.html: 2012/04/03 11:14:37 MDT		GSLFbot	 RemoteAddr:50.17.146.69 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/unix_editors.html: 2012/04/03 11:15:02 MDT		GSLFbot	 RemoteAddr:50.17.146.69 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/remote_login.html: 2012/04/03 11:15:03 MDT		GSLFbot	 RemoteAddr:50.17.146.69 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.htm: 2012/04/03 11:15:19 MDT		GSLFbot	 RemoteAddr:50.17.146.69 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/tracker.php: 2012/04/03 11:15:40 MDT		GSLFbot	 RemoteAddr:50.17.146.69 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/index.html: 2012/04/04 02:01:11 MDT		GSLFbot	 RemoteAddr:107.22.54.166 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/spectrometer.html: 2012/04/04 02:04:32 MDT		GSLFbot	 RemoteAddr:107.22.54.166 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/unix.html: 2012/04/04 02:04:33 MDT		GSLFbot	 RemoteAddr:107.22.54.166 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab3.html: 2012/04/04 02:04:35 MDT		GSLFbot	 RemoteAddr:107.22.54.166 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab4.html: 2012/04/04 02:04:36 MDT		GSLFbot	 RemoteAddr:107.22.54.166 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab3-4signup.html: 2012/04/04 02:04:37 MDT		GSLFbot	 RemoteAddr:107.22.54.166 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/IRAF.html: 2012/04/04 02:04:41 MDT		GSLFbot	 RemoteAddr:107.22.54.166 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.html: 2012/04/04 02:04:42 MDT		GSLFbot	 RemoteAddr:107.22.54.166 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/unix_editors.html: 2012/04/04 02:05:09 MDT		GSLFbot	 RemoteAddr:107.22.54.166 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/remote_login.html: 2012/04/04 02:05:10 MDT		GSLFbot	 RemoteAddr:107.22.54.166 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.htm: 2012/04/04 02:05:27 MDT		GSLFbot	 RemoteAddr:107.22.54.166 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/unix.html: 2012/04/05 08:59:54 MDT		Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)	 RemoteAddr:66.249.73.5 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab3.html: 2012/04/05 09:00:44 MDT		Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)	 RemoteAddr:66.249.73.5 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/tracker.php: 2012/04/05 09:03:16 MDT		Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)	 RemoteAddr:66.249.73.5 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/fieldtrip.html: 2012/04/05 09:05:47 MDT		Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)	 RemoteAddr:66.249.73.5 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.htm: 2012/04/05 09:06:37 MDT		Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)	 RemoteAddr:66.249.73.5 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab3-4signup.html: 2012/04/05 09:09:58 MDT		Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)	 RemoteAddr:66.249.73.5 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/spectrometer.html: 2012/04/05 17:25:03 MDT		Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)	 RemoteAddr:66.249.73.5 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/index.html: 2012/04/05 18:01:10 MDT		Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)	 RemoteAddr:66.249.73.5 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/remote_login.html: 2012/04/06 02:26:35 MDT		Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)	 RemoteAddr:66.249.73.5 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/index.html: 2012/04/14 05:11:51 MDT		Mozilla/5.0 (compatible; NerdByNature.Bot; http://www.nerdbynature.net/bot)	 RemoteAddr:178.63.44.73 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/tracker.php: 2012/04/14 05:11:56 MDT		Mozilla/5.0 (compatible; NerdByNature.Bot; http://www.nerdbynature.net/bot)	 RemoteAddr:178.63.44.73 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab3-4signup.html: 2012/04/14 05:11:56 MDT		Mozilla/5.0 (compatible; NerdByNature.Bot; http://www.nerdbynature.net/bot)	 RemoteAddr:178.63.44.73 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/fieldtrip.html: 2012/04/14 05:11:59 MDT		Mozilla/5.0 (compatible; NerdByNature.Bot; http://www.nerdbynature.net/bot)	 RemoteAddr:178.63.44.73 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.html: 2012/04/14 05:11:59 MDT		Mozilla/5.0 (compatible; NerdByNature.Bot; http://www.nerdbynature.net/bot)	 RemoteAddr:178.63.44.73 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/remote_login.html: 2012/04/14 05:12:02 MDT		Mozilla/5.0 (compatible; NerdByNature.Bot; http://www.nerdbynature.net/bot)	 RemoteAddr:178.63.44.73 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/unix_editors.html: 2012/04/14 05:12:05 MDT		Mozilla/5.0 (compatible; NerdByNature.Bot; http://www.nerdbynature.net/bot)	 RemoteAddr:178.63.44.73 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/spectrometer.html: 2012/04/14 05:12:06 MDT		Mozilla/5.0 (compatible; NerdByNature.Bot; http://www.nerdbynature.net/bot)	 RemoteAddr:178.63.44.73 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab4.html: 2012/04/14 05:12:06 MDT		Mozilla/5.0 (compatible; NerdByNature.Bot; http://www.nerdbynature.net/bot)	 RemoteAddr:178.63.44.73 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.htm: 2012/04/14 05:12:06 MDT		Mozilla/5.0 (compatible; NerdByNature.Bot; http://www.nerdbynature.net/bot)	 RemoteAddr:178.63.44.73 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/IRAF.html: 2012/04/14 05:12:07 MDT		Mozilla/5.0 (compatible; NerdByNature.Bot; http://www.nerdbynature.net/bot)	 RemoteAddr:178.63.44.73 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab4.html: 2012/04/15 21:57:55 MDT		Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)	 RemoteAddr:199.21.99.86 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/fieldtrip.html: 2012/04/16 00:08:16 MDT		Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)	 RemoteAddr:199.21.99.86 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.html: 2012/04/16 02:18:38 MDT		Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)	 RemoteAddr:199.21.99.86 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab3.html: 2012/04/16 07:49:47 MDT		Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)	 RemoteAddr:199.21.99.86 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/IRAF.html: 2012/04/16 10:29:51 MDT		Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)	 RemoteAddr:199.21.99.86 RemoteHost:	

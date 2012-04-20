@@ -36,6 +36,7 @@ highlighter
 *swp*
 *pem
 phparsed
+logfiles
 
 syntax:regexp
 ipython_log.py.*

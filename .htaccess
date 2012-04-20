@@ -7,3 +7,5 @@ AddHandler server-parsed .htm .html
 AddType application/octet-stream .fits
 #Options +Includes
 #XBitHack on
+
+DirectoryIndex index.htm

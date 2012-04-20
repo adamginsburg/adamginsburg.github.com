@@ -16,8 +16,13 @@ include 'tracker.php';?>
 <table align="center" width=800><tr><td>
 <center>
 <h1> Triplespec </h1>
-<h2> WARNING: as of 9/29/09, I have discovered a number of inadequacies / holes in the pipeline.  You can't
-  really follow these directions straightforwardly towards a final reduced product.  I'm working on fixing that. </h2>
+<h2> WARNING: as of 9/29/09, I have discovered a number of inadequacies / holes
+    in the pipeline.  You can't
+  really follow these directions straightforwardly towards a final reduced
+  product.  I'm working on fixing that. </h2>
+<br> <h2> Update 2/2/2012: I fixed a bunch of it!  The example should be a
+    little more straightforward to follow than my directions, which really
+    didn't make clear what was a variable and what was a name </h2>
 </center>
 Below is code using IRAF to create a full 2D wavelength solution for TripleSpec
 data.  It also rectifies spectral lines to be vertical.
@@ -59,6 +64,8 @@ data.  It also rectifies spectral lines to be vertical.
 </ol>
 <br> Example position-velocity diagram extracted from pipeline-reduced product:
 <a href="apo/outflow1.png"><img src='apo/outflow1.png' width=400></a>
+<br> Example "poor-man's IFU" data cube: <a href="w51/W51NSmapCube.fits">W51 Data Cube </a>
+<br> Slices look like this: <img src="w51/paB_brZ_brE_brD_brG.png" width=400>
 <br>
 <br> Instructions for use:
 <ol> 
@@ -73,16 +80,16 @@ data.  It also rectifies spectral lines to be vertical.
         <li><a class="norm" href="apo/sample_id_H.fits"> sample_id_H.fits </a> 
         <li><a class="norm" href="apo/sample_id_K.fits"> sample_id_K.fits </a> 
     </ul>
-    <li> load IRAF and start entering commands as follows...
+    <!--<li> load IRAF and start entering commands as follows...
     <li> <code> onedspec </code>
     <li> <code> twodspec </code>
-    <li> <code> longslit </code>
+    <li> <code> longslit </code>-->
     <li> <code> cp /path/to/bpm.fits . </code> (bad pixel mask)
     <li> <code> task pipeline_jhk=/full/path/to/pipeline_jhk.cl </code> (load pipeline code)
-    <li> <code> ls reference_star_filename* | sed 's/\.fits//' > refstarlist </code>
-    <li> <code> pipeline_jhk refstarlist refstarOUTname justcrop=yes background=no combine=no rawdir='raw/' procdir='proc/' </code>
-    <li> <code> ls starless_image_filename* | sed 's/\.fits//' > starless_imagelist </code>
-    <li> <code> pipeline_jhk starless_imagelist starless_imageOUTname justcrop=yes background=no combine=no rawdir='raw/' procdir='proc/' </code>
+    <li> <code> !ls reference_star_filename* | sed 's/\.fits//' > refstarlist </code>
+    <li> <code> pipeline_jhk refstarlist refstarOUTname justcrop=yes background=no combine=no rawdir='raw/' procdir='proc/' darksub=no </code>
+    <li> <code> !ls starless_image_filename* | sed 's/\.fits//' > starless_imagelist </code>
+    <li> <code> pipeline_jhk starless_imagelist starless_imageOUTname justcrop=yes background=no combine=no rawdir='raw/' procdir='proc/' darksub=no </code>
     <!--    <li> <code> identify [starless image[JHK]] coordlist=linelists$ohlines.dat  </code> -->
     <li> <code> reidentify sample_id_[JHK] [starless image[JHK]] coordlist=linelists$ohlines.dat nlost=10 ver+ shift=INDEF search=10.0 trace=yes </code> *
     <li> <code> identify [reference star image[JHK]] section="middle column" coordlist="" units=""</code> **
@@ -127,6 +134,57 @@ spatial direction as "angstroms"
     <li> Create general-use calibration files to reduce interactivity above
     <li> add orders
 </ul>
+<br>
+<br>
+A real example:
+<code><pre>
+!ls HD182761* | sed 's/\.fits//' &gt; refstarlist
+task pipeline_jhk=pipeline_jhk.cl
+# I had to specify darksub=no because I didn't have darks for this observation!
+pipeline_jhk refstarlist HD182761proc justcrop=yes background=no combine=no rawdir='raw/' procdir='proc/' darksub=no
+
+# Extract a starless spectrum and find &amp; identify the night sky lines
+!ls PelQua4*fits | sed 's/\.fits//' &gt; starless_imagelist
+pipeline_jhk starless_imagelist PelQua4_proc justcrop=yes background=no combine=no rawdir='raw/' procdir='proc/' darksub=no
+!ln proc/PelQua4.0072*fits .
+reidentify sample_id_J PelQua4.0072_J.fits coordlist=linelists$ohlines.dat nlost=10 verbose=yes shift=INDEF search=10.0 trace=yes 
+reidentify sample_id_H PelQua4.0072_H.fits coordlist=linelists$ohlines.dat nlost=10 verbose=yes shift=INDEF search=10.0 trace=yes 
+reidentify sample_id_K PelQua4.0072_K.fits coordlist=linelists$ohlines.dat nlost=10 verbose=yes shift=INDEF search=10.0 trace=yes 
+
+# Identify the stars in the images ("A" position = 25, "B" position = 75)
+!ln proc/HD182761.001[89]*fits .
+identify HD182761.0018_J.fits,HD182761.0019_J.fits section="middle column" coordlist="" units=""
+reidentify HD182761.0018_J.fits HD182761.0018_J.fits  section="middle column" coordlist="" nlost=10 ver+
+reidentify HD182761.0019_J.fits HD182761.0019_J.fits  section="middle column" coordlist="" nlost=10 ver+
+identify HD182761.0018_H.fits,HD182761.0019_H.fits section="middle column" coordlist="" units=""
+reidentify HD182761.0019_H.fits HD182761.0019_H.fits  section="middle column" coordlist="" nlost=10 ver+
+reidentify HD182761.0018_H.fits HD182761.0018_H.fits  section="middle column" coordlist="" nlost=10 ver+
+identify HD182761.0018_K.fits,HD182761.0019_K.fits section="middle column" coordlist="" units=""
+reidentify HD182761.0018_K.fits HD182761.0018_K.fits  section="middle column" coordlist="" nlost=10 ver+
+reidentify HD182761.0019_K.fits HD182761.0019_K.fits  section="middle column" coordlist="" nlost=10 ver+
+
+fitcoords PelQua4.0072_K fitname="skylinesK" combine=yes xo=6 yo=2 interactive+
+fitcoords HD182761.0018_K,HD182761.0019_K fitname="starsK" combine=yes xo=6 yo=2 interactive+
+fitcoords PelQua4.0072_J fitname="skylinesJ" combine=yes xo=6 yo=2 interactive+
+fitcoords PelQua4.0072_H fitname="skylinesH" combine=yes xo=6 yo=2 interactive+
+fitcoords HD182761.0018_H,HD182761.0019_H fitname="starsH" combine=yes xo=6 yo=2 interactive+
+fitcoords HD182761.0018_J,HD182761.0019_J fitname="starsJ" combine=yes xo=6 yo=2 interactive+
+
+# create refstarlist_A by hand (Select out A's by hand.  There's a better way to do this, but I didn't use it)
+pipeline_jhk refstarlist_A refstarlistout_A procdir='proc/' rawdir='raw/' calibrator=yes magJ=6.242 magH=6.318 magK=6.287 darksub=no 
+ls W51* &gt; objectlistA
+# Create objectlistOUTA by hand too
+!vim objectlistA
+pipeline_jhk objectlistA w51coaddA calibrate=yes darksub=no background=yes
+
+# now calibrate / combine each observation individually
+pipeline_jhk W51NSmaplist W51NSmapoutlist caleach=yes background=yes interactive_background=yes recrop=no darksub=no combine=no procdir='proc/' rawdir='raw/'
+
+# better to do it non-interactively
+pipeline_jhk W51NSmaplist W51NSmapoutlist caleach=yes background=yes interactive_background=no sample="5:12,90:98" recrop=no darksub=no combine=no procdir='proc/' rawdir='raw/' clobber=yes 
+
+</pre>
+</code>
 <br>
 <br> DOWNLOAD LINK: <a class="norm" href="http://code.google.com/p/aposoftware/source/browse/#hg/reduction/tspec_pipeline"> tspec pipeline </a>
 <br> REPOSITORY LINK: <a class="norm" href="http://code.google.com/p/aposoftware/">aposoftware at googlecode</a>
