@@ -87,9 +87,11 @@ nav li {padding:2px; font-size:15px; display:inline;}
 nav a:before {content:'['; display:inline; font-size:35px; position:relative; top:4px; left:-3px; color:white;}
 nav a:after {content:']'; display:inline; font-size:35px; position:relative; top:4px; right:-3px; color:white;}
 
-nav {text-align:left;} /* this doesn't work ARGH WHY NO CENTER?!?!?!? */
+nav {text-align:center;} /* this doesn't work ARGH WHY NO CENTER?!?!?!? */
 /* nav ul {padding-left:-9px; left:-20px;} */
-
+nav ul {
+    padding: 0;
+}
 
 span.leftbraces { font-size:25pt; padding: 0px 0px; 
     position:relative; right:-9px;  bottom:-3.75px;}
