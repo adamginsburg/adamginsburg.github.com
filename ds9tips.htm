@@ -54,6 +54,7 @@ function toggle(myself,first,second) {
          <a class="norm" href="images/full/">Full-sized images</a> are also available.-->
         <br>
         <br>
+        (all below are links)
         <hr>
     <div name="body1" id="body1" style='display: none'>
         <a href=# onClick="javascript: body1.style.display='none'; body1link.style.display='inline'; return false;"> 
@@ -251,6 +252,27 @@ function toggle(myself,first,second) {
         which allows you to call <tt>Cube Annulus Extract</tt> from the menu, or either of the other commands using lowercase
         and capital c.  The code it calls, <a href="ds9code/annulustools.ds9">annulustools.ds9</a>, is also provided 
         <a href="ds9code">here</a>, along with the necessary support file <a href="ds9code/gridtocircle.py">gridtocircle.py</a>.
+    </div>
+
+        <hr width=300 align="left">
+<div id="body8link" style='display: inline'>
+        <a href=# onClick="javascript: body8.style.display='inline'; body8link.style.display='none'; window.location.hash='body8'; return false;"> 
+        <h3 align="left" id="multifiles"> Quick-look Aperture Photometry </h3></a>
+    </div>
+<div id='body8' style='display: none'>
+<a href=# onClick="javascript: body8.style.display='none'; body8link.style.display='inline'; return false;"> 
+    <h3 align="left" id="analysis"> Quick-look Aperture Photometry</h3></a>
+
+    In ds9 7.1 (released in late 2012), there is a new "Region Statistics" feature.  In most regions, you
+    can now double-click on the region, then go to the region's analysis menu and click "Statistics".  It will pop up a window
+    showing basic stats (sum, mean, stddev, etc.).
+
+    <br>
+    <br>
+    If you're looking for something a little more complex and flexible, try
+    <a class="norm" href="http://code.google.com/p/agpy/source/browse/trunk/agpy/ds9_phot.py"> ds9_phot </a> from agpy.
+    WARNING: pyds9 currently (10/27/2012) does not work with astropy!  You'll need pyfits, pywcs, pyregion, and pyds9.
+
     </div>
         
         
