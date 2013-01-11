@@ -2894,3 +2894,11 @@ Array:	/Volumes/disk5/Users/adam/Sites/3520site/spectrometer.html: 2012/12/22 13
 Array:	/Volumes/disk5/Users/adam/Sites/3520site/tracker.php: 2012/12/22 13:53:18 MST		Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)	 RemoteAddr:94.180.36.148 RemoteHost:	
 Array:	/Volumes/disk5/Users/adam/Sites/3520site/tracker.php: 2012/12/24 05:53:15 MST		Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)	 RemoteAddr:66.249.73.42 RemoteHost:	
 Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.html: 2012/12/24 14:08:50 MST		Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)	 RemoteAddr:66.249.73.42 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/index.html: 2012/12/31 10:20:38 MST		Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)	 RemoteAddr:5.45.202.218 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/index.html: 2012/12/31 10:20:43 MST		Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)	 RemoteAddr:5.45.202.218 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/IRAF.html: 2013/01/08 22:28:21 MST		Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)	 RemoteAddr:180.76.5.188 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/spectrometer.html: 2013/01/08 23:40:39 MST		Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)	 RemoteAddr:180.76.5.94 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/apoechelle.html: 2013/01/09 00:52:01 MST		Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)	 RemoteAddr:180.76.5.62 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/fieldtrip.html: 2013/01/09 01:22:24 MST		Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)	 RemoteAddr:180.76.5.113 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/lab4.html: 2013/01/09 01:51:23 MST		Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)	 RemoteAddr:180.76.5.173 RemoteHost:	
+Array:	/Volumes/disk5/Users/adam/Sites/3520site/unix.html: 2013/01/09 03:03:11 MST		Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)	 RemoteAddr:180.76.5.107 RemoteHost:	
