@@ -37,6 +37,7 @@ highlighter
 *pem
 phparsed
 logfiles
+*htmbck
 
 syntax:regexp
 ipython_log.py.*
