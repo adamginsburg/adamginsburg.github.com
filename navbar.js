@@ -27,7 +27,7 @@ function navbar () {
 <a class="navbar" href="sitemap.htm">Site Map</a> \
 </li> \
 <li> \
-<a class="navbar" href="http://adamginsburg.blogspot.com/">Research Blog</a> \
+<a class="navbar" href="http://keflavich.github.io/blog/">Research Blog</a> \
 </li> \
 </ul> \
 </nav>'
