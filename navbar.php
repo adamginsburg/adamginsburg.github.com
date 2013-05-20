@@ -1,6 +1,6 @@
 <?php
 #echo "<center>";
-$links = array('Home'=>'index.htm', 'Research'=>'interests.htm', 'Teaching'=>'teaching.htm', 'Outreach'=>'outreach.htm','Software'=>'software.htm','Contact Me'=>'contact.htm','CV'=>'cv.htm','Site Map'=>'sitemap.htm', "Research Blog"=>"http://adamginsburg.blogspot.com/");
+$links = array('Home'=>'index.htm', 'Research'=>'interests.htm', 'Teaching'=>'teaching.htm', 'Outreach'=>'outreach.htm','Software'=>'software.htm','Contact Me'=>'contact.htm','CV'=>'cv.htm','Site Map'=>'sitemap.htm', "Research Blog"=>"http://keflavich.github.io/blog/");
 # 'About Me'=>'about.htm',
 #$links = array('Home'=>'index.htm', 'Research'=>'interests.htm', 'Teaching'=>'teaching.htm', 'Outreach'=>'outreach.htm','Software'=>'software.htm','Contact Me'=>'contact.htm','About Me'=>'about.htm','CV'=>'cv.htm','Site Map'=>'sitemap.htm');
 $leftbrace = "<span class=leftbraces>[</span>";
