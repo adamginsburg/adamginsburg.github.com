@@ -66,7 +66,7 @@ function random_imglink(){
     //imagelinks[15]="http://picasaweb.google.com/keflavich/BerthoudPass12312008/"
     imagelinks[6]="http://www.flickr.com/photos/31267019@N06/sets/72157631612868259/"
 
-
+    var ry=Math.floor(Math.random()*myimages.length);
     while (myimages[ry] == undefined) {
         var ry=Math.floor(Math.random()*myimages.length);
     }
