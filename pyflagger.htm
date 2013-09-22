@@ -21,8 +21,16 @@ includes a LOT of different functionality.  It's pretty neat.  Through the
 magic of python, I was able to write this in ~1 week.
 </center>
 
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+<script> 
+$(function(){
+  $("#includedContent").load("python/pyflagger.py"); 
+});
+</script> 
+
+
 <pre class="prettyprint">
-<? readfile("python/pyflagger.py";) ?>
+<div id="includedContent"></div>
 </pre>
 <!-- ?php
 $current_path=ini_get("include_path");
