@@ -1,5 +1,5 @@
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-37306139-2']);
+_gaq.push(['_setAccount', 'UA-43959515-1']);
 _gaq.push(['_setDomainName', 'adamgginsburg.com']);
 _gaq.push(['_setAllowLinker', true]);
 _gaq.push(['_trackPageview']);
@@ -15,7 +15,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-37306139-2');
+ga('create', 'UA-43959515-1', 'adamgginsburg.com');
 ga('send', 'pageview');
 
 function test(){
