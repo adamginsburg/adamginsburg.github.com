@@ -50,11 +50,14 @@ for rootdir,dirname,flist in os.walk('.'):
             fullfn = os.path.join(rootdir,fn)
             with open(fullfn,'r') as f:
                 data = f.read()
+                changed = False
                 b = bs4.BeautifulSoup(data)
+
+                reldir = os.path.relpath('.',rootdir)
 
                 analytics = b.new_tag(name='script', 
                                       type='text/javascript',
-                                      src='{}/googleanalytics.js'.format(rootdir))
+                                      src='{}/googleanalytics.js'.format(reldir))
 
                 scripts = b.findAll('script')
                 tracker = [s for s in scripts 
@@ -65,9 +68,16 @@ for rootdir,dirname,flist in os.walk('.'):
                     for t in tracker:
                         t.insert_before(analytics)
                         t.extract()
-                    print "Fixing script for ",fullfn
+                    print "Fixing script for ",fullfn, analytics
+                    changed = True
                 elif not any('googleanalytics.js' in s.attrs['src'] for s in scripts if 'src' in s.attrs):
-                    d.html.append(analytics)
-                    print "Appending script to ",fullfn
+                    b.html.append(analytics)
+                    print "Appending script to ",fullfn, analytics
+                    changed = True
                 else:
                     print "No need to fix ",fullfn
+
+            if changed:
+                with open(fullfn,'w') as f:
+                    f.write(b):w
+
