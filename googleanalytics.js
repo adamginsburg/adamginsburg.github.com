@@ -17,7 +17,3 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-43959515-1', 'adamgginsburg.com');
 ga('send', 'pageview');
-
-function test(){
-    alert("Test Success! rd2");
-}
