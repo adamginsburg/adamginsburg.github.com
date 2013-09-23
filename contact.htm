@@ -7,9 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <title>Contact Information</title>
 </head>
-<?php 
-$page="contact.htm";
-include 'tracker.php';?>
 <body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">
     <h1 align="center"> Contact Information</h1>
     <center>
@@ -63,12 +60,17 @@ digg_url = 'http://casa.colorado.edu/~ginsbura/'; digg_bgcolor="#000000"; digg_s
 
 <script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
 <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-37306139-2");
-pageTracker._trackPageview();
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37306139-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
 </body></html>
 
