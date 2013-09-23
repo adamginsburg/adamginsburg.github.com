@@ -18,3 +18,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-37306139-2');
 ga('send', 'pageview');
 
+function test(){
+    alert("Test Success!");
+}
