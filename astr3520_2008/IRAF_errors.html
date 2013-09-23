@@ -1,46 +1,41 @@
-
-<html>
-<link rel="stylesheet" type="text/css" href="style.css">
-<title> Astronomy 3520: IRAF errors </title>
-<body> 
-		<?php include 'tracker.php';?>
-<head><h1><center> ASTR 3520: Common IRAF/PyRAF errors 2008 </center></h1></head>
-    <table align="center" width=800><tr><td>
-<br>
-<br> If you experience an error not listed here, send it to me.
-<br>
-<br> <h3 id="dispcor"><tt>dispcor</tt></h3>
+<html><head><link href="style.css" rel="stylesheet" type="text/css"/><title> Astronomy 3520: IRAF errors </title></head><body>
+<h1><center> ASTR 3520: Common IRAF/PyRAF errors 2008 </center></h1>
+<table align="center" width="800"><tr><td>
+<br/>
+<br/> If you experience an error not listed here, send it to me.
+<br/>
+<br/> <h3 id="dispcor"><tt>dispcor</tt></h3>
 <pre>
 Killing IRAF task `dispcor'
 Traceback (innermost last):
-  File "<CL script CL1>", line 1, in <module>
+  File "<cl cl1="" script="">", line 1, in <module>
 IrafError: Error running IRAF task dispcor
 IRAF task terminated abnormally
 ERROR (1, "NGC7814_44rspec.fits - Missing reference for aperture 2")
-</pre>
-<br> This error results when you've used a different set of apertures in your 
+</module></cl></pre>
+<br/> This error results when you've used a different set of apertures in your 
 <a href="apextract/sample_apextraction.html#apall_callamp">calibration lamp extraction </a>
 than you used in your <a href="apextract/sample_apextraction.html#apall"> science spectrum
     extraction </a> OR when you haven't <tt>reidentify</tt>'d a cal lamp extraction with
 more than one spectrum in it (see step 11 of <a href="apextract/sample_apextraction.html">the 
     aperture extraction example</a>.
-<br>
-<br> If you experienced the former error, you need to go back and re-extract,
+<br/>
+<br/> If you experienced the former error, you need to go back and re-extract,
 then re-identify lines in your cal lamp spectra.  It may be possible to copy
 your wavelength solutions: look in database/id[filename], that's where IRAF
 stores the wavelength solution.
-<br>
-<br>
-<br> <h3> Syntax errors </h3>
+<br/>
+<br/>
+<br/> <h3> Syntax errors </h3>
 If you get an error that includes the word 'syntax', the first thing to check is that 
 you've loaded the right package.  For whatever command you're trying to use, run:
-<br><tt> help [command] </tt> 
-<br>and look at the name of the command at the top.  It should be something like
+<br/><tt> help [command] </tt>
+<br/>and look at the name of the command at the top.  It should be something like
 <tt>noao.twodspec.apextract.apall</tt>.  Then, run the commands in order:
-<br><tt> noao
-    <br> twodspec
-    <br> apextract </tt>
-<br> and try again.
+<br/><tt> noao
+    <br/> twodspec
+    <br/> apextract </tt>
+<br/> and try again.
 
 
 
@@ -65,21 +60,6 @@ also go on and change your imdir to <b>"home$images/"</b>.  Search for the line 
     <li>you may need to use the <tt>flpr</tt> command to make sure IRAF recognizes the change
     <li>Find your login.cl file.  Make sure the <tt>set imtype=fits</tt> line is uncommented as in <a href="IRAF.html#errors">the directions above</a>.
 </ol>-->
-
-<br><br><br>
-<?php include 'navbar.php';?>
-<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
-</body><script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
+<br/><br/><br/>
+<br/><br/>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a>
+</td></tr></table></body><head><script src="../googleanalytics.js" type="text/javascript"></script></head></html>

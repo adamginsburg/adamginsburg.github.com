@@ -1,17 +1,4 @@
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
-<meta name="ProgId" content="FrontPage.Editor.Document">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>New Page 1</title>
-</head>
-
-<body>
-
-
-
+<html><head><meta content="en-us" http-equiv="Content-Language"/><meta content="Microsoft FrontPage 5.0" name="GENERATOR"/><meta content="FrontPage.Editor.Document" name="ProgId"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>New Page 1</title></head><body>
 <!--<form name=datain >
 FeII8619 <input type=text name=FeII8619 size=10 maxlength=10> Variance <input type=text name=Var8619 size=10 maxlength=10> <span id=out1></span> <br>
 SII6717  <input type=text name=SII6717 size=10 maxlength=10>  Variance <input type=text name=Var6717 size=10 maxlength=10><span id=out4></span><br>
@@ -47,19 +34,19 @@ function handler(inputdata) {
 //	alert("handler called");
 	var temp;
 	document.getElementById('Output').innerHTML=inputdata.FeII8619;
-	document.getElementById('Output').innerHTML+="<br> feiivalue";
+	document.getElementById('Output').innerHTML+="<br/> feiivalue";
 	document.getElementById('Output').innerHTML+=inputdata.FeII8619.value;
-	document.getElementById('Output').innerHTML+="<br> inputdata";
+	document.getElementById('Output').innerHTML+="<br/> inputdata";
 	document.getElementById('Output').innerHTML+=inputdata;
-	document.getElementById('Output').innerHTML+="<br> x values ";
+	document.getElementById('Output').innerHTML+="<br/> x values ";
 	for (x in database)	{
 		listofchi[x]=[testmodel(inputdata,database[x]),x];
 	}
 	document.getElementById('Output').innerHTML+=x;
-	document.getElementById('Output').innerHTML+="<br> loX ";		
+	document.getElementById('Output').innerHTML+="<br/> loX ";		
     listofchi.sort(sortfunc);		
    	document.getElementById('Output').innerHTML+=listofchi[1][1];
-//	document.getElementById('Output').innerHTML="The 5 best models are:<br><table>";
+//	document.getElementById('Output').innerHTML="The 5 best models are:<br/><table>";
 	document.getElementById('model1').innerHTML="<td>";
 	document.getElementById('model1').innerHTML+=database[listofchi[0][1]][0];
 	document.getElementById('model1').innerHTML+="</td><td>";
@@ -116,7 +103,7 @@ function handler(inputdata) {
 
 function testmodel(inputdata,modeldata) {
 	document.getElementById('Output2').innerHTML=inputdata.SII6717.value;
-	document.getElementById('Output2').innerHTML+="<br>chi:";
+	document.getElementById('Output2').innerHTML+="<br/>chi:";
 	document.getElementById('Output2').innerHTML+=chisquare(inputdata.FeII8619.value,modeldata[23],inputdata.Var8619.value);
 	var chi = chisquare(inputdata.FeII8619.value,modeldata[23],inputdata.Var8619.value);
 	chi+=chisquare(inputdata.HA.value,modeldata[12],inputdata.VarHA.value);
@@ -148,21 +135,6 @@ function testmodel(inputdata,modeldata) {
 }
 
 				if (flag==0) {flag=1; alert(datarray[x][1]+" md "+modeldata[dbnames[0][y]]+" da "+datarray[x][2]);}
-document.getElementById('Output').innerHTML+=("<br>x: " + x + "     corr: "  + corr[x] + "  newratio: " + newratio);
+document.getElementById('Output').innerHTML+=("<br/>x: " + x + "     corr: "  + corr[x] + "  newratio: " + newratio);
 
-</body>
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
+</table></body><head><script src="../googleanalytics.js" type="text/javascript"></script></head></html>

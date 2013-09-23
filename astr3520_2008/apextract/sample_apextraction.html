@@ -1,11 +1,6 @@
-<html>
-<!--<meta http-equiv="Content-Language" content="en-us">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">-->
-<link rel="stylesheet" type="text/css" href="../style.css">
-<!--<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">-->
-<title> Astronomy 3520: Aperture Extraction Example </title>
-<script language="javascript">
-<!--
+<html><!--<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">--><head><link href="../style.css" rel="stylesheet" type="text/css"/><!--<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">--><title> Astronomy 3520: Aperture Extraction Example </title><script language="javascript">
+&lt;!--
 function click(imname,imsrc) {
     document[imname].
 	onclick = "click2(" + imname + "," + document[imname].src + ")";
@@ -28,201 +23,148 @@ function toggle(myself,first,second) {
 //    myself.src = (myself.src == first) ? second:first;
 //    return true;
 }
-    -->
-</script>
-<body> 
-		<head><h1><center> ASTR 3520 Aperture Extraction example</center></h1></head>
-		<?php include '../tracker.php';?>
-    <table align="center" width=800><tr><td>
+    --&gt;
+</script></head><body>
+<h1><center> ASTR 3520 Aperture Extraction example</center></h1>
+<table align="center" width="800"><tr><td>
        Example aperture extraction with a dark-subtracted science image and a
        dark subtracted cal lamp spectrum.  For answers to questions you get asked 
        on the command line, click the links below...
        <ol><tt>
-	<li> hedit [SCIENCE].fits field=DISPAXIS value=1 add+
-        <li> noao <font color=yellow> (package) </font>
-	<li> twodspec <font color=yellow> (package) </font>
-	<li> apextract <font color=yellow> (package) </font>
-        <li> <a href="#apall">apall [SCIENCE].fits output=[SCIENCESPEC].fits</a>
-	<li> onedspec <font color=yellow> (package) </font>
-        <li> scombine [SCIENCESPEC]* [SCIENCESPEC]_comb combine=median
-	<li> hedit [CALLAMP].fits field=DISPAXIS value=1 add+
-        <li> <a href="#apall_callamp">apall [CALLAMP].fits output=[CALLAMPSPEC].fits ref=[SCIENCE].fits trace- edit- </a>
-	<li> <a href="#identify">identify [CALLAMPSPEC].fits coordlist='linelists$henear.dat'</a>
-        <li> <a href="#reidentify">reidentify [CALLAMPSPEC].fits [CALLAMPSPEC].fits verbose+ interactive+</a>  <font color=yellow>If you have more than 1 aperture</font>
-	<li> hedit [SCIENCESPEC].fits REFSPEC1 "[CALLAMPSPEC].fits" add+
-	<li> dispcor [SCIENCESPEC].fits [SCIENCESPEC_DISPCOR].fits
-	<li> splot [SCIENCESPEC_DISPCOR].fits
-</tt></ol>
-<br>        The above are:
-<br>SCIENCE: fully reduced 2D science spectrum
-<br>CALLAMP: fully reduced 2D calibration lamp exposure
-<br>SCIENCESPEC: aperture-extracted science spectrum
-<br>SCIENCESPEC*: aperture-extracted science spectrum for EACH 2D reduced science image (i.e. repeat steps 1-5 for each science image)
-<br>CALLAMPSPEC: aperture-extracted cal lamp spectrum
-<br>SCIENCESPEC_DISPCOR: aperture-extracted, dispersion-corrected science spectrum
+<li> hedit [SCIENCE].fits field=DISPAXIS value=1 add+
+        </li><li> noao <font color="yellow"> (package) </font>
+</li><li> twodspec <font color="yellow"> (package) </font>
+</li><li> apextract <font color="yellow"> (package) </font>
+</li><li> <a href="#apall">apall [SCIENCE].fits output=[SCIENCESPEC].fits</a>
+</li><li> onedspec <font color="yellow"> (package) </font>
+</li><li> scombine [SCIENCESPEC]* [SCIENCESPEC]_comb combine=median
+	</li><li> hedit [CALLAMP].fits field=DISPAXIS value=1 add+
+        </li><li> <a href="#apall_callamp">apall [CALLAMP].fits output=[CALLAMPSPEC].fits ref=[SCIENCE].fits trace- edit- </a>
+</li><li> <a href="#identify">identify [CALLAMPSPEC].fits coordlist='linelists$henear.dat'</a>
+</li><li> <a href="#reidentify">reidentify [CALLAMPSPEC].fits [CALLAMPSPEC].fits verbose+ interactive+</a> <font color="yellow">If you have more than 1 aperture</font>
+</li><li> hedit [SCIENCESPEC].fits REFSPEC1 "[CALLAMPSPEC].fits" add+
+	</li><li> dispcor [SCIENCESPEC].fits [SCIENCESPEC_DISPCOR].fits
+	</li><li> splot [SCIENCESPEC_DISPCOR].fits
+</li></tt></ol>
+<br/>        The above are:
+<br/>SCIENCE: fully reduced 2D science spectrum
+<br/>CALLAMP: fully reduced 2D calibration lamp exposure
+<br/>SCIENCESPEC: aperture-extracted science spectrum
+<br/>SCIENCESPEC*: aperture-extracted science spectrum for EACH 2D reduced science image (i.e. repeat steps 1-5 for each science image)
+<br/>CALLAMPSPEC: aperture-extracted cal lamp spectrum
+<br/>SCIENCESPEC_DISPCOR: aperture-extracted, dispersion-corrected science spectrum
 
 
-<h2 id=apall>Extracting your Aperture</h2>
-<br> Most important commands:
+<h2 id="apall">Extracting your Aperture</h2>
+<br/> Most important commands:
 <ul>
-    <li> <tt>f</tt>: change to fit window
-    <li> <tt>j</tt>: plot residuals
-    <li> <tt>:order N</tt> change fit to order number N
-    <li> <tt>:func FUNCTION</tt> change fitting function (e.g. <tt>spline3</tt>,<tt>legendre</tt>)
-    <li> <tt>q</tt>: quit / move on to the next step
-</ul>
-<br>
-<br> You'll be prompted will a few questions.  Answer yes to all of them.
+<li> <tt>f</tt>: change to fit window
+    </li><li> <tt>j</tt>: plot residuals
+    </li><li> <tt>:order N</tt> change fit to order number N
+    </li><li> <tt>:func FUNCTION</tt> change fitting function (e.g. <tt>spline3</tt>,<tt>legendre</tt>)
+    </li><li> <tt>q</tt>: quit / move on to the next step
+</li></ul>
+<br/>
+<br/> You'll be prompted will a few questions.  Answer yes to all of them.
 <tt>
-<br>Find apertures for Balog_W5WC300s.0052b? ('yes'):
-<br>Number of apertures to be found automatically (3): 1 <font color=yellow>
-    <br> &nbsp; Pick a number of apertures corresponding to the  number of stars</font>
-<br>Resize apertures for Balog_W5WC300s.0052b? ('yes'): y
-<br>Edit apertures for Balog_W5WC300s.0052b? ('yes'): y
+<br/>Find apertures for Balog_W5WC300s.0052b? ('yes'):
+<br/>Number of apertures to be found automatically (3): 1 <font color="yellow">
+<br/>   Pick a number of apertures corresponding to the  number of stars</font>
+<br/>Resize apertures for Balog_W5WC300s.0052b? ('yes'): y
+<br/>Edit apertures for Balog_W5WC300s.0052b? ('yes'): y
 </tt>
-<br>
-<br><img border="0" src="thumbs/apall_frame1_tn.jpg"
-    onclick="toggle('apall_frame1','thumbs/apall_frame1_tn.jpg','apall_frame1.jpg')"
-    name="apall_frame1"> 
-    <br>Selecting your aperture
-<br><img border="0"
-    src="thumbs/apall_frame2_zoom_tn.jpg"
-    onclick="toggle('apall_frame2_zoom','thumbs/apall_frame2_zoom_tn.jpg','apall_frame2_zoom.jpg')"
-    name="apall_frame2_zoom"> 
-    <br>Selecting your aperture:
+<br/>
+<br/><img border="0" name="apall_frame1" onclick="toggle('apall_frame1','thumbs/apall_frame1_tn.jpg','apall_frame1.jpg')" src="thumbs/apall_frame1_tn.jpg"/>
+<br/>Selecting your aperture
+<br/><img border="0" name="apall_frame2_zoom" onclick="toggle('apall_frame2_zoom','thumbs/apall_frame2_zoom_tn.jpg','apall_frame2_zoom.jpg')" src="thumbs/apall_frame2_zoom_tn.jpg"/>
+<br/>Selecting your aperture:
 zoomed in.  Make sure you include the whole thing, and fit the background using <tt>b</tt>.  When you are through, press <tt>q</tt>
-<br><img border="0"
-    src="thumbs/apall_fit1_tn.jpg"
-    onclick="toggle('apall_fit1','thumbs/apall_fit1_tn.jpg','apall_fit1.jpg')"
-    name="apall_fit1"> 
-    <br>The next step is fitting the aperture
+<br/><img border="0" name="apall_fit1" onclick="toggle('apall_fit1','thumbs/apall_fit1_tn.jpg','apall_fit1.jpg')" src="thumbs/apall_fit1_tn.jpg"/>
+<br/>The next step is fitting the aperture
 trace
-<br><img border="0"
-    src="thumbs/apall_fit2_loworderresidual_tn.jpg" onclick="toggle('apall_fit2_loworderresidual','thumbs/apall_fit2_loworderresidual_tn.jpg','apall_fit2_loworderresidual.jpg')" name="apall_fit2_loworderresidual"> 
-                <br>Look at the
+<br/><img border="0" name="apall_fit2_loworderresidual" onclick="toggle('apall_fit2_loworderresidual','thumbs/apall_fit2_loworderresidual_tn.jpg','apall_fit2_loworderresidual.jpg')" src="thumbs/apall_fit2_loworderresidual_tn.jpg"/>
+<br/>Look at the
 residual for that attempt (use <tt>j</tt> to get residual plots)
-<br><img border="0"
-    src="thumbs/apall_fit3_4thorderresidual_tn.jpg"
-    onclick="toggle('apall_fit3_4thorderresidual','thumbs/apall_fit3_4thorderresidual_tn.jpg','apall_fit3_4thorderresidual.jpg')"
-    name="apall_fit3_4thorderresidual"> 
-    <br>As you go
+<br/><img border="0" name="apall_fit3_4thorderresidual" onclick="toggle('apall_fit3_4thorderresidual','thumbs/apall_fit3_4thorderresidual_tn.jpg','apall_fit3_4thorderresidual.jpg')" src="thumbs/apall_fit3_4thorderresidual_tn.jpg"/>
+<br/>As you go
 to higher orders (using the command <tt>:order n</tt> where n is an integer), the residual pattern changes
-<br><img border="0"
-    src="thumbs/apall_fit4_5thorderresidual_tn.jpg"
-    onclick="toggle('apall_fit4_5thorderresidual','thumbs/apall_fit4_5thorderresidual_tn.jpg','apall_fit4_5thorderresidual.jpg')"
-    name="apall_fit4_5thorderresidual">
-    <br>
+<br/><img border="0" name="apall_fit4_5thorderresidual" onclick="toggle('apall_fit4_5thorderresidual','thumbs/apall_fit4_5thorderresidual_tn.jpg','apall_fit4_5thorderresidual.jpg')" src="thumbs/apall_fit4_5thorderresidual_tn.jpg"/>
+<br/>
 Finally, a residual pattern that appears relatively random - this is your goal
-<br><img border="0"
-    src="thumbs/apall_fit5_5thorderchebfit_tn.jpg"
-    onclick="toggle('apall_fit5_5thorderchebfit','thumbs/apall_fit5_5thorderchebfit_tn.jpg','apall_fit5_5thorderchebfit.jpg')"
-    name="apall_fit5_5thorderchebfit">
-    <br>
+<br/><img border="0" name="apall_fit5_5thorderchebfit" onclick="toggle('apall_fit5_5thorderchebfit','thumbs/apall_fit5_5thorderchebfit_tn.jpg','apall_fit5_5thorderchebfit.jpg')" src="thumbs/apall_fit5_5thorderchebfit_tn.jpg"/>
+<br/>
 You can tell the fit is fairly good
-<br><img border="0"
-    src="thumbs/apall_fit6_2ndordersplinefit_tn.jpg"
-    onclick="toggle('apall_fit6_2ndordersplinefit','thumbs/apall_fit6_2ndordersplinefit_tn.jpg','apall_fit6_2ndordersplinefit.jpg')"
-    name="apall_fit6_2ndordersplinefit">
-    <br>
+<br/><img border="0" name="apall_fit6_2ndordersplinefit" onclick="toggle('apall_fit6_2ndordersplinefit','thumbs/apall_fit6_2ndordersplinefit_tn.jpg','apall_fit6_2ndordersplinefit.jpg')" src="thumbs/apall_fit6_2ndordersplinefit_tn.jpg"/>
+<br/>
 A 2nd order spline fit is about as good as a 5th order Chebyshev polynomial in this case, but either choice is OK
-<br><img border="0"
-    src="thumbs/apall_fit7_nonlinearcomponent_tn.jpg"
-    onclick="toggle('apall_fit7_nonlinearcomponent','thumbs/apall_fit7_nonlinearcomponent_tn.jpg','apall_fit7_nonlinearcomponent.jpg')"
-    name="apall_fit7_nonlinearcomponent">
-    <br>
+<br/><img border="0" name="apall_fit7_nonlinearcomponent" onclick="toggle('apall_fit7_nonlinearcomponent','thumbs/apall_fit7_nonlinearcomponent_tn.jpg','apall_fit7_nonlinearcomponent.jpg')" src="thumbs/apall_fit7_nonlinearcomponent_tn.jpg"/>
+<br/>
 This shows the fit divided by the linear part of the fit to show you nonlinear components.  When you're through press <tt>q</tt>
-
-<h2 id=apall_callamp><tt>apall</tt> with the cal lamp</h2>
+<h2 id="apall_callamp"><tt>apall</tt> with the cal lamp</h2>
 When extracting the calibration lamp aperture, you do NOT want to find, move,
 edit, or trace your aperture: answer NO to all of those questions.  You DO want to
 write to database, extract, and review your spectrum.
 <tt>
-<br>Find apertures for Balog_W5WC300s.0052b? ('yes'): n
-<br>Resize apertures for Balog_W5WC300s.0052b? ('yes'): n
-<br>Edit apertures for Balog_W5WC300s.0052b? ('yes'): n
-<br>Extract aperture spectra for focus_dsub? ('yes'): y
+<br/>Find apertures for Balog_W5WC300s.0052b? ('yes'): n
+<br/>Resize apertures for Balog_W5WC300s.0052b? ('yes'): n
+<br/>Edit apertures for Balog_W5WC300s.0052b? ('yes'): n
+<br/>Extract aperture spectra for focus_dsub? ('yes'): y
 </tt>
-
-<h2 id=identify>Identifying Calibration Lamp Lines</h2>
-<br> Common key commands:
+<h2 id="identify">Identifying Calibration Lamp Lines</h2>
+<br/> Common key commands:
 <ul>
-    <li> <tt>m</tt>: mark a line
-    <li> <tt>d</tt>: delete a line
-    <li> <tt>f</tt>: go to fitting window
-    <li> <tt>l</tt>: autoidentify other lines
-    <li> <tt>i</tt>: initialize (start over)
-</ul>
-<img src="thumbs/identify_success_tn.jpg"
-    onclick="toggle('identify_success','thumbs/identify_success_tn.jpg','identify_success.jpg')"
-    name="identify_success"
-    border="0"><br>My successful line identification. (compare to <a
-    href="http://www.noao.edu/cgi-bin/tharatlas/runit_spec?w1=6000&w2=7000&maxlines=all&source=henear&plot=on&list=on">the
+<li> <tt>m</tt>: mark a line
+    </li><li> <tt>d</tt>: delete a line
+    </li><li> <tt>f</tt>: go to fitting window
+    </li><li> <tt>l</tt>: autoidentify other lines
+    </li><li> <tt>i</tt>: initialize (start over)
+</li></ul>
+<img border="0" name="identify_success" onclick="toggle('identify_success','thumbs/identify_success_tn.jpg','identify_success.jpg')" src="thumbs/identify_success_tn.jpg"/><br/>My successful line identification. (compare to <a href="http://www.noao.edu/cgi-bin/tharatlas/runit_spec?w1=6000&amp;w2=7000&amp;maxlines=all&amp;source=henear&amp;plot=on&amp;list=on">the
     NOAO spectrum corresponding to my fit</a>, the resemblance is excellent)
-<br>Don't get discouraged - it took me nearly an hour of dozens of iterations to
+<br/>Don't get discouraged - it took me nearly an hour of dozens of iterations to
 complete this successfully.   You should use the IRAF HeNeAr linelist <tt>linelist$henear.dat</tt> instead of the
 SBO line list.
-<br>A few tips:
-<br>&nbsp;1. Fit few points at first using <tt>m</tt>
-<br>&nbsp;2. quickly fit using <tt>f</tt> and check with <tt>q,l</tt> in the identified lines.
-<br>&nbsp;3. If the fit doesn't look right, use <tt>i</tt> to initialize and start over
-<br>&nbsp;4. Use a 2nd-order polynomial, not a spline
-<br>&nbsp;5. ***When comparing to SBO plots, zoom in fairly deep.  The SBO plots are scaled very poorly
-<br>&nbsp; If the SBO plots fail for you, try <a href="http://www.noao.edu/kpno/specatlas/henear/henear.html">the Kitt Peak spectral atlas</a>
-<br><img
-    src="thumbs/identify_success_fit_tn.jpg"
-    onclick="toggle('identify_success_fit','thumbs/identify_success_fit_tn.jpg','identify_success_fit.jpg')"
-    name="identify_success_fit" border="0">
-    <br>
+<br/>A few tips:
+<br/> 1. Fit few points at first using <tt>m</tt>
+<br/> 2. quickly fit using <tt>f</tt> and check with <tt>q,l</tt> in the identified lines.
+<br/> 3. If the fit doesn't look right, use <tt>i</tt> to initialize and start over
+<br/> 4. Use a 2nd-order polynomial, not a spline
+<br/> 5. ***When comparing to SBO plots, zoom in fairly deep.  The SBO plots are scaled very poorly
+<br/>  If the SBO plots fail for you, try <a href="http://www.noao.edu/kpno/specatlas/henear/henear.html">the Kitt Peak spectral atlas</a>
+<br/><img border="0" name="identify_success_fit" onclick="toggle('identify_success_fit','thumbs/identify_success_fit_tn.jpg','identify_success_fit.jpg')" src="thumbs/identify_success_fit_tn.jpg"/>
+<br/>
     You want your fit to be approximately linear.   Use <tt>hjkl</tt> to change plot type.
-<br><img
-    src="thumbs/identify_success_residuals_tn.jpg"
-    onclick="toggle('identify_success_residuals','thumbs/identify_success_residuals_tn.jpg','identify_success_residuals.jpg')"
-    name="identify_success_residuals" border="0">
-    <br>
+<br/><img border="0" name="identify_success_residuals" onclick="toggle('identify_success_residuals','thumbs/identify_success_residuals_tn.jpg','identify_success_residuals.jpg')" src="thumbs/identify_success_residuals_tn.jpg"/>
+<br/>
 Your residuals should look approximately like noise.  If you recognize a
 pattern, you should use a higher order fit.  You can delete outliers
 that will mess up the fit using <tt>d</tt>
-<br>
-<br>
-<h2 id=reidentify>reidentify</a></h2>
+<br/>
+<br/>
+<h2 id="reidentify">reidentify</h2>
 Example: <tt> reidentify HeNeArCal_blue.ms.fits HeNeAr_sum.ms.fits interactive=yes</tt>
-<br> Reidentify will apply a wavelength solution stored in the
+<br/> Reidentify will apply a wavelength solution stored in the
 database/id[filename] file to all apertures in the 'image' file.
-<br>
-<br> If, when you pass the <tt>verbose+</tt> option, you get this error:
-<br><tt>    ** Too many features lost ** </tt>
-<br> try redoing the command with the option <tt>nlost=5</tt> or some other number.  
+<br/>
+<br/> If, when you pass the <tt>verbose+</tt> option, you get this error:
+<br/><tt>    ** Too many features lost ** </tt>
+<br/> try redoing the command with the option <tt>nlost=5</tt> or some other number.  
 This tells the command that it should still write the solution to the database if
 it loses some of the features you identified.
 
-<br>
-<br>
-<h2 id=extracted>Extracted spectra</h2>
-
-<br><img border="0" src="thumbs/pcyg_uncal_tn.jpg" onclick="toggle('pcyg_uncal','thumbs/pcyg_uncal_tn.jpg','pcyg_uncal.jpg')" name="pcyg_uncal">
-<br>Before dispersion correction (<tt>dispcor</tt>)
-<br><img border="0" src="thumbs/pcyg.calspec_tn.jpg" onclick="toggle('pcyg.calspec','thumbs/pcyg.calspec_tn.jpg','pcyg.calspec.jpg')" name="pcyg.calspec">
-<br>After dispersion correction using the correct lamp
-<br><img border="0" src="thumbs/pcyg_zoom_tn.jpg" onclick="toggle('pcyg_zoom','thumbs/pcyg_zoom_tn.jpg','pcyg_zoom.jpg')" name="pcyg_zoom">
-<br>Zoomed in on H-alpha
-<br>
-<br> There is still significant instrument response that has to be flat-fielded
+<br/>
+<br/>
+<h2 id="extracted">Extracted spectra</h2>
+<br/><img border="0" name="pcyg_uncal" onclick="toggle('pcyg_uncal','thumbs/pcyg_uncal_tn.jpg','pcyg_uncal.jpg')" src="thumbs/pcyg_uncal_tn.jpg"/>
+<br/>Before dispersion correction (<tt>dispcor</tt>)
+<br/><img border="0" name="pcyg.calspec" onclick="toggle('pcyg.calspec','thumbs/pcyg.calspec_tn.jpg','pcyg.calspec.jpg')" src="thumbs/pcyg.calspec_tn.jpg"/>
+<br/>After dispersion correction using the correct lamp
+<br/><img border="0" name="pcyg_zoom" onclick="toggle('pcyg_zoom','thumbs/pcyg_zoom_tn.jpg','pcyg_zoom.jpg')" src="thumbs/pcyg_zoom_tn.jpg"/>
+<br/>Zoomed in on H-alpha
+<br/>
+<br/> There is still significant instrument response that has to be flat-fielded
 out.  That example is available at <a href="../spectral_flatfielding.html">the
     spectral flatfielding page</a>
-
-<br><br><br><a class="special" href="../index.html">ASTR3520 home</a>
-<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
-</body><script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
+<br/><br/><br/><a class="special" href="../index.html">ASTR3520 home</a>
+<br/><br/>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a>
+</td></tr></table></body><head><script src="../../googleanalytics.js" type="text/javascript"></script></head></html>

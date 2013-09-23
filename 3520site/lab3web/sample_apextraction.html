@@ -1,90 +1,63 @@
-<html>
-<!--<meta http-equiv="Content-Language" content="en-us">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">-->
-<link rel="stylesheet" type="text/css" href="../style.css">
-<!--<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">-->
-<title> Astronomy 3520: Aperture Extraction Example </title>
-<body> 
-		<head><h1><center> ASTR 3520 Aperture Extraction example</center></h1></head>
-		<?php include '../tracker.php';?>
-		<ol><tt>
-				<line><br> hedit pcyg-dark.fits field=DISPAXIS value=1 add+
-				<line><br> hedit cal3.fits field=DISPAXIS value=1 add+
-				<line><br> noao
-				<line><br> twodspec
-				<line><br> apextract
-				<line><br> apall pcyg-dark.fits output=pcygmdarkap.fits
-				<line><br> apall cal3.fits output=cal3a.fits 
-				<line><br> onedspec
-				<line><br> <a href="sample_apextraction.html#identify">identify cal2.fits coordlist='linelists$henear.dat'</a>
-				<line><br> hedit pcygmdarkap.fits REFSPEC1 "cal3a.fits" add+
-				<line><br> dispcor pcygmdarkap.fits pcygmdarkcalspec.fits
-				<line><br> splot pcygmdarkcalspec.fits
-</tt></ol>
-
-<h2 id=apall>Extracting your Aperture</h2>
-<br><a href="apall_frame1.jpg"><img border="0" src="thumbs/apall_frame1_tn.jpg"></a> Selecting your aperture
-<br><a href="apall_frame2_zoom.jpg"><img border="0"
-		src="thumbs/apall_frame2_zoom_tn.jpg"></a> Selecting your aperture:
+<html><!--<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">--><head><link href="../style.css" rel="stylesheet" type="text/css"/><!--<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">--><title> Astronomy 3520: Aperture Extraction Example </title></head><body>
+<h1><center> ASTR 3520 Aperture Extraction example</center></h1>
+<ol><tt>
+<line><br/> hedit pcyg-dark.fits field=DISPAXIS value=1 add+
+				<line><br/> hedit cal3.fits field=DISPAXIS value=1 add+
+				<line><br/> noao
+				<line><br/> twodspec
+				<line><br/> apextract
+				<line><br/> apall pcyg-dark.fits output=pcygmdarkap.fits
+				<line><br/> apall cal3.fits output=cal3a.fits 
+				<line><br/> onedspec
+				<line><br/> <a href="sample_apextraction.html#identify">identify cal2.fits coordlist='linelists$henear.dat'</a>
+<line><br/> hedit pcygmdarkap.fits REFSPEC1 "cal3a.fits" add+
+				<line><br/> dispcor pcygmdarkap.fits pcygmdarkcalspec.fits
+				<line><br/> splot pcygmdarkcalspec.fits
+</line></line></line></line></line></line></line></line></line></line></line></line></tt></ol>
+<h2 id="apall">Extracting your Aperture</h2>
+<br/><a href="apall_frame1.jpg"><img border="0" src="thumbs/apall_frame1_tn.jpg"/></a> Selecting your aperture
+<br/><a href="apall_frame2_zoom.jpg"><img border="0" src="thumbs/apall_frame2_zoom_tn.jpg"/></a> Selecting your aperture:
             zoomed in.  Make sure you include the whole thing, and fit the background using <tt>b</tt>.  When you are through, press <tt>q</tt>
-            <br><a href="apall_fit1.jpg"><img border="0" src="thumbs/apall_fit1_tn.jpg"></a> The next step is fitting the aperture trace
-            <br><a href="apall_fit2_loworderresidual.jpg"><img border="0"
-		src="thumbs/apall_fit2_loworderresidual_tn.jpg"></a> Look at the
+<br/><a href="apall_fit1.jpg"><img border="0" src="thumbs/apall_fit1_tn.jpg"/></a> The next step is fitting the aperture trace
+            <br/><a href="apall_fit2_loworderresidual.jpg"><img border="0" src="thumbs/apall_fit2_loworderresidual_tn.jpg"/></a> Look at the
 residual for that attempt (use <tt>j</tt> to get residual plots)
-<br><a href="apall_fit3_4thorderresidual.jpg"><img border="0" src="thumbs/apall_fit3_4thorderresidual_tn.jpg"></a> As you go
+<br/><a href="apall_fit3_4thorderresidual.jpg"><img border="0" src="thumbs/apall_fit3_4thorderresidual_tn.jpg"/></a> As you go
 to higher orders (using the command <tt>:order n</tt> where n is an integer), the residual pattern changes
-<br><a href="apall_fit4_5thorderresidual.jpg"><img border="0" src="thumbs/apall_fit4_5thorderresidual_tn.jpg"></a>
+<br/><a href="apall_fit4_5thorderresidual.jpg"><img border="0" src="thumbs/apall_fit4_5thorderresidual_tn.jpg"/></a>
 Finally, a residual pattern that appears relatively random - this is your goal
-<br><a href="apall_fit5_5thorderchebfit.jpg"><img border="0" src="thumbs/apall_fit5_5thorderchebfit_tn.jpg"></a>
+<br/><a href="apall_fit5_5thorderchebfit.jpg"><img border="0" src="thumbs/apall_fit5_5thorderchebfit_tn.jpg"/></a>
 You can tell the fit is fairly good
-<br><a href="apall_fit6_2ndordersplinefit.jpg"><img border="0" src="thumbs/apall_fit6_2ndordersplinefit_tn.jpg"></a>
+<br/><a href="apall_fit6_2ndordersplinefit.jpg"><img border="0" src="thumbs/apall_fit6_2ndordersplinefit_tn.jpg"/></a>
 A 2nd order spline fit is about as good as a 5th order Chebyshev polynomial in this case, but either choice is OK
-<br><a href="apall_fit7_nonlinearcomponent.jpg"><img border="0" src="thumbs/apall_fit7_nonlinearcomponent_tn.jpg"></a>
+<br/><a href="apall_fit7_nonlinearcomponent.jpg"><img border="0" src="thumbs/apall_fit7_nonlinearcomponent_tn.jpg"/></a>
 This shows the fit divided by the linear part of the fit to show you nonlinear components.  When you're through press <tt>q</tt>
-
-<h2 id=identify>Identifying Calibration Lamp Lines</h2>
-<a href="identify_success.jpg"><img src="thumbs/identify_success_tn.jpg"
-    border="0"></a><br>My successful line identification. (compare to <a
-    href="http://www.noao.edu/cgi-bin/tharatlas/runit_spec?w1=6000&w2=7000&maxlines=all&source=henear&plot=on&list=on">the
+<h2 id="identify">Identifying Calibration Lamp Lines</h2>
+<a href="identify_success.jpg"><img border="0" src="thumbs/identify_success_tn.jpg"/></a><br/>My successful line identification. (compare to <a href="http://www.noao.edu/cgi-bin/tharatlas/runit_spec?w1=6000&amp;w2=7000&amp;maxlines=all&amp;source=henear&amp;plot=on&amp;list=on">the
     NOAO spectrum corresponding to my fit</a>, the resemblance is excellent)
-<br>Don't get discouraged - it took me nearly an hour of dozens of iterations to
+<br/>Don't get discouraged - it took me nearly an hour of dozens of iterations to
 complete this successfully.   You should use the IRAF HeNeAr linelist <tt>linelist$henear.dat</tt> instead of the
 SBO line list.
-<br>A few tips:
-<br>&nbsp;1. Fit few points at first using <tt>m</tt>
-<br>&nbsp;2. quickly fit using <tt>f</tt> and check with <tt>q,l</tt> in the identified lines.
-<br>&nbsp;3. If the fit doesn't look right, use <tt>i</tt> to initialize and start over
-<br>&nbsp;4. Use a 2nd-order polynomial, not a spline
-<br>&nbsp;5. ***When comparing to SBO plots, zoom in fairly deep.  The SBO plots are scaled very poorly
-<br>&nbsp; If the SBO plots fail for you, try <a href="http://www.noao.edu/kpno/specatlas/henear/henear.html">the Kitt Peak spectral atlas</a>
-<br><a href="identify_success_fit.jpg"><img src="thumbs/identify_success_fit_tn.jpg" border="0"></a>
+<br/>A few tips:
+<br/> 1. Fit few points at first using <tt>m</tt>
+<br/> 2. quickly fit using <tt>f</tt> and check with <tt>q,l</tt> in the identified lines.
+<br/> 3. If the fit doesn't look right, use <tt>i</tt> to initialize and start over
+<br/> 4. Use a 2nd-order polynomial, not a spline
+<br/> 5. ***When comparing to SBO plots, zoom in fairly deep.  The SBO plots are scaled very poorly
+<br/>  If the SBO plots fail for you, try <a href="http://www.noao.edu/kpno/specatlas/henear/henear.html">the Kitt Peak spectral atlas</a>
+<br/><a href="identify_success_fit.jpg"><img border="0" src="thumbs/identify_success_fit_tn.jpg"/></a>
 		You want your fit to be approximately linear. 
-<br><a href="identify_success_residuals.jpg"><img src="thumbs/identify_success_residuals_tn.jpg" border="0"></a>
+<br/><a href="identify_success_residuals.jpg"><img border="0" src="thumbs/identify_success_residuals_tn.jpg"/></a>
 		Your residuals should look approximately like noise.  If you recognize a
 		pattern, you should use a higher order fit.  You can delete outliers
 		that will mess up the fit using <tt>d</tt>
+<h2 id="extracted">Extracted spectra</h2>
+<br/><a href="pcyg_uncal.jpg"><img border="0" src="thumbs/pcyg_uncal_tn.jpg"/></a> Before dispersion correction (<tt>dispcor</tt>)
+		<br/><a href="pcyg.calspec.jpg"><img border="0" src="thumbs/pcyg.calspec_tn.jpg"/></a> After dispersion correction using the correct lamp
+		<br/><a href="pcyg_zoom.jpg"><img border="0" src="thumbs/pcyg_zoom_tn.jpg"/></a> Zoomed in on H-alpha
+		<br/>
+<br/> There is still significant instrument response that has to be flat-fielded out.  That is currently reserved for another exercise.
 
-		<h2 id=extracted>Extracted spectra</h2>
-
-		<br><a href="pcyg_uncal.jpg"><img border="0" src="thumbs/pcyg_uncal_tn.jpg"></a> Before dispersion correction (<tt>dispcor</tt>)
-		<br><a href="pcyg.calspec.jpg"><img border="0" src="thumbs/pcyg.calspec_tn.jpg"></a> After dispersion correction using the correct lamp
-		<br><a href="pcyg_zoom.jpg"><img border="0" src="thumbs/pcyg_zoom_tn.jpg"></a> Zoomed in on H-alpha
-		<br>
-		<br> There is still significant instrument response that has to be flat-fielded out.  That is currently reserved for another exercise.
-
-<br><br><br><a class="special" href="index.html">ASTR3520 home</a>
-<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
-</body><script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
+<br/><br/><br/><a class="special" href="index.html">ASTR3520 home</a>
+<br/><br/>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a>
+</body><head><script src="../../googleanalytics.js" type="text/javascript"></script></head></html>

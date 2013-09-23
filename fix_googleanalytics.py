@@ -79,5 +79,5 @@ for rootdir,dirname,flist in os.walk('.'):
 
             if changed:
                 with open(fullfn,'w') as f:
-                    f.write(b):w
+                    f.write(str(b))
 

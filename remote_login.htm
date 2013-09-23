@@ -1,73 +1,51 @@
-<html>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<title>ASTR 3520 Remote Login</title>
-<center>		<head><h1>ASTR 3520 Remote Login Instructions</h1></head>
-    <?php 
-$page="remote_login.htm";
-    include 'tracker.php';?>
+<html><head><link href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><title>ASTR 3520 Remote Login</title></head><body><center> <h1>ASTR 3520 Remote Login Instructions</h1>
 </center>
-<br>
-<body>
-    <table align="center" width=800><tr><td>
-		<br> In order to remotely login to cosmos, do the following:
+<br/>
+<table align="center" width="800"><tr><td>
+<br/> In order to remotely login to cosmos, do the following:
                 <ol>
-                    <li> Open a terminal on a UNIX system.  If you do not have a UNIX system available, see below.
-                    <li> Type <tt>ifconfig</tt> and record your IP address.  An
+<li> Open a terminal on a UNIX system.  If you do not have a UNIX system available, see below.
+                    </li><li> Type <tt>ifconfig</tt> and record your IP address.  An
                     IP address has the form #.#.#.#, where each # is a number
                     between 0 and 254.
-                    <li> Type <tt>xhost +cosmos.colorado.edu</tt>.  You should
+                    </li><li> Type <tt>xhost +cosmos.colorado.edu</tt>.  You should
                     get a response similar to "cosmos.colorado.edu being added
                     to access control list".  If you don't, don't worry about
                     it, just continue on.
-                    <li> Type <tt>ssh -XY (yourname)@cosmos.colorado.edu</tt>,
+                    </li><li> Type <tt>ssh -XY (yourname)@cosmos.colorado.edu</tt>,
                     where (yourname) should be replaced by your username, e.g.
                     <tt>ssh -XY ginsbura@cosmos.colorado.edu</tt>.  Enter your
                         password when prompted.  If you receive a strange
                         question about security, respond "yes".
-                    <li> To check whether you have access to graphics, attempt to load a graphical terminal, e.g. ds9. 
-                    <li> Pray your internet connection is fast and you're set.
-                </ol>
-		<br>
-		<br> <h3> Remote Login for Windows </h3>
-		<br> You can login remotely from windows using an ssh client, preferably
+                    </li><li> To check whether you have access to graphics, attempt to load a graphical terminal, e.g. ds9. 
+                    </li><li> Pray your internet connection is fast and you're set.
+                </li></ol>
+<br/>
+<br/> <h3> Remote Login for Windows </h3>
+<br/> You can login remotely from windows using an ssh client, preferably
                 <a class="norm" href="http://www.ssh.com/support/downloads/secureshellwks/non-commercial.html">SSH Secure Shell</a>,
                 but the graphics aren't trivial.  I
 		will have to communicate with the CU IT department to find out if this
 		is possible, as it requires proprietary software.  Please e-mail me if you'd like me to 
 		do that, otherwise I'll skip it for now.
-		<br>
-                <br> <a href="mailto:adam.ginsburg@colorado.edu">Ask questions</a> 
+		<br/>
+<br/> <a href="mailto:adam.ginsburg@colorado.edu">Ask questions</a> 
                 if this does not work!  Most of this is
                 experimental for me, so if there's some failure in my
                 instructions, I may be able to correct it, but don't be
                 surprised.
-		<br>
-                <br> <h3> Login (ssh and scp) without a password </h3>
+		<br/>
+<br/> <h3> Login (ssh and scp) without a password </h3>
                 You can log in to a remote machine without a password using the following method:
                 <ol>
-                    <li> Use <code> ssh-keygen -r rsa </code> to generate a key file (default is <code>id_rsa</code>) and store it in <code>~/.ssh/</code>
-                    <li> Copy your key file to the remote computer (<code> scp ~/.ssh/id_rsa name@remote.computer:. </code>)
-                    <li> Log in to the remote computer and append your key to <code> ~/.ssh/authorized_keys </code>, e.g. 
+<li> Use <code> ssh-keygen -r rsa </code> to generate a key file (default is <code>id_rsa</code>) and store it in <code>~/.ssh/</code>
+</li><li> Copy your key file to the remote computer (<code> scp ~/.ssh/id_rsa name@remote.computer:. </code>)
+                    </li><li> Log in to the remote computer and append your key to <code> ~/.ssh/authorized_keys </code>, e.g. 
                     <code> ssh name@remote.computer
-                        cat id_rsa >> ~/.ssh/authorized_keys
+                        cat id_rsa &gt;&gt; ~/.ssh/authorized_keys
                         </code>
-                    </ol>
-		<br>
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-</body>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
-
+</li></ol>
+<br/>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+<script src="./googleanalytics.js" type="text/javascript"></script>
+</td></tr></table></body></html>

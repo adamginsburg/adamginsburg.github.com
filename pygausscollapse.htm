@@ -1,58 +1,26 @@
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<link href="prettify.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="prettify.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Gaussian Fitting Cubes in Python</title>
-</head>
-<?php 
-$page="pygaussfit.htm";
-include 'tracker.php';?>
-<body onload="prettyPrint()"> 
-<table align="center" width=800><tr><td>
+<html><head><meta content="en-us" http-equiv="Content-Language"/><link href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><link href="prettify.css" rel="stylesheet" type="text/css"/><script src="prettify.js" type="text/javascript"></script><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>Gaussian Fitting Cubes in Python</title></head><body onload="prettyPrint()">
+<table align="center" width="800"><tr><td>
 <center>
 <h1> Cube Gaussfit </h1>
 While neat, this code has some unfortunate hacks in it and is quite slow because it
 uses loops instead of vectorizing.  I don't know how to vectorize a Levenberg-Marqardt
 least-squares fitting routine, though.  This was primarily written for use on CO 3-2
 data from the JCMT.
-<br>
-<br> If you're interested in 2D Gaussian fitting, look at <a class="norm" href="pygaussfit.htm">my 2D gaussian fitting page</a>
-</center></tr></td>
+<br/>
+<br/> If you're interested in 2D Gaussian fitting, look at <a class="norm" href="pygaussfit.htm">my 2D gaussian fitting page</a>
+</center></td></tr>
 <tr><td>
-
 <code class="prettyprint">
-<? readfile("python/collapse_gaussfit.py"); ?>
+ readfile("python/collapse_gaussfit.py"); ?&gt;
 </code>
-<br>
-<br>I rewrote the MAD (median absolute deviation) code found in scipy.stats.stats because in numpy version 1.0.1 there was an error related to 1-dimensional arrays.
+<br/>
+<br/>I rewrote the MAD (median absolute deviation) code found in scipy.stats.stats because in numpy version 1.0.1 there was an error related to 1-dimensional arrays.
 This error has been corrected in numpy 1.0.4 and therefore this code does not need to be used if you have that version.
 <code class="prettyprint">
-<? readfile("python/mad.py"); ?>
+ readfile("python/mad.py"); ?&gt;
 </code>
-
-
 <center>
-<br><br><hr>
-<br>
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-</body>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
-
+<br/><br/><hr/>
+<br/>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</center></td></tr></table></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

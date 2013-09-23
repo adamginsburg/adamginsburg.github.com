@@ -1,29 +1,11 @@
-
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link href="prettify.css" type="text/css" rel="stylesheet">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<script type="text/javascript" src="prettify.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>ASTR 5550: Observing/Statistics</title>
-</head>
-<?php 
-$page="5550_obs.htm";
-include 'tracker.php';?>
-<body onload="prettyPrint()"> 
-<table align="center" width=800><tr><td>
-    <center>
-    <h1> ASTR 5550: Observing/Statistics </h1>
-
-
-    </center>
-    <div id="hw1" style='display: none'>
-    <a href=# onClick="javascript: hw1.style.display='none'; hw1link.style.display='inline'; return false;"> 
-    <h3 align="left" id="projection">HW 1</h3></a>
-
+<html><head><meta content="en-us" http-equiv="Content-Language"/><link href="style.css" rel="stylesheet" type="text/css"/><link href="prettify.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><script src="prettify.js" type="text/javascript"></script><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>ASTR 5550: Observing/Statistics</title></head><body onload="prettyPrint()">
+<table align="center" width="800"><tr><td>
+<center>
+<h1> ASTR 5550: Observing/Statistics </h1>
+</center>
+<div id="hw1" style="display: none">
+<a href="#" onclick="javascript: hw1.style.display='none'; hw1link.style.display='inline'; return false;">
+<h3 align="left" id="projection">HW 1</h3></a>
 <code class="prettyprint">
 #!/usr/bin/python
 #if you want to generate consistent results, you can import numpy
@@ -38,42 +20,16 @@ probsuccess = .3 #30% chance of detecting a galaxy in a given field
 for i in range(ntrials):
     for j in xrange(10000000):  #inner loop limit set to "practically infinite"
         r = rand()
-        if r < probsuccess: 
-            n[i]=j
-            break   #quit the loop when a galaxy is detected
+        if r     
 
-#plotting commands
-clf()
-hist(n,20,width=1)
-  #the distribution is P(k) = .3*.7^k = probsuccess * (1-probsuccess)^k
-plot(arange(20),ntrials*probsuccess*(1-probsuccess)**(arange(20)),'r',linewidth=2)
-#axis([0,20,0,500])  #this is a useful set of limits in some situations
-savefig('hw1_plot2.png')
-show()
-
-#testing out something I think is true....
-from scipy import comb
-bigN=10
-for bigM in arange(10)+1:
-    summed = 0
-    for i in arange(bigM)+1:
-        summed += comb(bigN,i)
-    print "bigM:%d  N+M-1 choose M: %d  summed: %d" % (bigM,comb(bigN+bigM-1,bigM),summed)
-#so it turns out that 
-# ( N + M - 1 )     !=   sum   (  N  )
-# (     M     )         k=1..M (  k  )
-</code>    
-
+</code></div>
+<div id="hw1link" style="display: inline">
+<a href="#" onclick="javascript: hw1.style.display='inline'; hw1link.style.display='none'; return false;">
+<h3 align="left" id="projection">HW 1</h3></a>
 </div>
-    <div id="hw1link" style='display: inline'>
-        <a href=# onClick="javascript: hw1.style.display='inline'; hw1link.style.display='none'; return false;"> 
-        <h3 align="left" id="projection">HW 1</h3></a>
-    </div>
-    </center>
-    <div id="hw2" style='display: none'>
-    <a href=# onClick="javascript: hw2.style.display='none'; hw2link.style.display='inline'; return false;"> 
-    <h3 align="left" id="projection">HW 2</h3></a>
-
+<div id="hw2" style="display: none">
+<a href="#" onclick="javascript: hw2.style.display='none'; hw2link.style.display='inline'; return false;">
+<h3 align="left" id="projection">HW 2</h3></a>
 <code class="prettyprint">
 #!/opt/local/bin/ipython -pylab
 from pylab import *
@@ -92,7 +48,7 @@ Pj = LA**j / factorial(j) * exp(-LA)
 Pk = LB**j / factorial(j) * exp(-LB)
 #sumPl=0
 #for i in j:
-#    sumPl += LB ** (k-i) * LA ** i / factorial(k-i) / factorial(i) * (k>i)
+#    sumPl += LB ** (k-i) * LA ** i / factorial(k-i) / factorial(i) * (k&gt;i)
 #Pl = sumPl * exp(-LC)
 Pl2 = LC**k / factorial(k) * exp(-LC)
 #Pl2 = (3+6)**(j+k) / factorial(j) / factorial(k) * exp(-3-6)
@@ -161,38 +117,15 @@ s=90/ninety
 gaus = 1/(2*pi*s**2) * exp(-radgrid/(2*s**2))
 figure(2); clf()
 contour(gaus,gaus.max()*asarray([.54716,.90,.95,.995]))
-print "The fractional area contained within 1 sigma (%f km): %f" % (s,(gaus*(radgrid<s)).sum()/gaus.sum())
-print "The fractional area contained within 90km: %f" % ((gaus*(radgrid<90)).sum()/gaus.sum())
-
-################################################################################
-# 
-# CODE OUTPUT:
-#
-# 2a. Probability of finding 0 galaxies in 100 pointings: 0.132620 (binomial), 0.135335 (poisson)
-# 2c. Probability of finding 4 galaxies in 200 pointings: 0.197349 (binomial), 0.195367 (poisson)
-# 2d. Probability of finding 0 galaxies in 100 pointings and 4 galaxies in another 100 pointings: 0.011963 (binomial), 0.012210 (poisson)
-# 2e. Really, we are no longer using the binomial distribution - it is not M successes in N attempts, 
-# but two independent attempts each with M successes out of 100 attempts - so it's a negative binomial 
-# distribution, but the probability of success is poorly defined.
-# 3. 90% confidence interval for a Gaussian with sigma = 1: 1.644854    1 sigma (68%) interval: 54.716115 km
-# 
-################################################################################
-</code>    
-
+print "The fractional area contained within 1 sigma (%f km): %f" % (s,(gaus*(radgrid<s a="" and="" another="" are="" area="" attempts="" binomial="" but="" code="" confidence="" contained="" defined="" distribution="" each="" finding="" for="" fractional="" galaxies="" gaussian="" in="" independent="" interval="" interval:="" is="" it="" km="" longer="" m="" n="" negative="" no="" not="" of="" out="" output:="" pointings="" pointings:="" poorly="" print="" probability="" really="" sigma="1:" so="" success="" successes="" the="" two="" using="" we="" with="" within="">
+</s></code></div>
+<div id="hw2link" style="display: inline">
+<a href="#" onclick="javascript: hw2.style.display='inline'; hw2link.style.display='none'; return false;">
+<h3 align="left" id="projection">HW 2</h3></a>
 </div>
-    <div id="hw2link" style='display: inline'>
-        <a href=# onClick="javascript: hw2.style.display='inline'; hw2link.style.display='none'; return false;"> 
-        <h3 align="left" id="projection">HW 2</h3></a>
-    </div>
-
-
-
-
-
-    <div id="hw3" style='display: none'>
-    <a href=# onClick="javascript: hw3.style.display='none'; hw3link.style.display='inline'; return false;"> 
-    <h3 align="left" id="projection">HW 3</h3></a>
-
+<div id="hw3" style="display: none">
+<a href="#" onclick="javascript: hw3.style.display='none'; hw3link.style.display='inline'; return false;">
+<h3 align="left" id="projection">HW 3</h3></a>
 <code class="prettyprint">
 
 
@@ -226,7 +159,7 @@ def poisson_montecarlo(pois_mean,ntrials):
         for j in xrange(1000):  #inner loop limit set to large
             r = rand()
             sum += -log(r)  #pulling random variables from an exponential distribution (?)
-            if sum > pois_mean:  #quit when mean reached (for CDF)
+            if sum &gt; pois_mean:  #quit when mean reached (for CDF)
                 n[i]=j
                 break   #quit the loop when the mean has been exceeded
     return n
@@ -242,248 +175,13 @@ def poisson_montecarlo2(pois_mean,ntrials):
         sum = 0
         r = rand()
         count = 0
-        while sum < r:
-            count += 1
-            thefactorial = factorial(count)
-#            error checking: can't generate numbers larger than 
-#            factorial(170) so I just skip those
-            if str(thefactorial) == 'inf': 
-                print "Extreme outlier discovered: must skip. rand :%f sum: %f" % (r,sum)
-                n[i] = 171
-                break
-            else:
-                sum += pois_mean**count / thefactorial * exp(-pois_mean)
-        n[i] = count
-    return n
+        while sum     
 
-#this is the binomial distribution generator suggested in e-mail;
-#it is not used because I just rewrote it inside of method 3
-#for the record, it took 3 lines, not 2 - but it could 
-#have been condensed 
-def binom(mean,ntrials):
-    sum = 0
-    for i in range(ntrials):
-        if rand() < float(mean) / float(ntrials):
-            sum += 1
-    return sum
-
-#method 3: the one recommended in the e-mail
-#nbtrials is a set number of trials for the binomial distribution
-#such that it is large enough to be a Poisson distribution
-#the probability of success is defined as the poisson mean / number of binomial trials
-def poisson_montecarlo3(pois_mean,ntrials):
-    nbtrials=1000
-    n = zeros(ntrials)
-    for i in range(ntrials):
-        sum = 0
-        for j in range(nbtrials):
-            if rand() < float(pois_mean) / float(nbtrials):
-                sum += 1
-        n[i] = sum 
-    return n
-
-
-#run_mc runs each method [nruns] times with a given mean and number of trials
-#for 2 and 3, this takes an excessively long time and should not be done.  Ever.
-#it returns the average of the means and the average and variation of the
-#variations
-def run_mc(nruns,mean,ntrials):
-    means = zeros(nruns,dtype='float32')
-    variances = zeros(nruns,dtype='float32')
-    for i in range(nruns):
-        poisn = poisson_montecarlo(mean,ntrials)
-        means[i] = poisn.mean()
-        variances[i] = poisn.var()
-#    return means.mean(),variances.mean(),variances.var()
-    return means,variances
-
-def run_mc2(nruns,mean,ntrials):
-    means = zeros(nruns)
-    variances = zeros(nruns)
-    for i in range(nruns):
-        poisn = poisson_montecarlo2(mean,ntrials)
-        means[i] = poisn.mean()
-        variances[i] = poisn.var()
-    return means.mean(),variances.mean(),variances.var()
-
-def run_mc3(nruns,mean,ntrials):
-    means = zeros(nruns)
-    variances = zeros(nruns)
-    for i in range(nruns):
-        poisn = poisson_montecarlo3(mean,ntrials)
-        means[i] = poisn.mean()
-        variances[i] = poisn.var()
-    return means.mean(),variances.mean(),variances.var()
-
-
-#these are all the runs of the code and printing the answers
-#and making plots....
-
-n10 = poisson_montecarlo(10,10)
-n100 = poisson_montecarlo(10,100)
-n1000 = poisson_montecarlo(10,1000)
-n10000 = poisson_montecarlo(10,10000)
-
-(mean10,var10) = run_mc(100,10,10)
-(mean100,var100) = run_mc(100,10,100)
-(mean1000,var1000) = run_mc(100,10,1000)
-(mean10000,var10000) = run_mc(100,10,10000)
-
-(mmean10,mvar10,vvar10) = (mean10.mean(),var10.mean(),var10.var())
-(mmean100,mvar100,vvar100) = (mean100.mean(),var100.mean(),var100.var())
-(mmean1000,mvar1000,vvar1000) = (mean1000.mean(),var1000.mean(),var1000.var())
-(mmean10000,mvar10000,vvar10000) = (mean10000.mean(),var10000.mean(),var10000.var())
-
-#(mean10,mvar10,vvar10) = run_mc(100,10,10)
-#(mean100,mvar100,vvar100) = run_mc(100,10,100)
-#(mean1000,mvar1000,vvar1000) = run_mc(100,10,1000)
-#(mean10000,mvar10000,vvar10000) = run_mc(100,10,10000)
-
-print "Sample n=10, l=10.     Mean=%f, Variance=%f" % (n10.mean(),n10.var())
-print "Sample n=100, l=10.    Mean=%f, Variance=%f" % (n100.mean(),n100.var())
-print "Sample n=1000, l=10.   Mean=%f, Variance=%f" % (n1000.mean(),n1000.var())
-print "Sample n=10000, l=10.  Mean=%f, Variance=%f" % (n10000.mean(),n10000.var())
-print "Each of the above runs done 100 times to smooth out the mean/variance"
-print "100 Samples n=10, l=10.     avg Mean=%f, avg Variance=%f, var variance: %f" % (mmean10,mvar10,vvar10)
-print "100 Samples n=100, l=10.    avg Mean=%f, avg Variance=%f, var variance: %f" % (mmean100,mvar100,vvar100)
-print "100 Samples n=1000, l=10.   avg Mean=%f, avg Variance=%f, var variance: %f" % (mmean1000,mvar1000,vvar1000)
-print "100 Samples n=10000, l=10.  avg Mean=%f, avg Variance=%f, var variance: %f" % (mmean10000,mvar10000,vvar10000)
-print "3.c. Not far; the variance is significantly further from its expected value, but that makes sense since it is squared."
-print "3.d. The mean and variance are, of course, closer.\n"
-figure(1); clf(); n10_hist = asarray(hist(n10,range(25))[0])
-figure(2); clf(); n100_hist = asarray(hist(n100,range(25))[0])
-figure(3); clf(); n1000_hist = asarray(hist(n1000,range(25))[0])
-figure(4); clf(); n10000_hist = asarray(hist(n10000,range(25))[0])
-draw(); show();
-
-#plot(arange(4),[n10.var(),n100.std()**2,n1000.std()**2,n10000.std()**2])
-
-n2_10 = poisson_montecarlo2(10,10)
-n2_100 = poisson_montecarlo2(10,100)
-n2_1000 = poisson_montecarlo2(10,1000)
-n2_10000 = poisson_montecarlo2(10,10000)
-
-#(mean2_10,mvar2_10,vvar2_10) = run_mc2(100,10,10)
-#(mean2_100,mvar2_100,vvar2_100) = run_mc2(100,10,100)
-#(mean2_1000,mvar2_1000,vvar2_1000) = run_mc2(100,10,1000)
-#(mean2_10000,mvar2_10000,vvar2_10000) = run_mc2(100,10,10000)
-
-print "Second method:"
-print "Sample n=10, l=10.     Mean=%f, Variance=%f" % (n2_10.mean(),n2_10.var())
-print "Sample n=100, l=10.    Mean=%f, Variance=%f" % (n2_100.mean(),n2_100.var())
-print "Sample n=1000, l=10.   Mean=%f, Variance=%f" % (n2_1000.mean(),n2_1000.var())
-print "Sample n=10000, l=10.  Mean=%f, Variance=%f" % (n2_10000.mean(),n2_10000.var())
-#print "100 Sample n=10, l=10.     avg Mean=%f, avg Variance=%f, var Variance=%f" % (mean2_10,mvar2_10,vvar2_10)
-#print "100 Sample n=100, l=10.    avg Mean=%f, avg Variance=%f, var Variance=%f" % (mean2_100,mvar2_100,vvar2_100)
-#print "100 Sample n=1000, l=10.   avg Mean=%f, avg Variance=%f, var Variance=%f" % (mean2_1000,mvar2_1000,vvar2_1000)
-#print "100 Sample n=10000, l=10.  avg Mean=%f, avg Variance=%f, var Variance=%f" % (mean2_10000,mvar2_10000,vvar2_10000)
-
-figure(1); clf(); n2_10_hist = asarray(hist(n2_10,range(25))[0])
-figure(2); clf(); n2_100_hist = asarray(hist(n2_100,range(25))[0])
-figure(3); clf(); n2_1000_hist = asarray(hist(n2_1000,range(25))[0])
-figure(4); clf(); n2_10000_hist = asarray(hist(n2_10000,range(25))[0])
-draw(); show();
-
-n3_10 = poisson_montecarlo3(10,10)
-n3_100 = poisson_montecarlo3(10,100)
-n3_1000 = poisson_montecarlo3(10,1000)
-n3_10000 = poisson_montecarlo3(10,10000)
-
-#(mean3_10,mvar3_10,vvar3_10) = run_mc3(100,10,10)
-#(mean3_100,mvar3_100,vvar3_100) = run_mc3(100,10,100)
-#(mean3_1000,mvar3_1000,vvar3_1000) = run_mc3(100,10,1000)
-#(mean3_10000,mvar3_10000,vvar3_10000) = run_mc3(100,10,10000)
-
-print "Third method:"
-print "Sample n=10, l=10.     Mean=%f, Variance=%f" % (n3_10.mean(),n3_10.var())
-print "Sample n=100, l=10.    Mean=%f, Variance=%f" % (n3_100.mean(),n3_100.var())
-print "Sample n=1000, l=10.   Mean=%f, Variance=%f" % (n3_1000.mean(),n3_1000.var())
-print "Sample n=10000, l=10.  Mean=%f, Variance=%f" % (n3_10000.mean(),n3_10000.var())
-#print "100 Sample n=10, l=10.     avg Mean=%f, avg Variance=%f, var Variance=%f" % (mean3_10,mvar3_10,vvar3_10)
-#print "100 Sample n=100, l=10.    avg Mean=%f, avg Variance=%f, var Variance=%f" % (mean3_100,mvar3_100,vvar3_100)
-#print "100 Sample n=1000, l=10.   avg Mean=%f, avg Variance=%f, var Variance=%f" % (mean3_1000,mvar3_1000,vvar3_1000)
-#print "100 Sample n=10000, l=10.  avg Mean=%f, avg Variance=%f, var Variance=%f" % (mean3_10000,mvar3_10000,vvar3_10000)
-
-figure(1); clf(); n3_10_hist = asarray(hist(n3_10,range(25))[0])
-figure(2); clf(); n3_100_hist = asarray(hist(n3_100,range(25))[0])
-figure(3); clf(); n3_1000_hist = asarray(hist(n3_1000,range(25))[0])
-figure(4); clf(); n3_10000_hist = asarray(hist(n3_10000,range(25))[0])
-draw(); show();
-
-#comparitive plotting commands
-pdib = exp(-10) * 10.**(arange(25)) / factorial(arange(25)) 
-
-figure(1); clf(); title("10 trials"); plot(arange(25),n2_10_hist,label="2"); plot(arange(25),n3_10_hist,label="3"); plot(arange(25),n10_hist,label="1"); plot(arange(25),pdib*10,label="Poisson Function"); legend()
-figure(2); clf(); title("100 trials"); plot(arange(25),n2_100_hist,label="2"); plot(arange(25),n3_100_hist,label="3"); plot(arange(25),n100_hist,label="1"); plot(arange(25),pdib*100,label="Poisson Function"); legend()
-figure(3); clf(); title("1000 trials"); plot(arange(25),n2_1000_hist,label="2"); plot(arange(25),n3_1000_hist,label="3"); plot(arange(25),n1000_hist,label="1"); plot(arange(25),pdib*1000,label="Poisson Function"); legend()
-figure(4); clf(); title("10000 trials"); plot(arange(25),n2_10000_hist,label="2"); plot(arange(25),n3_10000_hist,label="3"); plot(arange(25),n10000_hist,label="1"); plot(arange(25),pdib*10000,label="Poisson Function"); legend()
-figure(5); clf(); title("Method 2"); plot(arange(25),n2_10_hist/10.,label="10"); plot(arange(25),n2_100_hist/100.,label="100");  plot(arange(25),n2_1000_hist/1000.,label="1000");  plot(arange(25),n2_10000_hist/10000.,label="10000");plot(arange(25),pdib,label="Poisson Function"); legend()
-figure(6); clf(); title("Method 3"); plot(arange(25),n3_10_hist/10.,label="10"); plot(arange(25),n3_100_hist/100.,label="100");  plot(arange(25),n3_1000_hist/1000.,label="1000");  plot(arange(25),n3_10000_hist/10000.,label="10000");plot(arange(25),pdib,label="Poisson Function"); legend()
-figure(7); clf(); title("Method 1"); plot(arange(25),n10_hist/10.,label="10"); plot(arange(25),n100_hist/100.,label="100");  plot(arange(25),n1000_hist/1000.,label="1000");  plot(arange(25),n10000_hist/10000.,label="10000");plot(arange(25),pdib,label="Poisson Function"); legend()
-draw(); show();
-
-"""
-######################################################################################################################
-#### OUTPUT ####
-Sample n=10, l=10.     Mean=10.200000, Variance=11.760000
-Sample n=100, l=10.    Mean=10.480000, Variance=11.929600
-Sample n=1000, l=10.   Mean=10.074000, Variance=10.324524
-Sample n=10000, l=10.  Mean=10.061700, Variance=9.911893
-Each of the above runs done 100 times to smooth out the mean/variance
-100 Samples n=10, l=10.     avg Mean=9.949001, avg Variance=9.367902, var variance: 15.964681
-100 Samples n=100, l=10.    avg Mean=10.028101, avg Variance=10.142794, var variance: 2.728547
-100 Samples n=1000, l=10.   avg Mean=9.983470, avg Variance=10.008345, var variance: 0.201694
-100 Samples n=10000, l=10.  avg Mean=10.004571, avg Variance=10.000493, var variance: 0.025863
-3.c. Not far; the variance is significantly further from its expected value, but that makes sense since it is squared.
-3.d. The mean and variance are, of course, closer.
-
-Second method:
-Sample n=10, l=10.     Mean=9.500000, Variance=3.450000
-Sample n=100, l=10.    Mean=10.550000, Variance=13.747500
-Sample n=1000, l=10.   Mean=10.055000, Variance=9.961975
-Sample n=10000, l=10.  Mean=10.008600, Variance=10.005326
-Third method:
-Sample n=10, l=10.     Mean=8.600000, Variance=5.440000
-Sample n=100, l=10.    Mean=9.950000, Variance=10.027500
-Sample n=1000, l=10.   Mean=9.963000, Variance=9.461631
-Sample n=10000, l=10.  Mean=10.004000, Variance=9.935584
-"""
-</code>    
-
+</code></div>
+<div id="hw3link" style="display: inline">
+<a href="#" onclick="javascript: hw3.style.display='inline'; hw3link.style.display='none'; return false;">
+<h3 align="left" id="projection">HW 3</h3></a>
 </div>
-    <div id="hw3link" style='display: inline'>
-        <a href=# onClick="javascript: hw3.style.display='inline'; hw3link.style.display='none'; return false;"> 
-        <h3 align="left" id="projection">HW 3</h3></a>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <hr><br>
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-    </body>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
+<hr/><br/>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</td></tr></table></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

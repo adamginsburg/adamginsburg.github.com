@@ -1,52 +1,32 @@
-<html>
-<!--<meta http-equiv="Content-Language" content="en-us">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">-->
-<link rel="stylesheet" type="text/css" href="style.css">
-<!--<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">-->
-<title> Astronomy 3520: Lab 3 </title>
-<body> 
-<head><h1><center> ASTR 3520: Lab 3</center></h1></head>
-<?php include 'tracker.php';?>
+<html><!--<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">--><head><link href="style.css" rel="stylesheet" type="text/css"/><!--<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">--><title> Astronomy 3520: Lab 3 </title></head><body>
+<h1><center> ASTR 3520: Lab 3</center></h1>
 <center>
-    <br> The assignment: <a class="norm" href="Lab3.pdf">Lab 3: Stellar Spectral extraction and reduction</a>   
-    <br> You should follow <a href="http://www.ifa.hawaii.edu/~joshw/IRAFtutorial/index.html">Josh Walawender's IRAF tutorial</a>
+<br/> The assignment: <a class="norm" href="Lab3.pdf">Lab 3: Stellar Spectral extraction and reduction</a>
+<br/> You should follow <a href="http://www.ifa.hawaii.edu/~joshw/IRAFtutorial/index.html">Josh Walawender's IRAF tutorial</a>
     up through the <a href="lab3web/sample_apextraction.html">line identification</a> section, at which point you should check 
     out the <a href="lab3web/sample_apextraction.html">helpful tips on <tt>apall</tt> and <tt> identify</tt></a> page.
-    <br>
-    <br> When you have applied your wavelength solution, you should have an image similar to mine:
-    <br><a href="lab3web/pcyg.calspec.jpg"><img border="0" src="lab3web/thumbs/pcyg.calspec_tn.jpg"></a>  
-    <br> Specifically, you should have wavelength instead of pixel number on the x axis.
-    <br>
-    <br> After you've completed that step, you just need to identify your stellar type.  In order to do this,
+    <br/>
+<br/> When you have applied your wavelength solution, you should have an image similar to mine:
+    <br/><a href="lab3web/pcyg.calspec.jpg"><img border="0" src="lab3web/thumbs/pcyg.calspec_tn.jpg"/></a>
+<br/> Specifically, you should have wavelength instead of pixel number on the x axis.
+    <br/>
+<br/> After you've completed that step, you just need to identify your stellar type.  In order to do this,
     you need to correct for the chip sensitivity, which involves dividing by some sort of spectral flat.  For
     long-slit spectroscopy, this is best done using a standard star (which corrects for atmospheric extinction
     in addition to chip sensitivity) or line ratios (which also corrects for interstellar extinction), but for 
     this lab it will not be necessary.
-    <br> In the lab, you are asked to interpolate over Balmer lines in Vega's spectrum.  This essentially means
+    <br/> In the lab, you are asked to interpolate over Balmer lines in Vega's spectrum.  This essentially means
     fitting a continuum to Vega.  This can be done easily in <tt>splot</tt>.  You need to use <tt>t</tt> to fit
     a continuum (then press <tt>f</tt> because you want a fit), then use <tt>i</tt> to save your continuum fit 
     as another image.  You should be familiar with fitting routines from earlier work (see, e.g., my helpful
     tips on <tt>apall</tt> above.  You should also know how to use <tt>imarith</tt> to divide spectra.  If not,
     ask!
-    <br>
-    <br> This website is a nice reference when identifying stellar type, but be careful: don't take these spectra 
+    <br/>
+<br/> This website is a nice reference when identifying stellar type, but be careful: don't take these spectra 
     as being correct without doing a sanity check, e.g. "is this F star hotter or colder than the sun?  should it 
     be?"  You should also use tables 11.2, 11.4, and 11.5 from your textbook to independently determine spectral type.
-    <br><a href="http://cfa-www.harvard.edu/~pberlind/atlas/atframes.html">An atlas of stellar spectra</a>
-<br><br><br><a class="special" href="index.html">ASTR3520 home</a>
-<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
-</body><script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
-
+    <br/><a href="http://cfa-www.harvard.edu/~pberlind/atlas/atframes.html">An atlas of stellar spectra</a>
+<br/><br/><br/><a class="special" href="index.html">ASTR3520 home</a>
+<br/><br/>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a>
+</center></body><head><script src="../googleanalytics.js" type="text/javascript"></script></head></html>

@@ -1,40 +1,39 @@
-<phtml>
+<html><body><phtml>
 <!--<meta http-equiv="Content-Language" content="en-us">
 <meta http-equiv="Content-Type" content="text/phtml; charset=windows-1252">-->
-<link rel="stylesheet" type="text/css" href="style.css">
+<link href="style.css" rel="stylesheet" type="text/css"/>
 <!--<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">-->
 <title> Astronomy 3520: SBO Spectrometer </title>
-<body> 
-		<head><h1><center> ASTR 3520: SBO Spectrometer</center></h1></head>
-    <table align="center" width=800><tr><td>
+<h1><center> ASTR 3520: SBO Spectrometer</center></h1>
+<table align="center" width="800"><tr><td>
 <h3><a href="http://casa.colorado.edu/~ginsbura/astr3520_2008/apextract/sample_apextraction.phtml">Spectral line identification example</a></h3>
 <a href="http://lyra.colorado.edu/sbo/manuals/24inch/spectrograph.pdf">Spectrograph Manual</a>
-<br>
+<br/>
                 Opening Procedure for the SBO spectrometer:
                 <ol><li>Open telescope with normal opening procedure.  Can leave dome closed at start.
-                    <li>Slew to zenith
-                    <li>Turn on comp lamps
-                    <li>Put narrowest slit at focus using the finder.  Move the decker out of the way.
-                    <li> Power up the spectrograph CCD.  Make sure it is plugged in.  You may have to 
+                    </li><li>Slew to zenith
+                    </li><li>Turn on comp lamps
+                    </li><li>Put narrowest slit at focus using the finder.  Move the decker out of the way.
+                    </li><li> Power up the spectrograph CCD.  Make sure it is plugged in.  You may have to 
                     unplug the imaging CCD, but make sure it is off first.
-                    <li> Turn on the leftmost computer.  It is the spectrograph controller.
-                    <li>Connect CCDSoft to the SBIG ST8 and turn on cooling
-                    <li>Rotate grating into correct position using vernier scale
-                    <li>Remove grating cover.
-                    <li>Expose and focus on HeAr / Ne comp lamp lines.
-                    <ol type='a'><li>Collimator focus dial is on the back of the spectrograph structure
-                        <li> Record focus positions and temperatures
-                        <li> Save focus files
-                    </ol>
-                    <li>Switch from comparison lamp to sky
-                    <li>Turn off comparison lamps
-                    <li>Slew to target
-                    <li>Find target in eyepiece, adjust to align slit to target
-                    <ol type='a'><li> If necessary, rotate turret by loosening
+                    </li><li> Turn on the leftmost computer.  It is the spectrograph controller.
+                    </li><li>Connect CCDSoft to the SBIG ST8 and turn on cooling
+                    </li><li>Rotate grating into correct position using vernier scale
+                    </li><li>Remove grating cover.
+                    </li><li>Expose and focus on HeAr / Ne comp lamp lines.
+                    <ol type="a"><li>Collimator focus dial is on the back of the spectrograph structure
+                        </li><li> Record focus positions and temperatures
+                        </li><li> Save focus files
+                    </li></ol>
+</li><li>Switch from comparison lamp to sky
+                    </li><li>Turn off comparison lamps
+                    </li><li>Slew to target
+                    </li><li>Find target in eyepiece, adjust to align slit to target
+                    <ol type="a"><li> If necessary, rotate turret by loosening
                         the gold knob located ~180 degrees from the eyepiece.
-                        Do not over-tighten.</ol>
-                </ol>
-<br>
+                        Do not over-tighten.</li></ol>
+</li></ol>
+<br/>
 <h3> PICKING YOUR SLIT </h3>
 Any slit will do for stellar spectroscopy.  The tradeoffs are resolution and
 exposure time.  A wider slit allows more light to pass through it, and
@@ -62,18 +61,13 @@ lamp has a power switch on its power cord
                         <br> Using a narrow slit, take images of the comparison lamp.  You want
                         the spectral lines to be as narrow as possible.  If they are more than
                         a few pixels wide you are not focused.-->
-
-<h3 id=data> Data from the SBO 24" telescope spectrometer </h3>
+<h3 id="data"> Data from the SBO 24" telescope spectrometer </h3>
 To transfer data from the 24" telescope to your home directory, use the program
  "WinSCP".  Login to cosmos.colorado.edu with your normal username and password.
-<br> The software at SBO saves the fits files generated as .fit files.  <a
-		href="http://www.ifa.hawaii.edu/~joshw/classes/sbo_fits.phtml">Josh
+<br/> The software at SBO saves the fits files generated as .fit files.  <a href="http://www.ifa.hawaii.edu/~joshw/classes/sbo_fits.phtml">Josh
 		Walawender's solution </a>also changes the stored variable type to
 signed (+/-) integer.
-<br> You can also use my <a href="tools/FITtofits.cl">FIT to fits script</a>
-<br><br><br>
-<?php include 'navbar.php';?>
-<br> <font size=1>Created 10/8/07 by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> (adam.ginsburg@colorado.edu)</font>
-
-</body>
-</phtml>
+<br/> You can also use my <a href="tools/FITtofits.cl">FIT to fits script</a>
+<br/><br/><br/>
+<br/> <font size="1">Created 10/8/07 by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> (adam.ginsburg@colorado.edu)</font>
+</td></tr></table></phtml></body><script src="../../googleanalytics.js" type="text/javascript"></script></html>

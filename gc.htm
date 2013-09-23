@@ -1,19 +1,5 @@
-
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<meta name="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Galactic Center</title>
-</head>
-<?php 
-$page="gc.htm";
-include 'tracker.php';?>
-<script language="javascript">
-<!--
+<html><head><meta content="en-us" http-equiv="Content-Language"/><meta content="NOINDEX, NOFOLLOW" name="ROBOTS"/><link href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>Galactic Center</title></head><head><script language="javascript">
+&lt;!--
 function toggle(myself,first,second) {
 //    image=myself.getElementsByTagName('img')[0];
 //    image.src =(image.src == first) ? second:first;
@@ -31,141 +17,107 @@ function togglew(myself,first,second) {
     var re = new RegExp(first);
     document[myself].width = (document[myself].width.match(re)) ?  second : first;
 }
-    -->
-</script>
-    <center>
-<table align="center" width=800><tr><td>
+    --&gt;
+</script></head><body><center>
+<table align="center" width="800"><tr><td>
 <h1>Galactic Center Positronium Search</h1>
     We'd like to use TripleSpec to try to detect positronium H-alpha and Paschen-gamma.
-    <br> TripleSpec (<a class="norm" href="http://www.astro.caltech.edu/palomar/200inch/TSpec/TSpec_cookbook.html">cookbook from palomar</a>)
+    <br/> TripleSpec (<a class="norm" href="http://www.astro.caltech.edu/palomar/200inch/TSpec/TSpec_cookbook.html">cookbook from palomar</a>)
     sensitivities should be ~19th mag in J band, 17th in K-band: it is more sensitive in the H-alpha line.
      (these numbers assume 10 minute exposures, but we are probably limited to ~18th magnitude by sky)
-     <br>
-     <br> Proposal draft for APO 3rd quarter 2008: <a class="norm" href="Astronomy/apo_gcprop.txt">apo_gcprop.txt</a>
-     <br>
-    <br> Zero magnitudes for J and K bands are given: 
+     <br/>
+<br/> Proposal draft for APO 3rd quarter 2008: <a class="norm" href="Astronomy/apo_gcprop.txt">apo_gcprop.txt</a>
+<br/>
+<br/> Zero magnitudes for J and K bands are given: 
     <a class="norm" href="http://www.ipac.caltech.edu/2mass/releases/allsky/doc/sec6_4a.html">here</a>
-    <br> K = 666.7, J=1594
-    <br> Our K sensitivity, then, is 666.7*10**(-17/2.512) = 114 microJanskys
-    <br> J is 1594 * 10**(-18/2.512) = 108 microJanskys
-    <br> so really the difference isn't that significant when you take into account sky background
-    <br> 
-    <br> Those measurements are for a continuum source, and they may be wrong.  We also need to do these
+<br/> K = 666.7, J=1594
+    <br/> Our K sensitivity, then, is 666.7*10**(-17/2.512) = 114 microJanskys
+    <br/> J is 1594 * 10**(-18/2.512) = 108 microJanskys
+    <br/> so really the difference isn't that significant when you take into account sky background
+    <br/>
+<br/> Those measurements are for a continuum source, and they may be wrong.  We also need to do these
     calculations for a resolved line.
-    <br>
-    <br>  Source 4 below gives an expected flux to "the best known source of annihilation in the GC direction"
+    <br/>
+<br/>  Source 4 below gives an expected flux to "the best known source of annihilation in the GC direction"
     of F(H-alpha) = 5x10^-29 erg cm^-2 s^-1 Hz^-1 = 5 microJanskys
-    <br> This source also recommends looking at GROJ1655-40, GRS1758-258
-    <br>
-    <br> If there is any emission from a point source, then observing with APO is the right way to go.  Otherwise, 
+    <br/> This source also recommends looking at GROJ1655-40, GRS1758-258
+    <br/>
+<br/> If there is any emission from a point source, then observing with APO is the right way to go.  Otherwise, 
     our only real hope is to average over a number of observations.
-    <br> 
-    <br> Task list:
-    <br> <ol>
-        <li> Pick targets: Great Annihilator?  Empty region?  Ask John
-        <li> Determine limits INTEGRAL information gives us
-        <li> Data mine?
-    </ol>
-    <br>
-    <br> Source list:
-    <ol> 
-        <li> <a href="http://simbad.u-strasbg.fr/simbad/sim-id?protocol=html&Ident=GROJ1655-40&NbIdent=1&Radius=2&Radius.unit=arcmin&submit=submit+id">Great Annihilator</a>
-        <li> <a href="http://simbad.u-strasbg.fr/simbad/sim-id?protocol=html&Ident=GROJ1655-40&NbIdent=1&Radius=2&Radius.unit=arcmin&submit=submit+id">GROJ1655-40</a>
-        <li> <a href="http://simbad.u-strasbg.fr/simbad/sim-id?protocol=html&Ident=GRS1758-258%20&NbIdent=1&Radius=2&Radius.unit=arcmin&submit=submit+id">GRS1758-258</a>
-        <li> 17 43 54.83 -29 44 42.6 
-        <li> 16 54 00.14 -39 50 44.9
-        <li> 18 01 12.30 -25 44 36.0
-    <br>
-    <br> <a href="http://www.astro.virginia.edu/~mfs4n/tspec/user/stdA0V.edb" class="norm"> TripleSpec A0 calibrators </a>
-    <br> Top choices:
+    <br/>
+<br/> Task list:
+    <br/> <ol>
+<li> Pick targets: Great Annihilator?  Empty region?  Ask John
+        </li><li> Determine limits INTEGRAL information gives us
+        </li><li> Data mine?
+    </li></ol>
+<br/>
+<br/> Source list:
     <ol>
-        <li>HD 159008,f|S|A0V, 17:32:50.71, -13:28:55.5, 7.24, 2000
-        <li>HD 164333,f|S|A0V, 18:00:55.98, -8:28:34.6, 10.04, 2000
-        <li>HD 155379,f|S|A0V, 17:12:13.62, -25:15:18.5, 6.50, 2000
-        <li>HD 164638,f|S|A0V, 18:03:09.84, -27:06:51.6, 10.58, 2000
-    </ol>
-    <br>
-    <br> Relevant papers:
+<li> <a href="http://simbad.u-strasbg.fr/simbad/sim-id?protocol=html&amp;Ident=GROJ1655-40&amp;NbIdent=1&amp;Radius=2&amp;Radius.unit=arcmin&amp;submit=submit+id">Great Annihilator</a>
+</li><li> <a href="http://simbad.u-strasbg.fr/simbad/sim-id?protocol=html&amp;Ident=GROJ1655-40&amp;NbIdent=1&amp;Radius=2&amp;Radius.unit=arcmin&amp;submit=submit+id">GROJ1655-40</a>
+</li><li> <a href="http://simbad.u-strasbg.fr/simbad/sim-id?protocol=html&amp;Ident=GRS1758-258%20&amp;NbIdent=1&amp;Radius=2&amp;Radius.unit=arcmin&amp;submit=submit+id">GRS1758-258</a>
+</li><li> 17 43 54.83 -29 44 42.6 
+        </li><li> 16 54 00.14 -39 50 44.9
+        </li><li> 18 01 12.30 -25 44 36.0
+    <br/>
+<br/> <a class="norm" href="http://www.astro.virginia.edu/~mfs4n/tspec/user/stdA0V.edb"> TripleSpec A0 calibrators </a>
+<br/> Top choices:
     <ol>
-        <li><a class="norm" href="http://cdsads.u-strasbg.fr/cgi-bin/nph-data_query?bibcode=2005ApJ...635.1103B&db_key=AST&link_type=ABSTRACT&high=468150f14423362">INTEGRAL central radian measurements</a>
-        <li><a class="norm" href="http://cdsads.u-strasbg.fr/cgi-bin/nph-data_query?bibcode=2005A%26A...441..513K&db_key=AST&link_type=ABSTRACT&high=468150f14423362">All-sky distribution of 511 keV</a>
-        <li><a class="norm" href="http://cdsads.u-strasbg.fr/cgi-bin/nph-data_query?bibcode=1996A%26AS..120C.365B&db_key=AST&link_type=ABSTRACT"> Characteristic Lines of Positronium </a>
-        <li><a class="norm" href="http://cdsads.u-strasbg.fr/abs/1997Ap%26SS.258..329B">Proposal for detection</a>
-        <li><a class="norm" href="http://cdsads.u-strasbg.fr/abs/1991Natur.353..234B">Bally and Leventhal: Great Annihilator</a>
-        <li><a class="norm" href="http://cdsads.u-strasbg.fr/abs/1996ASPC..102..439P">Search for Positronium in Great Annihilator</a>
-
-    </ol>
-    <br>
-    <br>
-    <br> For data mining:  There are SINFONI integral field spectrograph Ks-band observations of the GC, which means that there should be a lot of identically-sampled spectra that can be averaged over to attempt to get at the Pa-Gamma line.  Otherwise, we need to start looking at Keck/VLT/Gemini spectra; those will be the deepest.  
-    <br> <a class="norm" href="http://archive.eso.org/wdb/wdb/eso/eso_archive_main/query"> ESO Data Archive </a>
-    <br> <a class="norm" href="Astronomy/sinfonigc.htm">List of public (and private) SINFONI observations of GC</a>
+<li>HD 159008,f|S|A0V, 17:32:50.71, -13:28:55.5, 7.24, 2000
+        </li><li>HD 164333,f|S|A0V, 18:00:55.98, -8:28:34.6, 10.04, 2000
+        </li><li>HD 155379,f|S|A0V, 17:12:13.62, -25:15:18.5, 6.50, 2000
+        </li><li>HD 164638,f|S|A0V, 18:03:09.84, -27:06:51.6, 10.58, 2000
+    </li></ol>
+<br/>
+<br/> Relevant papers:
+    <ol>
+<li><a class="norm" href="http://cdsads.u-strasbg.fr/cgi-bin/nph-data_query?bibcode=2005ApJ...635.1103B&amp;db_key=AST&amp;link_type=ABSTRACT&amp;high=468150f14423362">INTEGRAL central radian measurements</a>
+</li><li><a class="norm" href="http://cdsads.u-strasbg.fr/cgi-bin/nph-data_query?bibcode=2005A%26A...441..513K&amp;db_key=AST&amp;link_type=ABSTRACT&amp;high=468150f14423362">All-sky distribution of 511 keV</a>
+</li><li><a class="norm" href="http://cdsads.u-strasbg.fr/cgi-bin/nph-data_query?bibcode=1996A%26AS..120C.365B&amp;db_key=AST&amp;link_type=ABSTRACT"> Characteristic Lines of Positronium </a>
+</li><li><a class="norm" href="http://cdsads.u-strasbg.fr/abs/1997Ap%26SS.258..329B">Proposal for detection</a>
+</li><li><a class="norm" href="http://cdsads.u-strasbg.fr/abs/1991Natur.353..234B">Bally and Leventhal: Great Annihilator</a>
+</li><li><a class="norm" href="http://cdsads.u-strasbg.fr/abs/1996ASPC..102..439P">Search for Positronium in Great Annihilator</a>
+</li></ol>
+<br/>
+<br/>
+<br/> For data mining:  There are SINFONI integral field spectrograph Ks-band observations of the GC, which means that there should be a lot of identically-sampled spectra that can be averaged over to attempt to get at the Pa-Gamma line.  Otherwise, we need to start looking at Keck/VLT/Gemini spectra; those will be the deepest.  
+    <br/> <a class="norm" href="http://archive.eso.org/wdb/wdb/eso/eso_archive_main/query"> ESO Data Archive </a>
+<br/> <a class="norm" href="Astronomy/sinfonigc.htm">List of public (and private) SINFONI observations of GC</a>
 <tbody><tr><th colspan="7">Cumulative Exposure Time / Instrument / Filter:</th></tr>
-
 <tr align="left" bgcolor="#cdffcd"><td>SCIENCE - SINFONI - </td>
 <td align="right" bgcolor="#ffffcc">23</td> <td> h </td>
 <td align="right" bgcolor="#ffffcc">41</td> <td>min </td>
 <td align="right" bgcolor="#ffffcc">54</td> <td>s </td> </tr>
-
 <tr align="left" bgcolor="#cdffcd"><td>SCIENCE - SINFONI - H+K</td>
 <td align="right" bgcolor="#ffffcc">29</td> <td> h </td>
 <td align="right" bgcolor="#ffffcc">15</td> <td>min </td>
 <td align="right" bgcolor="#ffffcc">33</td> <td>s </td> </tr>
-
 <tr align="left" bgcolor="#cdffcd"><td>SCIENCE - SINFONI - K</td>
 <td align="right" bgcolor="#ffffcc">36</td> <td> h </td>
 <td align="right" bgcolor="#ffffcc">35</td> <td>min </td>
 <td align="right" bgcolor="#ffffcc">33</td> <td>s </td> </tr>
-
 <tr align="left" bgcolor="#cdffcd"><td>CALIB - SINFONI - K</td>
 <td align="right" bgcolor="#ffffcc">0</td> <td> h </td>
 <td align="right" bgcolor="#ffffcc">0</td> <td>min </td>
 <td align="right" bgcolor="#ffffcc">20</td> <td>s </td> </tr>
-
 <tr align="left" bgcolor="#cdffcd"><td>ACQUISITION - SINFONI - H+K</td>
 <td align="right" bgcolor="#ffffcc">0</td> <td> h </td>
 <td align="right" bgcolor="#ffffcc">2</td> <td>min </td>
 <td align="right" bgcolor="#ffffcc">6</td> <td>s </td> </tr>
-
 <tr align="left" bgcolor="#cdffcd"><td>ACQUISITION - SINFONI - K</td>
 <td align="right" bgcolor="#ffffcc">0</td> <td> h </td>
 <td align="right" bgcolor="#ffffcc">0</td> <td>min </td>
 <td align="right" bgcolor="#ffffcc">43</td> <td>s </td> </tr>
-
-<tr colspan="9" align="left"><td> Total </td>
+<tr align="left" colspan="9"><td> Total </td>
 <td align="right" bgcolor="#ffffcc"> <b>89</b> </td> <td>h </td>
 <td align="right" bgcolor="#ffffcc"> <b>36</b> </td> <td>min </td>
 <td align="right" bgcolor="#ffffcc"> <b>10</b> </td> <td>s </td> </tr>
-
 </tbody>
-
-
-
 <center>
-<br><br><hr><br>
-</td></tr></table>
-
-<br>
+<br/><br/><hr/><br/>
+</center></li></ol></td></tr></table>
+<br/>
 <center>
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-
-</body>
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
-
-
-
-
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</center></center></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

@@ -1,78 +1,49 @@
-
-<html>
-<link rel="stylesheet" type="text/css" href="style.css">
-<title> Astronomy Pictures </title>
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<body> 
-<?php 
-$page="astropix.htm";
-include 'tracker.php';?>
-<head><h1><center> Astronomy Pictures</center></h1></head>
-
-
+<html><head><link href="style.css" rel="stylesheet" type="text/css"/><title> Astronomy Pictures </title><link href="favicon8.ico" rel="icon" type="image/gif"/></head><body>
+<h1><center> Astronomy Pictures</center></h1>
 <script language="javascript">
-<!--
+&lt;!--
 function toggle(myself,first,second) {
     var re = new RegExp(first)
     document[myself].src =  (document[myself].src.match(re)) ? "images/astropix/" + second : "images/astropix/thumbs/" + first;
     document[myself].width = (document[myself].width==100) ? 800:100;
 }
-    -->
+    --&gt;
 </script>
-
-
 <center>
-<table width=800><tr><td>
-<img width=100 src="images/astropix/thumbs/dragon_tn.jpg" onclick="toggle('dragon','dragon_tn.jpg','dragon.jpg')" name="dragon">
+<table width="800"><tr><td>
+<img name="dragon" onclick="toggle('dragon','dragon_tn.jpg','dragon.jpg')" src="images/astropix/thumbs/dragon_tn.jpg" width="100"/>
 </td><td>
-<img width=100 src="images/astropix/thumbs/fish_h2_smooth_tn.jpg" onclick="toggle('fish_h2_smooth','fish_h2_smooth_tn.jpg','fish_h2_smooth.jpg')" name="fish_h2_smooth">
+<img name="fish_h2_smooth" onclick="toggle('fish_h2_smooth','fish_h2_smooth_tn.jpg','fish_h2_smooth.jpg')" src="images/astropix/thumbs/fish_h2_smooth_tn.jpg" width="100"/>
 </td><td>
-<img width=100 src="images/astropix/thumbs/IRAS05358_H2_cont_tn.jpg" onclick="toggle('IRAS05358_H2_cont','IRAS05358_H2_cont_tn.jpg','IRAS05358_H2_cont.jpg')" name="IRAS05358_H2_cont">
+<img name="IRAS05358_H2_cont" onclick="toggle('IRAS05358_H2_cont','IRAS05358_H2_cont_tn.jpg','IRAS05358_H2_cont.jpg')" src="images/astropix/thumbs/IRAS05358_H2_cont_tn.jpg" width="100"/>
 </td><td>
-<img width=100 src="images/astropix/thumbs/bottomleftpv_tn.jpg" onclick="toggle('bottomleftpv','bottomleftpv_tn.jpg','bottomleftpv.jpg')" name="bottomleftpv">
+<img name="bottomleftpv" onclick="toggle('bottomleftpv','bottomleftpv_tn.jpg','bottomleftpv.jpg')" src="images/astropix/thumbs/bottomleftpv_tn.jpg" width="100"/>
 </td></tr><tr><td>
-<img width=100 src="images/astropix/thumbs/iras05358_colorjets_tn.jpg" onclick="toggle('iras05358_colorjets','iras05358_colorjets_tn.jpg','iras05358_colorjets.jpg')" name="iras05358_colorjets">
+<img name="iras05358_colorjets" onclick="toggle('iras05358_colorjets','iras05358_colorjets_tn.jpg','iras05358_colorjets.jpg')" src="images/astropix/thumbs/iras05358_colorjets_tn.jpg" width="100"/>
 </td><td>
-<img width=100 src="images/astropix/thumbs/iras05358_h2sub_2_tn.jpg" onclick="toggle('iras05358_h2sub_2','iras05358_h2sub_2_tn.jpg','iras05358_h2sub_2.jpg')" name="iras05358_h2sub_2">
+<img name="iras05358_h2sub_2" onclick="toggle('iras05358_h2sub_2','iras05358_h2sub_2_tn.jpg','iras05358_h2sub_2.jpg')" src="images/astropix/thumbs/iras05358_h2sub_2_tn.jpg" width="100"/>
 </td><td>
-<img width=100 src="images/astropix/thumbs/iras_05358_jhk_070205_tn.jpg" onclick="toggle('iras_05358_jhk_070205','iras_05358_jhk_070205_tn.jpg','iras_05358_jhk_070205.jpg')" name="iras_05358_jhk_070205">
+<img name="iras_05358_jhk_070205" onclick="toggle('iras_05358_jhk_070205','iras_05358_jhk_070205_tn.jpg','iras_05358_jhk_070205.jpg')" src="images/astropix/thumbs/iras_05358_jhk_070205_tn.jpg" width="100"/>
 </td><td>
-<img width=100 src="images/astropix/thumbs/l111N_RGB_bgps_COintegrated_tn.jpg" onclick="toggle('l111N_RGB_bgps_COintegrated','l111N_RGB_bgps_COintegrated_tn.jpg','l111N_RGB_bgps_COintegrated.jpg')" name="l111N_RGB_bgps_COintegrated">
+<img name="l111N_RGB_bgps_COintegrated" onclick="toggle('l111N_RGB_bgps_COintegrated','l111N_RGB_bgps_COintegrated_tn.jpg','l111N_RGB_bgps_COintegrated.jpg')" src="images/astropix/thumbs/l111N_RGB_bgps_COintegrated_tn.jpg" width="100"/>
 </td></tr><tr><td>
-<img width=100 src="images/astropix/thumbs/l111_curious_RGB_max_int_ratio_tn.jpg" onclick="toggle('l111_curious_RGB_max_int_ratio','l111_curious_RGB_max_int_ratio_tn.jpg','l111_curious_RGB_max_int_ratio.jpg')" name="l111_curious_RGB_max_int_ratio">
+<img name="l111_curious_RGB_max_int_ratio" onclick="toggle('l111_curious_RGB_max_int_ratio','l111_curious_RGB_max_int_ratio_tn.jpg','l111_curious_RGB_max_int_ratio.jpg')" src="images/astropix/thumbs/l111_curious_RGB_max_int_ratio_tn.jpg" width="100"/>
 </td><td>
 <!--<img width=100 src="images/astropix/thumbs/l111_curious_RGB_max_int_ratio_2_tn.jpg" onclick="toggle('l111_curious_RGB_max_int_ratio_2','l111_curious_RGB_max_int_ratio_2_tn.jpg','l111_curious_RGB_max_int_ratio_2.jpg')" name="l111_curious_RGB_max_int_ratio_2">-->
 </td><td>
-<img width=100 src="images/astropix/thumbs/mosaic_BGPS_CO_24um_tn.jpg" onclick="toggle('mosaic_BGPS_CO_24um','mosaic_BGPS_CO_24um_tn.jpg','mosaic_BGPS_CO_24um.jpg')" name="mosaic_BGPS_CO_24um">
+<img name="mosaic_BGPS_CO_24um" onclick="toggle('mosaic_BGPS_CO_24um','mosaic_BGPS_CO_24um_tn.jpg','mosaic_BGPS_CO_24um.jpg')" src="images/astropix/thumbs/mosaic_BGPS_CO_24um_tn.jpg" width="100"/>
 </td><td>
-<img width=100 src="images/astropix/thumbs/mosaic_BGPS_CO_24um_large_tn.jpg" onclick="toggle('mosaic_BGPS_CO_24um_large','mosaic_BGPS_CO_24um_large_tn.jpg','mosaic_BGPS_CO_24um_large.jpg')" name="mosaic_BGPS_CO_24um_large">
+<img name="mosaic_BGPS_CO_24um_large" onclick="toggle('mosaic_BGPS_CO_24um_large','mosaic_BGPS_CO_24um_large_tn.jpg','mosaic_BGPS_CO_24um_large.jpg')" src="images/astropix/thumbs/mosaic_BGPS_CO_24um_large_tn.jpg" width="100"/>
 </td></tr><tr><td>
-<img width=100 src="images/astropix/thumbs/mosaic_BGPS_CO_24um_northwest_tn.jpg" onclick="toggle('mosaic_BGPS_CO_24um_northwest','mosaic_BGPS_CO_24um_northwest_tn.jpg','mosaic_BGPS_CO_24um_northwest.jpg')" name="mosaic_BGPS_CO_24um_northwest">
+<img name="mosaic_BGPS_CO_24um_northwest" onclick="toggle('mosaic_BGPS_CO_24um_northwest','mosaic_BGPS_CO_24um_northwest_tn.jpg','mosaic_BGPS_CO_24um_northwest.jpg')" src="images/astropix/thumbs/mosaic_BGPS_CO_24um_northwest_tn.jpg" width="100"/>
 </td><td>
-<img width=100 src="images/astropix/thumbs/pcygnineb_tn.jpg" onclick="toggle('pcygnineb','pcygnineb_tn.jpg','pcygnineb.jpg')" name="pcygnineb">
+<img name="pcygnineb" onclick="toggle('pcygnineb','pcygnineb_tn.jpg','pcygnineb.jpg')" src="images/astropix/thumbs/pcygnineb_tn.jpg" width="100"/>
 </td><td>
-<img width=100 src="images/astropix/thumbs/redblue_tn.jpg" onclick="toggle('redblue','redblue_tn.jpg','redblue.jpg')" name="redblue">
+<img name="redblue" onclick="toggle('redblue','redblue_tn.jpg','redblue.jpg')" src="images/astropix/thumbs/redblue_tn.jpg" width="100"/>
 </td></tr>
-<tr><td width=800 colspan=4> For more information on the above objects, see <a
-            href="w5_public.htm" class="norm"> my W5 page </a>, <a class="norm" href="pcygni_public.htm">my P Cygni page</a> or my other research pages
+<tr><td colspan="4" width="800"> For more information on the above objects, see <a class="norm" href="w5_public.htm"> my W5 page </a>, <a class="norm" href="pcygni_public.htm">my P Cygni page</a> or my other research pages
         (coming soon) </td></tr>
-<tr><td width=800 colspan=4><br><br><hr><br><script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script></td></tr>
-
+<tr><td colspan="4" width="800"><br/><br/><hr/><br/><script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script></td></tr>
 </table>
-
 </center>
-</body><script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
-
+</body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

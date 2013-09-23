@@ -1,10 +1,10 @@
-<phtml>
+<html><body><phtml>
 <!--<meta http-equiv="Content-Language" content="en-us">
 <meta http-equiv="Content-Type" content="text/phtml; charset=windows-1252">-->
-<link rel="stylesheet" type="text/css" href="style.css">
+<link href="style.css" rel="stylesheet" type="text/css"/>
 <title> Astronomy 3520: Spectral Flatfielding </title>
 <script language="javascript">
-<!--
+&lt;!--
 function click(imname,imsrc) {
     document[imname].
 	onclick = "click2(" + imname + "," + document[imname].src + ")";
@@ -22,45 +22,40 @@ function toggle(myself,first,second) {
     document[myself].src =  (document[myself].src.match(re)) ? second : first;
     document[myself].width = (document[myself].width==100) ? 800:100;
 }
-    -->
+    --&gt;
 </script>
-<body> 
-<head><h1><center> ASTR 3520 Spectral Flatfielding</center></h1></head>
-<table align="center" width=800><tr><td>
+<h1><center> ASTR 3520 Spectral Flatfielding</center></h1>
+<table align="center" width="800"><tr><td>
 Spectral flatfielding using IRAF.
 <ol><tt>
-    <li> standard [VEGA_SPEC] [VEGA_SPEC]_std star_name="hr7001" airmass=1.0 exptime=90.0 mag=0.0 magband=V teff=A0 caldir="/usr/local/iraf/iraf/noao/lib/onedstds/bstdscal/" 
-    <li> sensfunc [VEGA_SPEC]_std [VEGA_SPEC]_sens interactive=yes
-    <li> calibrate [SCIENCE_SPEC] [SCIENCE_SPEC]_calibrated sensitivity=[VEGA_SPEC]_sens extinct=no flux=yes exptime=240 airmass=1.0 fnu=yes
-</tt></ol>
-<br>The above are:
-<br>SCIENCE_SPEC: aperture-extracted, dispersion-corrected science spectrum
-<br>VEGA_SPEC: aperture-extracted, dispersion-corrected standard star spectrum
-<br>
-<br>Variables:
+<li> standard [VEGA_SPEC] [VEGA_SPEC]_std star_name="hr7001" airmass=1.0 exptime=90.0 mag=0.0 magband=V teff=A0 caldir="/usr/local/iraf/iraf/noao/lib/onedstds/bstdscal/" 
+    </li><li> sensfunc [VEGA_SPEC]_std [VEGA_SPEC]_sens interactive=yes
+    </li><li> calibrate [SCIENCE_SPEC] [SCIENCE_SPEC]_calibrated sensitivity=[VEGA_SPEC]_sens extinct=no flux=yes exptime=240 airmass=1.0 fnu=yes
+</li></tt></ol>
+<br/>The above are:
+<br/>SCIENCE_SPEC: aperture-extracted, dispersion-corrected science spectrum
+<br/>VEGA_SPEC: aperture-extracted, dispersion-corrected standard star spectrum
+<br/>
+<br/>Variables:
 <ul>
-    <li><tt>exptime</tt>: the exposure time in the standard spectrum (for the <tt>standard</tt> command) or the science spectrum (for the <tt>calibrate</tt> command)
-    <li><tt>starname</tt>: the name of the star that corresponds to a name in the spectrophotometric standards catalog.  HR 7001 = Vega
-</ul>
-<br>
-<br> Details:
-<br> <ol> <li> <tt> standard </tt> [interactive]
-    <br> The <tt> standard </tt> function compares your spectrum of a known
+<li><tt>exptime</tt>: the exposure time in the standard spectrum (for the <tt>standard</tt> command) or the science spectrum (for the <tt>calibrate</tt> command)
+    </li><li><tt>starname</tt>: the name of the star that corresponds to a name in the spectrophotometric standards catalog.  HR 7001 = Vega
+</li></ul>
+<br/>
+<br/> Details:
+<br/> <ol> <li> <tt> standard </tt> [interactive]
+    <br/> The <tt> standard </tt> function compares your spectrum of a known
     standard star to the NOAO database version of that spectrum.  Your goal in
     this interactive code is to select smooth regions of the spectrum across
     the spectrum to fit with a curve.  You should draw many small boxes and
     carefully avoid absorption lines.
-    <li> <tt> sensfunc </tt> [interactive]
-    <br> Uses the fit you made in <tt> standard </tt> to create a sensitivity 
+    </li><li> <tt> sensfunc </tt> [interactive]
+    <br/> Uses the fit you made in <tt> standard </tt> to create a sensitivity 
     calibration.  Necessary to get your flux into real flux units.
-    <li> <tt> calibrate </tt>
-    <br> Applies the calibrations you computed with <tt> standard </tt> and
+    </li><li> <tt> calibrate </tt>
+<br/> Applies the calibrations you computed with <tt> standard </tt> and
     <tt> sensfunc</tt>.
-<br><br><hr><br>
-<?php include 'navbar.php';?>
-</body></phtml>
-
-
+<br/><br/><hr/><br/>
 <!--
 <h2 id=apall>Extracting your Aperture</h2>
 <br><img border="0" src="thumbs/apall_frame1_tn.jpg"
@@ -159,4 +154,4 @@ SBO line list.
 
 <br><br><br><a class="special" href="../index.phtml">ASTR3520 home</a>
 <br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
--->
+--></li></ol></td></tr></table></phtml></body><script src="../../googleanalytics.js" type="text/javascript"></script></html>

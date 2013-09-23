@@ -1,60 +1,33 @@
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Editing Postscript Files</title>
-</head>
-<?php 
-$page="editingps.htm";
-include 'tracker.php';?>
-<body>
-<table align="center" width=800><tr><td>
-    <h1> Editing Postscript </h1>
+<html><head><meta content="en-us" http-equiv="Content-Language"/><link href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>Editing Postscript Files</title></head><body>
+<table align="center" width="800"><tr><td>
+<h1> Editing Postscript </h1>
     It might seem odd to want to edit a postscript file - which is generally an image - 
     via a text interface, but it can be quite useful and is not terribly difficult.
     It came as a surprise to me when I discovered that postscript is actually human-
     readable, but except for the image binary sections, it is.
-    <br>
-    <br>
+    <br/>
+<br/>
     For the example, we'll use the DS9-generated postscript <a class="norm" href="images/ds9dustmapps.ps">image</a>
     from the <a class="norm" href="ds9tips.htm#coordgrid">DS9 Tips Page</a>.
-    <br>
-    <br> To simply remove the colorbar, delete lines 347-393.  This is the first image section of the postscript, I
+    <br/>
+<br/> To simply remove the colorbar, delete lines 347-393.  This is the first image section of the postscript, I
     identified it as the colorbar by noting that it is much smaller than the other image section.  Now we know that
     DS9 chooses to draw the colorbar first.  Lines 333-346 should also be deleted as they are setup commands for the
     colorbar.
-    <br>
-    <br>
+    <br/>
+<br/>
     The next - and for me final - step is to tighten the bounding box 
     so that the ps file does not include extra
     whitespace.  
-    <br>
-    <br> The original bounding box is:
+    <br/>
+<br/> The original bounding box is:
     <tt> %%BoundingBox: 36 226 576 566</tt>
-    <br>I found that the bounding box parameters 
+<br/>I found that the bounding box parameters 
     <tt>  %%BoundingBox: 120 256 455 555 </tt> worked well via a simple process guess-and-check using ghostview.
-    <br>
-    <br> I found <a class="norm" href="images/ds9dustmapmodps.ps">the results</a> to be significantly nicer than
+    <br/>
+<br/> I found <a class="norm" href="images/ds9dustmapmodps.ps">the results</a> to be significantly nicer than
     the original DS9-generated image.
-    <br>
-
-        <br><hr><br>
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-    </body>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
+    <br/>
+<br/><hr/><br/>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</td></tr></table></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

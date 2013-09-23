@@ -1,62 +1,52 @@
-
-<html>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<title> IRAF quick tips </title>
-<body> 
-<?php 
-$page="IRAF.htm";
-include 'tracker.php';?>
-<head><h1><center> IRAF quick tips</center></h1></head>
-<br>
-    <table align="center" width=800><tr><td>
-<br> For hints on using DS9 without IRAF, check out <a class="norm" href="ds9tips.htm">Adam's DS9 tips page</a>
-<br>
-<br><h3 id="errors"> Instructions for dealing with IRAF errors       </h3>
+<html><head><link href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><title> IRAF quick tips </title></head><body>
+<h1><center> IRAF quick tips</center></h1>
+<br/>
+<table align="center" width="800"><tr><td>
+<br/> For hints on using DS9 without IRAF, check out <a class="norm" href="ds9tips.htm">Adam's DS9 tips page</a>
+<br/>
+<br/><h3 id="errors"> Instructions for dealing with IRAF errors       </h3>
 If you experience errors containing $uparm, make sure you have write permissions to your <tt>home</tt> and <tt> imdir</tt> directories, 
 which are set on lines 7 and 8 of your <tt>login.cl</tt> file.
 
-<br> To install IRAF, run <tt>mkiraf</tt>, which will create a new login.cl for you.
+<br/> To install IRAF, run <tt>mkiraf</tt>, which will create a new login.cl for you.
 You may have to change your imdir to <b>"home$images/"</b> or something similar.  You must search for the line <b>
 #set imtype   "imh"</b> and change it to read <b>set imtype "fits"</b> (remove the # at the beginning of the line).
-<br>
-<br> If you have trouble with <tt>.imh</tt> files showing up instead of <tt>.fits</tt> files:
-<ol> 
-    <li>check to see if your imtype is set correctly with <tt>show imtype</tt>.
-    <li>if it's <tt>imh</tt>, use <tt>set imtype=fits</tt> to fix it
-    <li>you may need to use the <tt>flpr</tt> command to make sure IRAF recognizes the change
-    <li>Find your login.cl file.  Make sure the <tt>set imtype=fits</tt> line is uncommented as in <a href="IRAF.html#errors">the directions above</a>.
-</ol>
-
-<br><h3 id="quicktips"> IRAF quick tips</h3>
+<br/>
+<br/> If you have trouble with <tt>.imh</tt> files showing up instead of <tt>.fits</tt> files:
+<ol>
+<li>check to see if your imtype is set correctly with <tt>show imtype</tt>.
+    </li><li>if it's <tt>imh</tt>, use <tt>set imtype=fits</tt> to fix it
+    </li><li>you may need to use the <tt>flpr</tt> command to make sure IRAF recognizes the change
+    </li><li>Find your login.cl file.  Make sure the <tt>set imtype=fits</tt> line is uncommented as in <a href="IRAF.html#errors">the directions above</a>.
+</li></ol>
+<br/><h3 id="quicktips"> IRAF quick tips</h3>
 <dl>
-    <dt> To start logging with pyraf, use the command <code>.logfile [filename.log]</code>
-    <dt>-If you see errors that involve "uparm" or "unable to write...":
-        <dd>-try to <b>logout</b> of the cl and log back in; make sure you're in the directory with your login.cl file
+<dt> To start logging with pyraf, use the command <code>.logfile [filename.log]</code>
+<dt>-If you see errors that involve "uparm" or "unable to write...":
+        </dt></dt><dd>-try to <b>logout</b> of the cl and log back in; make sure you're in the directory with your login.cl file
         <dd>-make sure your login.cl has been edited as per <a href="IRAF.html#errors">the directions above</a>
-    <dt>
-    <dt>-If you have problems with <b>imexam</b> and cursor behavior:
-        <dd>-restart DS9, try again
+</dd></dd><dt>
+<dt>-If you have problems with <b>imexam</b> and cursor behavior:
+        </dt></dt><dd>-restart DS9, try again
         <dd>-restart DS9, <b>logout</b> of the cl and log back in
         <dd>-get frustrated, call or <a href="mailto:adam.ginsburg@colorado.edu">e-mail</a> Adam, see if he gets frustrated
-    <dt>
-    <dt>-Using IRAF graphics terminals:
-        <dd>-q quits; a quit and re-enter solves most problems
+    </dd></dd></dd><dt>
+<dt>-Using IRAF graphics terminals:
+        </dt></dt><dd>-q quits; a quit and re-enter solves most problems
         <dd>-? displays help in the terminal.  Don't forget to quit out of the help when you're done
         <dd>-:(command) allows "colon commands" that can be quite powerful (see, e.g., "wcs" in <b>imexam</b>)
-    <dt>
-    <dt>-A <tt>syntax error</tt> in IRAF generally means you have not loaded the requisite package.
-        <dd> -if you don't know what package that is, use the <tt>help</tt> command (e.g. <tt>help temden</tt>)
-</dl>
-<br>
-
-<br>
-<br> <h3 id="guider"> Matching Guider Images to Science Images </h3>
+    </dd></dd></dd><dt>
+<dt>-A <tt>syntax error</tt> in IRAF generally means you have not loaded the requisite package.
+        </dt></dt><dd> -if you don't know what package that is, use the <tt>help</tt> command (e.g. <tt>help temden</tt>)
+</dd></dl>
+<br/>
+<br/>
+<br/> <h3 id="guider"> Matching Guider Images to Science Images </h3>
  Instead of going through each individual file's header, I recommend using these commands or similar:
-<br> <tt>imhead proc-*.fits[0] lo+ | egrep "Pixel\ file\|UTTIME"</tt> 
-<br> <tt>imhead e*.fits lo+ | grep -E "Pixel\ file\|UTC-OBS"</tt>
-<br>
-<br> <h5>If you're curious about what those commands mean, read on.</h5>  You
+<br/> <tt>imhead proc-*.fits[0] lo+ | egrep "Pixel\ file\|UTTIME"</tt>
+<br/> <tt>imhead e*.fits lo+ | grep -E "Pixel\ file\|UTC-OBS"</tt>
+<br/>
+<br/> <h5>If you're curious about what those commands mean, read on.</h5>  You
 should already be familiar with the imhead command, which with the <tt>long</tt>
 option enabled prints the full header.  The <tt>[0]</tt> appended to the end of
 the filename chooses the first extension in the fits image.  A fits file is
@@ -64,25 +54,12 @@ capable of holding many extensions, i.e. many images, in one file.  In the case
 of the Echelle guider camera, the proc-[something].fits files have the slit
 superimposed on the sky image as the first extension, and the slit mask image as
 the second extension.  
-<br> The grep command outputs all lines containing a regular expression from its input.  A regular expression is a special pattern matching expression.
+<br/> The grep command outputs all lines containing a regular expression from its input.  A regular expression is a special pattern matching expression.
 In this case, we have <tt>"Pixel\ file\|UTC-OBS"</tt>, which means we are searching for lines with the string <tt>Pixel file</tt> or <tt>UTC-OBS</tt>.
 The backslash before the space <a href="http://xkcd.com/234/">escapes</a> the space so that IRAF doesn't think you are giving it another command.  Similarly,
 we must escape the or operator | (though I'm not entirely certain why - this is not standard behavior).  
 <tt>egrep</tt> is equivalent to <tt>grep -E</tt> for older versions of <tt>grep</tt> that do not allow the option syntax.
 
-<br><br><hr>
-<br><br><script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-</body><script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
+<br/><br/><hr/>
+<br/><br/><script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</td></tr></table></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

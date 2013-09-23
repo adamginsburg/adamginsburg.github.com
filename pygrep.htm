@@ -1,29 +1,15 @@
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<link href="prettify.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="prettify.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Making Python grep</title>
-</head>
-<?php 
-$page="pygrep.htm";
-include 'tracker.php';?>
-<body onload="prettyPrint()"> 
-<table align="center" width=800>
-    <center>
-    <h3> "Grep" in Python </h3>
-    <tr><td> I use Python as a command line tool.  I wanted to be able to do something similar to <tt>dir() | grep cmd</tt> to find out 
+<html><head><meta content="en-us" http-equiv="Content-Language"/><link href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><link href="prettify.css" rel="stylesheet" type="text/css"/><script src="prettify.js" type="text/javascript"></script><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>Making Python grep</title></head><body onload="prettyPrint()">
+<table align="center" width="800">
+<center>
+<h3> "Grep" in Python </h3>
+<tr><td> I use Python as a command line tool.  I wanted to be able to do something similar to <tt>dir() | grep cmd</tt> to find out 
     what packages had been loaded and variables created.  I got sick of searching the net and finding nothing, so here's a simple script
     that does effectively the same thing (with slightly more tedious syntax):</td></tr>
-    </center>
-    <br>
-    <tr><td>
-        <code class="prettyprint">
-            <? readfile("python/grep.py"); ?>           
+</center>
+<br/>
+<tr><td>
+<code class="prettyprint">
+             readfile("python/grep.py"); ?&gt;           
         </code>
 <!-- ?php
 $current_path=ini_get("include_path");
@@ -38,30 +24,15 @@ fclose($fh);
 
 echo $hlPY->highlight($theData);
 ? -->
-
-<br>
-    <br> If you know of a better (i.e. cleverer) way to accomplish this same feat, please let me know!
-    <br> Two of the solutions above were provided by a visitor, and I think they are a better solution to the problem presented here.
-    <br> Personally, I haven't ended up using the 'grep' function as much as I expected; instead I tend to get by on using the 
+<br/>
+<br/> If you know of a better (i.e. cleverer) way to accomplish this same feat, please let me know!
+    <br/> Two of the solutions above were provided by a visitor, and I think they are a better solution to the problem presented here.
+    <br/> Personally, I haven't ended up using the 'grep' function as much as I expected; instead I tend to get by on using the 
     Python debugger (pdb) and working on a smaller globals()/locals() list and using who/whos at the ipython command line.
-    <br><br>
+    <br/><br/>
     If you are interested in using python on the unix command line in place of grep, I recommend <a class="norm" href="http://www.zazzybob.com/bin/grep.py.html">the second hit on google</a>
-    <br>
-    <hr>
-<br>
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-</body>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37306139-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-</html>
+<br/>
+<hr/>
+<br/>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</td></tr></table></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>
