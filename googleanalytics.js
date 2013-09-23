@@ -19,5 +19,5 @@ ga('create', 'UA-43959515-1', 'adamgginsburg.com');
 ga('send', 'pageview');
 
 function test(){
-    alert("Test Success!");
+    alert("Test Success! rd2");
 }
