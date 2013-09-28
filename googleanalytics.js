@@ -15,5 +15,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-43959515-1', 'adamgginsburg.com');
+ga('create', 'UA-43959515-1');
 ga('send', 'pageview');
+
+var sc_project=9280898; 
+var sc_invisible=1; 
+var sc_security="b36bc84a"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+        "https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+        scJsHost+
+        "statcounter.com/counter/counter.js'></"+"script>");
+
