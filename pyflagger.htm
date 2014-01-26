@@ -1,28 +1,23 @@
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<link href="prettify.css" type="text/css" rel="stylesheet">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<link rel="stylesheet" type="text/css" href="style.css">
-<script type="text/javascript" src="prettify.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Interactive Flagging in Python</title>
-</head>
-<?php 
-$page="pyflagger.htm";
-include 'tracker.php';?>
-<body onload="prettyPrint()"> 
-<table align="center" width=800><tr><td>
+<html><head><meta content="en-us" http-equiv="Content-Language"/><link href="prettify.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><link href="style.css" rel="stylesheet" type="text/css"/><script src="prettify.js" type="text/javascript"></script><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>Interactive Flagging in Python</title></head><body onload="prettyPrint()">
+<table align="center" width="800"><tr><td>
 <center>
 <h1> Interactive data flagging in Python </h1>
-<br> I can't claim this is really well-done or pretty, but it works and
+<br/> I can't claim this is really well-done or pretty, but it works and
 includes a LOT of different functionality.  It's pretty neat.  Through the
 magic of python, I was able to write this in ~1 week.
 </center>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script> 
+$(function(){
+  $("#includedContent").load("python/pyflagger.py"); 
+});
+</script> 
+
+
+(apologies if the javascript doesn't work; the <a class="norm" href="python/pyflagger.py">source</a> is available)
 
 <pre class="prettyprint">
-<? readfile("python/pyflagger.py";) ?>
+<div id="includedContent"></div>
 </pre>
 <!-- ?php
 $current_path=ini_get("include_path");
@@ -37,11 +32,8 @@ fclose($fh);
 
 echo $hlPY->highlight($theData);
 ? -->
-
 <center>
-<br><br><hr>
-<br>
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-</body>
-</html>
-
+<br/><br/><hr/>
+<br/>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</center></td></tr></table></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

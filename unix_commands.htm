@@ -1,97 +1,83 @@
-
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Favorite Unix Commands</title>
-</head>
-<?php 
-$page="unix_commands.htm";
-include 'tracker.php';?>
-<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">
-<table align="center" width=800><tr><td>
-    <center>
-        <h1> A list of some of my favorite unix commands</h1>
-    </center>
+<html><head><meta content="en-us" http-equiv="Content-Language"/><link href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>Favorite Unix Commands</title></head><body bgcolor="#000000" link="#00FFFF" text="#FFFFFF" vlink="#0000FF">
+<table align="center" width="800"><tr><td>
+<center>
+<h1> A list of some of my favorite unix commands</h1>
+</center>
         When I say "favorite", I mean that I use them too rarely to memorize them but often enough that I'd like to have them saved somewhere.
-	<br> If this page is interesting, you may also want to see <a class="norm" href="mac_commands.htm">my Mac commands page</a>
-        <br><tt> sudo /etc/init.d/vpnclient_init start </tt> initialize the vpnclient service
-        <br><tt> sudo vpnclient connect cuboulder    </tt> connect to CU's VPN service from off-campus
-        <br><tt> sudo vpnclient connect oncampus    </tt> connect to CU's VPN service from on-campus
-        <br><tt> ls --color=never | grep "old" | xargs -n1 rm </tt> remove a list of files (in this case, list containing the string <tt>old</tt>
-        <br><tt> cat 2007-11-12T23\:53\:40.log | grep TEMP= | sed -e 's/.*TEMP=//' -e 's/,/  /g' -e "s/'//" > log_to_plot.txt </tt> NICFPS log file parsing to send to gnuplot
-        <br><tt> echo "plot [][] 'plotfile.tsv' index 0 using 1:($2-$3)" | gnuplot -persist </tt> Plot the contents of a file using gnuplot
-        <br>
-        <br><h2> Image resize / thumbnail creation using imagemagick's convert command </h2>
-        <br><tt class="emph"> ls *.gif | sed 's/\(.*\).gif/\/sw\/bin\/convert \1.gif -resize 100x100 thumbs\/\1_tn.gif/' | bash </tt> using imagemagick's convert to create thumbnails
-        <br><tt class="emph"> ls *.png | sed 's:\(.*\).png:/sw/bin/convert \1.png -resize 100x100 thumbs/\1_tn.png:' | bash </tt> using imagemagick's convert to create thumbnails (full path)
-        <br><tt class="emph"> ls *.png | sed 's:\(.*\).png:/sw/bin/convert \1.png -resize 800x800 ../\1.png:' | bash </tt> using imagemagick's convert to create smaller images
-        <br><tt class="emph"> ls *.jpg | sed 's:\(.*\).jpg:/sw/bin/convert \1.jpg -resize 100x100 thumbs/\1_tn.jpg:' | bash </tt> jpg thumbnails
-        <br><tt class="emph"> pstoimg -type png -crop a -density 600 *.ps </tt> using latex2html
-        <br><tt>cat trackdb.121207.txt | grep google | grep search | sed -e "s/.*[?\&\_]q=\(.*\?\)\&.*/\1/" | less</tt> Search my tracker
+	<br/> If this page is interesting, you may also want to see <a class="norm" href="mac_commands.htm">my Mac commands page</a>
+<br/><tt> sudo /etc/init.d/vpnclient_init start </tt> initialize the vpnclient service
+        <br/><tt> sudo vpnclient connect cuboulder    </tt> connect to CU's VPN service from off-campus
+        <br/><tt> sudo vpnclient connect oncampus    </tt> connect to CU's VPN service from on-campus
+        <br/><tt> ls --color=never | grep "old" | xargs -n1 rm </tt> remove a list of files (in this case, list containing the string <tt>old</tt>
+<br/><tt> cat 2007-11-12T23\:53\:40.log | grep TEMP= | sed -e 's/.*TEMP=//' -e 's/,/  /g' -e "s/'//" &gt; log_to_plot.txt </tt> NICFPS log file parsing to send to gnuplot
+        <br/><tt> echo "plot [][] 'plotfile.tsv' index 0 using 1:($2-$3)" | gnuplot -persist </tt> Plot the contents of a file using gnuplot
+        <br/>
+<br/><h2> Image resize / thumbnail creation using imagemagick's convert command </h2>
+<br/><tt class="emph"> ls *.gif | sed 's/\(.*\).gif/\/sw\/bin\/convert \1.gif -resize 100x100 thumbs\/\1_tn.gif/' | bash </tt> using imagemagick's convert to create thumbnails
+        <br/><tt class="emph"> ls *.png | sed 's:\(.*\).png:/sw/bin/convert \1.png -resize 100x100 thumbs/\1_tn.png:' | bash </tt> using imagemagick's convert to create thumbnails (full path)
+        <br/><tt class="emph"> ls *.png | sed 's:\(.*\).png:/sw/bin/convert \1.png -resize 800x800 ../\1.png:' | bash </tt> using imagemagick's convert to create smaller images
+        <br/><tt class="emph"> ls *.jpg | sed 's:\(.*\).jpg:/sw/bin/convert \1.jpg -resize 100x100 thumbs/\1_tn.jpg:' | bash </tt> jpg thumbnails
+        <br/><tt class="emph"> pstoimg -type png -crop a -density 600 *.ps </tt> using latex2html
+        <br/><tt>cat trackdb.121207.txt | grep google | grep search | sed -e "s/.*[?\&amp;\_]q=\(.*\?\)\&amp;.*/\1/" | less</tt> Search my tracker
         for hits from Google so I can see what search terms have been used to find this site
-        <br>
-        <hr width=400><br>
-        <h3> IRAF: </h3>
-        <tt> imhead *.fits lo+ | grep -E "Pixel\ file\|EXPTIME" </tt> find exposure times and file name for all fits files using IRAF's imhead
+        <br/>
+<hr width="400"/><br/>
+<h3> IRAF: </h3>
+<tt> imhead *.fits lo+ | grep -E "Pixel\ file\|EXPTIME" </tt> find exposure times and file name for all fits files using IRAF's imhead
         <!--        <br><tt> echo "from pyraf import iraf; iraf.imhead('*.fits',long='yes')" | ipython | grep -E "Pixel\ file\|EXPTIME" </tt> same using pyraf from command line-->
-        <br><tt> echo "from pyraf import iraf; s=iraf.imhead('*.fits',long='yes',Stdout=1); iraf.grep('-E EXPTIME\|Pixel\ file',Stdin=s)" | python </tt> same using pyraf from command line
-        <br>
-        <hr width=400><br>
-        <br>
-        <br><h3> Python: </h3> 
+<br/><tt> echo "from pyraf import iraf; s=iraf.imhead('*.fits',long='yes',Stdout=1); iraf.grep('-E EXPTIME\|Pixel\ file',Stdin=s)" | python </tt> same using pyraf from command line
+        <br/>
+<hr width="400"/><br/>
+<br/>
+<br/><h3> Python: </h3> 
          numarray.concatenate = numpy.hstack (numpy.concatenate is not equivalent to numarray.concatenate, it does not accept scalars)
-        <br> glob.glob(filename)  filename retrieval with wildcards
-        <br> <a class="norm" href="pygrep.htm">"Grep" type search with Python</a>: Python lacks a simple "grep" command to scan a list; I've written one
-        <br> <tt>for i in dir(): print "%s: %s" % (i,eval(i))</tt>  a useful quick look at all the variables available (particularly useful
-        when using <tt>pdb</tt>, the interactive debugger</tt>
-        <br>
-        <hr width=400><br>
-        <br> <h3> VIM: </h3>
+        <br/> glob.glob(filename)  filename retrieval with wildcards
+        <br/> <a class="norm" href="pygrep.htm">"Grep" type search with Python</a>: Python lacks a simple "grep" command to scan a list; I've written one
+        <br/> <tt>for i in dir(): print "%s: %s" % (i,eval(i))</tt>  a useful quick look at all the variables available (particularly useful
+        when using <tt>pdb</tt>, the interactive debugger
+        <br/>
+<hr width="400"/><br/>
+<br/> <h3> VIM: </h3>
          There are some tasks too complicated for vim's internal substitution commands
-        <br> <tt>%!perl -pe 's/(.*AREA HEIGHT.*WIDTH=")([0-9\.]*)(.*)/$1.($2+120).$3/e' </tt> is a complicated statement: it replaces
+        <br/> <tt>%!perl -pe 's/(.*AREA HEIGHT.*WIDTH=")([0-9\.]*)(.*)/$1.($2+120).$3/e' </tt> is a complicated statement: it replaces
         a number that occurs after WIDTH= with that number + 120.  The line number to operate on must be specified, even if it is
         global (% or g//).  Dots connect the output statements within the perl replacement side.  /e evaluates the replacement side
         rather than just printing it.  The parentheses are required.
-        <br> <tt> %!awk '{print "point("$2":"$3":"$4","$5":"$6":"$7") \# point=arrow text={"$1"}"}'</tt> Reformat catalog as DS9 region file
-        <br> <tt> %!awk 'BEGIN {FS="|"} {print $5"  "$3}'
-        <br> %!awk '{print "point("$1":"$2":"$3","$4":"$5":"$6") \# text={"$7" "$8" "$9" "$10" "$11" "$12"}"}'    </tt> 
+        <br/> <tt> %!awk '{print "point("$2":"$3":"$4","$5":"$6":"$7") \# point=arrow text={"$1"}"}'</tt> Reformat catalog as DS9 region file
+        <br/> <tt> %!awk 'BEGIN {FS="|"} {print $5"  "$3}'
+        <br/> %!awk '{print "point("$1":"$2":"$3","$4":"$5":"$6") \# text={"$7" "$8" "$9" "$10" "$11" "$12"}"}'    </tt> 
         SIMBAD catalog to ds9 regions file (requires significant filtering because SIMBAD is inconsistent between lines)
-        <br> <tt> s/(.\{-})// </tt> is the non-greedy version of <tt> s/(.*)//</tt>
-        <br>
-        <br> <tt>'&lt;,'>s/\(.*\)\.\(.*\)\(.png\)/&lt;h3>\2&lt;/h3>\r&lt;img src="images\/orion\/thumbs\/\1.\2_tn.png" \ronclick="toggle('\1','images\/orion\/thumbs\/\1_tn.png','images\/orion\/\1.png')" \rname="\1"></tt>
-        <br>
-        <br> <tt>%s/&lt;a href="images\/\(.*\)\(...g\)">&lt;img src="\(.*\)">&lt;\/a>/&lt;img src="\3" onclick="toggle('\1','\3','images\/\1\2')" name="\1">/ </tt>
-        <br>
-        <br> <tt>%s/\(.*\)\(.jpg\)/&lt;img src="images\/jcmt\/thumbs\/\1_tn.jpg" onclick="toggle('\1','images\/jcmt\/thumbs\/\1_tn.jpg','images\/jcmt\/\1.jpg')" name="\1"&gt;/</tt>
-        <br>
-        <br> <tt>'&lt;,'&gt;s/\(.*\)\(.jpg\)/&lt;img src="images\/jcmt\/thumbs\/\1_tn.jpg" \r\tonclick="toggle('\1','\1_tn.jpg','\1.jpg')" \r\tname="\1"&gt;/</tt>
-        <br> <tt>%!awk '{print "union select s.*,n"NR".universalid as n"NR"universalid from sagecatalog as s, fGetNearbyObjEqUTC("$1","$2".02 as n"NR" where n"NR".universalid=s.universalid and s.epoch="}'</tt>
-        <br> <tt>5,30!awk 'BEGIN {OFS=""} {a = substr($0,12,2);  print substr($0,0,11) , ":" , sprintf("\%2.2d",a*60.) , substr($0,14,100)}'    </tt> arithmetic operations using AWK instead of SED (useful when 
+        <br/> <tt> s/(.\{-})// </tt> is the non-greedy version of <tt> s/(.*)//</tt>
+<br/>
+<br/> <tt>'&lt;,'&gt;s/\(.*\)\.\(.*\)\(.png\)/&lt;h3&gt;\2&lt;/h3&gt;\r&lt;img src="images\/orion\/thumbs\/\1.\2_tn.png" \ronclick="toggle('\1','images\/orion\/thumbs\/\1_tn.png','images\/orion\/\1.png')" \rname="\1"&gt;</tt>
+<br/>
+<br/> <tt>%s/&lt;a href="images\/\(.*\)\(...g\)"&gt;&lt;img src="\(.*\)"&gt;&lt;\/a&gt;/&lt;img src="\3" onclick="toggle('\1','\3','images\/\1\2')" name="\1"&gt;/ </tt>
+<br/>
+<br/> <tt>%s/\(.*\)\(.jpg\)/&lt;img src="images\/jcmt\/thumbs\/\1_tn.jpg" onclick="toggle('\1','images\/jcmt\/thumbs\/\1_tn.jpg','images\/jcmt\/\1.jpg')" name="\1"&gt;/</tt>
+<br/>
+<br/> <tt>'&lt;,'&gt;s/\(.*\)\(.jpg\)/&lt;img src="images\/jcmt\/thumbs\/\1_tn.jpg" \r\tonclick="toggle('\1','\1_tn.jpg','\1.jpg')" \r\tname="\1"&gt;/</tt>
+<br/> <tt>%!awk '{print "union select s.*,n"NR".universalid as n"NR"universalid from sagecatalog as s, fGetNearbyObjEqUTC("$1","$2".02 as n"NR" where n"NR".universalid=s.universalid and s.epoch="}'</tt>
+<br/> <tt>5,30!awk 'BEGIN {OFS=""} {a = substr($0,12,2);  print substr($0,0,11) , ":" , sprintf("\%2.2d",a*60.) , substr($0,14,100)}'    </tt> arithmetic operations using AWK instead of SED (useful when 
             a catalog outputs decimal arcminute units when you want arcseconds)
-	<br> ESSENTIAL: if backspace in insert mode fails, you must <tt>:set bs=2</tt>.  VIM becomes VI - and, imo, generally unusable - without this.
+	<br/> ESSENTIAL: if backspace in insert mode fails, you must <tt>:set bs=2</tt>.  VIM becomes VI - and, imo, generally unusable - without this.
 
-        <hr width=400><br>
-        <br><h3> Apache Server: </h3>
-        <tt>/etc/init.d/apache2 start</tt> Initiate daemon
-        <br><tt>/etc/apache2/apache2.conf </tt> Configuration file (can use <tt> ln -s</tt> to link a new home directory to your
+        <hr width="400"/><br/>
+<br/><h3> Apache Server: </h3>
+<tt>/etc/init.d/apache2 start</tt> Initiate daemon
+        <br/><tt>/etc/apache2/apache2.conf </tt> Configuration file (can use <tt> ln -s</tt> to link a new home directory to your
         default <tt>/var/www</tt>)
-        <br>The <tt>.htaccess</tt> file allows you to modify the way files are processed in a given directory.
-        <br><a class="norm" href="http://www.debianadmin.com/apache2-web-server-with-php-support-in-ubuntu.html">Apache server in Ubuntu</a>
-        <br>
-        <br> More to come, but in the meantime these pages are recommended:
-        <br> <a class="norm" href="http://sparky.rice.edu/~hartigan/comp.html">Pat Hartigan's Computer Page </a>
-        <br>
-        <br> <a class="norm" href="http://www.xkcd.com/349/">Anyone who has attempted to install a unix system should be familiar with this</a> 
-        <br>
-        <hr width=400><br>
-        <br> <h3> Perl </h3>
-        <tt>perl -ne 'if (/RA/ && /DEC/) {$_ =~ m/RA *= .([0-9:\.]*)/;  print $1,"\t"; $_ =~ m/DEC *= .([0-9:\.-]*)/; print $1,"\n";'}</tt> 
+        <br/>The <tt>.htaccess</tt> file allows you to modify the way files are processed in a given directory.
+        <br/><a class="norm" href="http://www.debianadmin.com/apache2-web-server-with-php-support-in-ubuntu.html">Apache server in Ubuntu</a>
+<br/>
+<br/> More to come, but in the meantime these pages are recommended:
+        <br/> <a class="norm" href="http://sparky.rice.edu/~hartigan/comp.html">Pat Hartigan's Computer Page </a>
+<br/>
+<br/> <a class="norm" href="http://www.xkcd.com/349/">Anyone who has attempted to install a unix system should be familiar with this</a>
+<br/>
+<hr width="400"/><br/>
+<br/> <h3> Perl </h3>
+<tt>perl -ne 'if (/RA/ &amp;&amp; /DEC/) {$_ =~ m/RA *= .([0-9:\.]*)/;  print $1,"\t"; $_ =~ m/DEC *= .([0-9:\.-]*)/; print $1,"\n";'}</tt> 
         a hideously ugly and relatively slow way to extract RA and DEC from fits files.  Does NOT print the file name
-        <br><br><hr><br><br>
-
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-</body></html>
+        <br/><br/><hr/><br/><br/>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</td></tr></table></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

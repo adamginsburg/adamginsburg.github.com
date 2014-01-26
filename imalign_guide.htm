@@ -1,18 +1,5 @@
-
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>IMALIGN guide</title>
-</head>
-<?php 
-$page="imalign_guide.htm";
-include 'tracker.php';?>
-<script language="javascript">
-    <!--
+<html><head><meta content="en-us" http-equiv="Content-Language"/><link href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>IMALIGN guide</title></head><head><script language="javascript">
+    &lt;!--
     function click(imname,imsrc) {
         document[imname].
             onclick = "click2(" + imname + "," + document[imname].src + ")";
@@ -35,55 +22,49 @@ include 'tracker.php';?>
     //    myself.src = (myself.src == first) ? second:first;
     //    return true;
     }
-    -->
-</script>
-    <body>
-    <center>
+    --&gt;
+</script></head><body>
+<center>
     IMALIGN is a powerful but potentially annoying tool.
-    <Br>
-    <table align="center" width=800 rules=groups frame=hsides border=2>
-        <colgroup><colgroup><colgroup><colgroup>
-        <tr><th>Step</th> <th>How to</th> <th > <a class='astro' href="ds9_imalign.htm">Tricks with DS9</a></th><th>Example/Filename</th> </tr>
-        <tbody>
-        <tr><td>Select a reference image</td>
-            <td> Your reference image should be the smallest of your images if they are different sizes</td>
-            <td></td>
-            <td> <code>image1.fits</code>
-        </tr>
-        <tbody>
-        <tr><td>Select stars in reference image</td>
-            <td>Use <code>display</code> to display an image in DS9 (you may have to <code>set stdimag=imt2048</code>, then use <code>imexamine</code> with the <code>a,r</code>, or <code>x</code> 
+    <br/>
+<table align="center" border="2" frame="hsides" rules="groups" width="800">
+<colgroup></colgroup><colgroup></colgroup><colgroup></colgroup><colgroup>
+</colgroup><tr><th>Step</th> <th>How to</th> <th> <a class="astro" href="ds9_imalign.htm">Tricks with DS9</a></th><th>Example/Filename</th> </tr>
+<tbody>
+<tr><td>Select a reference image</td>
+<td> Your reference image should be the smallest of your images if they are different sizes</td>
+<td></td>
+<td> <code>image1.fits</code>
+</td></tr>
+</tbody><tbody>
+<tr><td>Select stars in reference image</td>
+<td>Use <code>display</code> to display an image in DS9 (you may have to <code>set stdimag=imt2048</code>, then use <code>imexamine</code> with the <code>a,r</code>, or <code>x</code> 
                 keys to find star coordinates in pixel position </td>
-            <td>Use DS9 regions to select a list of stars and use the region file</td>
-            <td><code>starcoords.txt</code></td></tr>
-        <tbody>
-        <tr><td>Find the relative shifts between images if the shifts are greater than the <code>bigbox</code> parameter of <code>imalign</code></td>
-            <td>Use <code>disp</code> and <code>imexam</code> to find the coordinates of the same star in each image, and calculate the relative shifts
+<td>Use DS9 regions to select a list of stars and use the region file</td>
+<td><code>starcoords.txt</code></td></tr>
+</tbody><tbody>
+<tr><td>Find the relative shifts between images if the shifts are greater than the <code>bigbox</code> parameter of <code>imalign</code></td>
+<td>Use <code>disp</code> and <code>imexam</code> to find the coordinates of the same star in each image, and calculate the relative shifts
                 between those stars.  The shifts should be of the form ( ref<sub>x</sub> - image<sub>x</sub> ,ref<sub>y</sub> - image<sub>y</sub> )</td>
-            <td>Copy and paste DS9 regions between the files.  It is helpful to have one ruler region included to make the measurement easier.</td>
-            <td><code>shiftlist.txt</code></td></tr>
-        <tbody>
-        <tr><td>Make a list of input and output files</td>
-            <td>Edit two files and put in the list of input/output files.  Make sure your reference image is the first one. </td>
-            <td>Use UNIX tricks</td>
+<td>Copy and paste DS9 regions between the files.  It is helpful to have one ruler region included to make the measurement easier.</td>
+<td><code>shiftlist.txt</code></td></tr>
+</tbody><tbody>
+<tr><td>Make a list of input and output files</td>
+<td>Edit two files and put in the list of input/output files.  Make sure your reference image is the first one. </td>
+<td>Use UNIX tricks</td>
 <!--<pre>ls image[0-9].fits &gt;
 inlist.txt  
 cat inlist.txt | 
 sed 's/.fits/_align.fits/' &gt; 
 outlist.txt </pre></td>-->
-            <td> <code>inlist.txt</code>, <code>outlist.txt</code></td></tr>
-        <tbody>
-            <tr><td colspan=4><br> <code> imalign @inlist.txt image1.fits starcoords.txt @outlist.txt shifts=shiftlist.txt</code></td></tr>
-            <tr><td colspan=4><br>Remember that inlist.txt, outlist.txt, and shiftlist.txt have to have the same number of items in them!</td></tr>
-            <tr><td colspan=4>If you get segmentation violations or similar errors, make sure that the coordinates and shifts are separated
+<td> <code>inlist.txt</code>, <code>outlist.txt</code></td></tr>
+</tbody><tbody>
+<tr><td colspan="4"><br/> <code> imalign @inlist.txt image1.fits starcoords.txt @outlist.txt shifts=shiftlist.txt</code></td></tr>
+<tr><td colspan="4"><br/>Remember that inlist.txt, outlist.txt, and shiftlist.txt have to have the same number of items in them!</td></tr>
+<tr><td colspan="4">If you get segmentation violations or similar errors, make sure that the coordinates and shifts are separated
                     by SPACES, not COMMAS. </td></tr>
-
-
-
-
-            <br>
-        </table>
-        <br>
-    <script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-    </body>
-</html>
+<br/>
+</tbody></table>
+<br/>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</center></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

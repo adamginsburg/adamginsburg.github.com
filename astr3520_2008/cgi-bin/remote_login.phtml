@@ -1,31 +1,28 @@
-<phtml>
-<link rel="stylesheet" type="text/css" href="style.css">
+<html><body><phtml>
+<link href="style.css" rel="stylesheet" type="text/css"/>
 <title>ASTR 3520 Remote Login</title>
-<center>		<head><h1>ASTR 3520 Remote Login Instructions</h1></head>
+<center> <h1>ASTR 3520 Remote Login Instructions</h1>
 </center>
-<br>
-<body>
-    <table align="center" width=800><tr><td>
-		<br> In order to remotely login to cosmos, do the following:
-		<br> 1. Open a terminal on a UNIX system.  If you do not have a UNIX system available, see below.
-		<br> 2. Type "ifconfig" and record your IP address.  An IP address has the form #.#.#.#, where each # is a number between 0 and 254.
-		<br> 3. Type "xhost +cosmos.colorado.edu".  You should get a response similar to "cosmos.colorado.edu being added to access control list".  If you don't, don't worry about it, just continue on.
-		<br> 4. Type "ssh -XY (yourname)@cosmos.colorado.edu", where (yourname) should be replaced by your username, e.g. "ssh -XY ginsbura@cosmos.colorado.edu".  Enter your password when prompted.  If you receive a strange question about security, respond "yes".
-		<br> 5. To check whether you have access to graphics, attempt to load a graphical terminal, e.g. ds9. 
-		<br> 6. Pray your internet connection is fast and you're set.
-		<br>
-		<br> <h3> Remote Login for Windows </h3>
-		<br> You can login remotely from windows using an ssh client, preferably
+<br/>
+<table align="center" width="800"><tr><td>
+<br/> In order to remotely login to cosmos, do the following:
+		<br/> 1. Open a terminal on a UNIX system.  If you do not have a UNIX system available, see below.
+		<br/> 2. Type "ifconfig" and record your IP address.  An IP address has the form #.#.#.#, where each # is a number between 0 and 254.
+		<br/> 3. Type "xhost +cosmos.colorado.edu".  You should get a response similar to "cosmos.colorado.edu being added to access control list".  If you don't, don't worry about it, just continue on.
+		<br/> 4. Type "ssh -XY (yourname)@cosmos.colorado.edu", where (yourname) should be replaced by your username, e.g. "ssh -XY ginsbura@cosmos.colorado.edu".  Enter your password when prompted.  If you receive a strange question about security, respond "yes".
+		<br/> 5. To check whether you have access to graphics, attempt to load a graphical terminal, e.g. ds9. 
+		<br/> 6. Pray your internet connection is fast and you're set.
+		<br/>
+<br/> <h3> Remote Login for Windows </h3>
+<br/> You can login remotely from windows using an ssh client, preferably
 		<a href="http://www.ssh.com/support/downloads/secureshellwks/non-commercial.phtml">SSH
 				Secure Shell</a>, but the graphics aren't trivial.  I
 		will have to communicate with the CU IT department to find out if this
 		is possible, as it requires proprietary software.  Please e-mail me if you'd like me to 
 		do that, otherwise I'll skip it for now.
-		<br>
-		<br> <a href="mailto:adam.ginsburg@colorado.edu">Ask questions</a> if this does not work!  Most of this is experimental for me, so if there's some failure in my instructions, I may be able to correct it, but don't be surprised.
-		<br>
-		<br><a href="index.phtml">ASTR3520 Home</a>
-<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
-</body>
-</phtml>
-
+		<br/>
+<br/> <a href="mailto:adam.ginsburg@colorado.edu">Ask questions</a> if this does not work!  Most of this is experimental for me, so if there's some failure in my instructions, I may be able to correct it, but don't be surprised.
+		<br/>
+<br/><a href="index.phtml">ASTR3520 Home</a>
+<br/><br/>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a>
+</td></tr></table></phtml></body><script src="../../googleanalytics.js" type="text/javascript"></script></html>

@@ -1,20 +1,10 @@
-<html>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<title> IDL CLEAN </title>
-<body> 
-    <?php
-$page="clean.htm";
-    include 'tracker.php';?>
-<head><h1><center> <h1> CLEAN algorithm </h1></center></h1></head>
-<br>
-<table align="center" width=800><tr><td>
-
-<br> <a href="http://setiathome.berkeley.edu/~aparsons/">Aaron Parsons</a>
+<html><head><link href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><title> IDL CLEAN </title></head><body>
+<h1><center> <h1> CLEAN algorithm </h1></center></h1>
+<br/>
+<table align="center" width="800"><tr><td>
+<br/> <a href="http://setiathome.berkeley.edu/~aparsons/">Aaron Parsons</a>
 wrote an implementation of the Hogbom clean algorithm in Python, and since it
-didn't exist yet in IDL (to the best of my knowledge), I translated his <a
-    href="http://setiathome.berkeley.edu/~aparsons/python/aipy.html"
-    class="norm">code</a> for use in the BGPS pipeline.
+didn't exist yet in IDL (to the best of my knowledge), I translated his <a class="norm" href="http://setiathome.berkeley.edu/~aparsons/python/aipy.html">code</a> for use in the BGPS pipeline.
 <pre>
 ;    """This is an implementation of the standard Hoegbom clean deconvolution 
 ;    algorithm, which operates on the assumption that the image is composed of
@@ -91,7 +81,7 @@ function hogbom_clean,im,ker,mdl=mdl,gain=gain,maxiter=maxiter,$
                 n_dif = dif
                 print,"In last if, model max: ",max(n_mdl,/nan),$
                     "  n_dif max: ",max(n_dif,/nan)
-                print,"Quitting with n_score = ",n_score," > score = ",score
+                print,"Quitting with n_score = ",n_score," &gt; score = ",score
                 break
             endif
     ;    If we're still doing fine, buffer this solution as the new best.
@@ -116,8 +106,6 @@ fclose($fh);
 
 echo $hlPY->highlight($theData);
 ?>-->
-<hr>
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-</body>
-</html>
-            
+<hr/>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</td></tr></table></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

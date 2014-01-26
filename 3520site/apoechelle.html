@@ -1,11 +1,7 @@
-
-<html>
-<link rel="stylesheet" type="text/css" href="style.css">
-<title> Astronomy 3520: APO Echelle Data Reduction Guide </title>
-<body> 
+<html><head><link href="style.css" rel="stylesheet" type="text/css"/><title> Astronomy 3520: APO Echelle Data Reduction Guide </title></head><body>
 <!--		<?php include 'tracker.php';?>-->
-<head><h1><center> ASTR 3520: APO Echelle Data Reduction Guide</center></h1></head>
-   <style type="text/css">
+<h1><center> ASTR 3520: APO Echelle Data Reduction Guide</center></h1>
+<style type="text/css">
        tt {
            color: yellow
        }
@@ -13,14 +9,14 @@
            font-size:12px
        }
    </style>
-<br>
-<br> Warnings:
-<br> 1. Do not copy images with 0 size to your working directory, they will cause errors.
-<br> 2. If you use wildcards as specified below, be careful how you name your files.
-<br> 3. The below commands are strongly order-dependent.  Be VERY careful with wildcards if you mix up order or have to go back to a previous step.
-<br>
-<br> <h2> General Instructions </h2>
-<br> <p>  Just like with other spectra and images, echelle data requires ccd
+<br/>
+<br/> Warnings:
+<br/> 1. Do not copy images with 0 size to your working directory, they will cause errors.
+<br/> 2. If you use wildcards as specified below, be careful how you name your files.
+<br/> 3. The below commands are strongly order-dependent.  Be VERY careful with wildcards if you mix up order or have to go back to a previous step.
+<br/>
+<br/> <h2> General Instructions </h2>
+<br/> <p>  Just like with other spectra and images, echelle data requires ccd
 processing and flat fielding.  As with other spectra, we need to correct for
 chip sensitivity using a standard, but this is less important over the small
 ranges of individual echelle orders.  We do need a calibration lamp to determine
@@ -28,12 +24,12 @@ what our wavelength scale is, and this is the most difficult part of both
 longslit and echelle spectroscopy.  Thankfully, John Barentine provided us with
 an identified cal lamp, so dispersion correction is not difficult with IRAF's
 automation.  
-<br><p> Below is a set of commands used to batch-process a set of
+<br/></p><p> Below is a set of commands used to batch-process a set of
 images.  I have reduced the data from UT071031, but because it was done in batch
 mode it shouldn't be trusted.  These commands show you exactly how everything
 was done, but many of the steps listed in the batch section have been done for
 you and do not need to be repeated.
-<br> <p> In /home/shared/astr3520/ref/, there are two spectra and a database
+<br/> </p><p> In /home/shared/astr3520/ref/, there are two spectra and a database
 folder containing their aperture lists and the linelists.  These references
 should be used as listed below - JBrefspec is a magnified standard star
 reference to use for aperture tracing on the science files, and JBtharspec
@@ -41,15 +37,15 @@ should be used to extract the thorium argon spectra and identify lines.
 JBtharspec can also be used as a wavelength reference as long as it is used
 carefully - it is from many years ago and it's possible things could have
 changed (though I think it's pretty much correct).  
-</p><br>
-<br> <h2> Command summary:</h2>
-<br> Packages you will need:
-<br> <tt> noao </tt>
-<br> <tt> imred </tt>
-<br> <tt> ccdred </tt> required for ccdproc
-<br> <tt> echelle </tt> required for apall
-<br> <tt> proto </tt> Only needed for bad pixel mask generation
-<dl> <br id="comet"> <a class="norm" href="examplepyrafsession.txt">Example for evega.0039.fits from UT071031</a>:
+</p><br/>
+<br/> <h2> Command summary:</h2>
+<br/> Packages you will need:
+<br/> <tt> noao </tt>
+<br/> <tt> imred </tt>
+<br/> <tt> ccdred </tt> required for ccdproc
+<br/> <tt> echelle </tt> required for apall
+<br/> <tt> proto </tt> Only needed for bad pixel mask generation
+<dl> <br id="comet"/> <a class="norm" href="examplepyrafsession.txt">Example for evega.0039.fits from UT071031</a>:
     <dd><tt><a href="#ccdproc">ccdproc</a> evega.0039.fits  ccdtype="" zerocor=no darkcor=no flatcor=no fixfile="echmask.pl" biassec="[2100:2128,2:2027]" trimsec="[21:2048,1:2048]" order=3 niterate=3 int- 
     <dd><a href="#hedit">hedit</a> evega.0039.fits DISPAXIS 1 add+
     <dd><a href="#magnify">magnify</a> evega.0039.fits evega.0039.rs.fits xmag=1 ymag=4 
@@ -57,83 +53,83 @@ changed (though I think it's pretty much correct).
     <dd><a href="#imarith">imarith</a> evega.0039.rs.ec.fits / eQuartzSUM.rs.ec.fits evega.0039.rs.ec.flat.fits
     <dd><a href="#refspectra">refspectra</a> evega.0039.rs.ec.flat.fits answer="yes" references="JBtharspec.ec" sort="" group=""
     <dd><a href="#dispcor">dispcor</a> evega.0039.rs.ec.flat.fits evega.0039.rs.ec.dispcor.fits
-    </tt>
-</dl>
+    </dd></dd></dd></dd></dd></dd></tt>
+</dd></dl>
 <dl>
-  <br id="quartz"> Individual Example for the Quartz Lamp:
-<dd><br> <tt> <a href="#ccdproc"> ccdproc eQuartz*.fits ccdtype="" zerocor=no darkcor=no flatcor=no fixfile="echmask.pl" biassec="[2100:2128,2:2027]" trimsec="[21:2048,1:2048]" order=3 niterate=3 int-</tt></a> takes care of basic CCD correction (bias, bad pixels)
-<dd><br> <tt> imarith eQuartz.0033.fits / 200 eQuartzBLUEdiv200.fits </tt>
+<br id="quartz"/> Individual Example for the Quartz Lamp:
+<dd><br/> <tt> <a href="#ccdproc"> ccdproc eQuartz*.fits ccdtype="" zerocor=no darkcor=no flatcor=no fixfile="echmask.pl" biassec="[2100:2128,2:2027]" trimsec="[21:2048,1:2048]" order=3 niterate=3 int-</a></tt> takes care of basic CCD correction (bias, bad pixels)
+<dd><br/> <tt> imarith eQuartz.0033.fits / 200 eQuartzBLUEdiv200.fits </tt>
 <!--<dd><br> <tt> imarith eQuartz.0030.fits / 1 eQuartzOPENdiv.fits </tt>-->
-<dd><br> Divide the two quartz lamps by their exposure times to get flats (eQUARTZ_OPEN.0030.fits has 1s exposure time).  
-<dd><br> <tt> imarith eQuartzBLUEdiv200.fits + eQUARTZ_OPEN.0030.fits eQuartzSUM.fits </tt>
-<dd><br> Because they are in different filters, they cover different orders, so the two lamps should be combined.
-<dd><br> <tt> hedit eQuartzSUM.fits FILTER "Blue+Open" </tt>  and the header updated
+<dd><br/> Divide the two quartz lamps by their exposure times to get flats (eQUARTZ_OPEN.0030.fits has 1s exposure time).  
+<dd><br/> <tt> imarith eQuartzBLUEdiv200.fits + eQUARTZ_OPEN.0030.fits eQuartzSUM.fits </tt>
+<dd><br/> Because they are in different filters, they cover different orders, so the two lamps should be combined.
+<dd><br/> <tt> hedit eQuartzSUM.fits FILTER "Blue+Open" </tt>  and the header updated
 <!--<dd><br> <tt> <a href="#ccdproc"> ccdproc  eQuartzSUM.fits ccdtype="" zerocor=no darkcor=no flatcor=no fixfile="echmask.pl" biassec="[2100:2128,2:2027]" trimsec="[21:2048,1:2048]" order=3 niterate=3 int-</tt></a> takes care of basic CCD correction (bias, bad pixels)-->
-<dd><br> <tt> <a href="#magnify"> magnify eQuartzSUM.fits eQuartzSUM.rs.fits  xmag=1 ymag=4 </a></tt> makes image larger (rs=rescale)
-<dd><br> <tt> <a href="#apall">apall eQuartzSUM.rs.fits references=JBrefspec interactive+ find- recenter+ resize- edit+ trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </tt></a> **INTERACTIVE** task to apply apertures from a reference, then check to make sure they're correct
-</dl>
+<dd><br/> <tt> <a href="#magnify"> magnify eQuartzSUM.fits eQuartzSUM.rs.fits  xmag=1 ymag=4 </a></tt> makes image larger (rs=rescale)
+<dd><br/> <tt> <a href="#apall">apall eQuartzSUM.rs.fits references=JBrefspec interactive+ find- recenter+ resize- edit+ trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </a></tt> **INTERACTIVE** task to apply apertures from a reference, then check to make sure they're correct
+</dd></dd></dd></dd></dd></dd></dd></dd></dl>
 <!--<br> <tt> apscatter eQuartzSUM.rs.fits eQuartzSUM.rs.scat.fits int+ find- recenter- resize- edit- trace- fittrace- nsum=-10 </tt>  **INTERACTIVE**
 <br> <tt> apall eQuartzSUM.rs.scat.fits references=JBrefspec interactive- find- recenter+ resize+ edit- trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </tt>-->
-<br>
+<br/>
 <!--<br> <a href="#quartz">Begin with Quartz Lamp</a>-->
-<br id="batch"> Batch example / ref file creation
+<br id="batch"/> Batch example / ref file creation
 <dl>
-<dd><br> <tt> <a href="#flatcombine"> flatcombine e-Bias.0*.fits output="e-Bias.flatcombine.fits" ccdtype="" process=no subsets=no </a></tt>
-<dd><br> <tt> !echo "788  788  803 2000\n1683 1683 664 2000" > badcols </tt> create badcols file 
-<dd><br> <tt> <a href="#text2mask"> text2mask text="badcols" mask="echmask" ncols=2128 nlines=2048 </a></tt> create bad pixel mask
-<dd><br> <tt> ls e*.fits | grep -E "[0-9]\{4\}.fits" > rawlist </tt> create list of raw images
-<dd><br> <tt> ccdproc @rawlist ccdtype="" zerocor=no darkcor=no flatcor=no fixfile="echmask.pl" biassec="[2100:2128,2:2027]" trimsec="[21:2048,1:2048]" order=3 niterate=3 int-</tt> apply CCD processing to raw images
-<dd><br> <tt> cat rawlist | grep -iv bias > echellespeclist </tt> 
-<dd><br> <tt> hedit @echellespeclist DISPAXIS 1 add+ </tt> add dispersion axis to spectra (essential for use of apall!)
-<dd><br> <tt> ls e*.fits | grep -i thar > tharlist </tt>
-<dd><br> <tt> apall @tharlist references=JBtharspec.fits interactive- find- recenter+ resize+ edit- trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </tt>
-<dd><br> <tt> ls e*.ec.fits | grep -i thar > tharspeclist </tt>
-<dd><br> <tt> ecreidentify @tharspeclist reference="JBtharspec.ec" cradius=1 threshold=100 </tt>
-<dd><br> <tt> cat echellespeclist | grep -iv thar | grep -iv quartz | grep -iv flat | grep -iv bias > premagnifylist</tt>
-<dd><br> <tt> !sed s/.fits/.rs.fits/ premagnifylist > postmagnifylist</tt>
-<dd><br> <tt> magnify @premagnifylist @postmagnifylist xmag=1 ymag=4 </tt>
-<dd><br> <tt> ls e*rs.fits | grep -E "vega\|RSOph\|sgr\|altair\|alder" > objectlist </tt>
-<dd><br> <tt> apall @objectlist references=JBrefspec interactive- find- recenter+ resize+ edit- trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </tt>
+<dd><br/> <tt> <a href="#flatcombine"> flatcombine e-Bias.0*.fits output="e-Bias.flatcombine.fits" ccdtype="" process=no subsets=no </a></tt>
+<dd><br/> <tt> !echo "788  788  803 2000\n1683 1683 664 2000" &gt; badcols </tt> create badcols file 
+<dd><br/> <tt> <a href="#text2mask"> text2mask text="badcols" mask="echmask" ncols=2128 nlines=2048 </a></tt> create bad pixel mask
+<dd><br/> <tt> ls e*.fits | grep -E "[0-9]\{4\}.fits" &gt; rawlist </tt> create list of raw images
+<dd><br/> <tt> ccdproc @rawlist ccdtype="" zerocor=no darkcor=no flatcor=no fixfile="echmask.pl" biassec="[2100:2128,2:2027]" trimsec="[21:2048,1:2048]" order=3 niterate=3 int-</tt> apply CCD processing to raw images
+<dd><br/> <tt> cat rawlist | grep -iv bias &gt; echellespeclist </tt>
+<dd><br/> <tt> hedit @echellespeclist DISPAXIS 1 add+ </tt> add dispersion axis to spectra (essential for use of apall!)
+<dd><br/> <tt> ls e*.fits | grep -i thar &gt; tharlist </tt>
+<dd><br/> <tt> apall @tharlist references=JBtharspec.fits interactive- find- recenter+ resize+ edit- trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </tt>
+<dd><br/> <tt> ls e*.ec.fits | grep -i thar &gt; tharspeclist </tt>
+<dd><br/> <tt> ecreidentify @tharspeclist reference="JBtharspec.ec" cradius=1 threshold=100 </tt>
+<dd><br/> <tt> cat echellespeclist | grep -iv thar | grep -iv quartz | grep -iv flat | grep -iv bias &gt; premagnifylist</tt>
+<dd><br/> <tt> !sed s/.fits/.rs.fits/ premagnifylist &gt; postmagnifylist</tt>
+<dd><br/> <tt> magnify @premagnifylist @postmagnifylist xmag=1 ymag=4 </tt>
+<dd><br/> <tt> ls e*rs.fits | grep -E "vega\|RSOph\|sgr\|altair\|alder" &gt; objectlist </tt>
+<dd><br/> <tt> apall @objectlist references=JBrefspec interactive- find- recenter+ resize+ edit- trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </tt>
 <dd><!--<br> <tt> !sed s/.fits/.scat.fits/ objectlist > unscatteredlist </tt>
 <dd><br> <tt> epar apscat1 </tt> ***MUST EDIT PARAMETERS, CANNOT USE COMMAND LINE*** order=5 low_reject=2 high_reject=2
 <dd><br> <tt> epar apscat2 </tt> ***MUST EDIT PARAMETERS, CANNOT USE COMMAND LINE*** order=5 niterate=2
 <dd><br> <tt> apscatter @objectlist @unscatteredlist find- recenter- resize- edit- trace- fittrace- nsum=-10 </tt> ***BEST DONE INTERACTIVELY***
 <dd><br> <tt> refspectra @unscatteredlist references="JBtharspec.ec" answer="yes" sort="" group="" </tt>
 <dd><br> <tt> !sed s/scat/flat/ unscatteredlist > flattedlist </tt> -->
-<dd><br> <tt> !sed s/.fits/.ec.fits/ objectlist > objspeclist </tt>
-<dd><br> <tt> !sed s/.fits/.flat.fits/ objspeclist > flattedlist </tt> 
-<dd><br> <tt> imarith @objspeclist / eQuartzSUM.rs.ec.fits @flattedlist </tt>
-<dd><br> <tt> refspectra @flattedlist answer="yes" references="JBtharspec.ec" sort="" group="" </tt>
-<dd><br> <tt> !sed s/flat/dispcor/ flattedlist > dispcorlist </tt>
-<dd><br> <tt> dispcor @flattedlist @dispcorlist </tt>
-<dd><br> <tt> !sed s/.rs.ec.dispcor./.singlespec./ dispcorlist > singlespeclist </tt>
-<dd><br> <tt> scombine @dispcorlist @singlespeclist group="images" combine="sum" </tt> **THIS COMMAND DOESN'T WORK AS IS: it requires some sort of rejection routine that I have not been able to pin down.
+<dd><br/> <tt> !sed s/.fits/.ec.fits/ objectlist &gt; objspeclist </tt>
+<dd><br/> <tt> !sed s/.fits/.flat.fits/ objspeclist &gt; flattedlist </tt>
+<dd><br/> <tt> imarith @objspeclist / eQuartzSUM.rs.ec.fits @flattedlist </tt>
+<dd><br/> <tt> refspectra @flattedlist answer="yes" references="JBtharspec.ec" sort="" group="" </tt>
+<dd><br/> <tt> !sed s/flat/dispcor/ flattedlist &gt; dispcorlist </tt>
+<dd><br/> <tt> dispcor @flattedlist @dispcorlist </tt>
+<dd><br/> <tt> !sed s/.rs.ec.dispcor./.singlespec./ dispcorlist &gt; singlespeclist </tt>
+<dd><br/> <tt> scombine @dispcorlist @singlespeclist group="images" combine="sum" </tt> **THIS COMMAND DOESN'T WORK AS IS: it requires some sort of rejection routine that I have not been able to pin down.
 <!--<br> <tt> continuum [filename] </tt> ***INTERACTIVE***-->
-</dl>
-<br>
-<br>
-<br>
-<br> <h2 id="detail"> Detailed explanation of individual commands </h2>
-<br id="imarith"> <tt>imarith [file1] [operation] [file2 or number] [outputfile]</tt> performs the designated mathematical operation on the desired files 
-<br id="flatcombine"> <tt> flatcombine [filelist] output=[outfile] </tt> is a flat-specific version of imcombine.  It defaults to "average" with "avsigclip", or average sigma clipping, to remove outliers from the set of images.
-<br id="text2mask"> <tt> text2mask text=[textfile] mask=[outfile] </tt> generates a bad pixel mask.  In the case of the APO Echelle, they tell us exactly what bad pixel mask to use.  
-<br id="ccdproc"> <tt> ccdproc [filename] fixfile=[fixfilename] biassec=[range] trimsec=[range] order=[ordernum] niterate=[niter]</tt> Automated CCD processing package uses a bad pixel mask (fixfilename) to eliminate bad pixels and a bias segment to determine what the chip bias is and remove it.  trimsec specifies a range to remove from the image.  The ordernum and niterate parameters are for fitting the bias from the small "overscan" regions used to determine it. 
-<br id="apall"> <tt> apall [filename] reference=[refspec] </tt> uses the reference spectrum specified to extract apertures from the 2D echelle image.  With the parameters used here, it does not automatically find new apertures, but will recenter and (except for the quartz lamp) resize the apertures.Most of the parameters specified are used for tracing the aperture and are not strictle necessary, but are included here because they were suggested in the APO Echelle Reduction guide
-<br id="ecreidentify"> <tt> ecreidentify [filename] reference=[refspec] </tt> uses the reference spectrum with identified lines to identify the wavelengths of the extracted apertures.  ecreidentify is only necessary here if ThAr lamps other than those provided are going to be used; in this example it is not used.
-<br id="magnify"> <tt> magnify [filename] [outname] xmag=[nx] ymag=[ny] </tt> simply magnifies the image by some factor while conserving flux.  This is used to reduce aliasing that results from the narrow apertures - see the echelle reduction guide.
-<br id="refspectra"> <tt> respectra [filename] reference=[refname] </tt> adds the reference spectrum to the header file of a target file.  This step is necessary to use dispcor
-<br id="dispcor"> <tt> dispcor [in] [out] </tt> applies the dispersion correction specified in the reference spectrum, i.e. it changes units from pixels to wavelength
-<br id="scombine"> <tt> scombine [in] [out] combine=[combtype] </tt> attempts to combine all of the individual spectral orders into a single spectrum using either sum, average, or median combine.  However, what we REALLY want is a "max" combine that will take the maximum of the two spectra at each point, and I don't know how to do that yet.
-<br id="hedit"> <tt> hedit [filename] [parameter] [value] add=[y/n] </tt> modifies the header of a fits file.  It is a very simple process to do this, but hedit preserves the fits format (which affects how different programs - e.g. ds9 - read and display the file) when making edits and prevents you from overwriting key parameters.  We use "DISPAXIS 1 add+" to say "change the value of DISPAXIS to 1, and add the parameter DISPAXIS if it does not exist".  DISPAXIS=1 means the X axis.  You can see in the echelle images that the x axis is the wavelength axis and the y axis is the "order" axis.
+</dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dl>
+<br/>
+<br/>
+<br/>
+<br/> <h2 id="detail"> Detailed explanation of individual commands </h2>
+<br id="imarith"/> <tt>imarith [file1] [operation] [file2 or number] [outputfile]</tt> performs the designated mathematical operation on the desired files 
+<br id="flatcombine"/> <tt> flatcombine [filelist] output=[outfile] </tt> is a flat-specific version of imcombine.  It defaults to "average" with "avsigclip", or average sigma clipping, to remove outliers from the set of images.
+<br id="text2mask"/> <tt> text2mask text=[textfile] mask=[outfile] </tt> generates a bad pixel mask.  In the case of the APO Echelle, they tell us exactly what bad pixel mask to use.  
+<br id="ccdproc"/> <tt> ccdproc [filename] fixfile=[fixfilename] biassec=[range] trimsec=[range] order=[ordernum] niterate=[niter]</tt> Automated CCD processing package uses a bad pixel mask (fixfilename) to eliminate bad pixels and a bias segment to determine what the chip bias is and remove it.  trimsec specifies a range to remove from the image.  The ordernum and niterate parameters are for fitting the bias from the small "overscan" regions used to determine it. 
+<br id="apall"/> <tt> apall [filename] reference=[refspec] </tt> uses the reference spectrum specified to extract apertures from the 2D echelle image.  With the parameters used here, it does not automatically find new apertures, but will recenter and (except for the quartz lamp) resize the apertures.Most of the parameters specified are used for tracing the aperture and are not strictle necessary, but are included here because they were suggested in the APO Echelle Reduction guide
+<br id="ecreidentify"/> <tt> ecreidentify [filename] reference=[refspec] </tt> uses the reference spectrum with identified lines to identify the wavelengths of the extracted apertures.  ecreidentify is only necessary here if ThAr lamps other than those provided are going to be used; in this example it is not used.
+<br id="magnify"/> <tt> magnify [filename] [outname] xmag=[nx] ymag=[ny] </tt> simply magnifies the image by some factor while conserving flux.  This is used to reduce aliasing that results from the narrow apertures - see the echelle reduction guide.
+<br id="refspectra"/> <tt> respectra [filename] reference=[refname] </tt> adds the reference spectrum to the header file of a target file.  This step is necessary to use dispcor
+<br id="dispcor"/> <tt> dispcor [in] [out] </tt> applies the dispersion correction specified in the reference spectrum, i.e. it changes units from pixels to wavelength
+<br id="scombine"/> <tt> scombine [in] [out] combine=[combtype] </tt> attempts to combine all of the individual spectral orders into a single spectrum using either sum, average, or median combine.  However, what we REALLY want is a "max" combine that will take the maximum of the two spectra at each point, and I don't know how to do that yet.
+<br id="hedit"/> <tt> hedit [filename] [parameter] [value] add=[y/n] </tt> modifies the header of a fits file.  It is a very simple process to do this, but hedit preserves the fits format (which affects how different programs - e.g. ds9 - read and display the file) when making edits and prevents you from overwriting key parameters.  We use "DISPAXIS 1 add+" to say "change the value of DISPAXIS to 1, and add the parameter DISPAXIS if it does not exist".  DISPAXIS=1 means the X axis.  You can see in the echelle images that the x axis is the wavelength axis and the y axis is the "order" axis.
 
 
-<br>
-<br>
-<br><h3> Log of work for UT110702:</h3>
-<br>In this example, I extracted a different set of Quartz lamp flat field images, then attempted to modify that image so that it would mask out the regions of lowest sensitivity on the Echelle detector.  However, this did not work very well
-<br> <tt>
-    <dl>
-        <dd>    flatcombine eblueflat* output="BLUEFLAT.comb.fits" ccdtype="" process- subset-
+<br/>
+<br/>
+<br/><h3> Log of work for UT110702:</h3>
+<br/>In this example, I extracted a different set of Quartz lamp flat field images, then attempted to modify that image so that it would mask out the regions of lowest sensitivity on the Echelle detector.  However, this did not work very well
+<br/> <tt>
+<dl>
+<dd>    flatcombine eblueflat* output="BLUEFLAT.comb.fits" ccdtype="" process- subset-
         <dd> flatcombine eredflat* output="REDFLAT.comb.fits" ccdtype="" process- subset-
         <dd> imarith BLUEFLAT.comb.fits / 240 BLUEFLAT.div240.fits
         <dd> imarith REDFLAT.comb.fits / 70 REDFLAT.div70.fits
@@ -145,34 +141,33 @@ changed (though I think it's pretty much correct).
         <dd> imreplace FLAT.rs.ec.rp.fits[*,1:70] value=1000 lower=0 upper=100
         <dd> imreplace FLAT.rs.ec.rp.fits[*,7:20] value=1000 lower=0 upper=400
         <dd>  imarith @objspeclist / FLAT.rs.ec.rp.fits @flattedlist
-    </dl>
+    </dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dl>
 </tt>
-<br>
-
-<br><br><br><a class="special" href="index.html">ASTR3520 home</a>
-<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
-<br>  
-<br>   
-<br>
-<br>
-<br>  
-<br>   
-<br>
-<br>
-<br>  
-<br>   
-<br>
-<br>
-<br>  
-<br>   
-<br>
-<br>
-<br>  
-<br>   
-<br>
-<br>
-<br>  
-<br>   
-<br>
-<br>
-</body></html>
+<br/>
+<br/><br/><br/><a class="special" href="index.html">ASTR3520 home</a>
+<br/><br/>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body><head><script src="../googleanalytics.js" type="text/javascript"></script></head></html>

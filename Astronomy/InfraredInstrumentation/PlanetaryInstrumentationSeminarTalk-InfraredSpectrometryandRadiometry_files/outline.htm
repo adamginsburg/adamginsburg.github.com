@@ -1,14 +1,4 @@
-<html>
-
-<head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
-<meta name=ProgId content=PowerPoint.Slide>
-<meta name=Generator content="Microsoft PowerPoint 10">
-<link id=Main-File rel=Main-File
-href="../PlanetaryInstrumentationSeminarTalk-InfraredSpectrometryandRadiometry.htm">
-<link rel=Preview href=preview.wmf>
-<meta name=Robots content=NoIndex>
-<script src=script.js></script><script><!--
+<html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="PowerPoint.Slide" name="ProgId"/><meta content="Microsoft PowerPoint 10" name="Generator"/><link href="../PlanetaryInstrumentationSeminarTalk-InfraredSpectrometryandRadiometry.htm" id="Main-File" rel="Main-File"/><link href="preview.wmf" rel="Preview"/><meta content="NoIndex" name="Robots"/><script src="script.js"></script><script>&lt;!--
 if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
 {
 	obj = GetObj("Main-File")
@@ -62,7 +52,7 @@ function UpdOtl(){ UpdIdx(parent.gCurSld) }
 function UpdIdx( idx )
 {
 	if( gSelected != idx ) {
-		if( gSelected > 0 )
+		if( gSelected &gt; 0 )
 			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
 		if( ObjExists( idx ) ) {
 			gSelected = idx
@@ -74,10 +64,10 @@ function UpdIdx( idx )
 		state = "block"
 		if( !parent.gOtlTxtExp )
 			state="none"
-		for(ii=0; ii<gChildEntryTable.length; ii++) {
+		for(ii=0; ii&lt;gChildEntryTable.length; ii++) {
 			obj=gChildEntryTable[ii];
 			if( obj.id == null ) continue;
-			if( obj.id.indexOf("PPTC") >= 0 )
+			if( obj.id.indexOf("PPTC") &gt;= 0 )
 				obj.style.display=state;
 		}
 		gTxtState=parent.gOtlTxtExp
@@ -89,10 +79,10 @@ function InitArray()
 {
 	count=0
 	var list=GetTags(document,"DIV");
-	for(ii=0; ii<list.length; ii++) {
+	for(ii=0; ii&lt;list.length; ii++) {
 		obj=list.item(ii)
 		if( obj.id == null ) continue
-		if( obj.id.indexOf("PPTC") >= 0 )
+		if( obj.id.indexOf("PPTC") &gt;= 0 )
 			gChildEntryTable[count++]=obj
 	}
 }
@@ -117,12 +107,12 @@ function GetLink(src)
 }
 function UpdNav()
 {
-	txt = "<center>";
+	txt = "&lt;center&gt;";
 	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
 		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
 	else
 		txt += "Hidden Slide"
-	txt += "</center>";
+	txt += "&lt;/center&gt;";
 	nav_text.innerHTML = txt;
 	if( !parent.HasPrevSld() )
 		gBtnArr["nb_prev"].Enabled(0)
@@ -146,9 +136,8 @@ function UpdOtlNav()
 		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
 }
 
-//--></script>
-<style>
-<!--.PTxt
+//--&gt;</script><style>
+&lt;!--.PTxt
 	{position:relative;
 	width:100%;
 	margin-top:5px;
@@ -175,541 +164,408 @@ ul
 	border-style:solid;
 	border-width:1px;
 	border-color:threedface;}
--->
-</style>
-</head>
-
-<body onload="Load()" style='margin:2px'>
-
-<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
-onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
-onkeypress="_KPH()" style='display:none;visibility:hidden'>
-<table id="notesBtn" style='position:absolute;display:none;width:70px' align=left cellpadding=0
- cellspacing=0>
- <td nowrap>
- <div id="nb_ntsElem" align=center style='position:relative;padding:3px;
- font-family:Arial;color:buttontext;font-size:9pt'><img src="notes_flag.gif"
- border=0 id="notes_flag" style='display:none'><span
-style='mso-spacerun:yes'>  </span>Notes</div>
- <div title="Show/Hide Notes" id="nb_nts" style='position:absolute;top:0%;
- left:0%;width:100%;height:100%'></div>
- </td>
+--&gt;
+</style></head><body onload="Load()" style="margin:2px">
+<div id="NavObj" onkeypress="_KPH()" onload="Load()" onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseover="BtnOnOver()" onmouseup="BtnOnUp()" style="display:none;visibility:hidden">
+<table align="left" cellpadding="0" cellspacing="0" id="notesBtn" style="position:absolute;display:none;width:70px">
+<td nowrap="nowrap">
+<div align="center" id="nb_ntsElem" style="position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt"><img border="0" id="notes_flag" src="notes_flag.gif" style="display:none"/><span style="mso-spacerun:yes">Â  </span>Notes</div>
+<div id="nb_nts" style="position:absolute;top:0%;
+ left:0%;width:100%;height:100%" title="Show/Hide Notes"></div>
+</td>
 </table>
-
-<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
- <td nowrap>
- <div id="nb_sldshwText" title="Full
-Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
- font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+<table align="right" cellpadding="0" cellspacing="0" style="position:relative;width:70px">
+<td nowrap="nowrap">
+<div align="center" id="nb_sldshwText" style="position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default" title="Full
+Screen Slide Show">Slide
 Show</div>
- <div id="nb_sldshwBorder" title="Full Screen Slide Show" style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
- <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
- src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
- </div>
- </td>
- <td>
- <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
- width:20px;height:20px'>
- <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
- src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
- relative;left:-290px'></div>
- </div>
- </td>
+<div id="nb_sldshwBorder" style="position:absolute;top:0%;left:0%;width:100%;height:20px" title="Full Screen Slide Show">
+<div style="position:absolute;clip:rect(0px, 18px, 18px, 0px)"><img id="nb_sldshw" src="buttons.gif" style="position:relative;left:-254px"/></div>
+</div>
+</td>
+<td>
+<div id="nb_voiceBorder" style="display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px">
+<div style="position:absolute;clip:rect(0px, 18px, 18px, 0px)"><img id="nb_voice" src="buttons.gif" style="position:
+ relative;left:-290px" title="Pause/Play Narration"/></div>
+</div>
+</td>
 </table>
-
-<table style='position:relative' align=center cellpadding=0 cellspacing=0>
- <td nowrap>
- <div id="nb_prevBorder" class=button style='left:-30px'>
- <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
- src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
- left:0px'></div>
- </div>
- <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
- Arial;color:buttontext;font-size:9pt'></span>
- <div id="nb_nextBorder" class=button>
- <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
- src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
- left:-90px'></div>
- </div>
- </td>
+<table align="center" cellpadding="0" cellspacing="0" style="position:relative">
+<td nowrap="nowrap">
+<div class="button" id="nb_prevBorder" style="left:-30px">
+<div style="position:absolute;clip:rect(0px, 30px, 18px, 0px)"><img id="nb_prev" src="buttons.gif" style="position:relative;
+ left:0px" title="Previous Slide"/></div>
+</div>
+<span id="nav_text" style="position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt"></span>
+<div class="button" id="nb_nextBorder">
+<div style="position:absolute;clip:rect(0px, 30px, 18px, 0px)"><img id="nb_next" src="buttons.gif" style="position:relative;
+ left:-90px" title="Next Slide"/></div>
+</div>
+</td>
 </table>
 </div>
-
-<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
-onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
-onkeypress="_KPH()" style='display:none;visibility:hidden'>
-
-<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
- <td nowrap><div title="Show/Hide
-Outline" id="nb_otl"
- style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
- <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
- color:buttontext;font-size:9pt'>Outline</div></div>
- </td>
+<div id="OtlNavObj" onkeypress="_KPH()" onload="Load()" onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseover="BtnOnOver()" onmouseup="BtnOnUp()" style="display:none;visibility:hidden">
+<table align="left" cellpadding="0" cellspacing="0" style="position:relative;width:70px">
+<td nowrap="nowrap"><div id="nb_otl" style="position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default" title="Show/Hide
+Outline">
+<div align="center" id="nb_otlElem" style="position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt">Outline</div></div>
+</td>
 </table>
-
-<table style='position:relative' align=center cellpadding=0 cellspacing=0>
- <td>
- <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
- solid;border-width:1px;border-color:threedface' id="nb_otlTxtBorder">
- <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
- src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
- style='position:relative;left:-157px'></div>
- </div>
- </td>
-</table>
-
+<table align="center" cellpadding="0" cellspacing="0" style="position:relative">
+<td>
+<div id="nb_otlTxtBorder" style="position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface">
+<div style="position:absolute;clip:rect(0px, 22px, 18px, 0px)"><img id="nb_otlTxt" src="buttons.gif" style="position:relative;left:-157px" title="Expand/Collapse Outline"/></div>
 </div>
-
-<div id=OtlObj style='display:none;visibility:hidden;'>
-
-
-<table width="100%" style='font-family:Arial;font-size:9pt'>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>1</font></div>
-  </td>
-  <td width="100%">
-  <div id=PPTP1 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0001.htm');" id=PPTL1>Infrared Spectrometry
-  and Radiometry<br>
+</td>
+</table>
+</div>
+<div id="OtlObj" style="display:none;visibility:hidden;">
+<table style="font-family:Arial;font-size:9pt" width="100%">
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">1</font></div>
+</td>
+<td width="100%">
+<div class="PTxt" id="PPTP1"><font size="2"><a href="javascript:GoToSld('slide0001.htm');" id="PPTL1">Infrared Spectrometry
+  and Radiometry<br/>
     (and the Cassini Composite Infrared spectrometer)</a></font></div>
-  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>Adam Ginsburg</li>
-   <li>September 25, 2007</li>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>2</font></div>
-  </td>
-  <td>
-  <div id=PPTP2 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0015.htm');" id=PPTL2>Infrared: What
+<div class="CTxt" id="PPTC1" style="display:none"><font size="2">
+<ul>
+<li>Adam Ginsburg</li>
+<li>September 25, 2007</li>
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">2</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP2"><font size="2"><a href="javascript:GoToSld('slide0015.htm');" id="PPTL2">Infrared: What
   wavelengths?</a></font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>3</font></div>
-  </td>
-  <td>
-  <div id=PPTP3 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0014.htm');" id=PPTL3>What can you see?</a></font></div>
-  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>Thermal Infrared</li>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>4</font></div>
-  </td>
-  <td>
-  <div id=PPTP4 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0016.htm');" id=PPTL4>Infrared Spectra</a></font></div>
-  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>Emission and absorption lines and bands</li>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>5</font></div>
-  </td>
-  <td>
-  <div id=PPTP5 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0004.htm');" id=PPTL5>Dealing with Infrared</a></font></div>
-  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>Longer wavelengths</li>
-   <br>
-   <br>
-   <li>Atmospheric emission</li>
-   <br>
-   <br>
-   <li>Instrument emission</li>
-   <br>
-   <br>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>6</font></div>
-  </td>
-  <td>
-  <div id=PPTP6 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0009.htm');" id=PPTL6>Dealing with Infrared</a></font></div>
-  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>Longer wavelengths</li>
-   <ul>
-    <li>Lower resolution for a given aperture</li>
-   </ul>
-   <li>Atmospheric emission</li>
-   <br>
-   <br>
-   <li>Instrument emission</li>
-   <br>
-   <br>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>7</font></div>
-  </td>
-  <td>
-  <div id=PPTP7 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0011.htm');" id=PPTL7>Dealing with Infrared</a></font></div>
-  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>Longer wavelengths</li>
-   <ul>
-    <li>Lower resolution for a given aperture</li>
-   </ul>
-   <li>Atmospheric emission</li>
-   <ul>
-    <li>Difficult or impossible from Earth</li>
-   </ul>
-   <li>Instrument emission</li>
-   <br>
-   <br>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>8</font></div>
-  </td>
-  <td>
-  <div id=PPTP9 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0013.htm');" id=PPTL9>Dealing with Infrared</a></font></div>
-  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>Instrument emission</li>
-   <ul>
-    <li>Must cool the whole box</li>
-   </ul>
-   <br>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>9</font></div>
-  </td>
-  <td>
-  <div id=PPTP10 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0005.htm');" id=PPTL10>Infrared Detectors</a></font></div>
-  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>HgCdTe (Mercury Cadmium Telluride)</li>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>10</font></div>
-  </td>
-  <td>
-  <div id=PPTP11 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0006.htm');" id=PPTL11>Bolometers</a></font></div>
-  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>Absorb photons, thermometers measure temperature</li>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>11</font></div>
-  </td>
-  <td>
-  <div id=PPTP12 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0007.htm');" id=PPTL12>Thermopiles</a></font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>12</font></div>
-  </td>
-  <td>
-  <div id=PPTP13 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0008.htm');" id=PPTL13>Heterodyne Detectors</a></font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>13</font></div>
-  </td>
-  <td>
-  <div id=PPTP15 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0028.htm');" id=PPTL15>Types of Spectrographs</a></font></div>
-  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>Grating spectrographs (Ben covered these)</li>
-   <li>Fourier Transform spectrographs</li>
-   <ul>
-    <li>Michelson Interferometer</li>
-   </ul>
-   <li>Fabry-Perot Interferometer / Etalon</li>
-   <li>Heterodyne Detectors</li>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>14</font></div>
-  </td>
-  <td>
-  <div id=PPTP16 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0018.htm');" id=PPTL16>Michelson
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">3</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP3"><font size="2"><a href="javascript:GoToSld('slide0014.htm');" id="PPTL3">What can you see?</a></font></div>
+<div class="CTxt" id="PPTC3" style="display:none"><font size="2">
+<ul>
+<li>Thermal Infrared</li>
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">4</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP4"><font size="2"><a href="javascript:GoToSld('slide0016.htm');" id="PPTL4">Infrared Spectra</a></font></div>
+<div class="CTxt" id="PPTC4" style="display:none"><font size="2">
+<ul>
+<li>Emission and absorption lines and bands</li>
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">5</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP5"><font size="2"><a href="javascript:GoToSld('slide0004.htm');" id="PPTL5">Dealing with Infrared</a></font></div>
+<div class="CTxt" id="PPTC5" style="display:none"><font size="2">
+<ul>
+<li>Longer wavelengths</li>
+<br/>
+<br/>
+<li>Atmospheric emission</li>
+<br/>
+<br/>
+<li>Instrument emission</li>
+<br/>
+<br/>
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">6</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP6"><font size="2"><a href="javascript:GoToSld('slide0009.htm');" id="PPTL6">Dealing with Infrared</a></font></div>
+<div class="CTxt" id="PPTC6" style="display:none"><font size="2">
+<ul>
+<li>Longer wavelengths</li>
+<ul>
+<li>Lower resolution for a given aperture</li>
+</ul>
+<li>Atmospheric emission</li>
+<br/>
+<br/>
+<li>Instrument emission</li>
+<br/>
+<br/>
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">7</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP7"><font size="2"><a href="javascript:GoToSld('slide0011.htm');" id="PPTL7">Dealing with Infrared</a></font></div>
+<div class="CTxt" id="PPTC7" style="display:none"><font size="2">
+<ul>
+<li>Longer wavelengths</li>
+<ul>
+<li>Lower resolution for a given aperture</li>
+</ul>
+<li>Atmospheric emission</li>
+<ul>
+<li>Difficult or impossible from Earth</li>
+</ul>
+<li>Instrument emission</li>
+<br/>
+<br/>
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">8</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP9"><font size="2"><a href="javascript:GoToSld('slide0013.htm');" id="PPTL9">Dealing with Infrared</a></font></div>
+<div class="CTxt" id="PPTC9" style="display:none"><font size="2">
+<ul>
+<li>Instrument emission</li>
+<ul>
+<li>Must cool the whole box</li>
+</ul>
+<br/>
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">9</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP10"><font size="2"><a href="javascript:GoToSld('slide0005.htm');" id="PPTL10">Infrared Detectors</a></font></div>
+<div class="CTxt" id="PPTC10" style="display:none"><font size="2">
+<ul>
+<li>HgCdTe (Mercury Cadmium Telluride)</li>
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">10</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP11"><font size="2"><a href="javascript:GoToSld('slide0006.htm');" id="PPTL11">Bolometers</a></font></div>
+<div class="CTxt" id="PPTC11" style="display:none"><font size="2">
+<ul>
+<li>Absorb photons, thermometers measure temperature</li>
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">11</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP12"><font size="2"><a href="javascript:GoToSld('slide0007.htm');" id="PPTL12">Thermopiles</a></font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">12</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP13"><font size="2"><a href="javascript:GoToSld('slide0008.htm');" id="PPTL13">Heterodyne Detectors</a></font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">13</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP15"><font size="2"><a href="javascript:GoToSld('slide0028.htm');" id="PPTL15">Types of Spectrographs</a></font></div>
+<div class="CTxt" id="PPTC15" style="display:none"><font size="2">
+<ul>
+<li>Grating spectrographs (Ben covered these)</li>
+<li>Fourier Transform spectrographs</li>
+<ul>
+<li>Michelson Interferometer</li>
+</ul>
+<li>Fabry-Perot Interferometer / Etalon</li>
+<li>Heterodyne Detectors</li>
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">14</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP16"><font size="2"><a href="javascript:GoToSld('slide0018.htm');" id="PPTL16">Michelson
   Interferometer</a></font></div>
-  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>Broad spectral range</li>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>15</font></div>
-  </td>
-  <td>
-  <div id=PPTP17 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0019.htm');" id=PPTL17>Fabry-Perot Etalon</a></font></div>
-  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>Very high resolving power ~30000</li>
-   <li>Most useful for <br>
-              narrow-band<br>
+<div class="CTxt" id="PPTC16" style="display:none"><font size="2">
+<ul>
+<li>Broad spectral range</li>
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">15</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP17"><font size="2"><a href="javascript:GoToSld('slide0019.htm');" id="PPTL17">Fabry-Perot Etalon</a></font></div>
+<div class="CTxt" id="PPTC17" style="display:none"><font size="2">
+<ul>
+<li>Very high resolving power ~30000</li>
+<li>Most useful for <br/>
+              narrow-band<br/>
               spectroscopy</li>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>16</font></div>
-  </td>
-  <td>
-  <div id=PPTP18 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0020.htm');" id=PPTL18>Cassini CIRS</a></font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>17</font></div>
-  </td>
-  <td>
-  <div id=PPTP19 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0021.htm');" id=PPTL19>The Instrument</a></font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>18</font></div>
-  </td>
-  <td>
-  <div id=PPTP20 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0003.htm');" id=PPTL20>CIRS Specs</a></font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>19</font></div>
-  </td>
-  <td>
-  <div id=PPTP21 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0023.htm');" id=PPTL21>Field of View</a></font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>20</font></div>
-  </td>
-  <td>
-  <div id=PPTP22 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0022.htm');" id=PPTL22>Science</a></font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>21</font></div>
-  </td>
-  <td>
-  <div id=PPTP23 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0026.htm');" id=PPTL23>Science Results: Titan</a></font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>22</font></div>
-  </td>
-  <td>
-  <div id=PPTP24 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0024.htm');" id=PPTL24>Science Results:
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">16</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP18"><font size="2"><a href="javascript:GoToSld('slide0020.htm');" id="PPTL18">Cassini CIRS</a></font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">17</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP19"><font size="2"><a href="javascript:GoToSld('slide0021.htm');" id="PPTL19">The Instrument</a></font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">18</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP20"><font size="2"><a href="javascript:GoToSld('slide0003.htm');" id="PPTL20">CIRS Specs</a></font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">19</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP21"><font size="2"><a href="javascript:GoToSld('slide0023.htm');" id="PPTL21">Field of View</a></font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">20</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP22"><font size="2"><a href="javascript:GoToSld('slide0022.htm');" id="PPTL22">Science</a></font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">21</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP23"><font size="2"><a href="javascript:GoToSld('slide0026.htm');" id="PPTL23">Science Results: Titan</a></font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">22</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP24"><font size="2"><a href="javascript:GoToSld('slide0024.htm');" id="PPTL24">Science Results:
   Enceladus</a></font></div>
-  <div id=PPTC24 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>Warm emissions around ice cracks</li>
-  </ul>
-  </font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>23</font></div>
-  </td>
-  <td>
-  <div id=PPTP25 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0025.htm');" id=PPTL25>Science Results:
+<div class="CTxt" id="PPTC24" style="display:none"><font size="2">
+<ul>
+<li>Warm emissions around ice cracks</li>
+</ul>
+</font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">23</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP25"><font size="2"><a href="javascript:GoToSld('slide0025.htm');" id="PPTL25">Science Results:
   Jupiter</a></font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>24</font></div>
-  </td>
-  <td>
-  <div id=PPTP26 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0027.htm');" id=PPTL26>Compare to VIMS</a></font></div>
-  </td>
- </tr>
- <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
-  style='cursor:hand'>
-  <td align=right valign=top>
-  <div class=sldNum><font size=2>25</font></div>
-  </td>
-  <td>
-  <div id=PPTP27 class=PTxt><font size=2><a
-  href="javascript:GoToSld('slide0002.htm');" id=PPTL27>References</a></font></div>
-  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
-  <ul>
-   <li>http://cirs.gsfc.nasa.gov/</li>
-   <li>http://saturn.jpl.nasa.gov/spacecraft/inst-cassini-cirs-details.cfm</li>
-   <li>http://www.iop.org/EJ/abstract/0143-0807/27/5/010<span
-       style='mso-spacerun:yes'>  </span>-<span style='mso-spacerun:yes'> 
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">24</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP26"><font size="2"><a href="javascript:GoToSld('slide0027.htm');" id="PPTL26">Compare to VIMS</a></font></div>
+</td>
+</tr>
+<tr onclick="Follow(this)" onmouseout="Out(this)" onmouseover="Over(this)" style="cursor:hand">
+<td align="right" valign="top">
+<div class="sldNum"><font size="2">25</font></div>
+</td>
+<td>
+<div class="PTxt" id="PPTP27"><font size="2"><a href="javascript:GoToSld('slide0002.htm');" id="PPTL27">References</a></font></div>
+<div class="CTxt" id="PPTC27" style="display:none"><font size="2">
+<ul>
+<li>http://cirs.gsfc.nasa.gov/</li>
+<li>http://saturn.jpl.nasa.gov/spacecraft/inst-cassini-cirs-details.cfm</li>
+<li>http://www.iop.org/EJ/abstract/0143-0807/27/5/010<span style="mso-spacerun:yes">Â  </span>-<span style="mso-spacerun:yes">Â 
        </span>Fabry Perot interferometers described</li>
-   <li>http://cdsads.u-strasbg.fr/cgi-bin/nph-iarticle_query?1995ESASP.374..385M&amp;amp;data_type=PDF_HIGH&amp;amp;whole_paper=YES&amp;amp;type=PRINTER&amp;amp;filetype=.pdf</li>
-   <li>http://cdsads.u-strasbg.fr/abs/1995ESASP.374..385M</li>
-   <li>http://www.boulder.swri.edu/recent/enceladus_geological_activity/</li>
-   <li>http://irtfweb.ifa.hawaii.edu/research/science/03.Orton.Cassini_CIRS.html
+<li>http://cdsads.u-strasbg.fr/cgi-bin/nph-iarticle_query?1995ESASP.374..385M&amp;data_type=PDF_HIGH&amp;whole_paper=YES&amp;type=PRINTER&amp;filetype=.pdf</li>
+<li>http://cdsads.u-strasbg.fr/abs/1995ESASP.374..385M</li>
+<li>http://www.boulder.swri.edu/recent/enceladus_geological_activity/</li>
+<li>http://irtfweb.ifa.hawaii.edu/research/science/03.Orton.Cassini_CIRS.html
        (Cassini Jupiter Temperature Mapping)</li>
-   <li>http://www.obspm.fr/actual/nouvelle/sep04/jupiter.en.shtml (Jupiter
+<li>http://www.obspm.fr/actual/nouvelle/sep04/jupiter.en.shtml (Jupiter
        CO/HCN vs latitude)</li>
-   <li>http://cassini-huygens.jpl.nasa.gov/cgibin/gs2.cgi?path=../multimedia/images/jupiter-flyby/images/cirs010123b.jpg&amp;type=image
+<li>http://cassini-huygens.jpl.nasa.gov/cgibin/gs2.cgi?path=../multimedia/images/jupiter-flyby/images/cirs010123b.jpg&amp;type=image
        (field of view for Jupiter flyby)</li>
-   <li>http://cassini-huygens.jpl.nasa.gov/cgibin/gs2.cgi?path=../multimedia/images/jupiter-flyby/images/cirs010123a.jpg&amp;type=image
+<li>http://cassini-huygens.jpl.nasa.gov/cgibin/gs2.cgi?path=../multimedia/images/jupiter-flyby/images/cirs010123a.jpg&amp;type=image
        (spectrum from jupiter flyby)</li>
-   <li>http://www.astro.umd.edu/~nixon/research.html (Titan spectrum)</li>
-   <li>http://www.astro.umd.edu/~nixon/mission.html (Titan pointings, Cassini
+<li>http://www.astro.umd.edu/~nixon/research.html (Titan spectrum)</li>
+<li>http://www.astro.umd.edu/~nixon/mission.html (Titan pointings, Cassini
        must be pointed as a whole)</li>
-   <li>http://www.californiasciencecenter.org/Exhibits/AirAndSpace/MissionToThePlanets/Cassini/CassiniUpdates/Archive/Cscience.php
+<li>http://www.californiasciencecenter.org/Exhibits/AirAndSpace/MissionToThePlanets/Cassini/CassiniUpdates/Archive/Cscience.php
        (saturn temperature mapping)</li>
-   <li>http://adsabs.harvard.edu/abs/2004SSRv..115..169F</li>
-   <li>http://en.wikipedia.org/wiki/Michelson_interferometer</li>
-  </ul>
-  </font></div>
-  </td>
- </tr>
+<li>http://adsabs.harvard.edu/abs/2004SSRv..115..169F</li>
+<li>http://en.wikipedia.org/wiki/Michelson_interferometer</li>
+</ul>
+</font></div>
+</td>
+</tr>
 </table>
-
-
-
 </div>
-
-<div style='display:none'><a href=master24.htm></a><a href=master24.xml></a><a
-href=preview.wmf></a><a href="master24_image001.jpg"></a><a href=master25.htm></a><a
-href=master25.xml></a><a href=pres.xml></a><a href=slide0001.htm></a><a
-href=slide0015.htm></a><a href="slide0015_image002.png"></a><a
-href="slide0015_image003.jpg"></a><a href=slide0014.htm></a><a
-href="slide0014_image004.png"></a><a href="slide0014_image005.jpg"></a><a
-href="slide0014_image006.png"></a><a href="slide0014_image007.jpg"></a><a
-href=slide0016.htm></a><a href="slide0016_image008.jpg"></a><a
-href="slide0016_image009.jpg"></a><a href="slide0016_image010.png"></a><a
-href="slide0016_image011.png"></a><a href="slide0016_image012.jpg"></a><a
-href=slide0004.htm></a><a href=slide0009.htm></a><a href=slide0011.htm></a><a
-href="slide0011_image013.png"></a><a href="slide0011_image014.jpg"></a><a
-href=slide0012.htm></a><a href=slide0013.htm></a><a
-href="slide0013_image015.png"></a><a href="slide0013_image016.jpg"></a><a
-href=slide0005.htm></a><a href="slide0005_image017.png"></a><a
-href="slide0005_image018.jpg"></a><a href="slide0005_image019.png"></a><a
-href="slide0005_image020.jpg"></a><a href=slide0006.htm></a><a
-href="slide0006_image021.png"></a><a href="slide0006_image022.jpg"></a><a
-href="slide0006_image023.png"></a><a href="slide0006_image024.jpg"></a><a
-href=slide0007.htm></a><a href="slide0007_image025.png"></a><a
-href="slide0007_image026.jpg"></a><a href="slide0007_image027.png"></a><a
-href="slide0007_image028.jpg"></a><a href="slide0007_image029.gif"></a><a
-href=slide0008.htm></a><a href="slide0008_image030.gif"></a><a
-href=slide0017.htm></a><a href=slide0028.htm></a><a href=slide0018.htm></a><a
-href="slide0018_image031.png"></a><a href="slide0018_image032.jpg"></a><a
-href="slide0018_image033.png"></a><a href="slide0018_image034.jpg"></a><a
-href=slide0019.htm></a><a href="slide0019_image035.png"></a><a
-href="slide0019_image036.jpg"></a><a href="slide0019_image037.png"></a><a
-href="slide0019_image038.jpg"></a><a href=slide0020.htm></a><a
-href="slide0020_image039.gif"></a><a href="slide0020_image040.jpg"></a><a
-href=slide0021.htm></a><a href="slide0021_image041.wmz"></a><a
-href="slide0021_image042.gif"></a><a href=slide0003.htm></a><a
-href="slide0003_image043.gif"></a><a href="slide0003_image044.gif"></a><a
-href=slide0023.htm></a><a href="slide0023_image045.gif"></a><a
-href="slide0023_image046.gif"></a><a href=slide0022.htm></a><a
-href="slide0022_image047.wmz"></a><a href="slide0022_image048.gif"></a><a
-href=slide0026.htm></a><a href="slide0026_image049.png"></a><a
-href="slide0026_image050.jpg"></a><a href="slide0026_image051.jpg"></a><a
-href=slide0024.htm></a><a href="slide0024_image052.jpg"></a><a
-href="slide0024_image053.jpg"></a><a href="slide0024_image054.jpg"></a><a
-href="slide0024_image055.jpg"></a><a href=slide0025.htm></a><a
-href="slide0025_image056.gif"></a><a href="slide0025_image057.gif"></a><a
-href="slide0025_image058.jpg"></a><a href=slide0027.htm></a><a
-href="slide0027_image059.png"></a><a href="slide0027_image060.jpg"></a><a
-href="slide0027_image061.png"></a><a href="slide0027_image062.jpg"></a><a
-href=slide0002.htm></a><a href="master24_stylesheet.css"></a><a href=script.js></a><a
-href="../PlanetaryInstrumentationSeminarTalk-InfraredSpectrometryandRadiometry.htm"></a><a
-href=fullscreen.htm></a><a href=buttons.gif></a><a href=frame.htm></a><a
-href=outline.htm></a></div>
-
-</body>
-
-</html>
+<div style="display:none"><a href="master24.htm"></a><a href="master24.xml"></a><a href="preview.wmf"></a><a href="master24_image001.jpg"></a><a href="master25.htm"></a><a href="master25.xml"></a><a href="pres.xml"></a><a href="slide0001.htm"></a><a href="slide0015.htm"></a><a href="slide0015_image002.png"></a><a href="slide0015_image003.jpg"></a><a href="slide0014.htm"></a><a href="slide0014_image004.png"></a><a href="slide0014_image005.jpg"></a><a href="slide0014_image006.png"></a><a href="slide0014_image007.jpg"></a><a href="slide0016.htm"></a><a href="slide0016_image008.jpg"></a><a href="slide0016_image009.jpg"></a><a href="slide0016_image010.png"></a><a href="slide0016_image011.png"></a><a href="slide0016_image012.jpg"></a><a href="slide0004.htm"></a><a href="slide0009.htm"></a><a href="slide0011.htm"></a><a href="slide0011_image013.png"></a><a href="slide0011_image014.jpg"></a><a href="slide0012.htm"></a><a href="slide0013.htm"></a><a href="slide0013_image015.png"></a><a href="slide0013_image016.jpg"></a><a href="slide0005.htm"></a><a href="slide0005_image017.png"></a><a href="slide0005_image018.jpg"></a><a href="slide0005_image019.png"></a><a href="slide0005_image020.jpg"></a><a href="slide0006.htm"></a><a href="slide0006_image021.png"></a><a href="slide0006_image022.jpg"></a><a href="slide0006_image023.png"></a><a href="slide0006_image024.jpg"></a><a href="slide0007.htm"></a><a href="slide0007_image025.png"></a><a href="slide0007_image026.jpg"></a><a href="slide0007_image027.png"></a><a href="slide0007_image028.jpg"></a><a href="slide0007_image029.gif"></a><a href="slide0008.htm"></a><a href="slide0008_image030.gif"></a><a href="slide0017.htm"></a><a href="slide0028.htm"></a><a href="slide0018.htm"></a><a href="slide0018_image031.png"></a><a href="slide0018_image032.jpg"></a><a href="slide0018_image033.png"></a><a href="slide0018_image034.jpg"></a><a href="slide0019.htm"></a><a href="slide0019_image035.png"></a><a href="slide0019_image036.jpg"></a><a href="slide0019_image037.png"></a><a href="slide0019_image038.jpg"></a><a href="slide0020.htm"></a><a href="slide0020_image039.gif"></a><a href="slide0020_image040.jpg"></a><a href="slide0021.htm"></a><a href="slide0021_image041.wmz"></a><a href="slide0021_image042.gif"></a><a href="slide0003.htm"></a><a href="slide0003_image043.gif"></a><a href="slide0003_image044.gif"></a><a href="slide0023.htm"></a><a href="slide0023_image045.gif"></a><a href="slide0023_image046.gif"></a><a href="slide0022.htm"></a><a href="slide0022_image047.wmz"></a><a href="slide0022_image048.gif"></a><a href="slide0026.htm"></a><a href="slide0026_image049.png"></a><a href="slide0026_image050.jpg"></a><a href="slide0026_image051.jpg"></a><a href="slide0024.htm"></a><a href="slide0024_image052.jpg"></a><a href="slide0024_image053.jpg"></a><a href="slide0024_image054.jpg"></a><a href="slide0024_image055.jpg"></a><a href="slide0025.htm"></a><a href="slide0025_image056.gif"></a><a href="slide0025_image057.gif"></a><a href="slide0025_image058.jpg"></a><a href="slide0027.htm"></a><a href="slide0027_image059.png"></a><a href="slide0027_image060.jpg"></a><a href="slide0027_image061.png"></a><a href="slide0027_image062.jpg"></a><a href="slide0002.htm"></a><a href="master24_stylesheet.css"></a><a href="script.js"></a><a href="../PlanetaryInstrumentationSeminarTalk-InfraredSpectrometryandRadiometry.htm"></a><a href="fullscreen.htm"></a><a href="buttons.gif"></a><a href="frame.htm"></a><a href="outline.htm"></a></div>
+</body><head><script src="../../../googleanalytics.js" type="text/javascript"></script></head></html>

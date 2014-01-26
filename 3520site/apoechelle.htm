@@ -1,49 +1,45 @@
-
-<html>
-<link rel="stylesheet" type="text/css" href="style.css">
-<title> Astronomy 3520: APO Echelle Data Reduction Guide </title>
-<body> 
-<head><h1><center> ASTR 3520: APO Echelle Data Reduction Guide</center></h1></head>
-<br>
-<br> Warnings:
-<br> 1. Do not copy images with 0 size to your working directory, they will cause errors.
-<br> 2. If you use wildcards as specified below, be careful how you name your files.
-<br> 3. The below commands are strongly order-dependent.  Be VERY careful with wildcards if you mix up order or have to go back to a previous step.
-<br>
-<br> Command summary:
-<br> <tt> imarith eQuartz.0033.fits / 200 eQuartzBLUEdiv200.fits </tt>
-<br> <tt> imarith eQuartz.0028.fits / 200 eQuartzOPENdiv200.fits </tt>
-<br> <tt> imarith eQuartzBLUEdiv200.fits + eQuartzOPENdiv200.fits eQuartzSUM.fits </tt>
-<br> <tt> noao </tt>
-<br> <tt> imred </tt>
-<br> <tt> ccdred </tt>
-<br> <tt> flatcombine e-Bias.0*.fits output="e-Bias.flatcombine.fits" ccdtype="" process=no subsets=no </tt>
-<br> <tt> proto </tt>
-<br> <tt> !echo "788  788  803 2000\n1683 1683 664 2000" > badcols </tt>
-<br> <tt> text2mask text="badcols" mask="echmask" ncols=2128 nlines=2068 </tt>
-<br> <tt> ccdproc e*.fits ccdtype="" zerocor=no darkcor=no flatcor=no fixfile="echmask.pl" biassec="[2100:2128,2:2027]" trimsec="21:2068,1:2048" order=3 niterate=3</tt>
-<br> <tt> ls e*.fits | grep -v Bias > echellespeclist </tt>
-<br> <tt> hedit @echellespeclist DISPAXIS 1 add+ </tt>
-<br> <tt> ls e*.fits | grep -i thar > tharlist </tt>
-<br> <tt> apall @tharlist references=JBtharspec.fits interactive- find- recenter+ resize+ edit- trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </tt>
-<br> <tt> ls e*.ec.fits | grep -i thar > tharspeclist </tt>
-<br> <tt> ecreidentify @tharspeclist reference="JBtharspec.ec" cradius=1 threshold=100 </tt>
-<br> <tt> ls e*.fits | grep -iv thar | grep -iv quartz > premagnifylist</tt>
-<br> <tt> !sed s/.fits/.rs.fits/ premagnifylist > postmagnifylist</tt>
-<br> <tt> magnify @premagnifylist @postmagnifylist xmag=1 ymag=4 </tt>
-<br> <tt> ls e*rs.fits | grep -E "vega\|RSOph\|sgr\|altair\|alder" > objectlist </tt>
-<br> <tt> apall @objectlist references=JBrefspec interactive- find- recenter+ resize+ edit- trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </tt>
-<br> <tt> apall eQuartzSUM.rs.fits references=JBrefspec interactive- find- recenter+ resize+ edit- trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </tt>
-<br> <tt> !sed s/.fits/.scat.fits/ objectlist > unscatteredlist </tt>
-<br> <tt> epar apscat1 </tt> ***MUST EDIT PARAMETERS, CANNOT USE COMMAND LINE*** order=5 low_reject=2 high_reject=2
-<br> <tt> epar apscat2 </tt> ***MUST EDIT PARAMETERS, CANNOT USE COMMAND LINE*** order=5 niterate=2
-<br> <tt> apscatter @objectlist @unscatteredlist find- recenter- resize- edit- trace- fittrace- nsum=-10 </tt> ***BEST DONE INTERACTIVELY***
-<br> <tt> refspectra @unscatteredlist references="JBtharspec.ec" answer="yes" sort="" group="" </tt>
-<br> <tt> !sed s/scat/flat/ unscatteredlist > flattedlist </tt>
-<br> <tt> imarith @unscatteredlist / eQuartzSUM.rs.ec.fits @flattedlist </tt>
-<br> <tt> !sed s/flat/dispcor/ flattedlist > dispcorlist </tt>
-<br> <tt> dispcor @flattedlist @dispcorlist </tt>
-<br> <tt> continuum [filename] </tt> ***INTERACTIVE***
-<br><br><br><a class="special" href="index.html">ASTR3520 home</a>
-<br><br>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a> 
-</body></html>
+<html><head><link href="style.css" rel="stylesheet" type="text/css"/><title> Astronomy 3520: APO Echelle Data Reduction Guide </title></head><body>
+<h1><center> ASTR 3520: APO Echelle Data Reduction Guide</center></h1>
+<br/>
+<br/> Warnings:
+<br/> 1. Do not copy images with 0 size to your working directory, they will cause errors.
+<br/> 2. If you use wildcards as specified below, be careful how you name your files.
+<br/> 3. The below commands are strongly order-dependent.  Be VERY careful with wildcards if you mix up order or have to go back to a previous step.
+<br/>
+<br/> Command summary:
+<br/> <tt> imarith eQuartz.0033.fits / 200 eQuartzBLUEdiv200.fits </tt>
+<br/> <tt> imarith eQuartz.0028.fits / 200 eQuartzOPENdiv200.fits </tt>
+<br/> <tt> imarith eQuartzBLUEdiv200.fits + eQuartzOPENdiv200.fits eQuartzSUM.fits </tt>
+<br/> <tt> noao </tt>
+<br/> <tt> imred </tt>
+<br/> <tt> ccdred </tt>
+<br/> <tt> flatcombine e-Bias.0*.fits output="e-Bias.flatcombine.fits" ccdtype="" process=no subsets=no </tt>
+<br/> <tt> proto </tt>
+<br/> <tt> !echo "788  788  803 2000\n1683 1683 664 2000" &gt; badcols </tt>
+<br/> <tt> text2mask text="badcols" mask="echmask" ncols=2128 nlines=2068 </tt>
+<br/> <tt> ccdproc e*.fits ccdtype="" zerocor=no darkcor=no flatcor=no fixfile="echmask.pl" biassec="[2100:2128,2:2027]" trimsec="21:2068,1:2048" order=3 niterate=3</tt>
+<br/> <tt> ls e*.fits | grep -v Bias &gt; echellespeclist </tt>
+<br/> <tt> hedit @echellespeclist DISPAXIS 1 add+ </tt>
+<br/> <tt> ls e*.fits | grep -i thar &gt; tharlist </tt>
+<br/> <tt> apall @tharlist references=JBtharspec.fits interactive- find- recenter+ resize+ edit- trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </tt>
+<br/> <tt> ls e*.ec.fits | grep -i thar &gt; tharspeclist </tt>
+<br/> <tt> ecreidentify @tharspeclist reference="JBtharspec.ec" cradius=1 threshold=100 </tt>
+<br/> <tt> ls e*.fits | grep -iv thar | grep -iv quartz &gt; premagnifylist</tt>
+<br/> <tt> !sed s/.fits/.rs.fits/ premagnifylist &gt; postmagnifylist</tt>
+<br/> <tt> magnify @premagnifylist @postmagnifylist xmag=1 ymag=4 </tt>
+<br/> <tt> ls e*rs.fits | grep -E "vega\|RSOph\|sgr\|altair\|alder" &gt; objectlist </tt>
+<br/> <tt> apall @objectlist references=JBrefspec interactive- find- recenter+ resize+ edit- trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </tt>
+<br/> <tt> apall eQuartzSUM.rs.fits references=JBrefspec interactive- find- recenter+ resize+ edit- trace- fittrace- extract+ extras- lower=-2 upper=2 b_sample="-6:-3,3:6" b_naverage=1 width=12 radius=15 shift- ylevel=.05 t_order=5 t_sample="200:1850,*" t_naverage=3 t_niterate=3 </tt>
+<br/> <tt> !sed s/.fits/.scat.fits/ objectlist &gt; unscatteredlist </tt>
+<br/> <tt> epar apscat1 </tt> ***MUST EDIT PARAMETERS, CANNOT USE COMMAND LINE*** order=5 low_reject=2 high_reject=2
+<br/> <tt> epar apscat2 </tt> ***MUST EDIT PARAMETERS, CANNOT USE COMMAND LINE*** order=5 niterate=2
+<br/> <tt> apscatter @objectlist @unscatteredlist find- recenter- resize- edit- trace- fittrace- nsum=-10 </tt> ***BEST DONE INTERACTIVELY***
+<br/> <tt> refspectra @unscatteredlist references="JBtharspec.ec" answer="yes" sort="" group="" </tt>
+<br/> <tt> !sed s/scat/flat/ unscatteredlist &gt; flattedlist </tt>
+<br/> <tt> imarith @unscatteredlist / eQuartzSUM.rs.ec.fits @flattedlist </tt>
+<br/> <tt> !sed s/flat/dispcor/ flattedlist &gt; dispcorlist </tt>
+<br/> <tt> dispcor @flattedlist @dispcorlist </tt>
+<br/> <tt> continuum [filename] </tt> ***INTERACTIVE***
+<br/><br/><br/><a class="special" href="index.html">ASTR3520 home</a>
+<br/><br/>Page written by <a class="hidden" href="http://casa.colorado.edu/~ginsbura">Adam Ginsburg</a>
+</body><head><script src="../googleanalytics.js" type="text/javascript"></script></head></html>

@@ -1,29 +1,21 @@
-<html>
-<link rel="stylesheet" type="text/css" href="style.css">
-<title> FIT to fits conversion </title>
-<body> 
-<?php 
-$page="FITtofits.htm";
-include 'tracker.php';?>
-<head><h1><center> Converting CCDSoft FIT to fits files</center></h1></head>
-<br>
-    <table align="center" width=800><tr><td>
-    <ol>
-        <li> Download <a class="norm" href="FITtofits.cl">FITtofits.cl</a> and place it in the directory
+<html><head><link href="style.css" rel="stylesheet" type="text/css"/><title> FIT to fits conversion </title></head><body>
+<h1><center> Converting CCDSoft FIT to fits files</center></h1>
+<br/>
+<table align="center" width="800"><tr><td>
+<ol>
+<li> Download <a class="norm" href="FITtofits.cl">FITtofits.cl</a> and place it in the directory
         where you have stored your images
-        <li> Open IRAF with the command <tt>pyraf</tt> and changed to the directory with your images
-        <li> Run the command <tt> cl &lt; FITtofits.cl </tt>
-        <li> Check that it worked:
-        <ol type=a>
-            <li> pick an image (the image name before the .xxx extension is <tt>[imname]</tt> below)
-            <li> run <tt> imstat [imname].FIT </tt>
-            <li> compare to <tt> imstat [imname].fits </tt>
-        </ol>
+        </li><li> Open IRAF with the command <tt>pyraf</tt> and changed to the directory with your images
+        </li><li> Run the command <tt> cl &lt; FITtofits.cl </tt>
+</li><li> Check that it worked:
+        <ol type="a">
+<li> pick an image (the image name before the .xxx extension is <tt>[imname]</tt> below)
+            </li><li> run <tt> imstat [imname].FIT </tt>
+</li><li> compare to <tt> imstat [imname].fits </tt>
+</li></ol>
         The first command should give an error, the second command
         will give you sensible results.
-    </ol>
-
-
-<br><br><hr>
-      <a href="http://casa.colorado.edu/~elling/astr3510/ASTR3510.html">ASTR 3510 home</a>
-</body></html>
+    </li></ol>
+<br/><br/><hr/>
+<a href="http://casa.colorado.edu/~elling/astr3510/ASTR3510.html">ASTR 3510 home</a>
+</td></tr></table></body><head><script src="../googleanalytics.js" type="text/javascript"></script></head></html>

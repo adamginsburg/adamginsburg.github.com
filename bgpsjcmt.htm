@@ -1,18 +1,5 @@
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<meta name="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>BGPS JCMT observations</title>
-</head>
-<?php 
-$page="bgpsjcmt.htm";
-include 'tracker.php';?>
-<script language="javascript">
-<!--
+<html><head><meta content="en-us" http-equiv="Content-Language"/><meta content="NOINDEX, NOFOLLOW" name="ROBOTS"/><link href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>BGPS JCMT observations</title></head><head><script language="javascript">
+&lt;!--
 function click(imname,imsrc) {
     document[imname].onclick = "click2(" + imname + "," + document[imname].src + ")";
     document[imname].src = imsrc;
@@ -33,160 +20,73 @@ function toggle(myself,first,second) {
 //    myself.src = (myself.src == first) ? second:first;
 //    return true;
 }
-    -->
-</script>
-
-<body text="#FFFFFF" bgcolor="#000000" vlink="#0000FF" link="#00FFFF">
-
-    <center>
-<h1>BGPS JCMT observations</h1>
-<table align="center" width=800><tr><td>
-    Single-click on images to expand them, single click again to shrink them.
-    <br> Can download all images from <a class="norm" href="images/jcmt/">here</a>
-    <br> Some images are duplicates in jpg and png form.  The pngs generally look nicer.
-    <br> Color images are maximum maps over sections of velocity space.  The bluer regions 
-    are blueshifted.  The B&W maps are maxima over all velocities except where labeled otherwise.
-    <br>
-
+    --&gt;
+</script></head><body bgcolor="#000000" link="#00FFFF" text="#FFFFFF" vlink="#0000FF">
 <center>
-<hr>
+<h1>BGPS JCMT observations</h1>
+<table align="center" width="800"><tr><td>
+    Single-click on images to expand them, single click again to shrink them.
+    <br/> Can download all images from <a class="norm" href="images/jcmt/">here</a>
+<br/> Some images are duplicates in jpg and png form.  The pngs generally look nicer.
+    <br/> Color images are maximum maps over sections of velocity space.  The bluer regions 
+    are blueshifted.  The B&amp;W maps are maxima over all velocities except where labeled otherwise.
+    <br/>
+<center>
+<hr/>
 <h2> L111 complex </h2>
-<img src="images/jcmt/thumbs/L111complex_CO_tn.png" 
-	onclick="toggle('L111complex_CO','L111complex_CO_tn.png','L111complex_CO.png','images/jcmt/')" 
-	name="L111complex_CO">
-<img src="images/jcmt/thumbs/L111complex_regionson_CO_tn.png" 
-	onclick="toggle('L111complex_regionson_CO','L111complex_regionson_CO_tn.png','L111complex_regionson_CO.png','images/jcmt/')" 
-	name="L111complex_regionson_CO">
-<img src="images/jcmt/thumbs/L111contoursandregionsonBGPS_tn.png" 
-	onclick="toggle('L111contoursandregionsonBGPS','L111contoursandregionsonBGPS_tn.png','L111contoursandregionsonBGPS.png','images/jcmt/')" 
-	name="L111contoursandregionsonBGPS">
-<img src="images/jcmt/thumbs/L111contoursonBGPS_tn.png" 
-	onclick="toggle('L111contoursonBGPS','L111contoursonBGPS_tn.png','L111contoursonBGPS.png','images/jcmt/')" 
-	name="L111contoursonBGPS">
-<img src="images/jcmt/thumbs/L111regionsonBGPS_tn.png" 
-	onclick="toggle('L111regionsonBGPS','L111regionsonBGPS_tn.png','L111regionsonBGPS.png','images/jcmt/')" 
-        name="L111regionsonBGPS">
+<img name="L111complex_CO" onclick="toggle('L111complex_CO','L111complex_CO_tn.png','L111complex_CO.png','images/jcmt/')" src="images/jcmt/thumbs/L111complex_CO_tn.png"/>
+<img name="L111complex_regionson_CO" onclick="toggle('L111complex_regionson_CO','L111complex_regionson_CO_tn.png','L111complex_regionson_CO.png','images/jcmt/')" src="images/jcmt/thumbs/L111complex_regionson_CO_tn.png"/>
+<img name="L111contoursandregionsonBGPS" onclick="toggle('L111contoursandregionsonBGPS','L111contoursandregionsonBGPS_tn.png','L111contoursandregionsonBGPS.png','images/jcmt/')" src="images/jcmt/thumbs/L111contoursandregionsonBGPS_tn.png"/>
+<img name="L111contoursonBGPS" onclick="toggle('L111contoursonBGPS','L111contoursonBGPS_tn.png','L111contoursonBGPS.png','images/jcmt/')" src="images/jcmt/thumbs/L111contoursonBGPS_tn.png"/>
+<img name="L111regionsonBGPS" onclick="toggle('L111regionsonBGPS','L111regionsonBGPS_tn.png','L111regionsonBGPS.png','images/jcmt/')" src="images/jcmt/thumbs/L111regionsonBGPS_tn.png"/>
 <h3> L110 S1 </h3>
-<img src="images/jcmt/thumbs/L110S1_con_tn.jpg" 
-	onclick="toggle('L110S1_con','L110S1_con_tn.jpg','L110S1_con.jpg','images/jcmt/')" 
-        name="L110S1_con"
-        alt="L110 S1 region" title="L110 S1 region">
-<img src="images/jcmt/thumbs/L110S1_rgb_tn.jpg" 
-	onclick="toggle('L110S1_rgb','L110S1_rgb_tn.jpg','L110S1_rgb.jpg','images/jcmt/')" 
-	name="L110S1_rgb"
-        alt="L110 S1 region" title="L110 S1 region">
-<img src="images/jcmt/thumbs/L110S1_tn.png" 
-	onclick="toggle('L110S1','L110S1_tn.png','L110S1.png','images/jcmt/')" 
-	name="L110S1">
-<br><br>
+<img alt="L110 S1 region" name="L110S1_con" onclick="toggle('L110S1_con','L110S1_con_tn.jpg','L110S1_con.jpg','images/jcmt/')" src="images/jcmt/thumbs/L110S1_con_tn.jpg" title="L110 S1 region"/>
+<img alt="L110 S1 region" name="L110S1_rgb" onclick="toggle('L110S1_rgb','L110S1_rgb_tn.jpg','L110S1_rgb.jpg','images/jcmt/')" src="images/jcmt/thumbs/L110S1_rgb_tn.jpg" title="L110 S1 region"/>
+<img name="L110S1" onclick="toggle('L110S1','L110S1_tn.png','L110S1.png','images/jcmt/')" src="images/jcmt/thumbs/L110S1_tn.png"/>
+<br/><br/>
 <h3> L111 S2 </h3>
-<img src="images/jcmt/thumbs/L111S2_con_tn.jpg" 
-	onclick="toggle('L111S2_con','L111S2_con_tn.jpg','L111S2_con.jpg','images/jcmt/')" 
-	name="L111S2_con">
-<img src="images/jcmt/thumbs/L111S2_rgb_tn.jpg" 
-	onclick="toggle('L111S2_rgb','L111S2_rgb_tn.jpg','L111S2_rgb.jpg','images/jcmt/')" 
-	name="L111S2_rgb">
-<img src="images/jcmt/thumbs/L111S2_RGB_tn.png" 
-	onclick="toggle('L111S2_RGB','L111S2_RGB_tn.png','L111S2_RGB.png','images/jcmt/')" 
-	name="L111S2_RGB">
-
-<br><br><hr>
+<img name="L111S2_con" onclick="toggle('L111S2_con','L111S2_con_tn.jpg','L111S2_con.jpg','images/jcmt/')" src="images/jcmt/thumbs/L111S2_con_tn.jpg"/>
+<img name="L111S2_rgb" onclick="toggle('L111S2_rgb','L111S2_rgb_tn.jpg','L111S2_rgb.jpg','images/jcmt/')" src="images/jcmt/thumbs/L111S2_rgb_tn.jpg"/>
+<img name="L111S2_RGB" onclick="toggle('L111S2_RGB','L111S2_RGB_tn.png','L111S2_RGB.png','images/jcmt/')" src="images/jcmt/thumbs/L111S2_RGB_tn.png"/>
+<br/><br/><hr/>
 <h2> W5 </h2>
-<img src="images/jcmt/thumbs/W5_CO_tn.png" 
-	onclick="toggle('W5_CO','W5_CO_tn.png','W5_CO.png','images/jcmt/')" 
-	name="W5_CO">
-<img src="images/jcmt/thumbs/W5Regions_on_CO_tn.png" 
-	onclick="toggle('W5Regions_on_CO','W5Regions_on_CO_tn.png','W5Regions_on_CO.png','images/jcmt/')" 
-        name="W5Regions_on_CO">
+<img name="W5_CO" onclick="toggle('W5_CO','W5_CO_tn.png','W5_CO.png','images/jcmt/')" src="images/jcmt/thumbs/W5_CO_tn.png"/>
+<img name="W5Regions_on_CO" onclick="toggle('W5Regions_on_CO','W5Regions_on_CO_tn.png','W5Regions_on_CO.png','images/jcmt/')" src="images/jcmt/thumbs/W5Regions_on_CO_tn.png"/>
 <h3> W5 SH 2-201 Nebula / Mountains</h3>
 Can we rename the whole of W5E Eagle Nebula 2?  Somehow it strikes me as very birdlike on the degree-scale images
-<br>
-<br>
-<img src="images/w5/w5body.jpg">
-<img src="images/w5/w5head.jpg">
-<img src="images/jcmt/thumbs/W5SH2-201_RGB_tn.png" 
-	onclick="toggle('W5SH2-201_RGB','W5SH2-201_RGB_tn.png','W5SH2-201_RGB.png','images/jcmt/')" 
-	name="W5SH2-201_RGB">
-<img src="images/jcmt/thumbs/W5SH2-201_veryred_tn.png" 
-	onclick="toggle('W5SH2-201_veryred','W5SH2-201_veryred_tn.png','W5SH2-201_veryred.png','images/jcmt/')" 
-	name="W5SH2-201_veryred">
-<img src="images/jcmt/thumbs/W5SH2-201_VelocityContours_Labels_tn.png" 
-        onclick="toggle('W5SH2-201_VelocityContours_Labels',
+<br/>
+<br/>
+<img src="images/w5/w5body.jpg"/>
+<img src="images/w5/w5head.jpg"/>
+<img name="W5SH2-201_RGB" onclick="toggle('W5SH2-201_RGB','W5SH2-201_RGB_tn.png','W5SH2-201_RGB.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_RGB_tn.png"/>
+<img name="W5SH2-201_veryred" onclick="toggle('W5SH2-201_veryred','W5SH2-201_veryred_tn.png','W5SH2-201_veryred.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_veryred_tn.png"/>
+<img name="W5SH2-201_VelocityContours_Labels" onclick="toggle('W5SH2-201_VelocityContours_Labels',
             'W5SH2-201_VelocityContours_Labels_tn.png',
-            'W5SH2-201_VelocityContours_Labels.png','images/jcmt/')" 
-	name="W5SH2-201_VelocityContours_Labels">
-<img src="images/jcmt/thumbs/W5SH2-201_VelocityContours_tn.png" 
-	onclick="toggle('W5SH2-201_VelocityContours','W5SH2-201_VelocityContours_tn.png','W5SH2-201_VelocityContours.png','images/jcmt/')" 
-	name="W5SH2-201_VelocityContours">
-<br> This image has broad colors.  Red is from -22 to -10 km/s, green is -40 to -22 km/s, blue is -51 to -40 km/s:
-<br>
-<img src="images/jcmt/thumbs/W5SH2-201_BroadColorsRGB_tn.png" 
-	onclick="toggle('W5SH2-201_BroadColorsRGB','W5SH2-201_BroadColorsRGB_tn.png','W5SH2-201_BroadColorsRGB.png','images/jcmt/')" 
-        name="W5SH2-201_BroadColorsRGB"
-        alt="Broad colors">
-<br> Individual broad channel maps (view alt text or image name to see velocities):
-<br>
-<img src="images/jcmt/thumbs/W5SH2-201_blue_n63ton51_tn.png" 
-	onclick="toggle('W5SH2-201_blue_n63ton51','W5SH2-201_blue_n63ton51_tn.png','W5SH2-201_blue_n63ton51.png','images/jcmt/')" 
-        name="W5SH2-201_blue_n63ton51"
-        title="-63 to -51 km/s"
-	alt="-63 to -51 km/s">
-<img src="images/jcmt/thumbs/W5SH2-201_cyan_n51ton40_tn.png" 
-	onclick="toggle('W5SH2-201_cyan_n51ton40','W5SH2-201_cyan_n51ton40_tn.png','W5SH2-201_cyan_n51ton40.png','images/jcmt/')" 
-	name="W5SH2-201_cyan_n51ton40"
-        title="-51 to -40 km/s"
-	alt="-51 to -40 km/s">
-<img src="images/jcmt/thumbs/W5SH2-201_green_n22ton10_tn.png" 
-	onclick="toggle('W5SH2-201_green_n22ton10','W5SH2-201_green_n22ton10_tn.png','W5SH2-201_green_n22ton10.png','images/jcmt/')" 
-	name="W5SH2-201_green_n22ton10"
-        title="-22 to -10 km/s"
-	alt="-22 to -10 km/s">
-<img src="images/jcmt/thumbs/W5SH2-201_red_n10to0_tn.png" 
-	onclick="toggle('W5SH2-201_red_n10to0','W5SH2-201_red_n10to0_tn.png','W5SH2-201_red_n10to0.png','images/jcmt/')" 
-	name="W5SH2-201_red_n10to0"
-        title="-10 to 0 km/s"
-	alt="-10 to 0 km/s">
-
+            'W5SH2-201_VelocityContours_Labels.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_VelocityContours_Labels_tn.png"/>
+<img name="W5SH2-201_VelocityContours" onclick="toggle('W5SH2-201_VelocityContours','W5SH2-201_VelocityContours_tn.png','W5SH2-201_VelocityContours.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_VelocityContours_tn.png"/>
+<br/> This image has broad colors.  Red is from -22 to -10 km/s, green is -40 to -22 km/s, blue is -51 to -40 km/s:
+<br/>
+<img alt="Broad colors" name="W5SH2-201_BroadColorsRGB" onclick="toggle('W5SH2-201_BroadColorsRGB','W5SH2-201_BroadColorsRGB_tn.png','W5SH2-201_BroadColorsRGB.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_BroadColorsRGB_tn.png"/>
+<br/> Individual broad channel maps (view alt text or image name to see velocities):
+<br/>
+<img alt="-63 to -51 km/s" name="W5SH2-201_blue_n63ton51" onclick="toggle('W5SH2-201_blue_n63ton51','W5SH2-201_blue_n63ton51_tn.png','W5SH2-201_blue_n63ton51.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_blue_n63ton51_tn.png" title="-63 to -51 km/s"/>
+<img alt="-51 to -40 km/s" name="W5SH2-201_cyan_n51ton40" onclick="toggle('W5SH2-201_cyan_n51ton40','W5SH2-201_cyan_n51ton40_tn.png','W5SH2-201_cyan_n51ton40.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_cyan_n51ton40_tn.png" title="-51 to -40 km/s"/>
+<img alt="-22 to -10 km/s" name="W5SH2-201_green_n22ton10" onclick="toggle('W5SH2-201_green_n22ton10','W5SH2-201_green_n22ton10_tn.png','W5SH2-201_green_n22ton10.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_green_n22ton10_tn.png" title="-22 to -10 km/s"/>
+<img alt="-10 to 0 km/s" name="W5SH2-201_red_n10to0" onclick="toggle('W5SH2-201_red_n10to0','W5SH2-201_red_n10to0_tn.png','W5SH2-201_red_n10to0.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_red_n10to0_tn.png" title="-10 to 0 km/s"/>
 <h3> W5 Ridge </h3>
-Contour-Velocity maps:<br>
-<img src="images/jcmt/thumbs/W5Ridge_VelocityContours_Levels_tn.png" 
-	onclick="toggle('W5Ridge_VelocityContours_Levels','W5Ridge_VelocityContours_Levels_tn.png','W5Ridge_VelocityContours_Levels.png','images/jcmt/')" 
-	name="W5Ridge_VelocityContours_Levels">
-<img src="images/jcmt/thumbs/W5Ridge_VelocityContours_tn.png" 
-	onclick="toggle('W5Ridge_VelocityContours','W5Ridge_VelocityContours_tn.png','W5Ridge_VelocityContours.png','images/jcmt/')" 
-        name="W5Ridge_VelocityContours">
-<br> Color maps: <br>
-<img src="images/jcmt/thumbs/W5Ridge_RGB_tn.png" 
-	onclick="toggle('W5Ridge_RGB','W5Ridge_RGB_tn.png','W5Ridge_RGB.png','images/jcmt/')" 
-	name="W5Ridge_RGB">
-<img src="images/jcmt/thumbs/W5Ridge_RGB2_tn.png" 
-	onclick="toggle('W5Ridge_RGB2','W5Ridge_RGB2_tn.png','W5Ridge_RGB2.png','images/jcmt/')" 
-        name="W5Ridge_RGB2">      
-<img src="images/jcmt/thumbs/W5Ridge_RGB_Interesting_tn.png" 
-	onclick="toggle('W5Ridge_RGB_Interesting','W5Ridge_RGB_Interesting_tn.png','W5Ridge_RGB_Interesting.png','images/jcmt/')" 
-	name="W5Ridge_RGB_Interesting">
-<br> Individual velocity maps (source of both colors and contours): <br>
-<img src="images/jcmt/thumbs/W5Ridge_blue_n52ton43_tn.png" 
-	onclick="toggle('W5Ridge_blue_n52ton43','W5Ridge_blue_n52ton43_tn.png','W5Ridge_blue_n52ton43.png','images/jcmt/')" 
-        name="W5Ridge_blue_n52ton43"
-        alt="-52 to -43 km/s"
-        title="-52 to -43 km/s">
-<img src="images/jcmt/thumbs/W5Ridge_green_n43ton40_tn.png" 
-	onclick="toggle('W5Ridge_green_n43ton40','W5Ridge_green_n43ton40_tn.png','W5Ridge_green_n43ton40.png','images/jcmt/')" 
-	name="W5Ridge_green_n43ton40"
-        alt="-43 to -40 km/s"
-        title="-43 to -40 km/s">
-<img src="images/jcmt/thumbs/W5Ridge_red_n36ton30_tn.png" 
-	onclick="toggle('W5Ridge_red_n36ton30','W5Ridge_red_n36ton30_tn.png','W5Ridge_red_n36ton30.png','images/jcmt/')" 
-	name="W5Ridge_red_n36ton30"
-        alt="-36 to -30 km/s"
-        title="-36 to -30 km/s">
-<br><br><hr><br>
-</td></tr></table>
-
-<br><a href="http://boom.caltech.edu:8080/Bolocam/ZWiki/GalacticPlane">BGPS Wiki</a> 
-<br><a href="index.htm">Adam's Homepage</a>
-
-</body>
-
-</html>
+Contour-Velocity maps:<br/>
+<img name="W5Ridge_VelocityContours_Levels" onclick="toggle('W5Ridge_VelocityContours_Levels','W5Ridge_VelocityContours_Levels_tn.png','W5Ridge_VelocityContours_Levels.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_VelocityContours_Levels_tn.png"/>
+<img name="W5Ridge_VelocityContours" onclick="toggle('W5Ridge_VelocityContours','W5Ridge_VelocityContours_tn.png','W5Ridge_VelocityContours.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_VelocityContours_tn.png"/>
+<br/> Color maps: <br/>
+<img name="W5Ridge_RGB" onclick="toggle('W5Ridge_RGB','W5Ridge_RGB_tn.png','W5Ridge_RGB.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_RGB_tn.png"/>
+<img name="W5Ridge_RGB2" onclick="toggle('W5Ridge_RGB2','W5Ridge_RGB2_tn.png','W5Ridge_RGB2.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_RGB2_tn.png"/>
+<img name="W5Ridge_RGB_Interesting" onclick="toggle('W5Ridge_RGB_Interesting','W5Ridge_RGB_Interesting_tn.png','W5Ridge_RGB_Interesting.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_RGB_Interesting_tn.png"/>
+<br/> Individual velocity maps (source of both colors and contours): <br/>
+<img alt="-52 to -43 km/s" name="W5Ridge_blue_n52ton43" onclick="toggle('W5Ridge_blue_n52ton43','W5Ridge_blue_n52ton43_tn.png','W5Ridge_blue_n52ton43.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_blue_n52ton43_tn.png" title="-52 to -43 km/s"/>
+<img alt="-43 to -40 km/s" name="W5Ridge_green_n43ton40" onclick="toggle('W5Ridge_green_n43ton40','W5Ridge_green_n43ton40_tn.png','W5Ridge_green_n43ton40.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_green_n43ton40_tn.png" title="-43 to -40 km/s"/>
+<img alt="-36 to -30 km/s" name="W5Ridge_red_n36ton30" onclick="toggle('W5Ridge_red_n36ton30','W5Ridge_red_n36ton30_tn.png','W5Ridge_red_n36ton30.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_red_n36ton30_tn.png" title="-36 to -30 km/s"/>
+<br/><br/><hr/><br/>
+</center></td></tr></table>
+<br/><a href="http://boom.caltech.edu:8080/Bolocam/ZWiki/GalacticPlane">BGPS Wiki</a>
+<br/><a href="index.htm">Adam's Homepage</a>
+</center></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

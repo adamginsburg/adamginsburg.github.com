@@ -1,17 +1,5 @@
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>DS9 Tricks</title>
-</head>
-<?php 
-$page="ds9tips.htm";
-include 'tracker.php';?>
-<script language="javascript">
-<!--
+<html><head><meta content="en-us" http-equiv="Content-Language"/><link href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>DS9 Tricks</title></head><head><script language="javascript">
+&lt;!--
 function click(imname,imsrc) {
     document[imname].
 	onclick = "click2(" + imname + "," + document[imname].src + ")";
@@ -34,250 +22,210 @@ function toggle(myself,first,second) {
 //    myself.src = (myself.src == first) ? second:first;
 //    return true;
 }
-    -->
+    --&gt;
 
-</script>
-<table align="center" width=800><tr><td>
-    <center>
-        <h1> DS9 Tips and Tricks</h1>
-        <br> If you're not familiar with <a
-            href="http://hea-www.harvard.edu/RD/ds9/">SAOIMAGE DS9</a>, check
+</script></head><body><table align="center" width="800"><tr><td>
+<center>
+<h1> DS9 Tips and Tricks</h1>
+<br/> If you're not familiar with <a href="http://hea-www.harvard.edu/RD/ds9/">SAOIMAGE DS9</a>, check
         out its <a class="norm" href="http://hea-www.harvard.edu/RD/ds9/">homepage</a>.  It is
         a FITS imaging program with significant capabilities.
-        <br>
-        <br>  However, its manual is not 100% clear.  There are a lot of capabilities that are not immediately obvious.
-        <br>
-        <br> I've also written a <a class="norm" href="ds9_imalign.htm">guide on using DS9 with IRAF's imalign and imcentroid </a>
-        <br>
+        <br/>
+<br/>  However, its manual is not 100% clear.  There are a lot of capabilities that are not immediately obvious.
+        <br/>
+<br/> I've also written a <a class="norm" href="ds9_imalign.htm">guide on using DS9 with IRAF's imalign and imcentroid </a>
+<br/>
 <!--         <h3> Single-clicking on images will toggle thumbnail/fullsize mode </h3>
          <h4> Single-clicking on titles will display text </h4>
          <a class="norm" href="images/full/">Full-sized images</a> are also available.-->
-        <br>
-        <br>
+<br/>
+<br/>
         (all below are links)
-        <hr>
-    <div name="body1" id="body1" style='display: none'>
-        <a href=# onClick="javascript: body1.style.display='none'; body1link.style.display='inline'; return false;"> 
-        <h3 align="left" id="projection">Projection (quick look spectroscopy)</h3></a>
-
-        <br> The most interesting overlooked capability is the <tt>projection</tt> region.  It can be accessed through the
+        <hr/>
+<div id="body1" name="body1" style="display: none">
+<a href="#" onclick="javascript: body1.style.display='none'; body1link.style.display='inline'; return false;">
+<h3 align="left" id="projection">Projection (quick look spectroscopy)</h3></a>
+<br/> The most interesting overlooked capability is the <tt>projection</tt> region.  It can be accessed through the
         <tt>Regions: Shape</tt> menu. 
-        <br><img src="images/thumbs/ds9regionshape_tn.jpg" 
-	onclick="toggle('rshape','ds9regionshape_tn.jpg','ds9regionshape.jpg')" name="rshape">
-        <!--<br><img src="images/thumbs/ds9regionshape_tn.jpg" 
+        <br/><img name="rshape" onclick="toggle('rshape','ds9regionshape_tn.jpg','ds9regionshape.jpg')" src="images/thumbs/ds9regionshape_tn.jpg"/>
+<!--<br><img src="images/thumbs/ds9regionshape_tn.jpg" 
 	onclick="click('rshape','ds9regionshape.jpg')" name="rshape">
         <br>--><!--<img src="images/thumbs/ds9regionshape_tn.jpg" 
 	onclick="document.rshape.src='ds9regionshape.jpg'" 
         ondblclick="document.rshape.src='images/thumbs/ds9regionshape_tn.jpg'"
         name="rshape"><a href="images/ds9regionshape.jpg"></a> -->
-        <br>It is extremely useful for quick-look spectroscopy. 
-        <br><img src="images/thumbs/ds9projectionexample_tn.png" 
-	onclick="toggle('ds9projectionexample','ds9projectionexample_tn.png','ds9projectionexample.png')" name="ds9projectionexample"> 
-        <br>You can also find out what the size and shape of a region are using <tt>Get Information</tt>
-        <br><img src="images/thumbs/ds9regioninformation_tn.jpg" 
-	onclick="toggle('ds9regioninformation','ds9regioninformation_tn.jpg','ds9regioninformation.jpg')" name="ds9regioninformation"> 
-    </div>
-    <div id="body1link" style='display: inline'>
-        <a href=#body1 onClick="javascript: body1.style.display='inline'; body1link.style.display='none'; window.location.hash='body1'; return false;"> 
-            <h3 align="left" id="projection"> Projection (quick look spectroscopy)</h3></a>
-    </div>
-
-
-    <hr width=300 align="left">
-    <div name="body2" id="body2" style='display: none'>
-    <a href=# onClick="javascript: body2.style.display='none'; body2link.style.display='inline'; return false;"> 
-    <h3 align="left" id="ruler"> Ruler / Distance Measurements </h3> </a>
-        <br>The ruler is another useful tool, particularly during an observing run when you need to find out quickly
+<br/>It is extremely useful for quick-look spectroscopy. 
+        <br/><img name="ds9projectionexample" onclick="toggle('ds9projectionexample','ds9projectionexample_tn.png','ds9projectionexample.png')" src="images/thumbs/ds9projectionexample_tn.png"/>
+<br/>You can also find out what the size and shape of a region are using <tt>Get Information</tt>
+<br/><img name="ds9regioninformation" onclick="toggle('ds9regioninformation','ds9regioninformation_tn.jpg','ds9regioninformation.jpg')" src="images/thumbs/ds9regioninformation_tn.jpg"/>
+</div>
+<div id="body1link" style="display: inline">
+<a href="#body1" onclick="javascript: body1.style.display='inline'; body1link.style.display='none'; window.location.hash='body1'; return false;">
+<h3 align="left" id="projection"> Projection (quick look spectroscopy)</h3></a>
+</div>
+<hr align="left" width="300"/>
+<div id="body2" name="body2" style="display: none">
+<a href="#" onclick="javascript: body2.style.display='none'; body2link.style.display='inline'; return false;">
+<h3 align="left" id="ruler"> Ruler / Distance Measurements </h3> </a>
+<br/>The ruler is another useful tool, particularly during an observing run when you need to find out quickly
         how to slew the telescope (e.g. if you're using a coronagraph and the image is at some angle to the plane of the sky)
-        <br><img src="images/thumbs/ds9shaperuler_tn.jpg" 
-	onclick="toggle('ds9shaperuler','ds9shaperuler_tn.jpg','ds9shaperuler.jpg')" name="ds9shaperuler"> 
-        <br>With the ruler, we can measure positions using get information again.
-        <br><img src="images/thumbs/ds9rulergetinfo_tn.png" 
-	onclick="toggle('ds9rulergetinfo','ds9rulergetinfo_tn.png','ds9rulergetinfo.png')" name="ds9rulergetinfo"> 
-        <br> If your image has WCS coordinates defined, it becomes extremely easy to find out exactly what your slew needs to be.
-        <br><img src="images/thumbs/ds9rulerWCS_tn.png" 
-	onclick="toggle('ds9rulerWCS','ds9rulerWCS_tn.png','ds9rulerWCS.png')" name="ds9rulerWCS"> 
-        <br>
-    </div>
-    <div id="body2link" style='display: inline'>
-        <a href=#body2 onClick="javascript: body2.style.display='inline'; body2link.style.display='none'; window.location.hash='body2';return false;"> 
-        <h3 align="left" id="projection"> Ruler / Distance Measurements </h3></a>
-    </div>
-
-        <hr width=300 align="left">
-
-<div id="body3link" style='display: inline'>
-        <a href=#body3 onClick="javascript: body3.style.display='inline'; body3link.style.display='none'; window.location.hash='body3'; return false;"> 
-        <h3 align="left" id="projection"> Multi-Extension FITS </h3></a>
-    </div>
-<div id='body3' style='display: none'>
-<a href=#body3 onClick="javascript: body3.style.display='none'; body3link.style.display='inline'; return false;"> 
-    <h3 align="left" id="multiext"> Multi-Extension FITS </h3></a>
-        <br> 
-        <br> DS9 can also be used to open multi-extension FITS files that IRAF may have trouble with.  They will not load 
+        <br/><img name="ds9shaperuler" onclick="toggle('ds9shaperuler','ds9shaperuler_tn.jpg','ds9shaperuler.jpg')" src="images/thumbs/ds9shaperuler_tn.jpg"/>
+<br/>With the ruler, we can measure positions using get information again.
+        <br/><img name="ds9rulergetinfo" onclick="toggle('ds9rulergetinfo','ds9rulergetinfo_tn.png','ds9rulergetinfo.png')" src="images/thumbs/ds9rulergetinfo_tn.png"/>
+<br/> If your image has WCS coordinates defined, it becomes extremely easy to find out exactly what your slew needs to be.
+        <br/><img name="ds9rulerWCS" onclick="toggle('ds9rulerWCS','ds9rulerWCS_tn.png','ds9rulerWCS.png')" src="images/thumbs/ds9rulerWCS_tn.png"/>
+<br/>
+</div>
+<div id="body2link" style="display: inline">
+<a href="#body2" onclick="javascript: body2.style.display='inline'; body2link.style.display='none'; window.location.hash='body2';return false;">
+<h3 align="left" id="projection"> Ruler / Distance Measurements </h3></a>
+</div>
+<hr align="left" width="300"/>
+<div id="body3link" style="display: inline">
+<a href="#body3" onclick="javascript: body3.style.display='inline'; body3link.style.display='none'; window.location.hash='body3'; return false;">
+<h3 align="left" id="projection"> Multi-Extension FITS </h3></a>
+</div>
+<div id="body3" style="display: none">
+<a href="#body3" onclick="javascript: body3.style.display='none'; body3link.style.display='inline'; return false;">
+<h3 align="left" id="multiext"> Multi-Extension FITS </h3></a>
+<br/>
+<br/> DS9 can also be used to open multi-extension FITS files that IRAF may have trouble with.  They will not load 
         as data cubes by default, though: you must use the <tt>Open Multi-Ext as Data Cube</tt> option, or from the command line
         use <tt>ds9 -medatacube filename.fits</tt>.  This is useful for the two-extension data files delivered from 
         <a href="nicfps.htm">APO's Near Infrared Camera/Fabry Perot Spectrograph</a>
-        <br><img src="images/thumbs/ds9multiextopen_tn.jpg" 
-	onclick="toggle('ds9multiextopen','ds9multiextopen_tn.jpg','ds9multiextopen.jpg')" name="ds9multiextopen"> 
-    </div>
-
-        
-        <hr width=300 align="left">
-<div id="body4link" style='display: inline'>
-        <a href=# onClick="javascript: body4.style.display='inline'; body4link.style.display='none';window.location.hash='body4'; return false;"> 
-        <h3 align="left" id="projection"> Coordinate Grids </h3></a>
-    </div>
-<div id='body4' style='display: none'>
-<a href=# onClick="javascript: body4.style.display='none'; body4link.style.display='inline'; return false;"> 
-    <h3 align="left" id="coordgrid"> Coordinate Grids</h3></a>
-        <br> It is possible to make publication-quality images using DS9.  Under the <tt>Analysis</tt> command menu,
+<br/><img name="ds9multiextopen" onclick="toggle('ds9multiextopen','ds9multiextopen_tn.jpg','ds9multiextopen.jpg')" src="images/thumbs/ds9multiextopen_tn.jpg"/>
+</div>
+<hr align="left" width="300"/>
+<div id="body4link" style="display: inline">
+<a href="#" onclick="javascript: body4.style.display='inline'; body4link.style.display='none';window.location.hash='body4'; return false;">
+<h3 align="left" id="projection"> Coordinate Grids </h3></a>
+</div>
+<div id="body4" style="display: none">
+<a href="#" onclick="javascript: body4.style.display='none'; body4link.style.display='inline'; return false;">
+<h3 align="left" id="coordgrid"> Coordinate Grids</h3></a>
+<br/> It is possible to make publication-quality images using DS9.  Under the <tt>Analysis</tt> command menu,
         select <tt> Coordinate Grid</tt>, then  <tt> Coordinate Grid Parameters...</tt>.  
-        <br><img src="images/thumbs/ds9coordgridparms_tn.jpg" 
-            
-	onclick="toggle('ds9coordgridparms','ds9coordgridparms_tn.jpg','ds9coordgridparms.jpg')" 
-            name="ds9coordgridparms"> 
-        <br>Note that I've used inverted colors so that the image will print nicely on white paper.  The format in this 
+        <br/><img name="ds9coordgridparms" onclick="toggle('ds9coordgridparms','ds9coordgridparms_tn.jpg','ds9coordgridparms.jpg')" src="images/thumbs/ds9coordgridparms_tn.jpg"/>
+<br/>Note that I've used inverted colors so that the image will print nicely on white paper.  The format in this 
         image is, frankly, quite ugly.  It is known as <tt> Analysis </tt> format.  Thankfully, in DS9 5.0, there is a 
         <tt> Type </tt> menu that allows you to change to <tt> Publication </tt> format.  Also, you can change the colors
         of each element of the coordinate grid and remove the axes, tickmarks, etc. via the various menus.  It will probably
         be necessary to modify the locations of the labels as well.
-        <br><img src="images/thumbs/ds9coordsmod_tn.jpg" 
-            
-	onclick="toggle('ds9coordsmod','ds9coordsmod_tn.jpg','ds9coordsmod.jpg')" 
-            name="ds9coordsmod"> 
-        <br> 
-        <br> Finally, to save as a postscript, <tt>Print</tt> the file to a postscript file instead of saving it.
-        <br><img src="images/thumbs/ds9printtops_tn.jpg" 
-            
-	onclick="toggle('ds9printtops','ds9printtops_tn.jpg','ds9printtops.jpg')" 
-            name="ds9printtops"> 
-        <br> The resulting <a class="norm" href="images/ds9dustmapps.ps">image</a> is mostly satisfactory except
+        <br/><img name="ds9coordsmod" onclick="toggle('ds9coordsmod','ds9coordsmod_tn.jpg','ds9coordsmod.jpg')" src="images/thumbs/ds9coordsmod_tn.jpg"/>
+<br/>
+<br/> Finally, to save as a postscript, <tt>Print</tt> the file to a postscript file instead of saving it.
+        <br/><img name="ds9printtops" onclick="toggle('ds9printtops','ds9printtops_tn.jpg','ds9printtops.jpg')" src="images/thumbs/ds9printtops_tn.jpg"/>
+<br/> The resulting <a class="norm" href="images/ds9dustmapps.ps">image</a> is mostly satisfactory except
         for the annoying presence of the colorbar, which currently cannot be removed except by 
         <a class="norm" href="editingps.htm">editing the postscript directly</a> - 
         I believe this is a glitch in DS9 that will likely be fixed in the next release.
-        <br>EDIT 6/23/08: In the latest release(s), you can remove the colorbar using the command line 
-        option <br><tt> xpaset -p ds9 view colorbar no </tt> or by selecting the option in the 'view' menu
+        <br/>EDIT 6/23/08: In the latest release(s), you can remove the colorbar using the command line 
+        option <br/><tt> xpaset -p ds9 view colorbar no </tt> or by selecting the option in the 'view' menu
     </div>
-
-        
-        <hr width=300 align="left">
-
-<div id="body5link" style='display: inline'>
-        <a href=# onClick="javascript: body5.style.display='inline'; body5link.style.display='none';window.location.hash='body5'; return false;"> 
-        <h3 align="left" id="projection"> Controlling DS9 from the command line </h3></a>
-    </div>
-<div id='body5' style='display: none'>
-<a href=# onClick="javascript: body5.style.display='none'; body5link.style.display='inline'; return false;"> 
-    <h3 align="left" id="analysis"> Controlling DS9 from the command line </h3></a>
+<hr align="left" width="300"/>
+<div id="body5link" style="display: inline">
+<a href="#" onclick="javascript: body5.style.display='inline'; body5link.style.display='none';window.location.hash='body5'; return false;">
+<h3 align="left" id="projection"> Controlling DS9 from the command line </h3></a>
+</div>
+<div id="body5" style="display: none">
+<a href="#" onclick="javascript: body5.style.display='none'; body5link.style.display='inline'; return false;">
+<h3 align="left" id="analysis"> Controlling DS9 from the command line </h3></a>
         There are some settings you can't change from DS9 directly.  For these, you can use
         the xpa interface.  e.g.
-        <br><tt>xpaset -p ds9 prefs bgcolor black</tt>
-        <br><tt>xpaset -p ds9 prefs nancolor black</tt>
-        <br>
-        <br> The same can be accomplished by opening DS9 from the command line:
-        <br> <tt> ds9 -prefs nancolor red </tt>
-    </div>
-
-    </center>
-         <hr width=300 align="left">
-
-
-
-<div id="body6link" style='display: inline'>
-        <a href=# onClick="javascript: body6.style.display='inline'; body6link.style.display='none'; window.location.hash='body6'; return false;"> 
-        <h3 align="left" id="multifiles"> Multiple files in a field </h3></a>
-    </div>
-<div id='body6' style='display: none'>
-<a href=# onClick="javascript: body6.style.display='none'; body6link.style.display='inline'; return false;"> 
-    <h3 align=left id="multifiles"> Multiple files in a field </h3></a>
+        <br/><tt>xpaset -p ds9 prefs bgcolor black</tt>
+<br/><tt>xpaset -p ds9 prefs nancolor black</tt>
+<br/>
+<br/> The same can be accomplished by opening DS9 from the command line:
+        <br/> <tt> ds9 -prefs nancolor red </tt>
+</div>
+</center>
+<hr align="left" width="300"/>
+<div id="body6link" style="display: inline">
+<a href="#" onclick="javascript: body6.style.display='inline'; body6link.style.display='none'; window.location.hash='body6'; return false;">
+<h3 align="left" id="multifiles"> Multiple files in a field </h3></a>
+</div>
+<div id="body6" style="display: none">
+<a href="#" onclick="javascript: body6.style.display='none'; body6link.style.display='inline'; return false;">
+<h3 align="left" id="multifiles"> Multiple files in a field </h3></a>
          You can open multiple files from the command line with commands like:
-        <br> <tt> ds9 -mosaic wcs *.fits </tt> 
-        <br>
-        <br> You can then open other images by specifying a new frame (only once)
-        <br> <tt> ds9 -mosaic wcs set1*.fits -frame new -file file2.fits </tt>
-        <br>
-        <br> It is also possible to automatically align the images.  They will be aligned to the last image loaded.
-        <br> <tt> ds9 *.fits -match frames wcs </tt>
-        <br>
-        <br> It can be useful to load region and contour files too. For the contour file, you must specify coordinate type (wcs)
+        <br/> <tt> ds9 -mosaic wcs *.fits </tt>
+<br/>
+<br/> You can then open other images by specifying a new frame (only once)
+        <br/> <tt> ds9 -mosaic wcs set1*.fits -frame new -file file2.fits </tt>
+<br/>
+<br/> It is also possible to automatically align the images.  They will be aligned to the last image loaded.
+        <br/> <tt> ds9 *.fits -match frames wcs </tt>
+<br/>
+<br/> It can be useful to load region and contour files too. For the contour file, you must specify coordinate type (wcs)
         and coordinate system (icrs, fk5, galactic...)
-        <br> <tt> ds9 *.fits -region load file.reg -contour load file.con wcs icrs red 1</tt>
-        <br>
-        <br> An example gigantic command line that saves me ~30 mouse clicks.  You can split the command into multiple
+        <br/> <tt> ds9 *.fits -region load file.reg -contour load file.con wcs icrs red 1</tt>
+<br/>
+<br/> An example gigantic command line that saves me ~30 mouse clicks.  You can split the command into multiple
         lines by prefacing new lines with a \:
-        <br> <tt> ds9 -mosaic wcs scuba*.fits -region load w34_gbttargets_handselected.reg -region load w3_nh3.reg \
-            <br> -frame new -file l133_1_coadd_h2omaser.fits -region load w34_gbttargets_handselected.reg \
-            <br> -region load w3_nh3.reg -contour load w34_scuba.con wcs icrs red 1 \
-            <br> -file l134_1_coadd_h2omaser.fits  -region load w34_gbttargets_handselected.reg \
-            <br> -region load w3_nh3.reg -contour load w34_scuba.con wcs icrs red 1 -single -match frames wcs  </tt>
-        <br>
-    </div>
-
-        
-        <hr width=300 align="left">
-<div id="body7link" style='display: inline'>
-        <a href=# onClick="javascript: body7.style.display='inline'; body7link.style.display='none'; window.location.hash='body7'; return false;"> 
-        <h3 align="left" id="multifiles"> Analysis Tools </h3></a>
-    </div>
-<div id='body7' style='display: none'>
-<a href=# onClick="javascript: body7.style.display='none'; body7link.style.display='inline'; return false;"> 
-    <h3 align="left" id="analysis"> Analysis Tools </h3></a>
-        <br> For significantly more advanced DS9 use, you can make your own analysis packages to put in to the "analysis commands"
+        <br/> <tt> ds9 -mosaic wcs scuba*.fits -region load w34_gbttargets_handselected.reg -region load w3_nh3.reg \
+            <br/> -frame new -file l133_1_coadd_h2omaser.fits -region load w34_gbttargets_handselected.reg \
+            <br/> -region load w3_nh3.reg -contour load w34_scuba.con wcs icrs red 1 \
+            <br/> -file l134_1_coadd_h2omaser.fits  -region load w34_gbttargets_handselected.reg \
+            <br/> -region load w3_nh3.reg -contour load w34_scuba.con wcs icrs red 1 -single -match frames wcs  </tt>
+<br/>
+</div>
+<hr align="left" width="300"/>
+<div id="body7link" style="display: inline">
+<a href="#" onclick="javascript: body7.style.display='inline'; body7link.style.display='none'; window.location.hash='body7'; return false;">
+<h3 align="left" id="multifiles"> Analysis Tools </h3></a>
+</div>
+<div id="body7" style="display: none">
+<a href="#" onclick="javascript: body7.style.display='none'; body7link.style.display='inline'; return false;">
+<h3 align="left" id="analysis"> Analysis Tools </h3></a>
+<br/> For significantly more advanced DS9 use, you can make your own analysis packages to put in to the "analysis commands"
         menu.  
-        <br><img src="images/thumbs/ds9loadanalysiscommands_tn.jpg" 
-	onclick="toggle('ds9loadanalysiscommands','ds9loadanalysiscommands_tn.jpg','ds9loadanalysiscommands.jpg')" name="ds9loadanalysiscommands"> 
-        <br>
+        <br/><img name="ds9loadanalysiscommands" onclick="toggle('ds9loadanalysiscommands','ds9loadanalysiscommands_tn.jpg','ds9loadanalysiscommands.jpg')" src="images/thumbs/ds9loadanalysiscommands_tn.jpg"/>
+<br/>
         For example, I have a file <tt><a href="ds9code/analysistools.ds9">analysistools.ds9</a></tt> with contents:
         <tt><dl>
-                <dd>param circlerad
+<dd>param circlerad
 		<dd>radius entry "Choose a radius for the circle to extract: " 3
 		<dd>end
 		<dd>
-		<dd>Cube Annulus Extract
+<dd>Cube Annulus Extract
 		<dd>*
 		<dd>menu
 		<dd>/media/sda4/work/CFHT99FP/annulusextractds9.py $filename $regions(include,physical) | $plot
 		<dd>
-		<dd>Cube Point Annulus
+<dd>Cube Point Annulus
 		<dd>*
 		<dd>bind c
 		<dd>/media/sda4/work/CFHT99FP/annulusextractds9.py $filename circle($x,$y,3) | $plot
 		<dd>
-		<dd>Cube Point Annulus (set radius)
+<dd>Cube Point Annulus (set radius)
 		<dd>*
 		<dd>bind C
 		<dd>$param(circlerad);/media/sda4/work/CFHT99FP/annulusextractds9.py $filename circle($x,$y,3) | $plot
-        </dl></tt>
+        </dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dl></tt>
         which allows you to call <tt>Cube Annulus Extract</tt> from the menu, or either of the other commands using lowercase
         and capital c.  The code it calls, <a href="ds9code/annulustools.ds9">annulustools.ds9</a>, is also provided 
         <a href="ds9code">here</a>, along with the necessary support file <a href="ds9code/gridtocircle.py">gridtocircle.py</a>.
     </div>
-
-        <hr width=300 align="left">
-<div id="body8link" style='display: inline'>
-        <a href=# onClick="javascript: body8.style.display='inline'; body8link.style.display='none'; window.location.hash='body8'; return false;"> 
-        <h3 align="left" id="multifiles"> Quick-look Aperture Photometry </h3></a>
-    </div>
-<div id='body8' style='display: none'>
-<a href=# onClick="javascript: body8.style.display='none'; body8link.style.display='inline'; return false;"> 
-    <h3 align="left" id="analysis"> Quick-look Aperture Photometry</h3></a>
+<hr align="left" width="300"/>
+<div id="body8link" style="display: inline">
+<a href="#" onclick="javascript: body8.style.display='inline'; body8link.style.display='none'; window.location.hash='body8'; return false;">
+<h3 align="left" id="multifiles"> Quick-look Aperture Photometry </h3></a>
+</div>
+<div id="body8" style="display: none">
+<a href="#" onclick="javascript: body8.style.display='none'; body8link.style.display='inline'; return false;">
+<h3 align="left" id="analysis"> Quick-look Aperture Photometry</h3></a>
 
     In ds9 7.1 (released in late 2012), there is a new "Region Statistics" feature.  In most regions, you
     can now double-click on the region, then go to the region's analysis menu and click "Statistics".  It will pop up a window
     showing basic stats (sum, mean, stddev, etc.).
 
-    <br>
-    <br>
+    <br/>
+<br/>
     If you're looking for something a little more complex and flexible, try
     <a class="norm" href="http://code.google.com/p/agpy/source/browse/trunk/agpy/ds9_phot.py"> ds9_phot </a> from agpy.
     WARNING: pyds9 currently (10/27/2012) does not work with astropy!  You'll need pyfits, pywcs, pyregion, and pyds9.
 
     </div>
-        
-        
-        <hr><br>
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-    </body>
-</html>
- 
+<hr/><br/>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</td></tr></table></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

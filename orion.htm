@@ -1,19 +1,5 @@
-
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<meta name="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<link rel="stylesheet" type="text/css" href="style.css">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Orion</title>
-</head>
-<?php 
-$page="orion.htm";
-include 'tracker.php';?>
-<script language="javascript">
-<!--
+<html><head><meta content="en-us" http-equiv="Content-Language"/><meta content="NOINDEX, NOFOLLOW" name="ROBOTS"/><link href="favicon8.ico" rel="icon" type="image/gif"/><link href="style.css" rel="stylesheet" type="text/css"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>Orion</title></head><head><script language="javascript">
+&lt;!--
 function toggle(myself,first,second) {
 //    image=myself.getElementsByTagName('img')[0];
 //    image.src =(image.src == first) ? second:first;
@@ -24,355 +10,190 @@ function toggle(myself,first,second) {
 //    myself.src = (myself.src == first) ? second:first;
 //    return true;
 }
-    -->
-</script>
-    <center>
+    --&gt;
+</script></head><body><center>
 <h1>Orion FP cube - 'Naked' stars</h1>
-<table align="center" width=800><tr><td>
-</center>
+<table align="center" width="800"><tr><td>
+
     Single-click images to expand.
-    <br> Full images available at <a class="norm" href="images/orion/full/">images/orion/full/</a>
-    <h3> HST 3 / [OW94] 159-350 /P 1869 </h3>
+    <br/> Full images available at <a class="norm" href="images/orion/full/">images/orion/full/</a>
+<h3> HST 3 / [OW94] 159-350 /P 1869 </h3>
 
     Four annulus-subtraction plots:
     <ol>
-        <li> Gaussian-fitted star minus annulus with equal area <br>
-<img src="images/orion/thumbs/hst3_equalarea_1_tn.png" 
-	onclick="toggle('hst3_equalarea_1','hst3_equalarea_1_tn.png','hst3_equalarea_1.png')" 
-	name="hst3_equalarea_1">
-        <li> Gaussian-fitted star minus annulus with approximately matched peak flux <br>
-<img src="images/orion/thumbs/hst3_equalflux_shift_1_tn.png" 
-	onclick="toggle('hst3_equalflux_shift_1','hst3_equalflux_shift_1_tn.png','hst3_equalflux_shift_1.png')" 
-	name="hst3_equalflux_shift_1">
-        <li> Larger star aperture minus annulus with equal area <br>
-<img src="images/orion/thumbs/hst3_equalarea_2_tn.png" 
-	onclick="toggle('hst3_equalarea_2','hst3_equalarea_2_tn.png','hst3_equalarea_2.png')" 
-	name="hst3_equalarea_2">
-        <li> Larger star aperture minus annulus with approximately matched peak flux <br>
-<img src="images/orion/thumbs/hst3_equalflux_shift_2_tn.png" 
-	onclick="toggle('hst3_equalflux_shift_2','hst3_equalflux_shift_2_tn.png','hst3_equalflux_shift_2.png')" 
-        name="hst3_equalflux_shift_2">
-    </ol>
-
-        <h3>[OW94] 170-334</h3>
-        <br> If the Simbad coordinates are correct 
-(<a href="http://simbad.u-strasbg.fr/simbad/sim-id?Ident=%40804578&Name=%5bAD95%5d%203538">05 35 16.97 -05 23 34.7</a>),
+<li> Gaussian-fitted star minus annulus with equal area <br/>
+<img name="hst3_equalarea_1" onclick="toggle('hst3_equalarea_1','hst3_equalarea_1_tn.png','hst3_equalarea_1.png')" src="images/orion/thumbs/hst3_equalarea_1_tn.png"/>
+</li><li> Gaussian-fitted star minus annulus with approximately matched peak flux <br/>
+<img name="hst3_equalflux_shift_1" onclick="toggle('hst3_equalflux_shift_1','hst3_equalflux_shift_1_tn.png','hst3_equalflux_shift_1.png')" src="images/orion/thumbs/hst3_equalflux_shift_1_tn.png"/>
+</li><li> Larger star aperture minus annulus with equal area <br/>
+<img name="hst3_equalarea_2" onclick="toggle('hst3_equalarea_2','hst3_equalarea_2_tn.png','hst3_equalarea_2.png')" src="images/orion/thumbs/hst3_equalarea_2_tn.png"/>
+</li><li> Larger star aperture minus annulus with approximately matched peak flux <br/>
+<img name="hst3_equalflux_shift_2" onclick="toggle('hst3_equalflux_shift_2','hst3_equalflux_shift_2_tn.png','hst3_equalflux_shift_2.png')" src="images/orion/thumbs/hst3_equalflux_shift_2_tn.png"/>
+</li></ol>
+<h3>[OW94] 170-334</h3>
+<br/> If the Simbad coordinates are correct 
+(<a href="http://simbad.u-strasbg.fr/simbad/sim-id?Ident=%40804578&amp;Name=%5bAD95%5d%203538">05 35 16.97 -05 23 34.7</a>),
 this source is not seen in the FP cube except as an extension of 
-<a href="http://simbad.u-strasbg.fr/simbad/sim-id?Ident=%40810220&Name=COUP%20J053517.0-052334">P 1893 / [OW94] 171-334</a>
-<br> From here on out, assume the source seen was P 1893.
+<a href="http://simbad.u-strasbg.fr/simbad/sim-id?Ident=%40810220&amp;Name=COUP%20J053517.0-052334">P 1893 / [OW94] 171-334</a>
+<br/> From here on out, assume the source seen was P 1893.
         It was not possible to do an accurate annulus extraction on this star: in a few of the FP bands, there is an emission knot
         directly in the outer annulus.
-        <br> The bump at channel 36 is because of an image artifact: the FP ring (from different sky conditions?) passes over the star
+        <br/> The bump at channel 36 is because of an image artifact: the FP ring (from different sky conditions?) passes over the star
         at that point
-        <br>
-        <ol>
-            <li> Gaussian fitted star minus equal area annulus <br> 
-<img src="images/orion/thumbs/ow94_170-334_starfit-nearsky_eqflux_tn.png" 
-	onclick="toggle('ow94_170-334_starfit-nearsky_eqflux','ow94_170-334_starfit-nearsky_eqflux_tn.png','ow94_170-334_starfit-nearsky_eqflux.png')" 
-	name="ow94_170-334_starfit-nearsky_eqflux">
-            <li> Gaussian fitted star minus approximately equal flux annulus<br> 
-<img src="images/orion/thumbs/ow94_170-334_starfit-nearsky_tn.png" 
-	onclick="toggle('ow94_170-334_starfit-nearsky','ow94_170-334_starfit-nearsky_tn.png','ow94_170-334_starfit-nearsky.png')" 
-	name="ow94_170-334_starfit-nearsky">
-    </ol>
-
-        <h3> Annulus subtraction difficulties: </h3>
-        <ol>
-            <li> Overlay of subtractions in the 4 directions from the star in HST3 (single-pixel) <br>
-<img src="images/orion/thumbs/hst3_4directionssub_tn.png" 
-	onclick="toggle('hst3_4directionssub','hst3_4directionssub_tn.png','hst3_4directionssub.png')" 
-        name="hst3_4directionssub"
-        title="differences in 4 directions from HST3"
-        alt="differences in 4 directions from HST3">
-            <li> Overlay of subtractions in opposite directions of [OW94] 170-334 to display a gradient <br>
-<img src="images/orion/thumbs/ow94_170-334_gradientdemo1_tn.png" 
-	onclick="toggle('ow94_170-334_gradientdemo1','ow94_170-334_gradientdemo1_tn.png','ow94_170-334_gradientdemo1.png')" 
-        name="ow94_170-334_gradientdemo1"
-        title="differences in opposite directions from 170-334: demonstrates non-real gradient"
-        alt="differences in opposite directions from 170-334: demonstrates non-real gradient">
-            <li> Overlay of subtractions in the other opposite directions of [OW94] 170-334 to display a different gradient <br>
-<img src="images/orion/thumbs/ow94_170-334_gradientdemo2_tn.png" 
-	onclick="toggle('ow94_170-334_gradientdemo2','ow94_170-334_gradientdemo2_tn.png','ow94_170-334_gradientdemo2.png')" 
-	name="ow94_170-334_gradientdemo2"
-        title="differences in opposite directions from 170-334: demonstrates non-real gradient"
-        alt="differences in opposite directions from 170-334: demonstrates non-real gradient">
-    </ol>
+        <br/>
+<ol>
+<li> Gaussian fitted star minus equal area annulus <br/>
+<img name="ow94_170-334_starfit-nearsky_eqflux" onclick="toggle('ow94_170-334_starfit-nearsky_eqflux','ow94_170-334_starfit-nearsky_eqflux_tn.png','ow94_170-334_starfit-nearsky_eqflux.png')" src="images/orion/thumbs/ow94_170-334_starfit-nearsky_eqflux_tn.png"/>
+</li><li> Gaussian fitted star minus approximately equal flux annulus<br/>
+<img name="ow94_170-334_starfit-nearsky" onclick="toggle('ow94_170-334_starfit-nearsky','ow94_170-334_starfit-nearsky_tn.png','ow94_170-334_starfit-nearsky.png')" src="images/orion/thumbs/ow94_170-334_starfit-nearsky_tn.png"/>
+</li></ol>
+<h3> Annulus subtraction difficulties: </h3>
+<ol>
+<li> Overlay of subtractions in the 4 directions from the star in HST3 (single-pixel) <br/>
+<img alt="differences in 4 directions from HST3" name="hst3_4directionssub" onclick="toggle('hst3_4directionssub','hst3_4directionssub_tn.png','hst3_4directionssub.png')" src="images/orion/thumbs/hst3_4directionssub_tn.png" title="differences in 4 directions from HST3"/>
+</li><li> Overlay of subtractions in opposite directions of [OW94] 170-334 to display a gradient <br/>
+<img alt="differences in opposite directions from 170-334: demonstrates non-real gradient" name="ow94_170-334_gradientdemo1" onclick="toggle('ow94_170-334_gradientdemo1','ow94_170-334_gradientdemo1_tn.png','ow94_170-334_gradientdemo1.png')" src="images/orion/thumbs/ow94_170-334_gradientdemo1_tn.png" title="differences in opposite directions from 170-334: demonstrates non-real gradient"/>
+</li><li> Overlay of subtractions in the other opposite directions of [OW94] 170-334 to display a different gradient <br/>
+<img alt="differences in opposite directions from 170-334: demonstrates non-real gradient" name="ow94_170-334_gradientdemo2" onclick="toggle('ow94_170-334_gradientdemo2','ow94_170-334_gradientdemo2_tn.png','ow94_170-334_gradientdemo2.png')" src="images/orion/thumbs/ow94_170-334_gradientdemo2_tn.png" title="differences in opposite directions from 170-334: demonstrates non-real gradient"/>
+</li></ol>
     The flux in the annulus is obviously not consistent, which leads to problems.
 
 
         <h3> Different approach for HST3</h3>
-    </center>
+    
         Spectra, in order: 
         <ol>
-            <li> 25 points centered on star
-            <li> 25 points minus a reference point
-            <li> 25 points minus said reference point scaled to match maximum
-        </ol>
+<li> 25 points centered on star
+            </li><li> 25 points minus a reference point
+            </li><li> 25 points minus said reference point scaled to match maximum
+        </li></ol>
         Numbers represent pixel positions.
-        <br>
-        <br>
-<img src="images/orion/thumbs/hst3_logy_grid25plot_tn.png" 
-	onclick="toggle('hst3_logy_grid25plot','hst3_logy_grid25plot_tn.png','hst3_logy_grid25plot.png')" 
-        name="hst3_logy_grid25plot"
-        title="25 points">
-<img src="images/orion/thumbs/hst3_logy_grid25_sub720,677_tn.png" 
-	onclick="toggle('hst3_logy_grid25_sub720,677','hst3_logy_grid25_sub720,677_tn.png','hst3_logy_grid25_sub720,677.png')" 
-	name="hst3_logy_grid25_sub720,677"
-        title="25 points minus ref">
-<img src="images/orion/thumbs/hst3_logy_grid25_sub720,677_scaled_tn.png" 
-	onclick="toggle('hst3_logy_grid25_sub720,677_scaled','hst3_logy_grid25_sub720,677_scaled_tn.png','hst3_logy_grid25_sub720,677_scaled.png')" 
-	name="hst3_logy_grid25_sub720,677_scaled"
-        title="25 points minus ref scaled">
-        <br>
-<img id="HST3" src="images/orion/thumbs/HST3_joshtargets_grid25_div_tn.png" 
-onclick="toggle('HST3_joshtargets_grid25_div','HST3_joshtargets_grid25_div_tn.png','HST3_joshtargets_grid25_div.png')" 
-name="HST3_joshtargets_grid25_div">
-        <br>
+        <br/>
+<br/>
+<img name="hst3_logy_grid25plot" onclick="toggle('hst3_logy_grid25plot','hst3_logy_grid25plot_tn.png','hst3_logy_grid25plot.png')" src="images/orion/thumbs/hst3_logy_grid25plot_tn.png" title="25 points"/>
+<img name="hst3_logy_grid25_sub720,677" onclick="toggle('hst3_logy_grid25_sub720,677','hst3_logy_grid25_sub720,677_tn.png','hst3_logy_grid25_sub720,677.png')" src="images/orion/thumbs/hst3_logy_grid25_sub720,677_tn.png" title="25 points minus ref"/>
+<img name="hst3_logy_grid25_sub720,677_scaled" onclick="toggle('hst3_logy_grid25_sub720,677_scaled','hst3_logy_grid25_sub720,677_scaled_tn.png','hst3_logy_grid25_sub720,677_scaled.png')" src="images/orion/thumbs/hst3_logy_grid25_sub720,677_scaled_tn.png" title="25 points minus ref scaled"/>
+<br/>
+<img id="HST3" name="HST3_joshtargets_grid25_div" onclick="toggle('HST3_joshtargets_grid25_div','HST3_joshtargets_grid25_div_tn.png','HST3_joshtargets_grid25_div.png')" src="images/orion/thumbs/HST3_joshtargets_grid25_div_tn.png"/>
+<br/>
         Conclusion for HST3: There is emission shifted from the nebular peak, independent of reference point selection (the latter 
         part of the analysis is not shown here)
 
         <h3> Ditto for [OW94] 170-334 </h3>
         Same order as above
-        <br>
-<img src="images/orion/thumbs/ow94_170-334_logy_grid25_tn.png" 
-	onclick="toggle('ow94_170-334_logy_grid25','ow94_170-334_logy_grid25_tn.png','ow94_170-334_logy_grid25.png')" 
-	name="ow94_170-334_logy_grid25"
-        title="25 points">
-<img src="images/orion/thumbs/ow94_170-334_logy_grid25_sub_tn.png" 
-	onclick="toggle('ow94_170-334_logy_grid25_sub','ow94_170-334_logy_grid25_sub_tn.png','ow94_170-334_logy_grid25_sub.png')" 
-	name="ow94_170-334_logy_grid25_sub"
-        title="25 points minus ref">
-<img src="images/orion/thumbs/ow94_170-334_logy_grid25_subscaled_tn.png" 
-	onclick="toggle('ow94_170-334_logy_grid25_subscaled','ow94_170-334_logy_grid25_subscaled_tn.png','ow94_170-334_logy_grid25_subscaled.png')" 
-	name="ow94_170-334_logy_grid25_subscaled"
-        title="25 points minus ref scaled">
-        <br>
-
-        <br>
+        <br/>
+<img name="ow94_170-334_logy_grid25" onclick="toggle('ow94_170-334_logy_grid25','ow94_170-334_logy_grid25_tn.png','ow94_170-334_logy_grid25.png')" src="images/orion/thumbs/ow94_170-334_logy_grid25_tn.png" title="25 points"/>
+<img name="ow94_170-334_logy_grid25_sub" onclick="toggle('ow94_170-334_logy_grid25_sub','ow94_170-334_logy_grid25_sub_tn.png','ow94_170-334_logy_grid25_sub.png')" src="images/orion/thumbs/ow94_170-334_logy_grid25_sub_tn.png" title="25 points minus ref"/>
+<img name="ow94_170-334_logy_grid25_subscaled" onclick="toggle('ow94_170-334_logy_grid25_subscaled','ow94_170-334_logy_grid25_subscaled_tn.png','ow94_170-334_logy_grid25_subscaled.png')" src="images/orion/thumbs/ow94_170-334_logy_grid25_subscaled_tn.png" title="25 points minus ref scaled"/>
+<br/>
+<br/>
         Conclusion for [OW94] 170-334:  Nothing special is observed except the FP "glitch"
-        <br>
-        <br> This is even more evident in the binned versions (not scaled, scaled):<br>
-<img src="images/orion/thumbs/ow94_170-334_binned_logy_grid25_sub_tn.png" 
-	onclick="toggle('ow94_170-334_binned_logy_grid25_sub','ow94_170-334_binned_logy_grid25_sub_tn.png','ow94_170-334_binned_logy_grid25_sub.png')" 
-	name="ow94_170-334_binned_logy_grid25_sub">
-<img src="images/orion/thumbs/ow94_170-334_binned_logy_grid25_subscaled_tn.png" 
-	onclick="toggle('ow94_170-334_binned_logy_grid25_subscaled','ow94_170-334_binned_logy_grid25_subscaled_tn.png','ow94_170-334_binned_logy_grid25_subscaled.png')" 
-	name="ow94_170-334_binned_logy_grid25_subscaled">
-
-        <br>
-        <h3>[OW94] 177-331 - example of probable disk</h3>
-<img src="images/orion/thumbs/ow94_177-331_logy_grid25_tn.png" 
-	onclick="toggle('ow94_177-331_logy_grid25','ow94_177-331_logy_grid25_tn.png','ow94_177-331_logy_grid25.png')" 
-	name="ow94_177-331_logy_grid25">
-<img src="images/orion/thumbs/ow94_177-341_logy_grid25_sub_tn.png" 
-	onclick="toggle('ow94_177-341_logy_grid25_sub','ow94_177-341_logy_grid25_sub_tn.png','ow94_177-341_logy_grid25_sub.png')" 
-	name="ow94_177-341_logy_grid25_sub">
-<img src="images/orion/thumbs/ow94_177-331_logy_grid25_subscaled_tn.png" 
-	onclick="toggle('ow94_177-331_logy_grid25_subscaled','ow94_177-331_logy_grid25_subscaled_tn.png','ow94_177-331_logy_grid25_subscaled.png')" 
-	name="ow94_177-331_logy_grid25_subscaled">
-        <br>
-        <br>
-        <h3>P1888</h3>
-
-<img src="images/orion/thumbs/p1888_logy_grid25_tn.png" 
-	onclick="toggle('p1888_logy_grid25','p1888_logy_grid25_tn.png','p1888_logy_grid25.png')" 
-	name="p1888_logy_grid25">
-<img src="images/orion/thumbs/p1888_logy_grid25_sub_tn.png" 
-	onclick="toggle('p1888_logy_grid25_sub','p1888_logy_grid25_sub_tn.png','p1888_logy_grid25_sub.png')" 
-	name="p1888_logy_grid25_sub">
-<img src="images/orion/thumbs/p1888_logy_grid25_subscaled_tn.png" 
-	onclick="toggle('p1888_logy_grid25_subscaled','p1888_logy_grid25_subscaled_tn.png','p1888_logy_grid25_subscaled.png')" 
-	name="p1888_logy_grid25_subscaled">
-<br>
+        <br/>
+<br/> This is even more evident in the binned versions (not scaled, scaled):<br/>
+<img name="ow94_170-334_binned_logy_grid25_sub" onclick="toggle('ow94_170-334_binned_logy_grid25_sub','ow94_170-334_binned_logy_grid25_sub_tn.png','ow94_170-334_binned_logy_grid25_sub.png')" src="images/orion/thumbs/ow94_170-334_binned_logy_grid25_sub_tn.png"/>
+<img name="ow94_170-334_binned_logy_grid25_subscaled" onclick="toggle('ow94_170-334_binned_logy_grid25_subscaled','ow94_170-334_binned_logy_grid25_subscaled_tn.png','ow94_170-334_binned_logy_grid25_subscaled.png')" src="images/orion/thumbs/ow94_170-334_binned_logy_grid25_subscaled_tn.png"/>
+<br/>
+<h3>[OW94] 177-331 - example of probable disk</h3>
+<img name="ow94_177-331_logy_grid25" onclick="toggle('ow94_177-331_logy_grid25','ow94_177-331_logy_grid25_tn.png','ow94_177-331_logy_grid25.png')" src="images/orion/thumbs/ow94_177-331_logy_grid25_tn.png"/>
+<img name="ow94_177-341_logy_grid25_sub" onclick="toggle('ow94_177-341_logy_grid25_sub','ow94_177-341_logy_grid25_sub_tn.png','ow94_177-341_logy_grid25_sub.png')" src="images/orion/thumbs/ow94_177-341_logy_grid25_sub_tn.png"/>
+<img name="ow94_177-331_logy_grid25_subscaled" onclick="toggle('ow94_177-331_logy_grid25_subscaled','ow94_177-331_logy_grid25_subscaled_tn.png','ow94_177-331_logy_grid25_subscaled.png')" src="images/orion/thumbs/ow94_177-331_logy_grid25_subscaled_tn.png"/>
+<br/>
+<br/>
+<h3>P1888</h3>
+<img name="p1888_logy_grid25" onclick="toggle('p1888_logy_grid25','p1888_logy_grid25_tn.png','p1888_logy_grid25.png')" src="images/orion/thumbs/p1888_logy_grid25_tn.png"/>
+<img name="p1888_logy_grid25_sub" onclick="toggle('p1888_logy_grid25_sub','p1888_logy_grid25_sub_tn.png','p1888_logy_grid25_sub.png')" src="images/orion/thumbs/p1888_logy_grid25_sub_tn.png"/>
+<img name="p1888_logy_grid25_subscaled" onclick="toggle('p1888_logy_grid25_subscaled','p1888_logy_grid25_subscaled_tn.png','p1888_logy_grid25_subscaled.png')" src="images/orion/thumbs/p1888_logy_grid25_subscaled_tn.png"/>
+<br/>
 Binned:
-<br>
-<img src="images/orion/thumbs/p1888_binned_logy_grid25_sub_tn.png" 
-	onclick="toggle('p1888_binned_logy_grid25_sub','p1888_binned_logy_grid25_sub_tn.png','p1888_binned_logy_grid25_sub.png')" 
-	name="p1888_binned_logy_grid25_sub">
-<img src="images/orion/thumbs/p1888_binned_logy_grid25_subscaled_tn.png" 
-	onclick="toggle('p1888_binned_logy_grid25_subscaled','p1888_binned_logy_grid25_subscaled_tn.png','p1888_binned_logy_grid25_subscaled.png')" 
-	name="p1888_binned_logy_grid25_subscaled">
-<br>
-<br>
+<br/>
+<img name="p1888_binned_logy_grid25_sub" onclick="toggle('p1888_binned_logy_grid25_sub','p1888_binned_logy_grid25_sub_tn.png','p1888_binned_logy_grid25_sub.png')" src="images/orion/thumbs/p1888_binned_logy_grid25_sub_tn.png"/>
+<img name="p1888_binned_logy_grid25_subscaled" onclick="toggle('p1888_binned_logy_grid25_subscaled','p1888_binned_logy_grid25_subscaled_tn.png','p1888_binned_logy_grid25_subscaled.png')" src="images/orion/thumbs/p1888_binned_logy_grid25_subscaled_tn.png"/>
+<br/>
+<br/>
 <h3> P1910</h3>
-<img src="images/orion/thumbs/p1910_logy_grid25_tn.png" 
-	onclick="toggle('p1910_logy_grid25','p1910_logy_grid25_tn.png','p1910_logy_grid25.png')" 
-	name="p1910_logy_grid25">
-<img src="images/orion/thumbs/p1910_logy_grid25_sub_tn.png" 
-	onclick="toggle('p1910_logy_grid25_sub','p1910_logy_grid25_sub_tn.png','p1910_logy_grid25_sub.png')" 
-	name="p1910_logy_grid25_sub">
-<img src="images/orion/thumbs/p1910_logy_grid25_subscaled_tn.png" 
-	onclick="toggle('p1910_logy_grid25_subscaled','p1910_logy_grid25_subscaled_tn.png','p1910_logy_grid25_subscaled.png')" 
-	name="p1910_logy_grid25_subscaled">
-
-        <h3> [OW94] 170-337</h3>
-        <br>
+<img name="p1910_logy_grid25" onclick="toggle('p1910_logy_grid25','p1910_logy_grid25_tn.png','p1910_logy_grid25.png')" src="images/orion/thumbs/p1910_logy_grid25_tn.png"/>
+<img name="p1910_logy_grid25_sub" onclick="toggle('p1910_logy_grid25_sub','p1910_logy_grid25_sub_tn.png','p1910_logy_grid25_sub.png')" src="images/orion/thumbs/p1910_logy_grid25_sub_tn.png"/>
+<img name="p1910_logy_grid25_subscaled" onclick="toggle('p1910_logy_grid25_subscaled','p1910_logy_grid25_subscaled_tn.png','p1910_logy_grid25_subscaled.png')" src="images/orion/thumbs/p1910_logy_grid25_subscaled_tn.png"/>
+<h3> [OW94] 170-337</h3>
+<br/>
         The bump around channel 50 is associated with HH 514; its presence is not directly apparent in the image but it is visible
         in the spectra.
-        <br>
-<img src="images/orion/thumbs/ow94_170-337_logy_grid25_tn.png" 
-	onclick="toggle('ow94_170-337_logy_grid25','ow94_170-337_logy_grid25_tn.png','ow94_170-337_logy_grid25.png')" 
-	name="ow94_170-337_logy_grid25">
-<img src="images/orion/thumbs/ow94_170-337_logy_grid25_sub_tn.png" 
-	onclick="toggle('ow94_170-337_logy_grid25_sub','ow94_170-337_logy_grid25_sub_tn.png','ow94_170-337_logy_grid25_sub.png')" 
-	name="ow94_170-337_logy_grid25_sub">
-<img src="images/orion/thumbs/ow94_170-337_logy_grid25_subscaled_tn.png" 
-	onclick="toggle('ow94_170-337_logy_grid25_subscaled','ow94_170-337_logy_grid25_subscaled_tn.png','ow94_170-337_logy_grid25_subscaled.png')" 
-	name="ow94_170-337_logy_grid25_subscaled">
-        <br>
-        <br>
-        <h2> Another Different Approach </h2>
+        <br/>
+<img name="ow94_170-337_logy_grid25" onclick="toggle('ow94_170-337_logy_grid25','ow94_170-337_logy_grid25_tn.png','ow94_170-337_logy_grid25.png')" src="images/orion/thumbs/ow94_170-337_logy_grid25_tn.png"/>
+<img name="ow94_170-337_logy_grid25_sub" onclick="toggle('ow94_170-337_logy_grid25_sub','ow94_170-337_logy_grid25_sub_tn.png','ow94_170-337_logy_grid25_sub.png')" src="images/orion/thumbs/ow94_170-337_logy_grid25_sub_tn.png"/>
+<img name="ow94_170-337_logy_grid25_subscaled" onclick="toggle('ow94_170-337_logy_grid25_subscaled','ow94_170-337_logy_grid25_subscaled_tn.png','ow94_170-337_logy_grid25_subscaled.png')" src="images/orion/thumbs/ow94_170-337_logy_grid25_subscaled_tn.png"/>
+<br/>
+<br/>
+<h2> Another Different Approach </h2>
         The sources selected below are those Josh extracted apertures for.
-        <br> The most interesting common feature is a red excess in nearly all stars.
-        <br> Plotted are the ratios between the central star and its surrounding aperture.  I think the ratio is a better measure than the difference.
-        <br> The grid plots are the central 25 points around the star center divided by each corner at a distance of 3 pixels in the x and 
+        <br/> The most interesting common feature is a red excess in nearly all stars.
+        <br/> Plotted are the ratios between the central star and its surrounding aperture.  I think the ratio is a better measure than the difference.
+        <br/> The grid plots are the central 25 points around the star center divided by each corner at a distance of 3 pixels in the x and 
         y directions.  These show whether the points within the aperture are likely to be consistent.
-        <br> Potentially interesting sources:
+        <br/> Potentially interesting sources:
         <ol>
-            <li> <a href="#thetah">Theta H</a> - possible symmetric excess
-            <li> <a href="#lv6">LV 6</a> - maybe some excess if you squint
-        </ol>
+<li> <a href="#thetah">Theta H</a> - possible symmetric excess
+            </li><li> <a href="#lv6">LV 6</a> - maybe some excess if you squint
+        </li></ol>
 <h3>tet01 Ori A</h3>
-<img src="images/orion/thumbs/joshtargetsplus_0_div.tet01_Ori_A_tn.png" 
-onclick="toggle('tet01_Ori_A','joshtargetsplus_0_div.tet01_Ori_A_tn.png','joshtargetsplus_0_div.tet01_Ori_A.png')" 
-name="tet01_Ori_A">
-<img id="OriA" src="images/orion/thumbs/OriA_joshtargets_grid25_div_tn.png" 
-onclick="toggle('OriA_joshtargets_grid25_div','OriA_joshtargets_grid25_div_tn.png','OriA_joshtargets_grid25_div.png')" 
-name="OriA_joshtargets_grid25_div">
+<img name="tet01_Ori_A" onclick="toggle('tet01_Ori_A','joshtargetsplus_0_div.tet01_Ori_A_tn.png','joshtargetsplus_0_div.tet01_Ori_A.png')" src="images/orion/thumbs/joshtargetsplus_0_div.tet01_Ori_A_tn.png"/>
+<img id="OriA" name="OriA_joshtargets_grid25_div" onclick="toggle('OriA_joshtargets_grid25_div','OriA_joshtargets_grid25_div_tn.png','OriA_joshtargets_grid25_div.png')" src="images/orion/thumbs/OriA_joshtargets_grid25_div_tn.png"/>
 <h3 id="lv6">LV 6 or [OW94] 158-327</h3>
-<img src="images/orion/thumbs/joshtargetsplus_10_div.LV_6_or_[OW94]_158-327_tn.png" 
-onclick="toggle('LV_6_or_[OW94]_158-327','joshtargetsplus_10_div.LV_6_or_[OW94]_158-327_tn.png','joshtargetsplus_10_div.LV_6_or_[OW94]_158-327.png')" 
-name="LV_6_or_[OW94]_158-327">
-<img id="LV6" src="images/orion/thumbs/LV6_joshtargets_grid25_div_tn.png" 
-onclick="toggle('LV6_joshtargets_grid25_div','LV6_joshtargets_grid25_div_tn.png','LV6_joshtargets_grid25_div.png')" 
-name="LV6_joshtargets_grid25_div">
+<img name="LV_6_or_[OW94]_158-327" onclick="toggle('LV_6_or_[OW94]_158-327','joshtargetsplus_10_div.LV_6_or_[OW94]_158-327_tn.png','joshtargetsplus_10_div.LV_6_or_[OW94]_158-327.png')" src="images/orion/thumbs/joshtargetsplus_10_div.LV_6_or_[OW94]_158-327_tn.png"/>
+<img id="LV6" name="LV6_joshtargets_grid25_div" onclick="toggle('LV6_joshtargets_grid25_div','LV6_joshtargets_grid25_div_tn.png','LV6_joshtargets_grid25_div.png')" src="images/orion/thumbs/LV6_joshtargets_grid25_div_tn.png"/>
 <h3>tet01 Ori C or P1891</h3>
-<img src="images/orion/thumbs/joshtargetsplus_11_div.tet01_Ori_C_or_P1891_or_etc._tn.png" 
-onclick="toggle('tet01_Ori_C_or_P1891_or_etc','joshtargetsplus_11_div.tet01_Ori_C_or_P1891_or_etc._tn.png','joshtargetsplus_11_div.tet01_Ori_C_or_P1891_or_etc..png')" 
-name="tet01_Ori_C_or_P1891_or_etc">
-<img id="OriC" src="images/orion/thumbs/OriC_joshtargets_grid25_div_tn.png" 
-onclick="toggle('OriC_joshtargets_grid25_div','OriC_joshtargets_grid25_div_tn.png','OriC_joshtargets_grid25_div.png')" 
-name="OriC_joshtargets_grid25_div">
+<img name="tet01_Ori_C_or_P1891_or_etc" onclick="toggle('tet01_Ori_C_or_P1891_or_etc','joshtargetsplus_11_div.tet01_Ori_C_or_P1891_or_etc._tn.png','joshtargetsplus_11_div.tet01_Ori_C_or_P1891_or_etc..png')" src="images/orion/thumbs/joshtargetsplus_11_div.tet01_Ori_C_or_P1891_or_etc._tn.png"/>
+<img id="OriC" name="OriC_joshtargets_grid25_div" onclick="toggle('OriC_joshtargets_grid25_div','OriC_joshtargets_grid25_div_tn.png','OriC_joshtargets_grid25_div.png')" src="images/orion/thumbs/OriC_joshtargets_grid25_div_tn.png"/>
 <h3>[OW94] 182-336</h3>
-<img src="images/orion/thumbs/joshtargetsplus_12_div.[OW94]_182-336_tn.png" 
-onclick="toggle('[OW94]_182-336','joshtargetsplus_12_div.[OW94]_182-336_tn.png','joshtargetsplus_12_div.[OW94]_182-336.png')" 
-name="[OW94]_182-336">
-<img id="182-336" src="images/orion/thumbs/182-336_joshtargets_grid25_div_tn.png" 
-onclick="toggle('182-336_joshtargets_grid25_div','182-336_joshtargets_grid25_div_tn.png','182-336_joshtargets_grid25_div.png')" 
-name="182-336_joshtargets_grid25_div">
+<img name="[OW94]_182-336" onclick="toggle('[OW94]_182-336','joshtargetsplus_12_div.[OW94]_182-336_tn.png','joshtargetsplus_12_div.[OW94]_182-336.png')" src="images/orion/thumbs/joshtargetsplus_12_div.[OW94]_182-336_tn.png"/>
+<img id="182-336" name="182-336_joshtargets_grid25_div" onclick="toggle('182-336_joshtargets_grid25_div','182-336_joshtargets_grid25_div_tn.png','182-336_joshtargets_grid25_div.png')" src="images/orion/thumbs/182-336_joshtargets_grid25_div_tn.png"/>
 <h3>[OW94] 179-246 or MT Ori or P 1910</h3>
-<img src="images/orion/thumbs/joshtargetsplus_13_div.[OW94]_179-246_or_MT_Ori_or_P_1910_tn.png" 
-onclick="toggle('[OW94]_179-246_or_MT_Ori_or_P_1910','joshtargetsplus_13_div.[OW94]_179-246_or_MT_Ori_or_P_1910_tn.png','joshtargetsplus_13_div.[OW94]_179-246_or_MT_Ori_or_P_1910.png')" 
-name="[OW94]_179-246_or_MT_Ori_or_P_1910">
-<img id="MTOri" src="images/orion/thumbs/MTOri_joshtargets_grid25_div_tn.png" 
-onclick="toggle('MTOri_joshtargets_grid25_div','MTOri_joshtargets_grid25_div_tn.png','MTOri_joshtargets_grid25_div.png')" 
-name="MTOri_joshtargets_grid25_div">
-
+<img name="[OW94]_179-246_or_MT_Ori_or_P_1910" onclick="toggle('[OW94]_179-246_or_MT_Ori_or_P_1910','joshtargetsplus_13_div.[OW94]_179-246_or_MT_Ori_or_P_1910_tn.png','joshtargetsplus_13_div.[OW94]_179-246_or_MT_Ori_or_P_1910.png')" src="images/orion/thumbs/joshtargetsplus_13_div.[OW94]_179-246_or_MT_Ori_or_P_1910_tn.png"/>
+<img id="MTOri" name="MTOri_joshtargets_grid25_div" onclick="toggle('MTOri_joshtargets_grid25_div','MTOri_joshtargets_grid25_div_tn.png','MTOri_joshtargets_grid25_div.png')" src="images/orion/thumbs/MTOri_joshtargets_grid25_div_tn.png"/>
 <!--<h3>[OW94] 164-403 or P 1895</h3>
 <img src="images/orion/thumbs/joshtargetsplus_15_div.[OW94]_164-403_or_P_1895_tn.png" 
 onclick="toggle('[OW94]_164-403_or_P_1895','joshtargetsplus_15_div.[OW94]_164-403_or_P_1895_tn.png','joshtargetsplus_15_div.[OW94]_164-403_or_P_1895.png')" 
 name="[OW94]_164-403_or_P_1895">-->
-
 <h3>[OW94] 107-345 or P 1784 or LQ Ori</h3>
-<img src="images/orion/thumbs/joshtargetsplus_16_div.[OW94]_107-345_or_P_1784_or_LQ_Ori_tn.png" 
-onclick="toggle('[OW94]_107-345_or_P_1784_or_LQ_Ori','joshtargetsplus_16_div.[OW94]_107-345_or_P_1784_or_LQ_Ori_tn.png','joshtargetsplus_16_div.[OW94]_107-345_or_P_1784_or_LQ_Ori.png')" 
-name="[OW94]_107-345_or_P_1784_or_LQ_Ori">
-<img id="LQOri" src="images/orion/thumbs/LQOri_joshtargets_grid25_div_tn.png" 
-onclick="toggle('LQOri_joshtargets_grid25_div','LQOri_joshtargets_grid25_div_tn.png','LQOri_joshtargets_grid25_div.png')" 
-name="LQOri_joshtargets_grid25_div">
+<img name="[OW94]_107-345_or_P_1784_or_LQ_Ori" onclick="toggle('[OW94]_107-345_or_P_1784_or_LQ_Ori','joshtargetsplus_16_div.[OW94]_107-345_or_P_1784_or_LQ_Ori_tn.png','joshtargetsplus_16_div.[OW94]_107-345_or_P_1784_or_LQ_Ori.png')" src="images/orion/thumbs/joshtargetsplus_16_div.[OW94]_107-345_or_P_1784_or_LQ_Ori_tn.png"/>
+<img id="LQOri" name="LQOri_joshtargets_grid25_div" onclick="toggle('LQOri_joshtargets_grid25_div','LQOri_joshtargets_grid25_div_tn.png','LQOri_joshtargets_grid25_div.png')" src="images/orion/thumbs/LQOri_joshtargets_grid25_div_tn.png"/>
 <h3>[OW94] 056-519 or P 1746 or LL Ori</h3>
-<img src="images/orion/thumbs/joshtargetsplus_17_div.[OW94]_056-519_or_P_1746_or_LL_Ori_tn.png" 
-onclick="toggle('[OW94]_056-519_or_P_1746_or_LL_Ori','joshtargetsplus_17_div.[OW94]_056-519_or_P_1746_or_LL_Ori_tn.png','joshtargetsplus_17_div.[OW94]_056-519_or_P_1746_or_LL_Ori.png')" 
-name="[OW94]_056-519_or_P_1746_or_LL_Ori">
-<img id="LLOri" src="images/orion/thumbs/LLOri_joshtargets_grid25_div_tn.png" 
-onclick="toggle('LLOri_joshtargets_grid25_div','LLOri_joshtargets_grid25_div_tn.png','LLOri_joshtargets_grid25_div.png')" 
-name="LLOri_joshtargets_grid25_div">
+<img name="[OW94]_056-519_or_P_1746_or_LL_Ori" onclick="toggle('[OW94]_056-519_or_P_1746_or_LL_Ori','joshtargetsplus_17_div.[OW94]_056-519_or_P_1746_or_LL_Ori_tn.png','joshtargetsplus_17_div.[OW94]_056-519_or_P_1746_or_LL_Ori.png')" src="images/orion/thumbs/joshtargetsplus_17_div.[OW94]_056-519_or_P_1746_or_LL_Ori_tn.png"/>
+<img id="LLOri" name="LLOri_joshtargets_grid25_div" onclick="toggle('LLOri_joshtargets_grid25_div','LLOri_joshtargets_grid25_div_tn.png','LLOri_joshtargets_grid25_div.png')" src="images/orion/thumbs/LLOri_joshtargets_grid25_div_tn.png"/>
 <h3 id="thetah">tet01 Ori H or LV 5</h3>
-<img src="images/orion/thumbs/joshtargetsplus_1_div.tet01_Ori_H_or_LV_5_tn.png" 
-onclick="toggle('tet01_Ori_H_or_LV_5','joshtargetsplus_1_div.tet01_Ori_H_or_LV_5_tn.png','joshtargetsplus_1_div.tet01_Ori_H_or_LV_5.png')" 
-name="tet01_Ori_H_or_LV_5">
-<img id="OriH" src="images/orion/thumbs/OriH_joshtargets_grid25_div_tn.png" 
-onclick="toggle('OriH_joshtargets_grid25_div','OriH_joshtargets_grid25_div_tn.png','OriH_joshtargets_grid25_div.png')" 
-name="OriH_joshtargets_grid25_div">
+<img name="tet01_Ori_H_or_LV_5" onclick="toggle('tet01_Ori_H_or_LV_5','joshtargetsplus_1_div.tet01_Ori_H_or_LV_5_tn.png','joshtargetsplus_1_div.tet01_Ori_H_or_LV_5.png')" src="images/orion/thumbs/joshtargetsplus_1_div.tet01_Ori_H_or_LV_5_tn.png"/>
+<img id="OriH" name="OriH_joshtargets_grid25_div" onclick="toggle('OriH_joshtargets_grid25_div','OriH_joshtargets_grid25_div_tn.png','OriH_joshtargets_grid25_div.png')" src="images/orion/thumbs/OriH_joshtargets_grid25_div_tn.png"/>
 <h3>tet01 Ori G or LV 2 or P 1890</h3>
-<img src="images/orion/thumbs/joshtargetsplus_2_div.tet01_Ori_G_or_LV_2_or_P_1890_tn.png" 
-onclick="toggle('tet01_Ori_G_or_LV_2_or_P_1890','joshtargetsplus_2_div.tet01_Ori_G_or_LV_2_or_P_1890_tn.png','joshtargetsplus_2_div.tet01_Ori_G_or_LV_2_or_P_1890.png')" 
-name="tet01_Ori_G_or_LV_2_or_P_1890">
-<img id="OriG" src="images/orion/thumbs/OriG_joshtargets_grid25_div_tn.png" 
-onclick="toggle('OriG_joshtargets_grid25_div','OriG_joshtargets_grid25_div_tn.png','OriG_joshtargets_grid25_div.png')" 
-name="OriG_joshtargets_grid25_div">
+<img name="tet01_Ori_G_or_LV_2_or_P_1890" onclick="toggle('tet01_Ori_G_or_LV_2_or_P_1890','joshtargetsplus_2_div.tet01_Ori_G_or_LV_2_or_P_1890_tn.png','joshtargetsplus_2_div.tet01_Ori_G_or_LV_2_or_P_1890.png')" src="images/orion/thumbs/joshtargetsplus_2_div.tet01_Ori_G_or_LV_2_or_P_1890_tn.png"/>
+<img id="OriG" name="OriG_joshtargets_grid25_div" onclick="toggle('OriG_joshtargets_grid25_div','OriG_joshtargets_grid25_div_tn.png','OriG_joshtargets_grid25_div.png')" src="images/orion/thumbs/OriG_joshtargets_grid25_div_tn.png"/>
 <h3>tet01 Ori D or P1889</h3>
-<img src="images/orion/thumbs/joshtargetsplus_3_div.tet01_Ori_D_or_P1889_tn.png" 
-onclick="toggle('tet01_Ori_D_or_P1889','joshtargetsplus_3_div.tet01_Ori_D_or_P1889_tn.png','joshtargetsplus_3_div.tet01_Ori_D_or_P1889.png')" 
-name="tet01_Ori_D_or_P1889">
-<img id="OriD" src="images/orion/thumbs/OriD_joshtargets_grid25_div_tn.png" 
-onclick="toggle('OriD_joshtargets_grid25_div','OriD_joshtargets_grid25_div_tn.png','OriD_joshtargets_grid25_div.png')" 
-name="OriD_joshtargets_grid25_div">
+<img name="tet01_Ori_D_or_P1889" onclick="toggle('tet01_Ori_D_or_P1889','joshtargetsplus_3_div.tet01_Ori_D_or_P1889_tn.png','joshtargetsplus_3_div.tet01_Ori_D_or_P1889.png')" src="images/orion/thumbs/joshtargetsplus_3_div.tet01_Ori_D_or_P1889_tn.png"/>
+<img id="OriD" name="OriD_joshtargets_grid25_div" onclick="toggle('OriD_joshtargets_grid25_div','OriD_joshtargets_grid25_div_tn.png','OriD_joshtargets_grid25_div.png')" src="images/orion/thumbs/OriD_joshtargets_grid25_div_tn.png"/>
 <h3>tet01 Ori B</h3>
-<img src="images/orion/thumbs/joshtargetsplus_4_div.tet01_Ori_B_tn.png" 
-onclick="toggle('tet01_Ori_B','joshtargetsplus_4_div.tet01_Ori_B_tn.png','joshtargetsplus_4_div.tet01_Ori_B.png')" 
-name="tet01_Ori_B">
-<img id="OriB" src="images/orion/thumbs/OriB_joshtargets_grid25_div_tn.png" 
-onclick="toggle('OriB_joshtargets_grid25_div','OriB_joshtargets_grid25_div_tn.png','OriB_joshtargets_grid25_div.png')" 
-name="OriB_joshtargets_grid25_div">
-
+<img name="tet01_Ori_B" onclick="toggle('tet01_Ori_B','joshtargetsplus_4_div.tet01_Ori_B_tn.png','joshtargetsplus_4_div.tet01_Ori_B.png')" src="images/orion/thumbs/joshtargetsplus_4_div.tet01_Ori_B_tn.png"/>
+<img id="OriB" name="OriB_joshtargets_grid25_div" onclick="toggle('OriB_joshtargets_grid25_div','OriB_joshtargets_grid25_div_tn.png','OriB_joshtargets_grid25_div.png')" src="images/orion/thumbs/OriB_joshtargets_grid25_div_tn.png"/>
 <h3>P1891 or [OW94] 171-334</h3>
-<img src="images/orion/thumbs/joshtargetsplus_5_div.P1891_or_[OW94]_171-334_tn.png" 
-onclick="toggle('P1891_or_[OW94]_171-334','joshtargetsplus_5_div.P1891_or_[OW94]_171-334_tn.png','joshtargetsplus_5_div.P1891_or_[OW94]_171-334.png')" 
-name="P1891_or_[OW94]_171-334">
-<img id="P1891" src="images/orion/thumbs/P1891_joshtargets_grid25_div_tn.png" 
-onclick="toggle('P1891_joshtargets_grid25_div','P1891_joshtargets_grid25_div_tn.png','P1891_joshtargets_grid25_div.png')" 
-name="P1891_joshtargets_grid25_div">
-<img id="170-334" src="images/orion/thumbs/170-334_joshtargets_grid25_div_tn.png" 
-onclick="toggle('170-334_joshtargets_grid25_div','170-334_joshtargets_grid25_div_tn.png','170-334_joshtargets_grid25_div.png')" 
-name="170-334_joshtargets_grid25_div">
-
+<img name="P1891_or_[OW94]_171-334" onclick="toggle('P1891_or_[OW94]_171-334','joshtargetsplus_5_div.P1891_or_[OW94]_171-334_tn.png','joshtargetsplus_5_div.P1891_or_[OW94]_171-334.png')" src="images/orion/thumbs/joshtargetsplus_5_div.P1891_or_[OW94]_171-334_tn.png"/>
+<img id="P1891" name="P1891_joshtargets_grid25_div" onclick="toggle('P1891_joshtargets_grid25_div','P1891_joshtargets_grid25_div_tn.png','P1891_joshtargets_grid25_div.png')" src="images/orion/thumbs/P1891_joshtargets_grid25_div_tn.png"/>
+<img id="170-334" name="170-334_joshtargets_grid25_div" onclick="toggle('170-334_joshtargets_grid25_div','170-334_joshtargets_grid25_div_tn.png','170-334_joshtargets_grid25_div.png')" src="images/orion/thumbs/170-334_joshtargets_grid25_div_tn.png"/>
 <h3>P 1940 or [OW94] 197-427</h3>
-<img src="images/orion/thumbs/joshtargetsplus_6_div.P_1940_or_[OW94]_197-427_tn.png" 
-onclick="toggle('P_1940_or_[OW94]_197-427','joshtargetsplus_6_div.P_1940_or_[OW94]_197-427_tn.png','joshtargetsplus_6_div.P_1940_or_[OW94]_197-427.png')" 
-name="P_1940_or_[OW94]_197-427">
-<img id="P1940" src="images/orion/thumbs/P1940_joshtargets_grid25_div_tn.png" 
-onclick="toggle('P1940_joshtargets_grid25_div','P1940_joshtargets_grid25_div_tn.png','P1940_joshtargets_grid25_div.png')" 
-name="P1940_joshtargets_grid25_div">
-
+<img name="P_1940_or_[OW94]_197-427" onclick="toggle('P_1940_or_[OW94]_197-427','joshtargetsplus_6_div.P_1940_or_[OW94]_197-427_tn.png','joshtargetsplus_6_div.P_1940_or_[OW94]_197-427.png')" src="images/orion/thumbs/joshtargetsplus_6_div.P_1940_or_[OW94]_197-427_tn.png"/>
+<img id="P1940" name="P1940_joshtargets_grid25_div" onclick="toggle('P1940_joshtargets_grid25_div','P1940_joshtargets_grid25_div_tn.png','P1940_joshtargets_grid25_div.png')" src="images/orion/thumbs/P1940_joshtargets_grid25_div_tn.png"/>
 <h3>P 1895 or [OW94] 164-403</h3>
-<img src="images/orion/thumbs/joshtargetsplus_7_div.P_1895_or_[OW94]_164-403_tn.png" 
-onclick="toggle('P_1895_or_[OW94]_164-403','joshtargetsplus_7_div.P_1895_or_[OW94]_164-403_tn.png','joshtargetsplus_7_div.P_1895_or_[OW94]_164-403.png')" 
-name="P_1895_or_[OW94]_164-403">
-<img id="P1895" src="images/orion/thumbs/P1895_joshtargets_grid25_div_tn.png" 
-onclick="toggle('P1895_joshtargets_grid25_div','P1895_joshtargets_grid25_div_tn.png','P1895_joshtargets_grid25_div.png')" 
-name="P1895_joshtargets_grid25_div">
-
+<img name="P_1895_or_[OW94]_164-403" onclick="toggle('P_1895_or_[OW94]_164-403','joshtargetsplus_7_div.P_1895_or_[OW94]_164-403_tn.png','joshtargetsplus_7_div.P_1895_or_[OW94]_164-403.png')" src="images/orion/thumbs/joshtargetsplus_7_div.P_1895_or_[OW94]_164-403_tn.png"/>
+<img id="P1895" name="P1895_joshtargets_grid25_div" onclick="toggle('P1895_joshtargets_grid25_div','P1895_joshtargets_grid25_div_tn.png','P1895_joshtargets_grid25_div.png')" src="images/orion/thumbs/P1895_joshtargets_grid25_div_tn.png"/>
 <h3>P1866 / [OW94] 157-323</h3>
-<img id="P1866" src="images/orion/thumbs/P1866_joshtargets_grid25_div_tn.png" 
-onclick="toggle('P1866_joshtargets_grid25_div','P1866_joshtargets_grid25_div_tn.png','P1866_joshtargets_grid25_div.png')" 
-name="P1866_joshtargets_grid25_div">
-
-
+<img id="P1866" name="P1866_joshtargets_grid25_div" onclick="toggle('P1866_joshtargets_grid25_div','P1866_joshtargets_grid25_div_tn.png','P1866_joshtargets_grid25_div.png')" src="images/orion/thumbs/P1866_joshtargets_grid25_div_tn.png"/>
 <h3>P1896 / [OW94] 168-404 </h3>
-<img id="P1896" src="images/orion/thumbs/P1896_joshtargets_grid25_div_tn.png" 
-onclick="toggle('P1896_joshtargets_grid25_div','P1896_joshtargets_grid25_div_tn.png','P1896_joshtargets_grid25_div.png')" 
-name="P1896_joshtargets_grid25_div">
-
-
-
-
+<img id="P1896" name="P1896_joshtargets_grid25_div" onclick="toggle('P1896_joshtargets_grid25_div','P1896_joshtargets_grid25_div_tn.png','P1896_joshtargets_grid25_div.png')" src="images/orion/thumbs/P1896_joshtargets_grid25_div_tn.png"/>
 <!--
 221,235s/\(.*\)\.\(.*\)\(.png\)/<h3>\2<\/h3>\r<img src="images\/orion\/thumbs\/\1.\2 tn.png" \ronclick="toggle('\2','\1.\2 tn.png','\1.\2.png')" \rname="\2">/ 
     -->
-
-<br>
-<br>
-</center>
-
-
-<br><br><hr><br>
+<br/>
+<br/>
+<br/><br/><hr/><br/>
 </td></tr></table>
-
-<br>
+<br/>
 <center>
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-
-</body>
-
-</html>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</center></center></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

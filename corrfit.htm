@@ -1,24 +1,14 @@
-<html>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link href="prettify.css" type="text/css" rel="stylesheet">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<script type="text/javascript" src="prettify.js"></script>
-<title> IDL codes </title>
-<body onload="prettyPrint()"> 
-    <?php
-$page="idl.htm";
-    include 'tracker.php';?>
-<head><h1><center> Cross-correlation alignment </center></h1></head>
-<br>
-<table align="center" width=800><tr><td>
+<html><head><link href="style.css" rel="stylesheet" type="text/css"/><link href="prettify.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><script src="prettify.js" type="text/javascript"></script><title> IDL codes </title></head><body onload="prettyPrint()">
+<h1><center> Cross-correlation alignment </center></h1>
+<br/>
+<table align="center" width="800"><tr><td>
 The problem of aligning images is common in astronomy.  In optical and near-IR
 images, it is best to fit the positions of individual point sources and then
 fit the offsets (and rotations) of those positions.  In millimeter and radio
 astronomy point sources are far too rare and rarely pointlike with modern
 telescopes.  
-<br>
-<br> For millimeter work, specifically the <a
-href="http://milkyway.colorado.edu/~jaguirre/index.html" class="norm">Bolocam
+<br/>
+<br/> For millimeter work, specifically the <a class="norm" href="http://milkyway.colorado.edu/~jaguirre/index.html">Bolocam
 Galactic Plane Survey</a>, morphology matching can be used to find the correct
 alignment with a two-dimensional cross-correlation.  The code below does this
 given an input FITS-style header and image.  It is optimized for BGPS images but
@@ -243,8 +233,6 @@ pro pixshift, master, image, hd1=hd1, hd2=hd2, xoff = xoff, yoff = yoff, maxoff 
 end
 
 </pre>
-
-<hr>
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
-</body>
-</html>
+<hr/>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
+</td></tr></table></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>

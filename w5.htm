@@ -1,18 +1,5 @@
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<meta name="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/gif" href="favicon8.ico">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>W5</title>
-</head>
-<?php 
-$page="w5.htm";
-include 'tracker.php';?>
-<script language="javascript">
-<!--
+<html><head><meta content="en-us" http-equiv="Content-Language"/><meta content="NOINDEX, NOFOLLOW" name="ROBOTS"/><link href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>W5</title></head><head><script language="javascript">
+&lt;!--
 function click(imname,imsrc) {
     document[imname].onclick = "click2(" + imname + "," + document[imname].src + ")";
     document[imname].src = imsrc;
@@ -31,15 +18,13 @@ function toggle_w5(myself,first,second) {
     var re = new RegExp(first)
     document[myself].src =  (document[myself].src.match(re)) ? "images/w5/" + second : "images/w5/thumbs/" + first;
 }
-    -->
-</script>
-
-<center>
+    --&gt;
+</script></head><body><center>
 <h1> W5 </h1>
 </center>
-<table align="center" width=800><tr><td>
-<br><br><hr>
-<br>
+<table align="center" width="800"><tr><td>
+<br/><br/><hr/>
+<br/>
 <pre>
 Collaboration:
     University of Colorado:
@@ -52,16 +37,15 @@ Collaboration:
     University of Exeter:
         Chris Brunt
 </pre>
-<br> NOTE:  ALL CO 3-2 values were actually already in T_A*, I double-corrected them!
-<br>
-<br> <h3> For Chris Beamont / Jonathan Williams August 2008: </h3>
-     <a class="norm" href="Astronomy/w5/W345.xml">JCMT OT .xml file list of W3/4/5 target regions </a>
-<br> <a class="norm" href="Astronomy/w5/w345_jcmt_targets_080108.reg">DS9 .reg file list of W3/4/5 target regions </a>
-<br>
-
-<br> <h3> "The Fish" </h3>
+<br/> NOTE:  ALL CO 3-2 values were actually already in T_A*, I double-corrected them!
+<br/>
+<br/> <h3> For Chris Beamont / Jonathan Williams August 2008: </h3>
+<a class="norm" href="Astronomy/w5/W345.xml">JCMT OT .xml file list of W3/4/5 target regions </a>
+<br/> <a class="norm" href="Astronomy/w5/w345_jcmt_targets_080108.reg">DS9 .reg file list of W3/4/5 target regions </a>
+<br/>
+<br/> <h3> "The Fish" </h3>
 Does this object need another name?
-<br> <a class="norm" href="Astronomy/w5/fish_draft.pdf">Fish Paper Draft</a>
+<br/> <a class="norm" href="Astronomy/w5/fish_draft.pdf">Fish Paper Draft</a>
 <pre>
 SIMBAD: <a href="http://simbad.u-strasbg.fr/simbad/sim-id?Ident=glmp+33"> GLMP 33 or IRAS 02497+6018 </a>
 Coordinates: 
@@ -104,7 +88,7 @@ Coordinates:
                 n_pix = 79
     
         Size estimate from Gaussian fitting CO 3-2:
-            9.9 x 13.3 arcseconds (1&sigma;)
+            9.9 x 13.3 arcseconds (1σ)
             23.2 x 31.2 FWHM
             Filling factor for FCRAO:
                 1.22 l / D = 46.9 "
@@ -120,11 +104,11 @@ Coordinates:
             ~ 1/3:  tau ~ 30? (assuming 12CO/13CO = 89)
             =.28, tau = 25.05 +/- 6.35
         13 CO / 12 CO in J=2-1:
-            .39, .47 => tau = 35, 42
+            .39, .47 =&gt; tau = 35, 42
         C18O / 13 CO
             C18O ~ 1/12 13CO ~ 10^-3 12CO
-            C18O/12CO range .033-.063 (.049 at peak) -> tau = 33-63
-            C18O/13CO range .085-.15 (.13 at peak)   -> tau(13CO) 1-1.8
+            C18O/12CO range .033-.063 (.049 at peak) -&gt; tau = 33-63
+            C18O/13CO range .085-.15 (.13 at peak)   -&gt; tau(13CO) 1-1.8
         CO 2-1 line width from Gaussian fit:
             .83 km/s (1.96 km/s FWHM)
             .77 km/s (13CO)
@@ -146,15 +130,15 @@ Coordinates:
         Since the mass estimates are apparently within a factor of 2 (IF that last correction is allowed),
             I think they're reasonable and don't show any exceptions to any rules...
     Spitzer:
-        1 MJy/sr = 23.50 &mu;Jy / sq. arcsec
-        1 pixel = 1.245" on a side, 1.55 sq arcsec for 24 &mu;m
-                  1.216" on a side, 1.48 sq arcsec for 4.5 &mu;m
-                  1.223" on a side, 1.50 sq arcsec for 3.6 &mu;m
-        therefore measurement is in units of 36.43 uJy for 24&mu;m, 34.76 for 4.5&mu;m, 35.17 for 3.6&mu;m
-            below, used 23.5 &mu;Jy / sq. arcsec
+        1 MJy/sr = 23.50 μJy / sq. arcsec
+        1 pixel = 1.245" on a side, 1.55 sq arcsec for 24 μm
+                  1.216" on a side, 1.48 sq arcsec for 4.5 μm
+                  1.223" on a side, 1.50 sq arcsec for 3.6 μm
+        therefore measurement is in units of 36.43 uJy for 24μm, 34.76 for 4.5μm, 35.17 for 3.6μm
+            below, used 23.5 μJy / sq. arcsec
             need to multiply by 1.55,1.48,1.50 sq arcsec....
         Whole Fish:
-            24.4" radius -> 1870 sq. arcsec
+            24.4" radius -&gt; 1870 sq. arcsec
         24 um:  
             Star is probably saturated, therefore only a lower limit will be meaningful
             photometry on the MIPS image gives 905362 (units not specified in header, probably MJy/sr)
@@ -192,43 +176,33 @@ Coordinates:
             .83 Jy
     
 </pre>
-<br>
+<br/>
 <pre> 
 Bandpass comparison:
     MSX: <a href="http://irsa.ipac.caltech.edu/applications/MSX/MSX/imageDescriptions.htm">MSX</a> (look at "isophotal bandwidth")        
     IRAS: <a href="http://irsa.ipac.caltech.edu/IRASdocs/iras_mission.html">IRAS</a>
     Spitzer: have to search through the whole documentation
 </pre>
-<br>
-<br> Fish Gaussian fits:
-    <br><img src="images/w5/thumbs/fish_gaussian_tn.png" 
-	onclick="toggle_w5('fish_gaussian','fish_gaussian_tn.png','fish_gaussian.png','images/w5/')" 
-	name="fish_gaussian">
-        <br>    <a class="norm" href="images/w5/fish_gaussian.eps">postscript version</a>
-    <br><img src="images/w5/thumbs/fishspec_tn.png" 
-	onclick="toggle_w5('fishspec','fishspec_tn.png','fishspec.png','images/w5/')" 
-	name="fishspec">
-        <br>    <a class="norm" href="images/w5/fishspec.eps">postscript version</a>
-<br>
-<br> H2 data:
-    <br><img src="images/w5/thumbs/fish_h2_smooth_tn.png" 
-	onclick="toggle_w5('fish_h2_smooth','fish_h2_smooth_tn.png','fish_h2_smooth.png','images/w5/')" 
-	name="fish_h2_smooth">
-        <br><a class="norm" href="images/w5/fish_h2_smooth.fits">.fits file</a>
-<br>
-<br> The Fish in 12 CO, 13 CO, CO 3-2, and CGPS 1420 MHz
-    <br><img src="images/w5/thumbs/fish_compare_radio_tn.png" 
-	onclick="toggle_w5('fish_compare_radio','fish_compare_radio_tn.png','fish_compare_radio.png','images/w5/')" 
-	name="fish_compare_radio">
-
-
-<br>
-<br>  What else needs to be observed? Initial planning for the 2008 JCMT run:
-<br>    -in the "Double Knot" region, more complete 12CO 3-2 coverage is needed (as identified in the below target maps)
-<br>    -may also want to observe some of the "fluffy" structure south of AFGL 4029 IRS 1 - may show up in BGPS, is probably high-excitation
-<br>    -other species (13CO, C180, what else?) in BGPS cores greater than a certain mass
-<br>
-<br>
+<br/>
+<br/> Fish Gaussian fits:
+    <br/><img name="fish_gaussian" onclick="toggle_w5('fish_gaussian','fish_gaussian_tn.png','fish_gaussian.png','images/w5/')" src="images/w5/thumbs/fish_gaussian_tn.png"/>
+<br/> <a class="norm" href="images/w5/fish_gaussian.eps">postscript version</a>
+<br/><img name="fishspec" onclick="toggle_w5('fishspec','fishspec_tn.png','fishspec.png','images/w5/')" src="images/w5/thumbs/fishspec_tn.png"/>
+<br/> <a class="norm" href="images/w5/fishspec.eps">postscript version</a>
+<br/>
+<br/> H2 data:
+    <br/><img name="fish_h2_smooth" onclick="toggle_w5('fish_h2_smooth','fish_h2_smooth_tn.png','fish_h2_smooth.png','images/w5/')" src="images/w5/thumbs/fish_h2_smooth_tn.png"/>
+<br/><a class="norm" href="images/w5/fish_h2_smooth.fits">.fits file</a>
+<br/>
+<br/> The Fish in 12 CO, 13 CO, CO 3-2, and CGPS 1420 MHz
+    <br/><img name="fish_compare_radio" onclick="toggle_w5('fish_compare_radio','fish_compare_radio_tn.png','fish_compare_radio.png','images/w5/')" src="images/w5/thumbs/fish_compare_radio_tn.png"/>
+<br/>
+<br/>  What else needs to be observed? Initial planning for the 2008 JCMT run:
+<br/>    -in the "Double Knot" region, more complete 12CO 3-2 coverage is needed (as identified in the below target maps)
+<br/>    -may also want to observe some of the "fluffy" structure south of AFGL 4029 IRS 1 - may show up in BGPS, is probably high-excitation
+<br/>    -other species (13CO, C180, what else?) in BGPS cores greater than a certain mass
+<br/>
+<br/>
 <pre> 
 Antenna properties for Jan 2008 run at JCMT:
     eta_A = .56
@@ -240,192 +214,112 @@ Antenna properties for Jan 2008 run at JCMT:
         <a href="docs.jach.hawaii.edu/JCMT/OVERVIEW/tel_overview/">docs.jach.hawaii.edu/JCMT/OVERVIEW/tel_overview</a>
         <a href="docs.jach.hawaii.edu/JCMT/spectral_line/General/status.html">docs.jach.hawaii.edu/JCMT/spectral_line/General/status.html</a>
         </pre>
-<br>
-<br>
+<br/>
+<br/>
     For Jonathan Williams:
     <dl>
-        <dd><a class="norm" href="images/w5/W34524umtargets.ps">W34524umtargets.ps</a>
-        <dd><a class="norm" href="images/w5/W345COtargets.ps">W345COtargets.ps</a>
-        <dd><a class="norm" href="images/w5/W524ummap.ps">W524ummap.ps</a>
-        <dd><a class="norm" href="images/w5/W5CO1-0map.ps">W5CO1-0map.ps</a>
-        <dd><a class="norm" href="images/w5/W5CO3-2coverage.ps">W5CO3-2coverage.ps</a>
-        <dd><br>
-        <dd><a class="norm" href="images/w5/w5dragon_color.1.ps">"Dragon" in color with overlays (vers 1)</a> [OLD]
+<dd><a class="norm" href="images/w5/W34524umtargets.ps">W34524umtargets.ps</a>
+<dd><a class="norm" href="images/w5/W345COtargets.ps">W345COtargets.ps</a>
+<dd><a class="norm" href="images/w5/W524ummap.ps">W524ummap.ps</a>
+<dd><a class="norm" href="images/w5/W5CO1-0map.ps">W5CO1-0map.ps</a>
+<dd><a class="norm" href="images/w5/W5CO3-2coverage.ps">W5CO3-2coverage.ps</a>
+<dd><br/>
+<dd><a class="norm" href="images/w5/w5dragon_color.1.ps">"Dragon" in color with overlays (vers 1)</a> [OLD]
         <dd><a class="norm" href="images/w5/w5dragon_color.2.ps">"Dragon" in color with overlays (vers 2)</a> [OLD]
         <dd><a class="norm" href="images/w5/w5dragon_color.3.ps">"Dragon" in color (no contours)</a>
-        <dd><a class="norm" href="images/w5/w345cotargets2.ps">w345cotargets2.ps</a>
-        <dd><a class="norm" href="images/w5/w345targets+obs.ps">Targets + Observed Regions over CO 1-0</a>
-    </dl>
-    <br><br><hr>
+<dd><a class="norm" href="images/w5/w345cotargets2.ps">w345cotargets2.ps</a>
+<dd><a class="norm" href="images/w5/w345targets+obs.ps">Targets + Observed Regions over CO 1-0</a>
+</dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dd></dl>
+<br/><br/><hr/>
 
     Outflow / Infall Detection:
-    <br> These first 4 images all contain high velocity components poorly fit by a Gaussian: Infall or outflow? 
-    <br><img src="images/w5/thumbs/outflow_ic1848_tn.png" 
-	onclick="toggle_w5('outflow_ic1848','outflow_ic1848_tn.png','outflow_ic1848.png','images/w5/')" 
-	name="outflow_ic1848">
-    <br><img src="images/w5/thumbs/outflow_ic1848_doublegauss_tn.png" 
-	onclick="toggle_w5('outflow_ic1848_doublegauss','outflow_ic1848_doublegauss_tn.png','outflow_ic1848_doublegauss.png','images/w5/')" 
-	name="outflow_ic1848_doublegauss">
-    <br><img src="images/w5/thumbs/sfo13_small_outflow_tn.png" 
-	onclick="toggle_w5('sfo13_small_outflow','sfo13_small_outflow_tn.png','sfo13_small_outflow.png','images/w5/')" 
-	name="sfo13_small_outflow">
-    <br><img src="images/w5/thumbs/sh2-201_E_outflows_tn.png" 
-	onclick="toggle_w5('sh2-201_E_outflows','sh2-201_E_outflows_tn.png','sh2-201_E_outflows.png','images/w5/')" 
-	name="sh2-201_E_outflows">
-    <br>This set, despite having multiple Gaussian velocity components, does NOT have any outflow / infall signature:
-    <br><img src="images/w5/thumbs/sh2-201_W_no_outflows_tn.png" 
-	onclick="toggle_w5('sh2-201_W_no_outflows','sh2-201_W_no_outflows_tn.png','sh2-201_W_no_outflows.png','images/w5/')" 
-	name="sh2-201_W_no_outflows">
-<br><br><hr>
+    <br/> These first 4 images all contain high velocity components poorly fit by a Gaussian: Infall or outflow? 
+    <br/><img name="outflow_ic1848" onclick="toggle_w5('outflow_ic1848','outflow_ic1848_tn.png','outflow_ic1848.png','images/w5/')" src="images/w5/thumbs/outflow_ic1848_tn.png"/>
+<br/><img name="outflow_ic1848_doublegauss" onclick="toggle_w5('outflow_ic1848_doublegauss','outflow_ic1848_doublegauss_tn.png','outflow_ic1848_doublegauss.png','images/w5/')" src="images/w5/thumbs/outflow_ic1848_doublegauss_tn.png"/>
+<br/><img name="sfo13_small_outflow" onclick="toggle_w5('sfo13_small_outflow','sfo13_small_outflow_tn.png','sfo13_small_outflow.png','images/w5/')" src="images/w5/thumbs/sfo13_small_outflow_tn.png"/>
+<br/><img name="sh2-201_E_outflows" onclick="toggle_w5('sh2-201_E_outflows','sh2-201_E_outflows_tn.png','sh2-201_E_outflows.png','images/w5/')" src="images/w5/thumbs/sh2-201_E_outflows_tn.png"/>
+<br/>This set, despite having multiple Gaussian velocity components, does NOT have any outflow / infall signature:
+    <br/><img name="sh2-201_W_no_outflows" onclick="toggle_w5('sh2-201_W_no_outflows','sh2-201_W_no_outflows_tn.png','sh2-201_W_no_outflows.png','images/w5/')" src="images/w5/thumbs/sh2-201_W_no_outflows_tn.png"/>
+<br/><br/><hr/>
 <h3> AFGL 4029 IRS 1 </h3>
 <pre>
 Centered at coordinates: 
         138.2914 +01.5527
-        <a href="http://simbad.u-strasbg.fr/simbad/sim-id?Ident=%40226043&Name=NAME%20AFGL%204029%20IRS%201">SIMBAD link</a>
+        <a href="http://simbad.u-strasbg.fr/simbad/sim-id?Ident=%40226043&amp;Name=NAME%20AFGL%204029%20IRS%201">SIMBAD link</a>
         Spectra Per Pixel image:
             <a href="images/w5/ic1848.ps">postscript</a>
             <a href="images/w5/ic1848.pdf">PDF</a>
-<img src="images/w5/thumbs/ic1848_tn.png" 
-        onclick="toggle_w5('ic1848','ic1848_tn.png','ic1848.png','images/w5/')" 
-        name="ic1848">
+<img name="ic1848" onclick="toggle_w5('ic1848','ic1848_tn.png','ic1848.png','images/w5/')" src="images/w5/thumbs/ic1848_tn.png"/>
         </pre>
-
-<br><br><hr>
+<br/><br/><hr/>
 <h3> SH 2-201 </h3>
 <pre>
 Centered at coordinates: 
         138.4978 +01.6407
-        <a href="http://simbad.u-strasbg.fr/simbad/sim-id?protocol=html&Ident=sh%202-201">SIMBAD link</a>
+        <a href="http://simbad.u-strasbg.fr/simbad/sim-id?protocol=html&amp;Ident=sh%202-201">SIMBAD link</a>
         Spectra Per Pixel image:
             <a href="images/w5/SH2-201_gal.ps">postscript</a>
             <a href="images/w5/SH2-201_gal.pdf">PDF</a>
-<img src="images/w5/thumbs/SH2-201_gal_tn.png" 
-        onclick="toggle_w5('SH2-201_gal','SH2-201_gal_tn.png','SH2-201_gal.png','images/w5/')" 
-        name="SH2-201_gal">
-<img src="images/w5/thumbs/SH2-201_32_10_tn.png" 
-        onclick="toggle_w5('SH2-201_32_10','SH2-201_32_10_tn.png','SH2-201_32_10.png','images/w5/')" 
-        name="SH2-201_32_10">
+<img name="SH2-201_gal" onclick="toggle_w5('SH2-201_gal','SH2-201_gal_tn.png','SH2-201_gal.png','images/w5/')" src="images/w5/thumbs/SH2-201_gal_tn.png"/>
+<img name="SH2-201_32_10" onclick="toggle_w5('SH2-201_32_10','SH2-201_32_10_tn.png','SH2-201_32_10.png','images/w5/')" src="images/w5/thumbs/SH2-201_32_10_tn.png"/>
         </pre>
-
-<br><br><hr>
-
-<img src="images/jcmt/thumbs/W5_CO_tn.png" 
-	onclick="toggle_jcmt('W5_CO','W5_CO_tn.png','W5_CO.png','images/jcmt/')" 
-	name="W5_CO">
-<img src="images/jcmt/thumbs/W5Regions_on_CO_tn.png" 
-	onclick="toggle_jcmt('W5Regions_on_CO','W5Regions_on_CO_tn.png','W5Regions_on_CO.png','images/jcmt/')" 
-        name="W5Regions_on_CO">
+<br/><br/><hr/>
+<img name="W5_CO" onclick="toggle_jcmt('W5_CO','W5_CO_tn.png','W5_CO.png','images/jcmt/')" src="images/jcmt/thumbs/W5_CO_tn.png"/>
+<img name="W5Regions_on_CO" onclick="toggle_jcmt('W5Regions_on_CO','W5Regions_on_CO_tn.png','W5Regions_on_CO.png','images/jcmt/')" src="images/jcmt/thumbs/W5Regions_on_CO_tn.png"/>
 <h3> W5 SH 2-201 Nebula / Mountains</h3>
-<br>
-<br> Finder charts:
-<br><img src="images/w5/thumbs/w5dss_tn.jpg" 
-	onclick="toggle_w5('w5dss','w5dss_tn.jpg','w5dss.jpg')" 
-	name="w5dss">
-<img src="images/w5/thumbs/w5body_tn.jpg" 
-	onclick="toggle_w5('w5body','w5body_tn.jpg','w5body.jpg')" 
-	name="w5body">
-<img src="images/w5/thumbs/w5head_tn.jpg" 
-	onclick="toggle_w5('w5head','w5head_tn.jpg','w5head.jpg')" 
-	name="w5head">
-<br>
-<br> Fits versions: 
-<br> <a class="norm" href="images/w5/dss_red_w5E.fits"> DSS R-band image of whole field </a>
-<br> <a class="norm" href="images/w5/w5bodyR_comb_wcs.fits"> SBO R-band image  (dragon "body") </a>
-<br> <a class="norm" href="images/w5/w5headR_comb_wcs.fits"> SBO R-band image  (dragon "head") </a>
-<br>
-<br> Why is it a dragon?
-<br><img src="images/w5/thumbs/dragon_tn.png" 
-	onclick="toggle_w5('dragon','dragon_tn.png','dragon.png')" 
-	name="dragon">
-<br>
-<br> Variable star extraction routines:
-<br> <a class="norm" href="python/gaussfitter.py">gaussfitter.py</a>
-<br> <a class="norm" href="python/subim_gaussfit.py">subim_gaussfit.py</a>
-<br> These can be run on cosmos now, using <tt> /usr/local/adm/config/python/bin/ipython -pylab</tt>
-<br> (I recommend adding <tt> alias pylab="/usr/local/adm/config/python/bin/ipython -pylab" </tt> to your .bashrc or .cshrc file)
-<br> The only condition is that both files need to be in the same directory
-<br> See the header of subim_gaussfit for usage information
-<br>
-<br> We'll probably end up using IRAF's DAOFIND / DAOPHOT package in place of the above, but I have other
+<br/>
+<br/> Finder charts:
+<br/><img name="w5dss" onclick="toggle_w5('w5dss','w5dss_tn.jpg','w5dss.jpg')" src="images/w5/thumbs/w5dss_tn.jpg"/>
+<img name="w5body" onclick="toggle_w5('w5body','w5body_tn.jpg','w5body.jpg')" src="images/w5/thumbs/w5body_tn.jpg"/>
+<img name="w5head" onclick="toggle_w5('w5head','w5head_tn.jpg','w5head.jpg')" src="images/w5/thumbs/w5head_tn.jpg"/>
+<br/>
+<br/> Fits versions: 
+<br/> <a class="norm" href="images/w5/dss_red_w5E.fits"> DSS R-band image of whole field </a>
+<br/> <a class="norm" href="images/w5/w5bodyR_comb_wcs.fits"> SBO R-band image  (dragon "body") </a>
+<br/> <a class="norm" href="images/w5/w5headR_comb_wcs.fits"> SBO R-band image  (dragon "head") </a>
+<br/>
+<br/> Why is it a dragon?
+<br/><img name="dragon" onclick="toggle_w5('dragon','dragon_tn.png','dragon.png')" src="images/w5/thumbs/dragon_tn.png"/>
+<br/>
+<br/> Variable star extraction routines:
+<br/> <a class="norm" href="python/gaussfitter.py">gaussfitter.py</a>
+<br/> <a class="norm" href="python/subim_gaussfit.py">subim_gaussfit.py</a>
+<br/> These can be run on cosmos now, using <tt> /usr/local/adm/config/python/bin/ipython -pylab</tt>
+<br/> (I recommend adding <tt> alias pylab="/usr/local/adm/config/python/bin/ipython -pylab" </tt> to your .bashrc or .cshrc file)
+<br/> The only condition is that both files need to be in the same directory
+<br/> See the header of subim_gaussfit for usage information
+<br/>
+<br/> We'll probably end up using IRAF's DAOFIND / DAOPHOT package in place of the above, but I have other
 code prepared in Python to process the output from DAOPHOT. 
-<br>
-<img src="images/jcmt/thumbs/W5SH2-201_RGB_tn.png" 
-	onclick="toggle_jcmt('W5SH2-201_RGB','W5SH2-201_RGB_tn.png','W5SH2-201_RGB.png','images/jcmt/')" 
-	name="W5SH2-201_RGB">
-<img src="images/jcmt/thumbs/W5SH2-201_veryred_tn.png" 
-	onclick="toggle_jcmt('W5SH2-201_veryred','W5SH2-201_veryred_tn.png','W5SH2-201_veryred.png','images/jcmt/')" 
-	name="W5SH2-201_veryred">
-<img src="images/jcmt/thumbs/W5SH2-201_VelocityContours_Labels_tn.png" 
-        onclick="toggle_jcmt('W5SH2-201_VelocityContours_Labels',
+<br/>
+<img name="W5SH2-201_RGB" onclick="toggle_jcmt('W5SH2-201_RGB','W5SH2-201_RGB_tn.png','W5SH2-201_RGB.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_RGB_tn.png"/>
+<img name="W5SH2-201_veryred" onclick="toggle_jcmt('W5SH2-201_veryred','W5SH2-201_veryred_tn.png','W5SH2-201_veryred.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_veryred_tn.png"/>
+<img name="W5SH2-201_VelocityContours_Labels" onclick="toggle_jcmt('W5SH2-201_VelocityContours_Labels',
             'W5SH2-201_VelocityContours_Labels_tn.png',
-            'W5SH2-201_VelocityContours_Labels.png','images/jcmt/')" 
-	name="W5SH2-201_VelocityContours_Labels">
-<img src="images/jcmt/thumbs/W5SH2-201_VelocityContours_tn.png" 
-	onclick="toggle_jcmt('W5SH2-201_VelocityContours','W5SH2-201_VelocityContours_tn.png','W5SH2-201_VelocityContours.png','images/jcmt/')" 
-	name="W5SH2-201_VelocityContours">
-<br> This image has broad colors.  Red is from -22 to -10 km/s, green is -40 to -22 km/s, blue is -51 to -40 km/s:
-<br>
-<img src="images/jcmt/thumbs/W5SH2-201_BroadColorsRGB_tn.png" 
-	onclick="toggle_jcmt('W5SH2-201_BroadColorsRGB','W5SH2-201_BroadColorsRGB_tn.png','W5SH2-201_BroadColorsRGB.png','images/jcmt/')" 
-        name="W5SH2-201_BroadColorsRGB"
-        alt="Broad colors">
-<br> Individual broad channel maps (view alt text or image name to see velocities):
-<br>
-<img src="images/jcmt/thumbs/W5SH2-201_blue_n63ton51_tn.png" 
-	onclick="toggle_jcmt('W5SH2-201_blue_n63ton51','W5SH2-201_blue_n63ton51_tn.png','W5SH2-201_blue_n63ton51.png','images/jcmt/')" 
-        name="W5SH2-201_blue_n63ton51"
-        title="-63 to -51 km/s"
-	alt="-63 to -51 km/s">
-<img src="images/jcmt/thumbs/W5SH2-201_cyan_n51ton40_tn.png" 
-	onclick="toggle_jcmt('W5SH2-201_cyan_n51ton40','W5SH2-201_cyan_n51ton40_tn.png','W5SH2-201_cyan_n51ton40.png','images/jcmt/')" 
-	name="W5SH2-201_cyan_n51ton40"
-        title="-51 to -40 km/s"
-	alt="-51 to -40 km/s">
-<img src="images/jcmt/thumbs/W5SH2-201_green_n22ton10_tn.png" 
-	onclick="toggle_jcmt('W5SH2-201_green_n22ton10','W5SH2-201_green_n22ton10_tn.png','W5SH2-201_green_n22ton10.png','images/jcmt/')" 
-	name="W5SH2-201_green_n22ton10"
-        title="-22 to -10 km/s"
-	alt="-22 to -10 km/s">
-<img src="images/jcmt/thumbs/W5SH2-201_red_n10to0_tn.png" 
-	onclick="toggle_jcmt('W5SH2-201_red_n10to0','W5SH2-201_red_n10to0_tn.png','W5SH2-201_red_n10to0.png','images/jcmt/')" 
-	name="W5SH2-201_red_n10to0"
-        title="-10 to 0 km/s"
-	alt="-10 to 0 km/s">
-
+            'W5SH2-201_VelocityContours_Labels.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_VelocityContours_Labels_tn.png"/>
+<img name="W5SH2-201_VelocityContours" onclick="toggle_jcmt('W5SH2-201_VelocityContours','W5SH2-201_VelocityContours_tn.png','W5SH2-201_VelocityContours.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_VelocityContours_tn.png"/>
+<br/> This image has broad colors.  Red is from -22 to -10 km/s, green is -40 to -22 km/s, blue is -51 to -40 km/s:
+<br/>
+<img alt="Broad colors" name="W5SH2-201_BroadColorsRGB" onclick="toggle_jcmt('W5SH2-201_BroadColorsRGB','W5SH2-201_BroadColorsRGB_tn.png','W5SH2-201_BroadColorsRGB.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_BroadColorsRGB_tn.png"/>
+<br/> Individual broad channel maps (view alt text or image name to see velocities):
+<br/>
+<img alt="-63 to -51 km/s" name="W5SH2-201_blue_n63ton51" onclick="toggle_jcmt('W5SH2-201_blue_n63ton51','W5SH2-201_blue_n63ton51_tn.png','W5SH2-201_blue_n63ton51.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_blue_n63ton51_tn.png" title="-63 to -51 km/s"/>
+<img alt="-51 to -40 km/s" name="W5SH2-201_cyan_n51ton40" onclick="toggle_jcmt('W5SH2-201_cyan_n51ton40','W5SH2-201_cyan_n51ton40_tn.png','W5SH2-201_cyan_n51ton40.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_cyan_n51ton40_tn.png" title="-51 to -40 km/s"/>
+<img alt="-22 to -10 km/s" name="W5SH2-201_green_n22ton10" onclick="toggle_jcmt('W5SH2-201_green_n22ton10','W5SH2-201_green_n22ton10_tn.png','W5SH2-201_green_n22ton10.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_green_n22ton10_tn.png" title="-22 to -10 km/s"/>
+<img alt="-10 to 0 km/s" name="W5SH2-201_red_n10to0" onclick="toggle_jcmt('W5SH2-201_red_n10to0','W5SH2-201_red_n10to0_tn.png','W5SH2-201_red_n10to0.png','images/jcmt/')" src="images/jcmt/thumbs/W5SH2-201_red_n10to0_tn.png" title="-10 to 0 km/s"/>
 <h3> W5 Ridge </h3>
-Contour-Velocity maps:<br>
-<img src="images/jcmt/thumbs/W5Ridge_VelocityContours_Levels_tn.png" 
-	onclick="toggle_jcmt('W5Ridge_VelocityContours_Levels','W5Ridge_VelocityContours_Levels_tn.png','W5Ridge_VelocityContours_Levels.png','images/jcmt/')" 
-	name="W5Ridge_VelocityContours_Levels">
-<img src="images/jcmt/thumbs/W5Ridge_VelocityContours_tn.png" 
-	onclick="toggle_jcmt('W5Ridge_VelocityContours','W5Ridge_VelocityContours_tn.png','W5Ridge_VelocityContours.png','images/jcmt/')" 
-        name="W5Ridge_VelocityContours">
-<br> Color maps: <br>
-<img src="images/jcmt/thumbs/W5Ridge_RGB_tn.png" 
-	onclick="toggle_jcmt('W5Ridge_RGB','W5Ridge_RGB_tn.png','W5Ridge_RGB.png','images/jcmt/')" 
-	name="W5Ridge_RGB">
-<img src="images/jcmt/thumbs/W5Ridge_RGB2_tn.png" 
-	onclick="toggle_jcmt('W5Ridge_RGB2','W5Ridge_RGB2_tn.png','W5Ridge_RGB2.png','images/jcmt/')" 
-        name="W5Ridge_RGB2">      
-<img src="images/jcmt/thumbs/W5Ridge_RGB_Interesting_tn.png" 
-	onclick="toggle_jcmt('W5Ridge_RGB_Interesting','W5Ridge_RGB_Interesting_tn.png','W5Ridge_RGB_Interesting.png','images/jcmt/')" 
-	name="W5Ridge_RGB_Interesting">
-<br> Individual velocity maps (source of both colors and contours): <br>
-<img src="images/jcmt/thumbs/W5Ridge_blue_n52ton43_tn.png" 
-	onclick="toggle_jcmt('W5Ridge_blue_n52ton43','W5Ridge_blue_n52ton43_tn.png','W5Ridge_blue_n52ton43.png','images/jcmt/')" 
-        name="W5Ridge_blue_n52ton43"
-        alt="-52 to -43 km/s"
-        title="-52 to -43 km/s">
-<img src="images/jcmt/thumbs/W5Ridge_green_n43ton40_tn.png" 
-	onclick="toggle_jcmt('W5Ridge_green_n43ton40','W5Ridge_green_n43ton40_tn.png','W5Ridge_green_n43ton40.png','images/jcmt/')" 
-	name="W5Ridge_green_n43ton40"
-        alt="-43 to -40 km/s"
-        title="-43 to -40 km/s">
-<img src="images/jcmt/thumbs/W5Ridge_red_n36ton30_tn.png" 
-	onclick="toggle_jcmt('W5Ridge_red_n36ton30','W5Ridge_red_n36ton30_tn.png','W5Ridge_red_n36ton30.png','images/jcmt/')" 
-	name="W5Ridge_red_n36ton30"
-        alt="-36 to -30 km/s"
-        title="-36 to -30 km/s">
-<br><br><hr><br>
-<script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
+Contour-Velocity maps:<br/>
+<img name="W5Ridge_VelocityContours_Levels" onclick="toggle_jcmt('W5Ridge_VelocityContours_Levels','W5Ridge_VelocityContours_Levels_tn.png','W5Ridge_VelocityContours_Levels.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_VelocityContours_Levels_tn.png"/>
+<img name="W5Ridge_VelocityContours" onclick="toggle_jcmt('W5Ridge_VelocityContours','W5Ridge_VelocityContours_tn.png','W5Ridge_VelocityContours.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_VelocityContours_tn.png"/>
+<br/> Color maps: <br/>
+<img name="W5Ridge_RGB" onclick="toggle_jcmt('W5Ridge_RGB','W5Ridge_RGB_tn.png','W5Ridge_RGB.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_RGB_tn.png"/>
+<img name="W5Ridge_RGB2" onclick="toggle_jcmt('W5Ridge_RGB2','W5Ridge_RGB2_tn.png','W5Ridge_RGB2.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_RGB2_tn.png"/>
+<img name="W5Ridge_RGB_Interesting" onclick="toggle_jcmt('W5Ridge_RGB_Interesting','W5Ridge_RGB_Interesting_tn.png','W5Ridge_RGB_Interesting.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_RGB_Interesting_tn.png"/>
+<br/> Individual velocity maps (source of both colors and contours): <br/>
+<img alt="-52 to -43 km/s" name="W5Ridge_blue_n52ton43" onclick="toggle_jcmt('W5Ridge_blue_n52ton43','W5Ridge_blue_n52ton43_tn.png','W5Ridge_blue_n52ton43.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_blue_n52ton43_tn.png" title="-52 to -43 km/s"/>
+<img alt="-43 to -40 km/s" name="W5Ridge_green_n43ton40" onclick="toggle_jcmt('W5Ridge_green_n43ton40','W5Ridge_green_n43ton40_tn.png','W5Ridge_green_n43ton40.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_green_n43ton40_tn.png" title="-43 to -40 km/s"/>
+<img alt="-36 to -30 km/s" name="W5Ridge_red_n36ton30" onclick="toggle_jcmt('W5Ridge_red_n36ton30','W5Ridge_red_n36ton30_tn.png','W5Ridge_red_n36ton30.png','images/jcmt/')" src="images/jcmt/thumbs/W5Ridge_red_n36ton30_tn.png" title="-36 to -30 km/s"/>
+<br/><br/><hr/><br/>
+<script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
 </td></tr></table>
+</body><script src="./googleanalytics.js" type="text/javascript"></script></html>
