@@ -4,50 +4,55 @@
 
 /* Default Style */
 body {
-	background-color: black;
-	color: white;
+	background-color: #111111;
+	color: #CCC;
 	font-style: normal;
-	font-family: "Times New Roman";
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size:15px;
+    line-height: 1.2;
 }
 
 table {
-    background-color: #222222;
+    background-color: #323232;
     border-style: inset outset outset inset;
     border-width: 5;
     border-color: #222222;
-    color: white;
+    color: #CCC;
     font-style: normal;
-   	font-family: "Times New Roman";
+   	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size:15px;
+    line-height: 1.2;
 }
 
 
 td {
-    background-color: #090909;
+    background-color: #252525;
     border-style: none;
     border-width: 0;
-    color: white;
+    color: #CCC;
     font-style: normal;
-   	font-family: "Times New Roman";
+   	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size:15px;
+    line-height: 1.2;
 }
 
 p {
     /* background-color: #090909; */
-    color: white;
+    color: #CCC;
     font-style: normal;
-	font-family: "Times New Roman";
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size:15px;
+    line-height: 1.2;
 }
 
 
 div {
     background-color: black;
-    color: white;
-	font-family: "Times New Roman";
+    color: #CCC;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
 	font-size:15px;
+    line-height: 1.2;
 }
 
 h2 {
@@ -60,11 +65,11 @@ tt {color:#55ECA9}
 
 
 /* Link Style */
-a:link		{ color:white; text-shadow: grey 0.0px 0.0px 2px  }
-a:visited	{ color:white }
+a:link		{ color:#DDD; text-shadow: grey 0.0px 0.0px 2px  }
+a:visited	{ color:#DDD }
 /* a:visited	{ color:blue }*/
-a:active	{ color:cyan; text-shadow: none }
-a:hover		{ color:cyan }
+a:active	{ color:#2288BB; text-shadow: none }
+a:hover		{ color:#2288BB }
 a {text-decoration: none; }
 
 /* http://stackoverflow.com/questions/8290447/remove-horizontal-spacing-when-using-positionrelative-in-navigation-bar */
@@ -168,8 +173,8 @@ a.offwhite:visited	{ color:#DDDDDD ;}
 a.offwhite:hover		{ color:#FF3300;}
 a.offwhite:active	{ color:#FF3300; }
 
-a.norm:link		{ color:cyan ; text-shadow: none; }
-a.norm:visited	{ color:cyan ;}
+a.norm:link		{ color:rgb(93, 201, 201) ; text-shadow: none; }
+a.norm:visited	{ color:rgb(93, 201, 201) ;}
 a.norm:hover		{ color:#FF3300;}
 a.norm:active	{ color:#FF3300; }
 /*a.norm {text-decoration: underline;}		*/
@@ -227,11 +232,6 @@ a.big:active	{ color:#FF3300;
 				font-size:30px ;}
 a.big {text-decoration: underline;}				
 
-a.norm:link		{ color:cyan; text-shadow:none;}
-a.norm:visited	{ color:cyan ;}
-a.norm:hover		{ color:#FF3300;}
-a.norm:active	{ color:#FF3300; }
-/*a.norm {text-decoration: underline;}		*/
 
 /* Custom classes */
 .sidebar { font-size: 15px; }
