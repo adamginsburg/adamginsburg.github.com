@@ -11,134 +11,178 @@ function togglecolor()
         button.innerHTML = "Toggle Colorscheme (white to black)";
     }
 };
-</script></head><body>
+
+function httpGet(theUrl)
+{
+    var xmlHttp = null;
+
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+var nrepos=JSON.parse(httpGet("https://api.github.com/users/keflavich"))['public_repos'];
+
+function set_nrepos(){
+    document.getElementById('nrepos').innerHTML = nrepos;
+}
+
+</script></head>
+<body onload="set_nrepos()">
 <h1 align="center"> CV </h1>
 <center>
     <table align="center" width=800><tr><td>
-            <br> [ <a class=special href="cv/cv.pdf">PDF version</a>  ] [ <a class=offwhite href="cv/">LaTeX source for PDF</a> ] 
-            <br> <button id="togglecolor" onclick="togglecolor();">Toggle Colorscheme (black to white)</button>
-            <br> <b>Education:</b>
-            <br> <a href="http://www.physics.rice.edu/astro.cfm">BS Astrophysics, Rice University, May 2006</a>
+                <center>
+                    <br> [ <a class=special href="cv/cv.pdf">PDF version</a>  ] [ <a class=offwhite href="cv/">LaTeX source for PDF</a> ] 
+                    <br> <button id="togglecolor" onclick="togglecolor();">Toggle Colorscheme (black to white)</button>
+                </center>
+            <br> <b class='heading'>Education:</b>
+             <br>     PhD Astrophysics, April 2013 (advisor: <a class="norm" href="http://casa.colorado.edu/~bally">John Bally</a>)
+             <br>    M.S. Astrophysics September 2009
+             <br>    Passed comprehensive exam II (oral masters defense) June 12 2009.
+             <br>    Passed comprehensive exam January 2009.   
             <br> <a href="http://aps.colorado.edu/">University of Colorado
                 Astrophysical and Planetary Sciences, August
-                2007-present</a>:
-             <br/>    Passed comprehensive exam January 2009.   
-             <br/>    Passed comprehensive exam II (oral masters defense) June 12 2009.
-             <br/>    M.S. Astrophysics September 2009
-             <br>     PhD Astrophysics, April 2013 (advisor: <a class="norm" href="casa.colorado.edu/~bally">John Bally</a>)
+                2007-2013</a>:
+            <br> <a href="http://www.physics.rice.edu/astro.cfm">BS Astrophysics, Rice University, May 2006</a>
             <br/>
-<br/><b> <a href="publications.htm"> Publications: </a> </b> [ <a class="norm" href="http://arxiv.org/find/astro-ph/1/au:+Ginsburg_A/0/1/0/all/0/1"> arXiv listing </a> ] [ <a class="norm" href="http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?db_key=AST&amp;db_key=PRE&amp;qform=AST&amp;arxiv_sel=astro-ph&amp;arxiv_sel=cond-mat&amp;arxiv_sel=cs&amp;arxiv_sel=gr-qc&amp;arxiv_sel=hep-ex&amp;arxiv_sel=hep-lat&amp;arxiv_sel=hep-ph&amp;arxiv_sel=hep-th&amp;arxiv_sel=math&amp;arxiv_sel=math-ph&amp;arxiv_sel=nlin&amp;arxiv_sel=nucl-ex&amp;arxiv_sel=nucl-th&amp;arxiv_sel=physics&amp;arxiv_sel=quant-ph&amp;arxiv_sel=q-bio&amp;sim_query=YES&amp;ned_query=YES&amp;adsobj_query=YES&amp;aut_logic=OR&amp;obj_logic=OR&amp;author=ginsburg%2C+a&amp;object=&amp;start_mon=&amp;start_year=2006&amp;end_mon=&amp;end_year=&amp;ttl_logic=OR&amp;title=&amp;txt_logic=OR&amp;text=&amp;nr_to_return=200&amp;start_nr=1&amp;jou_pick=ALL&amp;ref_stems=&amp;data_and=ALL&amp;group_and=ALL&amp;start_entry_day=&amp;start_entry_mon=&amp;start_entry_year=&amp;end_entry_day=&amp;end_entry_mon=&amp;end_entry_year=&amp;min_score=&amp;sort=SCORE&amp;data_type=SHORT&amp;aut_syn=YES&amp;ttl_syn=YES&amp;txt_syn=YES&amp;aut_wt=1.0&amp;obj_wt=1.0&amp;ttl_wt=0.3&amp;txt_wt=3.0&amp;aut_wgt=YES&amp;obj_wgt=YES&amp;ttl_wgt=YES&amp;txt_wgt=YES&amp;ttl_sco=YES&amp;txt_sco=YES&amp;version=1"> ADS search </a> ]
+            <br/><b class='heading'> <a href="publications.htm"> Publications: </a> </b> 
+            [ <a class="norm" href="http://arxiv.org/find/astro-ph/1/au:+Ginsburg_A/0/1/0/all/0/1"> arXiv listing </a> ]
+            [ <a class="norm" href="http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?db_key=AST&amp;db_key=PRE&amp;qform=AST&amp;arxiv_sel=astro-ph&amp;arxiv_sel=cond-mat&amp;arxiv_sel=cs&amp;arxiv_sel=gr-qc&amp;arxiv_sel=hep-ex&amp;arxiv_sel=hep-lat&amp;arxiv_sel=hep-ph&amp;arxiv_sel=hep-th&amp;arxiv_sel=math&amp;arxiv_sel=math-ph&amp;arxiv_sel=nlin&amp;arxiv_sel=nucl-ex&amp;arxiv_sel=nucl-th&amp;arxiv_sel=physics&amp;arxiv_sel=quant-ph&amp;arxiv_sel=q-bio&amp;sim_query=YES&amp;ned_query=YES&amp;adsobj_query=YES&amp;aut_logic=OR&amp;obj_logic=OR&amp;author=ginsburg%2C+a&amp;object=&amp;start_mon=&amp;start_year=2006&amp;end_mon=&amp;end_year=&amp;ttl_logic=OR&amp;title=&amp;txt_logic=OR&amp;text=&amp;nr_to_return=200&amp;start_nr=1&amp;jou_pick=ALL&amp;ref_stems=&amp;data_and=ALL&amp;group_and=ALL&amp;start_entry_day=&amp;start_entry_mon=&amp;start_entry_year=&amp;end_entry_day=&amp;end_entry_mon=&amp;end_entry_year=&amp;min_score=&amp;sort=SCORE&amp;data_type=SHORT&amp;aut_syn=YES&amp;ttl_syn=YES&amp;txt_syn=YES&amp;aut_wt=1.0&amp;obj_wt=1.0&amp;ttl_wt=0.3&amp;txt_wt=3.0&amp;aut_wgt=YES&amp;obj_wgt=YES&amp;ttl_wgt=YES&amp;txt_wgt=YES&amp;ttl_sco=YES&amp;txt_sco=YES&amp;version=1"> ADS search </a> ]
             <span id="badgeCont147142" style="width:26px"><script src="http://labs.researcherid.com/mashlets?el=badgeCont147142&amp;mashlet=badge&amp;showTitle=false&amp;className=a&amp;rid=E-6413-2011&amp;size=small"></script></span>
 <a href="http://scholar.google.com/citations?user=xzUAtvYAAAAJ"><img height="20" src="images/GoogleScholar.png" width="20"/></a>
             [ <a class="norm" href="http://sciencewise.info/users/Adam_Ginsburg_1">ScienceWise</a> ]
             [ <a class="norm" href="http://impactstory.org/AdamGinsburg">ImpactStory</a> ]
             <br/> <a class="norm" href="http://labs.adsabs.harvard.edu/adsabs/search/?q=ack%3Aginsburg&amp;db_f=astronomy&amp;year_f=[2005%20TO%202100]"> Acknowledgements mentioning me (using ADS Labs) </a><br/>
 <!--<br> A summary of these publications and my contributions to them is on <a class="norm" href="http://adamginsburg.blogspot.com/search/label/publication">adamginsburg.blogspot.com</a>-->
-<br/>Papers I have written (first author): total 6 papers
+<br/><span class="paperheaders">Papers I have written as first author: total 6 papers</span>
             <ol>
-                <li><A class="norm" href="http://arxiv.org/abs/1310.0809"><b>Ginsburg, Adam</b>, Federrath, Christoph, and Darling, Jeremy </a> 2013, ApJ
+                <li><A class="norm" href="http://arxiv.org/abs/1310.0809"><b class="myname">Ginsburg, Adam</b>, Federrath, Christoph, and Darling, Jeremy </a> 2013, ApJ
                 <br> A measurement of the turbulence-driven density distribution in a non-star-forming molecular cloud
-<li><a class="norm" href="http://adsabs.harvard.edu/abs/2013ApJS..208...14G"><b>Ginsburg, Adam;</b> Glenn, Jason; Rosolowsky, Erik; Ellsworth-Bowers, Timothy P.; Battersby, Cara; Dunham, Miranda; Merello, Manuel; Shirley, Yancy; Bally, John; Evans, Neal J., II; Stringfellow, Guy; Aguirre, James</a> October, <b>2013</b> ApJS
+<li><a class="norm" href="http://adsabs.harvard.edu/abs/2013ApJS..208...14G"><b class="myname">Ginsburg, Adam;</b> Glenn, Jason; Rosolowsky, Erik; Ellsworth-Bowers, Timothy P.; Battersby, Cara; Dunham, Miranda; Merello, Manuel; Shirley, Yancy; Bally, John; Evans, Neal J., II; Stringfellow, Guy; Aguirre, James</a> October, <b>2013</b> ApJS
                 <br/>   The Bolocam Galactic Plane Survey. IX. Data Release 2 and Outer Galaxy Extension
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2012ApJ...758L..29G"><b>Ginsburg, A.,</b> Bressert, E., Bally, J., and Battersby, C.</a> , August, <b>2012</b>, ApJL, 758, L29
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2012ApJ...758L..29G"><b class="myname">Ginsburg, A.,</b> Bressert, E., Bally, J., and Battersby, C.</a> , August, <b>2012</b>, ApJL, 758, L29
                 <br/>   There are no starless massive proto-clusters in the first quadrant of the Galaxy
-                </li><li><a class="norm" href="http://arxiv.org/abs/1106.1433"><b>Ginsburg, A.</b>, Bally, J., and Williams, J.</a> <b>2011</b>, MNRAS, 418, 2121
+                </li><li><a class="norm" href="http://arxiv.org/abs/1106.1433"><b class="myname">Ginsburg, A.</b>, Bally, J., and Williams, J.</a> <b>2011</b>, MNRAS, 418, 2121
                 <br/>   "JCMT HARP CO 3-2 Observations of Molecular Outflows in W5"  
                 <br/>[ <a class="norm" href="papers/w5outflows_online_draft0628.pdf"> full version </a> ]
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2011ApJ...736..149G"><b>Adam Ginsburg</b>, Jeremy Darling, Cara Battersby, Ben Zeiger, John Bally</a> <b>2011</b>, ApJ, 736, 149
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2011ApJ...736..149G"><b class="myname">Adam Ginsburg</b>, Jeremy Darling, Cara Battersby, Ben Zeiger, John Bally</a> <b>2011</b>, ApJ, 736, 149
                 <br/>   "Galactic H2CO Densitometry I: Pilot survey of Ultracompact HII regions and methodology"
                 <br/>[ <a class="norm" href="papers/h2co_pilot_draft0607.pdf"> full version </a> ]
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2009ApJ...707..310G"><b>Ginsburg, A. G.</b>; Bally, J.; Yan, C.; Williams, J. P.</a> <b>2009</b>, ApJ, 707,p310-327
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2009ApJ...707..310G"><b class="myname">Ginsburg, A. G.</b>; Bally, J.; Yan, C.; Williams, J. P.</a> <b>2009</b>, ApJ, 707,p310-327
                 <br/>     <a href="iras05358.htm"> "Outflows and Massive Stars in the protocluster IRAS 05358+3543"</a>
 <br/>[ <a class="norm" href="papers/iras05358.pdf"> full version </a> ]
             </li></ol>
-<br/> Non-first-author papers sorted by degree of contribution, total 20 papers
+            <br> <span class="underline paperheaders"> Non-first-author papers sorted by degree of contribution, total 23 papers</span>
+            <br>
 
-            <br/>Papers in which I made a large contribution, including writing
-            some text and/or performing some of the analysis:
+            <br><span class="paperheaders">Papers in which I made a large contribution, including writing
+                some text and/or performing some of the analysis:</span>
             <ol>
-<li><a class="norm" href="http://adsabs.harvard.edu/abs/2012ApJ...758L..28B">Bressert, E., <b>Ginsburg, A.,</b> Battersby, C., Bally, J., Longmore, S., and Testi, L.</a> , August, <b>2012</b>, ApJL, 758, L28
+
+                <!--            Not refereed
+                <li><a class="norm" href="http://adsabs.harvard.edu/abs/2014arXiv1401.3418M">
+                    Mills, E. A. C.; <b class="myname">Ginsburg, A.</b>; Kruijssen, J. M. D.; Sjouwerman, L.; Lang, C. C.; Mao, S. A.; Walsh, A.; Su, M.; Longmore, S. N.; Zhao, J-H.; Meier, D.; Morris, M. R.
+                </a> <b>2014</b> 
+                <br>VLASSICK: The VLA Sky Survey in the Central Kiloparsec-->
+
+                <li><a class="norm" href="http://adsabs.harvard.edu/abs/2014AJ....147...23L">
+                        Levesque, Emily M.; Stringfellow, Guy S.; <b class='myname'>Ginsburg, Adam G.</b>; Bally, John; Keeney, Brian A.
+                    </a> <b>2014</b>
+                    <br> The Peculiar Balmer Decrement of SN 2009ip: Constraints on Circumstellar Geometry
+
+                    <li><a class="norm" href="http://adsabs.harvard.edu/abs/2013ApJ...775L..50K">
+                            Kendrew, S.; <b class="myname">Ginsburg, A.</b>; Johnston, K.; Beuther, H.; Bally, J.; Cyganowski, C. J.; Battersby, C.
+                        </a>
+                        <br>Early-stage Massive Star Formation near the Galactic Center: Sgr C
+                
+<li><a class="norm" href="http://adsabs.harvard.edu/abs/2012ApJ...758L..28B">Bressert, E., <b class="myname">Ginsburg, A.,</b> Battersby, C., Bally, J., Longmore, S., and Testi, L.</a> , August, <b>2012</b>, ApJL, 758, L28
                 <br/>   How to Find Young Massive Cluster Progenitors
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2011ApJS..192....4A">Aguirre, J, <b>Ginsburg, A.G.</b>, Dunham, M.K., Drosback, M. and the BGPS collaboration</a> <b>2010</b> ApJS, 192, 4
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2011ApJS..192....4A">Aguirre, J, <b class="myname">Ginsburg, A.G.</b>, Dunham, M.K., Drosback, M. and the BGPS collaboration</a> <b>2010</b> ApJS, 192, 4
                 <br/>     "The Bolocam Galactic Plane Survey -- I. Survey Description and Data Reduction"
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2011A%26A...535A.128B">C. Battersby, J. Bally, <b>A. Ginsburg</b>, J.-P. Bernard, C. Brunt, G.A. Fuller, P. Martin, S. Molinari, J. Mottram, N. Peretto, L. Testi, M.A. Thompson</a> <b>2011</b> [ <a class="norm" href="http://adsabs.harvard.edu/abs/2011A%26A...535A.128B"> arXiv link</a> ]
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2011A%26A...535A.128B">C. Battersby, J. Bally, <b class="myname">A. Ginsburg</b>, J.-P. Bernard, C. Brunt, G.A. Fuller, P. Martin, S. Molinari, J. Mottram, N. Peretto, L. Testi, M.A. Thompson</a> <b>2011</b> [ <a class="norm" href="http://adsabs.harvard.edu/abs/2011A%26A...535A.128B"> arXiv link</a> ]
                 <br/>    "Characterizing Precursors to Stellar Clusters with Herschel"
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2010ApJ...721..222B">Cara Battersby, John Bally, James M. Jackson, <b>Adam Ginsburg</b>, Yancy L. Shirley, Wayne Schlingman, Jason Glenn</a> <b>2010</b>, ApJ, 721, 222
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2010ApJ...721..222B">Cara Battersby, John Bally, James M. Jackson, <b class="myname">Adam Ginsburg</b>, Yancy L. Shirley, Wayne Schlingman, Jason Glenn</a> <b>2010</b>, ApJ, 721, 222
                 <br/>     "An Infrared through Radio Study of the Properties and Evolution of IRDC Clumps"
-            </li></ol>
+            </li>
 
-            Papers I have significantly contributed to:
-            <ol>
-<li><a class="norm" href="http://adsabs.harvard.edu/abs/2013arXiv1304.4597E">Ellsworth-Bowers, Timothy P.; Glenn, Jason; Rosolowsky, Erik; Mairs, Steven; Evans, Neal J., II; Battersby, Cara; <b>Ginsburg, Adam</b>; Shirley, Yancy L.; Bally, John</a> 06, <b>2013</b> The Astrophysical Journal
+            <br><span class='paperheaders minorheaders'> Papers I have significantly contributed to:</span>
+            <li><a class="norm" href="http://adsabs.harvard.edu/abs/2013ApJS..209....2S">
+                    Shirley, Yancy L.; Ellsworth-Bowers, Timothy P.; Svoboda, Brian; Schlingman, Wayne M.; <b class="myname">Ginsburg, Adam</b>; Rosolowsky, Erik; Gerner, Thomas; Mairs, Steven; Battersby, Cara; Stringfellow, Guy; Dunham, Miranda K.; Glenn, Jason; Bally, John
+                </a><b class='date'>2013</b>
+                <br> The Bolocam Galactic Plane Survey. X. A Complete Spectroscopic Catalog of Dense Molecular Gas Observed toward 1.1 mm Dust Continuum Sources with 7.°5 <= l <= 194°
+<li><a class="norm" href="http://adsabs.harvard.edu/abs/2013arXiv1304.4597E">Ellsworth-Bowers, Timothy P.; Glenn, Jason; Rosolowsky, Erik; Mairs, Steven; Evans, Neal J., II; Battersby, Cara; <b class="myname">Ginsburg, Adam</b>; Shirley, Yancy L.; Bally, John</a> 06, <b>2013</b> The Astrophysical Journal
                 <br/>   The Bolocam Galactic Plane Survey. VIII. A Mid-infrared Kinematic Distance Discrimination Method
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2011ApJS..195...14S">Wayne M. Schlingman, Yancy L. Shirley, David E. Bolin, Erik Rosolowsky, John Bally, Cara Battersby, Miranda K. Dunham, Timothy P. Ellsworth-Bowers, Neal J. Evans II, <b>Adam Ginsburg</b>, Guy Stringfellow</a> <b>2011</b>, ApJS, 2, 14
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2011ApJS..195...14S">Wayne M. Schlingman, Yancy L. Shirley, David E. Bolin, Erik Rosolowsky, John Bally, Cara Battersby, Miranda K. Dunham, Timothy P. Ellsworth-Bowers, Neal J. Evans II, <b class="myname">Adam Ginsburg</b>, Guy Stringfellow</a> <b>2011</b>, ApJS, 2, 14
                 <br/>   "The Bolocam Galactic Plane Survey V: HCO+ and N2H+ Spectroscopy of 1.1 mm Dust Continuum Sources"
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2010ApJ...721..137B">John Bally, James Aguirre, Cara Battersby, Eric Todd Bradley, Claudia Cyganowski, Darren Dowell, Meredith Drosback, Miranda K Dunham, Neal J. Evans II, <b>Adam Ginsburg</b>, Jason Glenn, Paul Harvey, Elisabeth Mills, Manuel Merello, Erik Rosolowsky, Wayne Schlingman, Yancy L. Shirley, Guy S. Stringfellow, Josh Walawender, Jonathan Williams</a> <b>2010</b>, ApJ, 721, 137
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2010ApJ...721..137B">John Bally, James Aguirre, Cara Battersby, Eric Todd Bradley, Claudia Cyganowski, Darren Dowell, Meredith Drosback, Miranda K Dunham, Neal J. Evans II, <b class="myname">Adam Ginsburg</b>, Jason Glenn, Paul Harvey, Elisabeth Mills, Manuel Merello, Erik Rosolowsky, Wayne Schlingman, Yancy L. Shirley, Guy S. Stringfellow, Josh Walawender, Jonathan Williams</a> <b>2010</b>, ApJ, 721, 137
                 <br/>     The Bolocam Galactic Plane Survey IV: 1.1 and 0.35 mm Dust Continuum Emission in the Galactic Center Region
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2010ApJS..188..123R"> Rosolowsky, E., Dunham, M. K., <b>Ginsburg, A.G.</b>, Bradley, E. T., and the BGPS collaboration </a> <b>2009</b>, ApJS, 188, 123-138
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2010ApJS..188..123R"> Rosolowsky, E., Dunham, M. K., <b class="myname">Ginsburg, A.G.</b>, Bradley, E. T., and the BGPS collaboration </a> <b>2009</b>, ApJS, 188, 123-138
                 <br/>     "The Bolocam Galactic Plane Survey -- II. Catalog of the Image Data"
-            </li></ol>
+            </li>
 
-            Papers I made a minor contribution to:
-            <ol>
-<li><a class="norm" href="http://adsabs.harvard.edu/abs/2013arXiv1307.0022F">Fallscheer, C.; Reid, M. A.; Di Francesco, J.; Martin, P. G.; Hill, T.; Hennemann, M.; Nguyen-Luong, Q.; Motte, F.; Men'shchikov, A.; AndrÃ©, Ph.; Ward-Thompson, D.; Griffin, M.; Kirk, J.; Konyves, V.; Rygl, K. L. J.; Sadavoy, S.; Sauvage, M.; Schneider, N.; Anderson, L. D.; Benedettini, M.; Bernard, J. -P.; Bontemps, S.; <b>Ginsburg, A.</b>; Molinari, S.; Polychroni, D.; Rivera-Ingraham, A.; Roussel, H.; Testi, L.; White, G.; Williams, J. P.; Wilson, C. D.; Wong, M.; Zavagno, A.</a> 08, <b>2013</b> The Astrophysical Journal
-                <br/>   Herschel Reveals Massive Cold Clumps in NGCÂ 7538
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2013arXiv1307.6212T">The Astropy Collaboration; Robitaille, Thomas P.; Tollerud, Erik J.; Greenfield, Perry; Droettboom, Michael; Bray, Erik; Aldcroft, Tom; Davis, Matt; <b>Ginsburg, Adam</b>; Price-Whelan, Adrian M.; Kerzendorf, Wolfgang E.; Conley, Alexander; Crighton, Neil; Barbary, Kyle; Muna, Demitri; Ferguson, Henry; Grollier, FrÃ©dÃ©ric; Parikh, Madhura M.; Nair, Prasanth H.; GÃ¼nther, Hans M.; Deil, Christoph; Woillez, Julien; Conseil, Simon; Kramer, Roban; Turner, James E. H.; Singer, Leo; Fox, Ryan; Weaver, Benjamin A.; Zabalza, Victor; Edwards, Zachary I.; Azalee Bostroem, K.; Burke, D. J.; Casey, Andrew R.; Crawford, Steven M.; Dencheva, Nadia; Ely, Justin; Jenness, Tim; Labrie, Kathleen; Lian Lim, Pey; Pierfederici, Francesco; Pontzen, Andrew; Ptak, Andy; Refsdal, Brian; Servillat, Mathieu; Streicher, Ole</a> 07, <b>2013</b> ArXiv e-prints
+            <br><span class="paperheaders minorheaders">Papers I made a minor contribution to:</span>
+
+<li><a class="norm" href="http://adsabs.harvard.edu/abs/2013arXiv1307.0022F">Fallscheer, C.; Reid, M. A.; Di Francesco, J.; Martin, P. G.; Hill, T.; Hennemann, M.; Nguyen-Luong, Q.; Motte, F.; Men'shchikov, A.; AndrÃ©, Ph.; Ward-Thompson, D.; Griffin, M.; Kirk, J.; Konyves, V.; Rygl, K. L. J.; Sadavoy, S.; Sauvage, M.; Schneider, N.; Anderson, L. D.; Benedettini, M.; Bernard, J. -P.; Bontemps, S.; <b class="myname">Ginsburg, A.</b>; Molinari, S.; Polychroni, D.; Rivera-Ingraham, A.; Roussel, H.; Testi, L.; White, G.; Williams, J. P.; Wilson, C. D.; Wong, M.; Zavagno, A.</a> 08, <b>2013</b> The Astrophysical Journal
+                <br/>   Herschel Reveals Massive Cold Clumps in NGC 7538
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2013arXiv1307.6212T">The Astropy Collaboration; Robitaille, Thomas P.; Tollerud, Erik J.; Greenfield, Perry; Droettboom, Michael; Bray, Erik; Aldcroft, Tom; Davis, Matt; <b class="myname">Ginsburg, Adam</b>; Price-Whelan, Adrian M.; Kerzendorf, Wolfgang E.; Conley, Alexander; Crighton, Neil; Barbary, Kyle; Muna, Demitri; Ferguson, Henry; Grollier, FrÃ©dÃ©ric; Parikh, Madhura M.; Nair, Prasanth H.; GÃ¼nther, Hans M.; Deil, Christoph; Woillez, Julien; Conseil, Simon; Kramer, Roban; Turner, James E. H.; Singer, Leo; Fox, Ryan; Weaver, Benjamin A.; Zabalza, Victor; Edwards, Zachary I.; Azalee Bostroem, K.; Burke, D. J.; Casey, Andrew R.; Crawford, Steven M.; Dencheva, Nadia; Ely, Justin; Jenness, Tim; Labrie, Kathleen; Lian Lim, Pey; Pierfederici, Francesco; Pontzen, Andrew; Ptak, Andy; Refsdal, Brian; Servillat, Mathieu; Streicher, Ole</a> 07, <b>2013</b> ArXiv e-prints
                 <br/>   Astropy: A Community Python Package for Astronomy
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2013arXiv1306.0038M">Margutti, R.; Milisavljevic, D.; Soderberg, A. M.; Chornock, R.; Zauderer, B. A.; Murase, K.; Guidorzi, C.; Sanders, N. E.; Kuin, P.; Fransson, C.; Levesque, E. M.; Chandra, P.; Berger, E.; Bianco, F. B.; Brown, P. J.; Challis, P.; Chatzopoulos, E.; Cheung, C. C.; Choi, C.; Chomiuk, L.; Chugai, N.; Contreras, C.; Drout, M. R.; Fesen, R.; Foley, R. J.; Fong, W.; Friedman, A. S.; Gall, C.; Gehrels, N.; Hjorth, J.; Hsiao, E.; Kirshner, R.; Im, M.; Leloudas, G.; Lunnan, R.; Marion, G. H.; Martin, J.; Morrell, N.; Neugent, K. F.; Omodei, N.; Phillips, M. M.; Rest, A.; Silverman, J. M.; Strader, J.; Stritzinger, M. D.; Szalai, T.; Utterback, N. B.; Vinko, J.; Wheeler, J. C.; Arnett, D.; Campana, S.; Chevalier, R.; <b>Ginsburg, A.</b>; Kamble, A.; Roming, P. W. A.; Pritchard, T.; Stringfellow, G.</a> 05, <b>2013</b> ArXiv e-prints
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2013arXiv1306.0038M">Margutti, R.; Milisavljevic, D.; Soderberg, A. M.; Chornock, R.; Zauderer, B. A.; Murase, K.; Guidorzi, C.; Sanders, N. E.; Kuin, P.; Fransson, C.; Levesque, E. M.; Chandra, P.; Berger, E.; Bianco, F. B.; Brown, P. J.; Challis, P.; Chatzopoulos, E.; Cheung, C. C.; Choi, C.; Chomiuk, L.; Chugai, N.; Contreras, C.; Drout, M. R.; Fesen, R.; Foley, R. J.; Fong, W.; Friedman, A. S.; Gall, C.; Gehrels, N.; Hjorth, J.; Hsiao, E.; Kirshner, R.; Im, M.; Leloudas, G.; Lunnan, R.; Marion, G. H.; Martin, J.; Morrell, N.; Neugent, K. F.; Omodei, N.; Phillips, M. M.; Rest, A.; Silverman, J. M.; Strader, J.; Stritzinger, M. D.; Szalai, T.; Utterback, N. B.; Vinko, J.; Wheeler, J. C.; Arnett, D.; Campana, S.; Chevalier, R.; <b class="myname">Ginsburg, A.</b>; Kamble, A.; Roming, P. W. A.; Pritchard, T.; Stringfellow, G.</a> 05, <b>2013</b> ArXiv e-prints
                 <br/>   A panchromatic view of the restless SN2009ip reveals the explosive ejection of a massive star envelope
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1212.6966">Harvey, Paul M.; Fallscheer, Cassandra; <b>Ginsburg, Adam</b>; Terebey, Susan; Andre, Philippe; Bourke, Tyler L.; Di Francesco, James; Konyves, Vera; Matthews, Brenda C.; Peterson, Dawn E.</a> January, <b>2013</b> ApJ
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1212.6966">Harvey, Paul M.; Fallscheer, Cassandra; <b class="myname">Ginsburg, Adam</b>; Terebey, Susan; Andre, Philippe; Bourke, Tyler L.; Di Francesco, James; Konyves, Vera; Matthews, Brenda C.; Peterson, Dawn E.</a> January, <b>2013</b> ApJ
                 <br/>   A First Look at the Auriga-California Giant Molecular Cloud With Herschel and the CSO: Census of the Young Stellar Objects and the Dense Gas
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/doi/10.1093/mnras/sts418">Smith, Nathan; Arnett, W. David; Bally, John; <b>Ginsburg, Adam</b>; Filippenko, Alexei V.</a>, December, <b>2012</b>, MNRAS 
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/doi/10.1093/mnras/sts418">Smith, Nathan; Arnett, W. David; Bally, John; <b class="myname">Ginsburg, Adam</b>; Filippenko, Alexei V.</a>, December, <b>2012</b>, MNRAS 
                 <br/>   The ring nebula around the blue supergiant SBW1: pre-explosion snapshot of an SN 1987A
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2012ApJ...756..137B">Bally, J., Youngblood, A., and <b>Ginsburg, A.</b></a> , September, <b>2012</b>, ApJ, 756, 137
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2012ApJ...756..137B">Bally, J., Youngblood, A., and <b class="myname">Ginsburg, A.</b></a> , September, <b>2012</b>, ApJ, 756, 137
                 <br/>   The Spindle: An Irradiated Disk and Bent Protostellar Jet in Orion
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2011A%26A...530A..90V"> E. van Aarle, H. Van Winckel, T. Lloyd Evans, T. Ueta, P. R. Wood, and <b>A. G. Ginsburg</b></a> <b>2011</b>, A&amp;A, 530, 90
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2011A%26A...530A..90V"> E. van Aarle, H. Van Winckel, T. Lloyd Evans, T. Ueta, P. R. Wood, and <b class="myname">A. G. Ginsburg</b></a> <b>2011</b>, A&amp;A, 530, 90
                 <br/>   "The optically bright post-AGB population of the LMC" 
-                <!--                <li><a class="norm" href="http://cdsads.u-strasbg.fr/abs/2008arXiv0801.0674V">Van de Steene, G.C., Ueta, T., van Hoof, P.A.M., Reyniers, M., <b>Ginsburg, A.G.</b> </a><b>2008</b>, ArXiv e-prints, 801, arXiv:0801.0674 -->
-</li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2010ApJ...720....1Y">Yan, Chi-Hung; Minh, Y. C.; Wang, Shiang-Yu; Su, Yu-Nang; <b>Ginsburg, Adam</b></a>, <b>2010</b>, ApJ, 720,1-8
+                <!--                <li><a class="norm" href="http://cdsads.u-strasbg.fr/abs/2008arXiv0801.0674V">Van de Steene, G.C., Ueta, T., van Hoof, P.A.M., Reyniers, M., <b class="myname">Ginsburg, A.G.</b> </a><b>2008</b>, ArXiv e-prints, 801, arXiv:0801.0674 -->
+</li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2010ApJ...720....1Y">Yan, Chi-Hung; Minh, Y. C.; Wang, Shiang-Yu; Su, Yu-Nang; <b class="myname">Ginsburg, Adam</b></a>, <b>2010</b>, ApJ, 720,1-8
                 <br/>     "Star-forming Region Sh 2-233IR. I. Deep Near-infrared Observations toward the Embedded Stellar Clusters"
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2010ApJ...717.1157D">Dunham, M.K., Rosolowsky, E., Evans, N. J, Cyganowsky, C. J., and <b>the BGPS collaboration</b></a> <b>2010</b>, ApJ, 717, 1157
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2010ApJ...717.1157D">Dunham, M.K., Rosolowsky, E., Evans, N. J, Cyganowsky, C. J., and <b class="myname">the BGPS collaboration</b></a> <b>2010</b>, ApJ, 717, 1157
                 <br/>     "The Bolocam Galactic Plane Survey -- III. Characterizing Physical Properties of Massive Star-Forming Regions in the Gemini OB1 Molecular Cloud"
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2010A%26A...518L..90B">Bally, J., Anderson, L. D., Battersby, C., Calzoletti, L., Digiorgio, A. M., Faustini, F., <b>Ginsburg, A.</b>, Li, J. Z., Nguyen- Luong, Q., Molinari, S., Motte, F., Pestalozzi, M., Plume, R., Rodon, J., Schilke, P., Schlingman, W., Schneider-Bontemps, N., Shirley, Y., Stringfellow, G. S., Testi, L., Traficante, A., Veneziani, M., &amp; Zavagno, A., </a> July, <b>2010</b>, A&amp;A, 518, L90+
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2010A%26A...518L..90B">Bally, J., Anderson, L. D., Battersby, C., Calzoletti, L., Digiorgio, A. M., Faustini, F., <b class="myname">Ginsburg, A.</b>, Li, J. Z., Nguyen- Luong, Q., Molinari, S., Motte, F., Pestalozzi, M., Plume, R., Rodon, J., Schilke, P., Schlingman, W., Schneider-Bontemps, N., Shirley, Y., Stringfellow, G. S., Testi, L., Traficante, A., Veneziani, M., &amp; Zavagno, A., </a> July, <b>2010</b>, A&amp;A, 518, L90+
                 <br/>     Herschel observations of the W43 "mini-starburst"
-                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2009A%26A...494..647R"> Rubin, D. and the <b>SAGE collaboration</b></a>, <b>2009</b>, A&amp;A,494,p647-661
+                </li><li><a class="norm" href="http://adsabs.harvard.edu/abs/2009A%26A...494..647R"> Rubin, D. and the <b class="myname">SAGE collaboration</b></a>, <b>2009</b>, A&amp;A,494,p647-661
                 <br/>     "A spatially resolved study of photoelectric heating and [C II] cooling in the LMC. Comparison with dust emission as seen by SAGE"
-                </li><li><a class="norm" href="http://cdsads.u-strasbg.fr/abs/2008A%26A...480..775V">Van de Steene, G.C., Ueta, T., van Hoof, P.A.M., Reyniers, M., <b>Ginsburg, A.G.</b> </a> <b>2008</b>, A&amp;A, 480, 3, 775-783 
+                </li><li><a class="norm" href="http://cdsads.u-strasbg.fr/abs/2008A%26A...480..775V">Van de Steene, G.C., Ueta, T., van Hoof, P.A.M., Reyniers, M., <b class="myname">Ginsburg, A.G.</b> </a> <b>2008</b>, A&amp;A, 480, 3, 775-783 
                 <br/>     "Kinematics and H<sub>2</sub> morphology of the multipolar post-AGB star IRAS 16594-4656"
                 </li></ol>
-<br/>
-<br/><b> Public Code Projects:</b>
-<br/> <tt><a class="norm" href="http://pyspeckit.bitbucket.org">pyspeckit</a></tt>, a spectroscopic plotting and fitting tool written in Python
-            <br/> <tt><a class="norm" href="http://code.google.com/p/agpy/">agpy</a></tt>, a collection of mostly standalone python and IDL codes.
-            <br/> <tt><a class="norm" href="http://code.google.com/p/bgpspipeline/">The BGPS pipeline</a></tt>, the pipeline for the Bolocam Galactic Plane Survey (IDL)
-            <br/> <tt><a class="norm" href="http://code.google.com/p/casaradio/">casaradio</a></tt> Codes generated by the radio astronomers at my institution 
-            <br/> <tt><a class="norm" href="http://code.google.com/p/aposoftware/">aposoftware</a></tt> Reduction codes and observing scripts for the APO 3.5m telescope 
-            <br/> <tt><a class="norm" href="https://github.com/astropy/astroquery"> astroquery </a> </tt> Querying tools for catalogs and image archives
-            <br/> <tt><a class="norm" href="http://image-registration.rtfd.org"> image_registration </a> </tt> Image Registration tools in python (primarily using cross-correlation)
-            <br/>
+<br>
+<br><b class='heading'> Public Code Projects:</b>
+<br> There are <span id='nrepos' class='nrepos'></span> projects listed on <a href="http://github.com/keflavich" class="norm"> my github page<a>
+            <br> <tt><a class="norm" href="http://pyspeckit.bitbucket.org">pyspeckit</a></tt>, a spectroscopic plotting and fitting tool written in Python
+            <br> <tt><a class="norm" href="http://code.google.com/p/agpy/">agpy</a></tt>, a collection of mostly standalone python and IDL codes.
+            <br> <tt><a class="norm" href="http://code.google.com/p/bgpspipeline/">The BGPS pipeline</a></tt>, the pipeline for the Bolocam Galactic Plane Survey (IDL)
+            <br> <tt><a class="norm" href="http://code.google.com/p/casaradio/">casaradio</a></tt> Codes generated by the radio astronomers at my institution 
+            <br> <tt><a class="norm" href="http://code.google.com/p/aposoftware/">aposoftware</a></tt> Reduction codes and observing scripts for the APO 3.5m telescope 
+            <br> <tt><a class="norm" href="https://github.com/astropy/astroquery"> astroquery </a> </tt> Querying tools for catalogs and image archives
+            <br> <tt><a class="norm" href="http://image-registration.rtfd.org"> image_registration </a> </tt> Image Registration tools in python (primarily using cross-correlation)
+            <br>
 <!--
-            <br><b> Conference Proceedings:</b>
+            <br><b class='heading'> Conference Proceedings:</b>
             <br> <a class="norm" href="http://cdsads.u-strasbg.fr/abs/2006AAS...20910003G">Ginsburg, A. 2006, Bulletin of the American Astronomical Society, 38, 1042 </a>
             <br>
             -->
-            <br> <b> <a href="talks.htm">Talks:</a> </b>
+            <br> <b class='heading'> <a href="talks.htm">Talks:</a> </b>
             <br> <a href="http://www.astro.cardiff.ac.uk/newsandevents/conferences/antfest/antfest.talks.posters/Session%206%20-%20Initial%20Stages%20of%20SF/5_Ginsburg.pdf">Labyrinth of Star Formation, June 21, 2012: Surveying pre-stellar gas with the BGPS</a>
             <br> <a href="talks/mw2011.pdf">MW2011 conference, September 19th, 2011: The Bolocam Galactic Plane Survey and Formaldehyde Follow-up</a>
             <br> <a href="talks/bgps_oct16_2009.pdf"> JILA seminar: The Bolocam Galactic Plane Survey </a>
             <br>
-            <br> <b>Summer Schools:</b>
+            <br> <b class='heading'>Summer Schools:</b>
             <br> <a href="http://www.iram.es/IRAMES/events/summerschool2009/index.html"> IRAM single-dish, Granada, Spain, September 2009  </a>
             <br> <a href="http://www.aoc.nrao.edu/events/synthesis/2006/">NRAO VLA Synthesis Imaging, Socorro, New Mexico, July 2006</a>
             <br>
-            <br> <b> Teaching: </b>
+            <br> <b class='heading'> Teaching: </b>
             <br> <a href="https://fcq.colorado.edu/scripts/broker.exe?iname=ginsburg&_PROGRAM=fcqlib.fcqdata.sas&_SERVICE=fcq&camp=BD&fyr=2006&lyr=2013&grp1=ALL">My FCQs</a> from teaching at CU
             <br> Taught <a href="http://astr2600s13.github.io/">ASTR 2600: Computational Techniques</a> in Fall 2012 and Spring 2013
             <br> Taught <a href="http://casa.colorado.edu/~ginsbura/summer1120/">ASTR 1120: Stars and Galaxies</a> with <a href="http://www.devinsilvia.com">Devin Silvia</a> during Summer term B, 2010
             <br> TA for <a href="3520site/">ASTR 3520, Fall 2007</a>, <a href="astr3520_2008/">Fall 2008</a>, Spring 2010
             <br> TA for <a href="http://casa.colorado.edu/~elling/astr3510/ASTR3510.html">ASTR 3510, Spring 2008</a>, <a href="http://cosmos.colorado.edu/astr3510/"> Fall 2009 </a>, Fall 2011
             <br>
-            <br> <b> Outreach: </b>
+            <br> <b class='heading'> Outreach: </b>
             <br> Judge for <a class="norm" href="http://www2.uchsc.edu/sciencefair/">Denver Metro Science Fair</a>, 2/27/2008
             <br> Volunteer for middle school science day at the University of Denver, May 2007
             <br> Volunteer for University of Colorado Astronomy Day, 2008-2011
@@ -150,7 +194,7 @@ function togglecolor()
             <br> Presentation to Boulder Astronomical Society 1/16/2010
             <br> Winter Park Star Safari, July 2011
             <br>
-            <br> <b> Awards / Honors: </b>
+            <br> <b class='heading'> Awards / Honors: </b>
             <br> 2011 CU APS department Chance Irick Cooke Graduate Fellowship recipient 
             <br> 2010 NRAO Student Observing Support 
             <br> 2009 NSF GRFP Honorable Mention
@@ -159,7 +203,7 @@ function togglecolor()
             <br> 2008 University of Colorado Astrophysical and Planetary Sciences Excellence in Teaching award
             <br> 2006 National Radio Astronomy Observatory - summer REU with David Meiers
             <br>
-            <br> <b> Large Collaborations: </b>
+            <br> <b class='heading'> Large Collaborations: </b>
             <br> 2007-2008 SAGE: Surveying the Agents of a Galaxy's Evolution: A Spitzer Space Telescope survey of the Large Magellanic Cloud
             <br> &nbsp; PI: Margaret Meixner //  Advisor: Toshiya Ueta
             <br> 2008-present BGPS: <a href="http://milkyway.colorado.edu/~jaguirre/index.html">Bolocam Galactic Plane Survey</a>
@@ -167,12 +211,12 @@ function togglecolor()
             <br> 2010-present Hi-Gal: <a href="https://hi-gal.ifsi-roma.inaf.it/higal/">Herschel Infrared Galactic Plane Survey</a>
             <br> &nbsp; PI: Sergio Molinari
             <br> 
-            <br> <b> Programming: </b>
+            <br> <b class='heading'> Programming: </b>
             <br> Fluent in: Python, IDL, HTML, LaTeX, IRAF, Unix Shell, Mathematica
             <br> Less fluent in: PHP, SQL, Fortran
             <br> Past experience with: Perl, PDL,  CGI,  C++
             <br>
-            <br> <b> Data Reduction / Processing: </b>
+            <br> <b class='heading'> Data Reduction / Processing: </b>
             <br> Optical, Near-IR with IRAF/pyRAF
             <br> Optical, UV with Python
             <br> Near-IR with SPEXTOOL
@@ -183,7 +227,7 @@ function togglecolor()
             <br> EVLA with CASA
             <br> CARMA with CASA, MIRIAD
             <br> 
-            <br> <b> Observing: </b> [see <a href="observing.htm" class="norm"> my observing page </a> for details ]
+            <br> <b class='heading'> Observing: </b> [see <a href="observing.htm" class="norm"> my observing page </a> for details ]
             <br> PI  of 
                  <a href="http://library.nrao.edu/proposals/catalog/3696">VLA/10A-229 (A)</a>, 
                  <a href="http://library.nrao.edu/proposals/catalog/6587">VLA/12B-365 (B)</a>,
@@ -201,13 +245,13 @@ function togglecolor()
             <br> Arecibo Mock Spectrometer
             <br> CARMA
             <br>
-            <br> <b> Refereeing: </b>
+            <br> <b class='heading'> Refereeing: </b>
             <br> Revista Mexicana de Astronom&iacute;a y Astrof&iacute;sica: 2010 - present
             <br> Monthly Notices of the Royal Astronomical Society: 2010 - present
             <br> Astronomy and Astrophysics Letters: 2013 - present
             <br> Astrophysical Journal: 2013 - present
             <br>
-            <br> <b> Service Activities: </b>
+            <br> <b class='heading'> Service Activities: </b>
             <br> Served on a grant allocation committee (institution required to be private)
             <br> 2010-2012 Graduate Student Representative to the Faculty
             <br> 2009-2010 Graduate Student Representative on the Admissions Committee

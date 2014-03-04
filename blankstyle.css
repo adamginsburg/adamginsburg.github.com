@@ -1,3 +1,11 @@
+body {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+li {
+    padding: 8px;
+    }
+
 /* http://stackoverflow.com/questions/8290447/remove-horizontal-spacing-when-using-positionrelative-in-navigation-bar */
 /* a.navbar { position:relative; left:-20px; right: 20px;} */
 a.navbar:link	 { text-shadow:none; padding: 5px 0px; white-space:nowrap; font-size:15px;}
@@ -54,3 +62,7 @@ nav li {padding:2px; font-size:15px; display:inline;}
 
 nav a:before {content:'['; display:inline; font-size:35px; position:relative; top:4px; left:-3px; color:white;}
 nav a:after {content:']'; display:inline; font-size:35px; position:relative; top:4px; right:-3px; color:white;}
+
+.minorheaders {
+    margin: -40px;
+}

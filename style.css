@@ -12,6 +12,11 @@ body {
     line-height: 1.2;
 }
 
+li {
+    padding: 8px;
+    }
+
+
 table {
     background-color: #323232;
     border-style: inset outset outset inset;
@@ -71,6 +76,10 @@ a:visited	{ color:#DDD }
 a:active	{ color:#2288BB; text-shadow: none }
 a:hover		{ color:#2288BB }
 a {text-decoration: none; }
+
+.myname {
+    color: #9999FF;
+}
 
 /* http://stackoverflow.com/questions/8290447/remove-horizontal-spacing-when-using-positionrelative-in-navigation-bar */
 /* a.navbar { position:relative; left:-20px; right: 20px;} */
@@ -277,4 +286,21 @@ a.big {text-decoration: underline;}
     font-family: courier;
     font-size: 12px;
     border: solid 1px Lightgrey;
+}
+
+button { 
+    border-radius:6px;
+}
+.underline {text-decoration:underline}
+.bold {font-weight:bold}
+
+.paperheaders {
+    color:#DB90B4;
+    font-size: 105%;
+}
+.minorheaders{
+    margin: -40px;
+}
+.heading {
+    color: #B7B7EE;
 }
