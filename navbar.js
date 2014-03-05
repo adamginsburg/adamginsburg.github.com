@@ -1,7 +1,7 @@
 
 function navbar () {
     return '<nav> \
-<ul> \
+<ul class="navbar"> \
 <li> \
 <a class="navbar" href="index.htm">Home</a> \
 </li> \

@@ -304,3 +304,15 @@ button {
 .heading {
     color: #B7B7EE;
 }
+
+ul.navbar {
+    background-color: #111;
+    height: 50px;
+    margin-bottom: -5px;
+}
+nav {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
