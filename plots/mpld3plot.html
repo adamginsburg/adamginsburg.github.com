@@ -52,7 +52,7 @@ if(typeof(mpld3) !== "undefined"){
    require.config({paths: {d3: "/d3"}});
    require(["d3"], function(d3){
       window.d3 = d3;
-      mpld3_load_lib("/mpld3.js", function(){
+      mpld3_load_lib("https://raw.githubusercontent.com/jakevdp/mpld3/master/mpld3/js/mpld3.v0.1.js", function(){
          
     var LinkedViewPlugin = function(fig, prop){
       this.fig = fig;
@@ -81,8 +81,8 @@ if(typeof(mpld3) !== "undefined"){
     });
 }else{
     // require.js not available: dynamically load d3 & mpld3
-    mpld3_load_lib("/d3.js", function(){
-         mpld3_load_lib("/mpld3.js", function(){
+    mpld3_load_lib("http://d3js.org/d3.v3.min.js", function(){
+         mpld3_load_lib("https://raw.githubusercontent.com/jakevdp/mpld3/master/mpld3/js/mpld3.v0.1.js", function(){
                  
     var LinkedViewPlugin = function(fig, prop){
       this.fig = fig;
