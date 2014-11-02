@@ -1,0 +1,3 @@
+[submodule "summer1120"]
+	path = summer1120
+	url = https://github.com/keflavich/astr1120_2010.git
