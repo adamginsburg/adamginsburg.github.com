@@ -1,5 +1,8 @@
 \documentclass{article}
 \usepackage{url}
+%\usepackage[utf8]{inputenc}
+\usepackage{listliketab}
+\usepackage[margin=1.0in]{geometry}
 \usepackage{natbib}  % Requires natbib.sty, available from http://ads.harvard.edu/pubs/bibtex/astronat/
 %\usepackage[sorting=ydnt]{biblatex}
 %\setlength{\bibsep}{0pt}
@@ -24,36 +27,54 @@
 
 
 \begin{document}
-\begin{centering}
+\begin{center}
 \par Adam Ginsburg 
-\par Fellow, European Southern Observatory
-\par Karl-Schwarzschild-Str. 2 85748
-\par Garching bei München
-\par e-mail: adam.g.ginsburg@gmail.com or adam.ginsburg@eso.org
-% why is the hspace hack necessary?
-\par \hspace{20mm} Website: \url{http://www.adamgginsburg.com/}
-\end{centering}
+\par Fellow
+\par ESO Headquarters
+\par Karl-Schwarzschild-Str. 2
+\par 85748 Garching bei Muenchen
+\par Germany
+\par Phone: 015787192507; e-mail: adam.ginsburg@eso.org / adam.g.ginsburg@gmail.com
+% why is the hspace hack necessary?  because CENTER, not CENTERING
+\par Website: \url{http://www.adamgginsburg.com}
+\end{center}
   
-\section*{Educational Background \& Professional Employment: }
-\begin{itemize}
-    \item 2013 - present - Fellow, European Southern Observatory
-    \item 2013 PhD Astrophysics - University of Colorado, Boulder (advisor: John Bally)
-    \item 2009 M.S. Astrophysics - University of Colorado, Boulder (advisor: John Bally)
-    \item 2006  B.S. Astrophysics - Rice University (advisor: Pat Hartigan)
-    \item 2007-2012 - Graduate Research Assistant - Center for Astrophysics and Space Astronomy, 
-                                                                          University of Colorado, Boulder, CO 
-    \item 2007-2010    - Teaching Assistant - Department of Astrophysical and Planetary Sciences, 
-                                                              University of Colorado, Boulder, CO 
-    \item 2007 - Research Assistant - Department of Physics and Astronomy, 
-                                                 University of Denver, Denver, CO 
-\end{itemize}
+\section*{Educational Background: }
+\begin{tabular} {cll}
+    \textbullet & 2013 PhD Astrophysics & University of Colorado, Boulder \\
+    \textbullet & 2009 M.S. Astrophysics & University of Colorado, Boulder \\
+    \textbullet & 2006  B.S. Astrophysics & Rice University \\
+\end{tabular}
+
+
+\section*{Professional Employment:}
+\begin{listliketab}
+    %\storetstyleof{itemize}
+    \begin{tabular}{clll}
+    \textbullet & 2013-     & Fellow  & European Southern Observatory, Garching, Germany \\
+    \textbullet & 2007-2013 & Graduate Research Assistant & Center for Astrophysics and Space Astronomy, \\
+                                                           &&& University of Colorado, Boulder, CO \\
+    \textbullet & 2010,        & Instructor  & Department of Astrophysical and Planetary Sciences, \\
+                & 2012-2013              && University of Colorado, Boulder, CO \\
+    \textbullet & 2007-2011    & Teaching Assistant & Department of Astrophysical and Planetary Sciences, \\
+                                                  &&& University of Colorado, Boulder, CO \\
+    \textbullet & 2007 & Research Assistant & Department of Physics and Astronomy, \\
+                                          &&& University of Denver, Denver, CO \\
+    \end{tabular}
+\end{listliketab}
 
 \section*{Areas of Research: }
-The astrophysics of massive star formation and the interstellar medium, with a
-focus on millimeter observations of proto-cluster clumps and massive outflows. 
-Observing with single-dish heterodyne and continuum millimeter instruments,
-single dish and synthesis array radio imaging,  and optical and near infrared
-imaging and spectroscopy.  
+\begin{itemize}
+    \item The astrophysics of massive star formation and the interstellar
+        medium, with a focus on millimeter observations of proto-cluster
+        clumps, massive outflows, and turbulence. 
+    \item Observing with single-dish heterodyne and continuum millimeter
+        instruments, single dish and synthesis array radio imaging,  and
+        optical and near infrared imaging and spectroscopy. 
+    \item Development of software tools for the analysis of spectral data
+        cubes, images of diffuse and extended emission and development of
+        general-use tools.
+\end{itemize}
 
 %Ginsburg, Adam, Bally, John, Williams, Jonathan 2011, MNRAS, in press 
 %   “JCMT HARP CO 3-2 Observations of Molecular Outflows in W5” 
@@ -83,35 +104,94 @@ imaging and spectroscopy. 
 %    “Kinematics and H2 morphology of the multipolar post-AGB star IRAS 16594-4656”
 
 
-\section*{Conferences: }
-\begin{itemize}
-    \item PP6 Poster ``Gemini GEMS AO imaging of the Orion Outflow''
-    \item Labyrinth of Star Formation, June 21, 2012: Surveying pre-stellar gas with the BGPS 
-    \item MW2011 Contributed Talk ``The Bolocam Galactic Plane Survey''
-    \item Stars to Galaxies 2010 Poster ``Star Formation in Perseus Arm Complexes''
-    \item AAS 217 Poster ``Formaldehyde Densitometry of Dust Clumps: The shapes and densities of massive star forming regions''
-    \item AAS 215 Poster ``The Bolocam Galactic Plane Survey: Data, Early Results, and Future Directions''
-    \item IRAM single-dish summer school 2009 
-    \item VLA synthesis imaging summer school and summer REU 2006 
-\end{itemize}
-
-
-\section*{Teaching: }
-\begin{itemize}
-    \item Intructor of Record for ASTR 2600: Introduction to Programming for Scientists, Fall 2012 and Spring 2013 
-    \item Summer 2010         Co-taught ASTR 1020 - Stars and Galaxies
-    \item Fall 2007-2011      Teaching Assistant for advanced undergraduate labs ASTR 3510 - Imaging and ASTR3520 - Spectroscopy
-\end{itemize}
 
 \section*{Honors/Awards: }
-\begin{itemize}
-    \item 2011 University of Colorado Chance Irick Cooke Fellowship
-    \item 2010 NRAO Green Bank Student Observing Support 
-    \item 2008,2009,2010 NSF GRFP Honorable Mention 
-    \item 2008 NRAO Photo Contest First Prize 
-    \item 2008 University of Colorado Astrophysical and Planetary Sciences Excellence in Teaching award 
-    \item 2006 National Radio Astronomy Observatory - summer REU with David Meiers 
-\end{itemize}
+\begin{tabular}{cll}
+    \textbullet & 2011 & University of Colorado Chance Irick Cooke Fellowship for Excellence in Research\\
+    \textbullet & 2010 & NRAO Green Bank Student Observing Support  \\
+    \textbullet & 2008, 2009, 2010 & NSF GRFP Honorable Mention  \\
+    \textbullet & 2008 & NRAO Photo Contest First Prize  \\
+    \textbullet & 2008 & University of Colorado Astrophysical and Planetary Sciences Excellence in Teaching award  \\
+    \textbullet & 2006 & National Radio Astronomy Observatory - summer REU with David Meiers  \\
+\end{tabular}
+
+\section*{Teaching: }
+\begin{tabular}{cll}
+    \textbullet & Spring 2013  &   Instructor ASTR 2600: Introduction to Programming for Astronomers (in IDL) \\
+    \textbullet & Fall 2012    &   Instructor ASTR 2600: Introduction to Programming for Astronomers (in IDL) \\
+    \textbullet & Summer 2010  &   Co-Instructor ASTR 1020: Stars and Galaxies \\
+    \textbullet & Fall 2011    &   Co-Instructor ASTR 6000: Graduate Seminar on the Interstellar Medium \\
+    \textbullet & Fall 2011    &   Teaching Assistant for ASTR 3510: Astronomical Observing (imaging) \\
+    \textbullet & Spring 2010  &   Teaching Assistant for ASTR 3520: Astronomical Observing (spectroscopy) \\
+    \textbullet & Fall 2009    &   Teaching Assistant for ASTR 3510: Astronomical Observing (imaging) \\
+    \textbullet & Fall 2008    &   Teaching Assistant for ASTR 3520: Astronomical Observing (spectroscopy) \\
+    \textbullet & Spring 2008  &   Teaching Assistant for ASTR 3510: Astronomical Observing (imaging) \\
+    \textbullet & Fall 2007    &   Teaching Assistant for ASTR 3520: Astronomical Observing (spectroscopy) \\
+\end{tabular}
+
+\section*{Conferences: }
+\begin{tabular}{cp{1.8in}cp{1cm}p{3.5in}}
+    \textbullet & MPIfR Bonn Workshop on the APEX CMZ 1 mm survey & 2014 & Organized &  \\
+    \textbullet & ALMA Arc Node Retreat & 2014 & Talk & ALMA's first look at the extended Sgr B2 Cloud \\
+    \textbullet & Sexten Workshop: The Formation of Globular Clusters & 2014 & Talk & The Galactic population of young massive clusters \\
+    \textbullet & Sexten Workshop: The assembly of massive clusters & 2014 & Talk & The density of W51 and its protoclusters \\
+    \textbullet & Early Phase of Star Formation (EPoS 6) & 2014 & Talk & The density structure of The Brick \\
+    \textbullet & Early Phase of Star Formation (EPoS 6) & 2014 & Poster & The density structure of the W51 Giant Molecular Cloud \\
+    \textbullet & ISM Physical Processes in Garching & 2013 & Poster & A measurement of the turbulence driving parameter \\
+    \textbullet & .Astronomy 5 & 2013 & Talk & Astroquery: A toolkit for remote data access in python \\
+%    \textbullet & IAU 303: The Galactic Center & 2013 & Poster&  \\
+    \textbullet & AAS 221 & 2013 & Thesis Talk & Surveying massive star formation in the Galactic Plane \\
+    \textbullet & Galactic Scale Star Formation & 2012 & Poster& There are no starless massive proto-clusters in the first quadrant \\
+    \textbullet & Labyrinth of Star Formation & 2012 &  Talk& Surveying Pre-Stellar Gas with the BGPS (with an emphasis on what we don't see) \\
+    \textbullet & Milky Way & 2011 & Talk& The Bolocam Galactic Plane Survey \\
+    \textbullet & Stars to Galaxies & 2010 & Poster& Star Formation in Perseus Arm Complexes \\
+    \textbullet & AAS 217 & 2010 &  Poster& Formaldehyde Densitometry of Dust Clumps: The shapes and densities of massive star forming regions \\
+    \textbullet & AAS 215 & 2009 &  Poster& The Bolocam Galactic Plane Survey: Data, Early Results, and Future Directions \\
+%    \textbullet & IRAM single-dish summer school  &2009&   \\
+%    \textbullet & VLA synthesis imaging summer school and summer REU &2006&  \\
+\end{tabular}
+
+% \section*{Selected Talks:}
+% \begin{tabular}{cp{1.8in}cp{3.5in}}
+%     \textbullet & ESO Lunch Talk & 2013 & Examining Massive Cluster Formation with H2CO in W51 \\
+%     \textbullet & MPIfR Lunch Talk & 2013 & Surveying Star Formation in the Galactic Plane  \\
+%     \textbullet & CfA Lunch Talk & 2013 & Surveying Star Formation in the Galactic Plane  \\
+% \end{tabular}
+
+\section*{Successful Observing Proposals to open TACs as PI:}
+\begin{tabular}{p{0.75in}p{3.0in}p{1.0in}p{0.75in}}
+                Telescope & Title & Time & Status \\
+    \hline
+    GBT & GBT14A-329: MUSTANG Galactic Plane survey: HCHIIs in the brightest massive proto-clusters & 14 hours & A-ranked \\
+    ALMA & Cycle 2: 2013.1.00269.S: Sgr B2 - The Proving Ground for Star Formation Theories & 6 hours & In Progress\\
+    LOFAR & Cycle 2: LC2\_006: A search for p-H2CO, a potential EoR contaminant, toward the Galactic Center, W43, W44, W49, and M82. & 8 hours & Observed (2014) \\
+    APEX & H2CO Thermometry of the CMZ to understand its low star formation rate & 300 hours from 3 TACs & Observed (2014) \\
+    EVLA & 13A/064: Massive stars and ionized gas in the W51 complex & 13 hours, 4 configurations & Observed (2014) \\
+    GBT  & GBT14A-110/GBT12B-221: Density Measurements in G0.253+0.016: Pilot program for CMZ H2CO densitometry & 18 hours & Observed (2014) \\
+    GBT  & GBT10B-019: Densitometry of young star-forming complexes throughout the Galaxy & 120 hours & Published: 2013ApJ...779...50G \\
+    GBT  & GBT09C-049	Measuring the dense gas mass fraction with H2CO absorption & 4 hours & Published: 2011ApJ...736..149G \\
+    Arecibo & A2584: Densitometry of young star-forming complexes throughout the Galaxy & 60 hours & Published: 2013ApJ...779...50G \\
+    Arecibo & A2854: Density Map of the W51 Giant Molecular Cloud complex & 13 hours & In Press: 2014 A\&A \\
+\end{tabular}
+
+\section*{Service:}
+\begin{enumerate}
+    \item Organizer of the python coffee and tutorial series at ESO, 2014
+    \item Referee for \textit{Science}, the Astrophysical Journal, Astronomy \&
+    Astrophysics (main journal and letters), Monthly Notices of the Royal
+    Astronomical Society, Revista Mexicana De Astronomia y Astrofisica 
+    \item Panel chair for a NASA grant review panel 1 year between 2012 and 2014
+    \item ESO Fellow Duties as ALMA support scientist.  Primary duties included
+        software development and maintenance of the Quality Assurance Packager
+        software
+    \item Co-organizer of the ALMA Postdoc Symposium in Tokyo, December 2014
+    \item Member of the \texttt{astropy} (\url{astropy.org}) collaboration
+    \item Member of the \texttt{Montage} (\url{montage.ipac.caltech.edu}) users group
+\end{enumerate}
+
+
+
+
 
 \newpage
 \nocite{*}

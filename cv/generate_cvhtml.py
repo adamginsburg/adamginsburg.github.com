@@ -67,8 +67,8 @@ with codecs.open('generated.html','w',encoding='utf8') as outf:
 print datalist[1]
 
 #response = requests.post('http://adslabs.org/adsabs/api/search/',
-$                         params={'q':'author:ginsburg, a',
-$                                 'dev_key':get_dev_key(),
-$                                 'rows':200,
-$                                 'filter':'database:astronomy',
-$                                 'facet':['year','author','bibstem','property']})
+#                         params={'q':'author:ginsburg, a',
+#                                 'dev_key':get_dev_key(),
+#                                 'rows':200,
+#                                 'filter':'database:astronomy',
+#                                 'facet':['year','author','bibstem','property']})
