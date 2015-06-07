@@ -33,7 +33,7 @@ table {
 td {
     background-color: #252525;
     border-style: none;
-    border-width: 0;
+    border-width: 0.5;
     color: #CCC;
     font-style: normal;
    	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
