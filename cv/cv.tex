@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{url}
+\usepackage{pbox}
 %\usepackage[utf8]{inputenc}
 \usepackage{listliketab}
 \usepackage[margin=1.0in]{geometry}
@@ -33,7 +34,7 @@
 \par ESO Headquarters
 \par Karl-Schwarzschild-Str. 2
 \par 85748 Garching bei Muenchen, Germany
-\par Phone: +49-0157-8719-2507
+\par Phone: +49~0157-8719-2507
 \par E-mail: adam.ginsburg@eso.org / adam.g.ginsburg@gmail.com
 % why is the hspace hack necessary?  because CENTER, not CENTERING
 \par Website: \url{www.adamgginsburg.com}
@@ -41,9 +42,9 @@
   
 \section*{Educational Background: }
 \begin{tabular} {cll}
-    \textbullet & 2013 PhD Astrophysics & University of Colorado, Boulder \\
-    \textbullet & 2009 M.S. Astrophysics & University of Colorado, Boulder \\
-    \textbullet & 2006  B.S. Astrophysics & Rice University \\
+    \textbullet & 2013~PhD Astrophysics & University of Colorado, Boulder \\
+    \textbullet & 2009~M.S. Astrophysics & University of Colorado, Boulder \\
+    \textbullet & 2006~B.S. Astrophysics & Rice University \\
 \end{tabular}
 
 
@@ -51,12 +52,13 @@
 \begin{listliketab}
     %\storetstyleof{itemize}
     \begin{tabular}{clll}
-    \textbullet & 2013-     & Fellow  & European Southern Observatory, Garching, Germany \\
-    \textbullet & 2007-2013 & Graduate Research Assistant & Center for Astrophysics and Space Astronomy, \\
-                                                           &&& University of Colorado, Boulder, CO \\
-    \textbullet & 2010,        & Instructor  & Department of Astrophysical and Planetary Sciences, \\
-                & 2012-2013              && University of Colorado, Boulder, CO \\
-    \textbullet & 2007-2011    & Teaching Assistant & Department of Astrophysical and Planetary Sciences, \\
+    \textbullet & 2013 - present & Fellow  & European Southern Observatory\\
+                &              &         & Garching, Germany \\
+    \textbullet & 2007 - 2013 & Graduate Research Assistant & Center for Astrophysics and Space Astronomy, \\
+                &           &                             & University of Colorado, Boulder, CO \\
+    \textbullet & 2010 - 2013 & Instructor  & Department of Astrophysical and Planetary Sciences, \\
+                                         &&& University of Colorado, Boulder, CO \\
+    \textbullet & 2007 - 2011    & Teaching Assistant & Department of Astrophysical and Planetary Sciences, \\
                                                   &&& University of Colorado, Boulder, CO \\
     \textbullet & 2007 & Research Assistant & Department of Physics and Astronomy, \\
                                           &&& University of Denver, Denver, CO \\
@@ -66,14 +68,14 @@
 \section*{Areas of Research: }
 \begin{itemize}
     \item The astrophysics of massive star formation and the interstellar
-        medium, with a focus on millimeter observations of proto-cluster
+        medium, with a focus on observations of proto-cluster
         clumps, massive outflows, and turbulence. 
     \item Observing with single-dish heterodyne and continuum millimeter
         instruments, single dish and synthesis array radio imaging,  and
         optical and near infrared imaging and spectroscopy. 
-    \item Development of software tools for the analysis of spectral data
-        cubes, images of diffuse and extended emission and development of
-        general-use tools.
+    \item The development of software tools for the analysis and visualization
+        of diffuse and extended emission, spectral data cubes, and large
+        astromical data sets.
 \end{itemize}
 
 %Ginsburg, Adam, Bally, John, Williams, Jonathan 2011, MNRAS, in press 
@@ -105,22 +107,42 @@
 
 
 
+\setlength{\extrarowheight}{4pt}
 \section*{Honors/Awards: }
+\vspace{-12pt}
 \begin{tabular}{cll}
-    \textbullet & 2011 & University of Colorado Chance Irick Cooke Fellowship for Excellence in Research\\
+    \textbullet & 2013 & European Southern Observatory Postdoctoral Fellowship \\
+    \textbullet & 2011 & University of Colorado Chance Irick Cooke Fellowship for Excellence in Research \\
     \textbullet & 2010 & NRAO Green Bank Student Observing Support  \\
-    \textbullet & 2008, 2009, 2010 & NSF GRFP Honorable Mention  \\
-    \textbullet & 2008 & NRAO Photo Contest First Prize  \\
+    \textbullet & 2010 & NSF GRFP Honorable Mention  \\
+    \textbullet & 2009 & NSF GRFP Honorable Mention  \\
+    \textbullet & 2008 & NSF GRFP Honorable Mention  \\
+    \textbullet & 2008 & NRAO Photo Contest First Prize \\
     \textbullet & 2008 & University of Colorado Astrophysical and Planetary Sciences Excellence in Teaching award  \\
     \textbullet & 2006 & National Radio Astronomy Observatory - summer REU with David Meiers  \\
 \end{tabular}
 
+\setlength{\extrarowheight}{4pt}
+\section*{Academic Advising: }
+\vspace{-12pt}
+\begin{tabular}{p{0.75in}p{1.2in}lp{2.6in}}
+    Date & Program & Student & Project \\
+    \hline
+    Fall 2013 -\newline present & Ludwig-Maximilian University / ESO PhD Thesis Student & Anna Faye McLeod & FUSION: Comparison of hydrodynamic simulations and observations in nearby high mass star forming regions  \\
+    Summer 2014 & Google Summer of Code & Simon Liedtke& New tools for \texttt{astroquery}: XMatch, SkyView, Atomic Line List \\
+    Summer 2013 & Google Summer of Code & Madhura Parikh& A coherent API for \texttt{astroquery}, a python web database query toolkit \\
+\end{tabular}
+
+\setlength{\extrarowheight}{4pt}
 \section*{Teaching: }
+\vspace{-12pt}
 \begin{tabular}{cll}
-    \textbullet & Spring 2013  &   Instructor ASTR 2600: Introduction to Programming for Astronomers (in IDL) \\
-    \textbullet & Fall 2012    &   Instructor ASTR 2600: Introduction to Programming for Astronomers (in IDL) \\
-    \textbullet & Summer 2010  &   Co-Instructor ASTR 1020: Stars and Galaxies \\
-    \textbullet & Fall 2011    &   Co-Instructor ASTR 6000: Graduate Seminar on the Interstellar Medium \\
+                & Date         & Course \\
+                \hline
+    \textbullet & Spring 2013  &   Instructor of ASTR 2600: Introduction to Programming for Astronomers (in IDL) \\
+    \textbullet & Fall 2012    &   Instructor of ASTR 2600: Introduction to Programming for Astronomers (in IDL) \\
+    \textbullet & Summer 2010  &   Co-Instructor of ASTR 1020: Stars and Galaxies \\
+    \textbullet & Fall 2011    &   Co-Instructor of ASTR 6000: Graduate Seminar on the Interstellar Medium \\
     \textbullet & Fall 2011    &   Teaching Assistant for ASTR 3510: Astronomical Observing (imaging) \\
     \textbullet & Spring 2010  &   Teaching Assistant for ASTR 3520: Astronomical Observing (spectroscopy) \\
     \textbullet & Fall 2009    &   Teaching Assistant for ASTR 3510: Astronomical Observing (imaging) \\
@@ -129,24 +151,33 @@
     \textbullet & Fall 2007    &   Teaching Assistant for ASTR 3520: Astronomical Observing (spectroscopy) \\
 \end{tabular}
 
-\section*{Conferences: }
-\begin{tabular}{cp{1.8in}cp{1cm}p{3.5in}}
-    \textbullet & MPIfR Bonn Workshop on the APEX CMZ 1 mm survey & 2014 & Organized &  \\
-    \textbullet & ALMA Arc Node Retreat & 2014 & Talk & ALMA's first look at the extended Sgr B2 Cloud \\
-    \textbullet & Sexten Workshop: The Formation of Globular Clusters & 2014 & Talk & The Galactic population of young massive clusters \\
-    \textbullet & Sexten Workshop: The assembly of massive clusters & 2014 & Talk & The density of W51 and its protoclusters \\
-    \textbullet & Early Phase of Star Formation (EPoS 6) & 2014 & Talk & The density structure of The Brick \\
-    \textbullet & Early Phase of Star Formation (EPoS 6) & 2014 & Poster & The density structure of the W51 Giant Molecular Cloud \\
-    \textbullet & ISM Physical Processes in Garching & 2013 & Poster & A measurement of the turbulence driving parameter \\
-    \textbullet & .Astronomy 5 & 2013 & Talk & Astroquery: A toolkit for remote data access in python \\
-%    \textbullet & IAU 303: The Galactic Center & 2013 & Poster&  \\
-    \textbullet & AAS 221 & 2013 & Thesis Talk & Surveying massive star formation in the Galactic Plane \\
-    \textbullet & Galactic Scale Star Formation & 2012 & Poster& There are no starless massive proto-clusters in the first quadrant \\
-    \textbullet & Labyrinth of Star Formation & 2012 &  Talk& Surveying Pre-Stellar Gas with the BGPS (with an emphasis on what we don't see) \\
-    \textbullet & Milky Way & 2011 & Talk& The Bolocam Galactic Plane Survey \\
-    \textbullet & Stars to Galaxies & 2010 & Poster& Star Formation in Perseus Arm Complexes \\
-    \textbullet & AAS 217 & 2010 &  Poster& Formaldehyde Densitometry of Dust Clumps: The shapes and densities of massive star forming regions \\
-    \textbullet & AAS 215 & 2009 &  Poster& The Bolocam Galactic Plane Survey: Data, Early Results, and Future Directions \\
+\setlength{\extrarowheight}{4pt}
+\section*{Conferences and Workshops: }
+\vspace{-12pt}
+\begin{tabular}{cp{1.8in}p{1.5cm}p{3.0in}}
+    Date & Meeting Name & Role & Talk or Poster Title \\
+                \hline
+    2015 &      Florence Simulation-Observation Workshop & Organized & CAMELOT: Comparing simulations and observations \\
+    2015 &      ESO Central Molecular Zone workshop (2 days)   & Organized & Dense Gas Structure and Thermal Balance in the CMZ \\
+    2015 &      Astropy Lorentz Center Workshop (5 days) & Talks \& unconferences & radio-astro-tools, astroquery, and spectral-cube \\ 
+    2015 &      University of Munich Filaments Workshop (3 days) & Talk & W51: The most active star-forming complex in the Galaxy \\
+    2015 &      Soul of High Mass Star Formation, Chile & Talk & The Density Structure of the W51 GMC \\
+    2014 &      Workshop on the APEX CMZ 1 mm survey at MPIfR Bonn (1 day)   & Organized &  \\
+    2014 &      ALMA Arc Node Retreat  & Talk & ALMA's first look at the extended Sgr B2 Cloud \\
+    2014 &      Sexten Workshop: The Formation of Globular Clusters  & Talk & The Galactic population of young massive clusters \\
+    2014 &      Sexten Workshop: The assembly of massive clusters  & Talk & The density of W51 and its protoclusters \\
+    2014 &      Early Phase of Star Formation (EPoS 6)  & Talk & The density structure of The Brick \\
+    2014 &      Early Phase of Star Formation (EPoS 6)  & Poster & The density structure of the W51 Giant Molecular Cloud \\
+    2013 &      ISM Physical Processes in Garching  & Poster & A measurement of the turbulence driving parameter \\
+    2013 &      .Astronomy 5  & Talk & Astroquery: A toolkit for remote data access in python \\
+%    2013 &     IAU 303: The Galactic Center  & Poster&  \\
+    2013 &      AAS 221  & Thesis Talk & Surveying massive star formation in the Galactic Plane \\
+    2012 &      Galactic Scale Star Formation  & Poster& There are no starless massive proto-clusters in the first quadrant \\
+    2012 &      Labyrinth of Star Formation  &  Talk& Surveying Pre-Stellar Gas with the BGPS (with an emphasis on what we don't see) \\
+    2011 &      Milky Way  & Talk& The Bolocam Galactic Plane Survey \\
+    2010 &      Stars to Galaxies  & Poster& Star Formation in Perseus Arm Complexes \\
+    2010 &      AAS 217  &  Poster& Formaldehyde Densitometry of Dust Clumps: The shapes and densities of massive star forming regions \\
+    2009 &      AAS 215  &  Poster& The Bolocam Galactic Plane Survey: Data, Early Results, and Future Directions \\
 %    \textbullet & IRAM single-dish summer school  &2009&   \\
 %    \textbullet & VLA synthesis imaging summer school and summer REU &2006&  \\
 \end{tabular}
@@ -158,40 +189,100 @@
 %     \textbullet & CfA Lunch Talk & 2013 & Surveying Star Formation in the Galactic Plane  \\
 % \end{tabular}
 
+
+\setlength{\extrarowheight}{7pt}
+
 \section*{Successful Observing Proposals to open TACs as PI:}
-\begin{tabular}{p{0.75in}p{3.0in}p{1.0in}p{0.75in}}
+\begin{tabular}{p{0.75in}p{3.25in}p{0.65in}p{0.70in}}
                 Telescope & Title & Time & Status \\
     \hline
-    GBT & GBT14A-329: MUSTANG Galactic Plane survey: HCHIIs in the brightest massive proto-clusters & 14 hours & A-ranked \\
-    ALMA & Cycle 2: 2013.1.00269.S: Sgr B2 - The Proving Ground for Star Formation Theories & 6 hours & In Progress\\
-    LOFAR & Cycle 2: LC2\_006: A search for p-H2CO, a potential EoR contaminant, toward the Galactic Center, W43, W44, W49, and M82. & 8 hours & Observed (2014) \\
-    APEX & H2CO Thermometry of the CMZ to understand its low star formation rate & 300 hours from 3 TACs & Observed (2014) \\
-    EVLA & 13A/064: Massive stars and ionized gas in the W51 complex & 13 hours, 4 configurations & Observed (2014) \\
-    GBT  & GBT14A-110/GBT12B-221: Density Measurements in G0.253+0.016: Pilot program for CMZ H2CO densitometry & 18 hours & Observed (2014) \\
-    GBT  & GBT10B-019: Densitometry of young star-forming complexes throughout the Galaxy & 120 hours & Published: 2013ApJ...779...50G \\
-    GBT  & GBT09C-049	Measuring the dense gas mass fraction with H2CO absorption & 4 hours & Published: 2011ApJ...736..149G \\
-    Arecibo & A2584: Densitometry of young star-forming complexes throughout the Galaxy & 60 hours & Published: 2013ApJ...779...50G \\
-    Arecibo & A2854: Density Map of the W51 Giant Molecular Cloud complex & 13 hours & In Press: 2014 A\&A \\
+    {\textbf{VLA    }\newline {\small 2014} } & VLA15A-164: Studying turbulence through the atomic-to-molecular transition & 3.3 hours & Approved \\
+    {\textbf{GBT    }\newline {\small 2014} } & GBT14A-329: MUSTANG Galactic Plane survey: HCHIIs in the brightest massive proto-clusters & 14 hours & Approved \\
+    {\textbf{ALMA   }\newline {\small 2014} } & Cycle 2: 2013.1.00269.S: Sgr B2 - The Proving Ground for Star Formation Theories & 6 hours & In Progress\\
+    {\textbf{LOFAR  }\newline {\small 2014} } & Cycle 2: LC2\_006: A search for p-H2CO, a potential EoR contaminant, toward the Galactic Center, W43, W44, W49, and M82. & 8 hours & Observed (2014) \\
+    {\textbf{APEX   }\newline {\small 2014} } & H2CO Thermometry of the CMZ to understand its low star formation rate & 250 hours & Observed (2014) \\
+    {\textbf{GBT    }\newline {\small 2014} } & GBT14A-110/GBT12B-221: Density Measurements in G0.253+0.016: Pilot program for CMZ H2CO densitometry & 18 hours & Observed (2014) \\
+    {\textbf{KPNO   }\newline {\small 2013} } & 2013A-0399: Star formation in the Central Molecular Zone: Massive Outflows in Sgr C & 6 hours & Observed (2013) \\
+    {\textbf{EVLA   }\newline {\small 2013} } & 13A/064: Massive stars and ionized gas in the W51 complex & 13 hours,\newline 4 configs & Observed (2014) \\
+    {\textbf{Arecibo}\newline {\small 2012} } & A2854: Density Map of the W51 Giant Molecular Cloud complex & 13 hours & In~Press:~A\&A~2014 \\
+    {\textbf{GBT    }\newline {\small 2010} } & GBT10B-019: Densitometry of young star-forming complexes throughout the Galaxy & 120 hours & Published: 2013ApJ...779...50G \\
+    {\textbf{Arecibo}\newline {\small 2010} } & A2584: Densitometry of young star-forming complexes throughout the Galaxy & 60 hours & Published: 2013ApJ...779...50G \\
+    {\textbf{GBT    }\newline {\small 2009} } & GBT09C-049:	Measuring the dense gas mass fraction with H2CO absorption & 4 hours & Published: 2011ApJ...736..149G \\
 \end{tabular}
 
+\section*{Other relevant observing:}
+I was an active user of the Apache Point Observatory (APO) while at the
+University of Colorado, using a few dozen nights of TripleSpec, NICFPS, and DIS
+time to examine outflows in Sh 2-233 (IRAS 05358+3543), W5, Orion BN/KL, W51,
+and Sgr C.
+
+I am Co-I on successful proposals to the VLT, Gemini, SOFIA, HST, ALMA, IRAM
+30m, HHT/SMT, APEX, Herschel, GBT, VLA, and Arecibo.  Please ask me if you
+would like the complete detailed list.
+
+\section*{Computing:}
+I am an active developer of a large variety of astronomical python software
+tools and a contributor to \texttt{astropy} and its affiliates.  My github
+profile (\url{github.com/keflavich}) contains a complete list of projects.
+Below is a selection of my most popular packages:
+
+\begin{itemize}
+    \item \texttt{astroquery} (\url{astroquery.readthedocs.org}):
+        a toolkit for querying internet-hosted astronomical databases.
+    \item \texttt{pyspeckit} (\url{pyspeckit.bitbucket.org}): a software suite
+        for visualizing and analyzing spectral line and spectral cube
+        data
+    \item \texttt{spectral-cube} (\url{spectral-cube.rtfd.org}): a library for the manipulation
+        of radio spectral cube data
+    %\item \texttt{radio-astro-tools} (\url{radio-astro-tools.github.io}): an
+    %    umbrella organization that includes tools for the analysis of radio
+    %    data, including ALMA and EVLA spectral cubes.
+    \item \texttt{pyradex} (\url{github.com/keflavich/pyradex}):
+        an object-oriented frontend to the popular RADEX radiative transfer code and
+        its peers.
+    \item \texttt{image-registration} (\url{github.com/keflavich/image_registration}):
+        a package designed to determine and correct the offsets between images containing only
+        diffuse emission
+    \item \texttt{FITS-tools} (\url{github.com/keflavich/FITS_tools}):
+        a collection of tools for slicing and reprojecting FITS images and cubes
+\end{itemize}
+
 \section*{Service:}
-\begin{enumerate}
-    \item Organizer of the python coffee and tutorial series at ESO, 2014
-    \item Referee for \textit{Science}, the Astrophysical Journal, Astronomy \&
-    Astrophysics (main journal and letters), Monthly Notices of the Royal
-    Astronomical Society, Revista Mexicana De Astronomia y Astrofisica 
-    \item Panel chair for a NASA grant review panel 1 year between 2012 and 2014
-    \item ESO Fellow Duties as ALMA support scientist.  Primary duties included
+\begin{itemize}
+    \item Organizer of the ``Python Coffee and Tutorial'' series at ESO, 2014
+    \item Referee for the following journals:
+        \begin{itemize}
+            \item \textit{Science}
+            \item \textit{Astrophysical Journal}
+            \item \textit{Astronomy \& Astrophysics} (main journal and letters)
+            \item \textit{Monthly Notices of the Royal Astronomical Society}
+            \item \textit{Revista Mexicana de Astronom{\'i}a y Astrof{\'i}sica}
+    \end{itemize}
+    \item Panel chair for a recent NASA grant review panel
+    \item ESO ALMA Fellow Duties.  Primary duties include
         software development and maintenance of the Quality Assurance Packager
         software
-    \item Co-organizer of the ALMA Postdoc Symposium in Tokyo, December 2014
-    \item Member of the \texttt{astropy} (\url{astropy.org}) collaboration
-    \item Member of the \texttt{Montage} (\url{montage.ipac.caltech.edu}) users group
-\end{enumerate}
+    \item Co-organizer of the December 2014 ALMA Postdoc Symposium in Tokyo
+    %\item Member of the \texttt{astropy} (\url{astropy.org}) collaboration
+    \item Member of the \texttt{montage} (\url{montage.ipac.caltech.edu}) Image
+        Mosaic Engine users group
+    \item Member of the CCAT ISM working group
+    \item Member of the Next-Generation VLA (NGVLA) high mass star formation
+        working group
+\end{itemize}
 
 
-% Press Releases:
-% http://sci.esa.int/herschel/55942-herschels-hunt-for-filaments-in-the-milky-way/
+%\section*{Outreach:}
+%    Judge for Denver Metro Science Fair, 2/27/2008
+%    Volunteer for middle school science day at the University of Denver, May 2007
+%    Volunteer for University of Colorado Astronomy Day, 2008-2011
+%    Volunteer for Sommers-Bausch Observatory Open Houses, 2007-
+%    Vail Nature Center presentation 7/19/2008
+%    Judge at Boulder Country Day science fair 12/10/2008
+%    Judge at Centennial Middle School science fair 1/30/2009
+%    <a href="outreach.htm"> Public presentations at REI September 2008, 2009</a>
+%    Presentation to Boulder Astronomical Society 1/16/2010
+%    Winter Park Star Safari, July 2011
 
 
 
