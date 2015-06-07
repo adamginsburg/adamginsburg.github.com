@@ -34,6 +34,7 @@ function random_imglink(){
     myimages[11]="images/gc/gc_alternate_800x800.jpg"
     //myimages[15]="images/berthoudjump.jpg"
     //myimages[6]="http://farm9.staticflickr.com/8181/8018405587_39fc025da3_c.jpg"
+    myimages[21]="https://lh3.googleusercontent.com/-tryyxY3TFvY/VXST971sXyI/AAAAAAAAVqc/joyLVU61PLM/w2236-h1258-no/20150605_101014.jpg"
 
 
     //specify corresponding links below
@@ -65,6 +66,7 @@ function random_imglink(){
     imagelinks[11]="http://picasaweb.google.com/keflavich/GC/"
     //imagelinks[15]="http://picasaweb.google.com/keflavich/BerthoudPass12312008/"
     imagelinks[6]="http://www.flickr.com/photos/31267019@N06/sets/72157631612868259/"
+    imagelinks[21]="https://lh3.googleusercontent.com/-tryyxY3TFvY/VXST971sXyI/AAAAAAAAVqc/joyLVU61PLM/w2236-h1258-no/20150605_101014.jpg"
 
     var ry=Math.floor(Math.random()*myimages.length);
     while (myimages[ry] == undefined) {
