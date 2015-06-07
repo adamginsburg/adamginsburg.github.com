@@ -8,7 +8,7 @@ body {
 	color: #CCC;
 	font-style: normal;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-size:15px;
+	font-size:16px;
     line-height: 1.2;
 }
 
@@ -58,6 +58,14 @@ div {
 	font-style: normal;
 	font-size:15px;
     line-height: 1.2;
+}
+
+div.smallheading {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-size:200%;
+    background-color: #252525;
+	color: #CCC;
 }
 
 h2 {

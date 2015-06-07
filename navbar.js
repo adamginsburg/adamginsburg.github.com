@@ -24,9 +24,6 @@ function navbar () {
 <a class="navbar" href="cv.htm">CV</a> \
 </li> \
 <li> \
-<a class="navbar" href="sitemap.htm">Site Map</a> \
-</li> \
-<li> \
 <a class="navbar" href="http://keflavich.github.io/blog/">Research Blog</a> \
 </li> \
 </ul> \
