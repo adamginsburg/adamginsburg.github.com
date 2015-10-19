@@ -16,6 +16,23 @@ li {
     padding: 8px;
     }
 
+li.nopad {
+    padding: 0px;
+}
+
+p + ul {
+    margin-top: -10px;
+}
+
+br + ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+ul + br {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 
 table {
     background-color: #323232;
