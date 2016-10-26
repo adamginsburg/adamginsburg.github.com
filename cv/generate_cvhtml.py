@@ -60,11 +60,11 @@ import codecs
 
 with codecs.open('generated.html','w',encoding='utf8') as outf:
     for data in datalist:
-        print fmt.format(**format(data))
+        print(fmt.format(**format(data)))
 
-        print >>outf,fmt.format(**format(data))
+        outf.write(fmt.format(**format(data))+"\n")
 
-print datalist[1]
+print(datalist[1])
 
 #response = requests.post('http://adslabs.org/adsabs/api/search/',
 #                         params={'q':'author:ginsburg, a',
