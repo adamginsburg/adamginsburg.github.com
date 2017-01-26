@@ -1,31 +1,79 @@
-<html><head><meta content="en-us" http-equiv="Content-Language"/><link class="norm" href="style.css" rel="stylesheet" type="text/css"/><link href="favicon8.ico" rel="icon" type="image/gif"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><title>Astronomy - Interests</title></head><head><script>
-function toggle_w5(myself,first,second) {
-    var re = new RegExp(first)
-    document[myself].src =  (document[myself].src.match(re)) ? "images/w5/" + second : "images/w5/thumbs/" + first;
-}
-</script></head><body><center><h2>NRAO REU projects for Summer 2017</h2>
+<html>
+<head>
+<meta content="en-us" http-equiv="Content-Language"/>
+<link class="norm" href="style.css" rel="stylesheet" type="text/css"/>
+<link href="favicon8.ico" rel="icon" type="image/gif"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>REU Projects - Summer 2017</title>
+</head>
+<head>
+</head><body><center><h2>NRAO REU projects for Summer 2017</h2>
 <script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
 <br/>
 <table align="center" width="800px"><tr><td>
 
 
-            <h3> Cataloging clouds in the Central Molecular Zone </h3>
+<h3> Cataloging clouds in the Central Molecular Zone </h3>
 
 Goal: Create an improved catalog of molecular clouds as seen in 13CO from the
 <a class=norm href="https://dataverse.harvard.edu/dataverse/APEX-CMZ-1mm">APEX CMZ
 survey</a>.  
+<br>
 This project will use the <a class=norm href="http://dendrograms.org/">astrodendro</a>
 package for cataloging.  The catalog will be examined (using <a class=norm
     href="http://glueviz.org/en/stable/">glue</a>) to determine what the most
 robust and reliable parameters are.
 
-<br> Time permitting, with the catalog in hand, determine the geometry of the clouds
+<br>
+The student will learn about structure identification in images, the dynamics
+and structure of molecular clouds, and the center of our Galaxy.
+These data sets already exist in reduced form, so the student will not need
+to do any data reduction work.
+
+<img src="images/13CO_moment0.png" width=800>
+<br>
+<br>
+<hr>
+<br>
+<br>
+</td></tr>
+
+<tr><td>
+<h3> Geometry of Molecular Clouds in the CMZ </h3>
+<br>
+Goal: Determine the geometry of the clouds
 using the method demonstrated in <a
     class=norm href="http://esoads.eso.org/abs/2015A%26A...573A.106G"> Ginsburg+ 2015 (fig
-9)</a> and figure out how far the clouds are from the central black hole.
+9)</a> and figure out how far the clouds are from the central black hole.  
 
-            <img src="images/13CO_moment0.png" width=800>
-        <hr>
+<br> 
+While improved models of the CMZ's geometry have recently been developed (<a
+href="http://adsabs.harvard.edu/abs/2011ApJ...735L..33M" class=norm>1</a>,<a
+href="http://esoads.eso.org/abs/2015MNRAS.447.1059K" class=norm>2</a>),
+we still know little about where exactly the clouds are relative to the central
+black hole and one another.  This geometric information is crucial for understanding
+the physical properties and evolutionary sequence of clouds in the CMZ.
+<br>
+The basic method is to compare H<sub>2</sub>CO absorption with <sup>13</sup>CO
+emission in position-velocity cubes over regions where we know that HII regions
+are present in the CMZ along the line of sight.  By comparing the emission and
+absorption, we can determine which clouds are in the foreground or background
+of the HII regions and therefore where along the "CMZ Ring" they lay.
+
+<br>
+
+This project will use ATCA, GBT, and VLA data sets that are already reduced.
+The analysis will be primarily visual, using ds9 and glue to compare the
+images.  
+The student will learn these visualization tools and the details of the CMZ's
+layout.
+
+<center><img src="images/cyan_wide_PV_h2co11_22_13co.png" width=600></center>
+<br>
+<br>
+<hr>
+<br>
+<br>
 </td></tr>
 
 
@@ -47,17 +95,21 @@ The project should involve a relatively straightforward measurement
 followed by an examination of the possible confusing effects that
 might impact the measurement.
 
+The student will learn about molecular abundances and protostellar outflows.
+They will be trained to use interpolation and reprojection algorithms to match
+datasets on different grids.
+
 </td></tr>
 <tr><td>
-        <center>
-        <img src='images/rgb_CO_continuum_outflows_aplpy_wideLacy_h77a.png' width=400>
-    </center>
+    <center>
+    <img src='images/rgb_CO_continuum_outflows_aplpy_wideLacy_h77a.png' width=400>
+</center>
 </td></tr>
 
 <tr><td>
-        <!-- whitespace to make sure we can see 'under' the navbar'-->
-        <br><br>
-        <br><br>
+    <!-- whitespace to make sure we can see 'under' the navbar'-->
+    <br><br>
+    <br><br>
 </td></tr>
 
 <!--CMZ Cloud Geometry
@@ -67,8 +119,11 @@ ATCA H2CO-->
 
 
 
+<br>
 <br/>
 <hr/>
+<br>
+<br>
 <br/>
 <script src="navbar.js" type="text/javascript"></script><script type="text/javascript">document.write(navbar())</script>
 </td></tr></table></center></body><head><script src="./googleanalytics.js" type="text/javascript"></script></head></html>
