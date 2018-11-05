@@ -12,7 +12,7 @@ function navbar () {
 <a class="navbar" href="teaching.htm">Teaching</a> \
 </li> \
 <li> \
-<a class="navbar" href="https://github.com/keflavich">Software</a> \
+<a class="navbar" href="software.htm">Software</a> \
 </li> \
 <li> \
 <a class="navbar" href="contact.htm">Contact Me</a> \
