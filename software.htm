@@ -10,15 +10,14 @@
 <center><br><h2> Software </h2> 
 
     <table align="center" width=800><tr><td>
-    <br>    
-    <br>    
     <br>  I have a large number of public repositories on <a class="norm" href="github.com/keflavich">github</a>;
     the most up to date listing of my code is there.
     <br>
     <br>
 </td></tr>
 <tr><td>
-    <div> <img align='right' src="images/astropy_logo_notext.svg" width=250px> 
+<div class=smallheading align=left> astropy </div>
+     <img align='right' src="images/astropy_logo_notext.svg" width=250px> 
     I am a core contributor to <a class=norm href="http://www.astropy.org/">astropy</a>.  I am the lead maintainer of the
     <a class=norm
         href="http://docs.astropy.org/en/stable/convolution/">convolution</a>
@@ -51,7 +50,7 @@ class="norm">KEYSTONE</a> projects to fit the ammonia spectra.
 
 
     <img src=http://radio-astro-tools.github.io/radiosnakes_nostruts2.svg align=right width=200px>
-<div class=smallheading> Other Software Tools </div>
+<div class=smallheading> Radio-astro-tools </div>
 I've developed <a class=norm
 href="http://radio-astro-tools.github.io/"> tools for radio astronomy</a>,
 especially for handling <a class=norm
@@ -60,42 +59,34 @@ href="http://pvextractor.readthedocs.org/en/latest/">position-velocity
 diagram</a> extraction.  The <a class=norm href="http://radio-astro-tools.github.io/">radio-astro-tools</a>
 project tries to solve many of the commonly-encountered problems in radio data analysis.
 
+<br>
+<br>
 </td></tr>
 
+<tr><td>
+</td></tr>
+<div align=right class=smallheading><a href="https://github.com/keflavich/pyradex">pyradex</a></div>
+The pyradex package is a wrapper of the <A class=norm
+href="http://home.strw.leidenuniv.nl/~moldata/radex.html">RADEX</a> radiative
+transfer package.  It also wraps Fujun Du's <a class=norm href="https://github.com/fjdu/myRadex">myRadex</a>
+package, which includes an alternative numerical solver.
 
 
+<tr><td>
+        <div align=left class=smallheading><a href="https://image-registration.readthedocs.io/en/latest/">Image Registration</a></div>
+        <img width=200px align=right src="https://image-registration.readthedocs.io/en/latest/_images/image_shifted_corrupted.png">
+        My <a href="https://github.com/keflavich/image_registration">Image Registration</a> package
+        is a toolkit for registering images with extended emissino.  I designed it originally to match images
+        in the Bolocam Galactic Plane survey and measure the offsets between those images with error bars.
+        It uses an FFT-based registration technique to achieve sub-pixel accuracy without fitting point source centroids.
 
-    <!--
-    <br>  Any code I post here is released under <a href="http://www.gnu.org/copyleft/gpl.html"> the Gnu GPL </a>
-    <br>  I also have python codes at my <a class="norm"
-        href="http://code.google.com/p/agpy/"> Google Code </a> page, including
-    <a href="http://code.google.com/p/agpy/source/browse/trunk/h2fit.py">an
-        H<sub>2</sub> rovibrational line fitting code</a> modeled after XSPEC (with a <a href=https://github.com/keflavich/molecular_hydrogen class=norm>github
-        update</a> too)
-    <br> The <a class=norm href="http://pyspeckit.bitbucket.org">PySpecKit</a> package is a spectroscopic analysis package co-written with Jordan Mirocha
-    <br>
-    <br><a class="norm" href="APO_reduction_DIS.htm">IRAF script to reduce spectra from DIS</a>
-    <br><a class="norm" href="APO_reduction_tspec.htm">IRAF script to reduce spectra from TripleSpec</a>
-    <br><a class="norm" href="ds9tips.htm">Advanced DS9 usage</a> (plus <a href="ds9_imalign.htm" class="norm">DS9 & imalign</a>)
-    <br><a class="norm" href="pyreadcol.htm"> readcol for python </a>
-    <br><a class="norm" href="pygrep.htm">Python grep</a>
-    <br><a class="norm" href="pygaussfit.htm">Python / Scipy / Pylab Gaussian fitting</a>
-    <br><a class="norm" href="pygausscollapse.htm">Collapsing a data cube with gaussian fits</a>
-    <br><a class="norm" href="pyflagger.htm">Python Interactive Data Flagger using TxAgg</a> 
-    <br><a class="norm" href="unix.htm">Introduction to UNIX</a>
-    <br><a class="norm" href="unix_editors.htm">UNIX editors</a>
-    <br><a class="norm" href="unix_commands.htm">Complicated UNIX commands</a>
-    <br><a class="norm" href="idl.htm">IDL code</a>
-    <br><a class="norm" href="python.htm">Python code</a>
-    <br><a class="norm" href="IRAF.htm">IRAF tips for my ASTR 3520 class</a> (plus <a class="norm" href="imalign_guide.htm">a guide to imalign</a>)
-    <br>
-    <br> For software by other people, please view my <a class="norm" href="astrotools.htm">Astronomy Tools</a> page.
-    <br>
-    <br><hr>
-    -->
-</td></tr></table>
+</td></tr>
+
+</table>
 
 
+<br>
+<br>
     
 <script type="text/javascript" src="navbar.js"></script><script type=text/javascript>document.write(navbar())</script>
 <script type="text/javascript" src='googleanalytics.js'></script>
