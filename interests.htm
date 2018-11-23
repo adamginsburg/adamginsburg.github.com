@@ -8,6 +8,7 @@ function toggle_w5(myself,first,second) {
 
 <table align="center" width="800px"><tr><td>
 <tr><td>
+        <!--
     I seek to understand the origin of the stellar mass function and how it is
     influenced by high-mass stars.  This means I study massive star and
     cluster formation.  High mass stars and clusters are the driving agents of
@@ -23,26 +24,57 @@ function toggle_w5(myself,first,second) {
     near-infrared, millimeter, and radio spectroscopy and imaging.  I develop
     and publicly release tools for processing this data, and all of my reduced
     images are also publicly released.
+    -->
+    <ul class="smallpad">
+        <li> High-mass star formation
+        <li> The stellar initial mass function and the processes that shape it
+        <li> Stellar feedback during the early stages of star formation
+        <li> Astrochemistry as a tool for measuring local gas physical properties
+        <li> Molecular lines tracing unique conditions (H<sub>2</sub>CO &amp; SiO masers, salts)
+        <li> Software development for astronomical analysis
+    </ul>
     
-    <br>
-    <br> The most up-to-date summary of my research can be found at my <a class="norm"
+    <br> See also my <a class="norm"
     href="cv.htm">CV & List of publications</a>.
 
     <br>
 
     <br> For students interested in working with me, check my <a class=norm
         href="student_projects.htm">student projects</a> page.
+    <br>
+    <br>
     If you want to get a sense of my other upcoming new projects, have a look at
-    my <a href="observing.htm" class=norm>observing</a> page, or the
+    my <a href="observing.htm" class=norm>observing</a> page or the
     observations section of my CV, which has nicer formatting.
     <br>
+    <br>
+
+ Below are brief summaries of some of my completed and ongoing projects, mostly in reverse chronological order.
+ <br>
+ <br>
+ <ul class=smallpad>
+     <li> <a href="#orionalma" class=norm>Orion Source I ALMA Disk Characterization</a>
+     <li> <a href="#sgrb2alma" class=norm>Sgr B2 ALMA Protostar Census</a>
+     <li> <a href="#w51vla" class=norm>W51 ALMA/VLA Feedback</a>
+     <li> <a href="#cmz" class=norm>Central Molecular Zone (CMZ) gas property measurements</a>
+     <li> <a href="#w51density" class=norm>W51 VLA/GBT/Arecibo gas density measurements</a>
+     <li> <a href="#BGPS" class=norm>BGPS: the Bolocam Galactic Plane Survey</a>
+     <li> <a href="#IRAS05358" class=norm>IRAS 05358+3543 case study</a>
+     <li> <a href="#w5" class=norm>W5 CO outflows</a>
+     <li> <a href="#irdcs" class=norm>Infrared Dark Cloud (IRDC) observations</a>
+     <li> <a href="#H2CO" class=norm>Formaldehyde (H<sub>2</sub>CO) density measurements</a>
+     <li> <a href="#lbvs" class=norm>Luminous Blue Variable (LBV) star imaging</a>
+     <li> <a href="#software" class=norm>Software Development</a> (see also <a href="software.htm" class="norm">my software page</a>)
+ </ul>
+
 </td></tr>
 </table>
 
+
+
+
+
 <table align="center" width="800px"><tr><td>
-<tr><td>
- Below are brief summaries of some of my completed and ongoing projects, mostly in reverse chronological order.
-</td></tr>
 
 <tr><td>
 
@@ -119,7 +151,7 @@ for the <a href="http://www.ifa.hawaii.edu/~reipurth/newsletter/newsletter290.pd
 <tr><td>
 <img align="right" width=400 src="images/cmz_sn_both.png" title="CMZ">
 <br>
-<div class=smallheading><a href="http://adsabs.harvard.edu/abs/2015arXiv150901583G"> Temperatures in the CMZ </a></div>
+<div id=cmz class=smallheading><a href="http://adsabs.harvard.edu/abs/2015arXiv150901583G"> Temperatures in the CMZ </a></div>
 The center few hundred parsecs of our Galaxy are filled with stars and gas,
 especially the dense molecular gas that forms stars.
 I have led a <a class="norm"
@@ -146,7 +178,7 @@ and an ongoing project combining the above data sets to measure star formation a
 
 <tr><td>
 <img align="left" width=400 src="images/W51_4096sq_WISE_bolo_mosaic_rotated_blackbg_small.png" title="W51...">
-<div class=smallheading align=right> Densities in W51 </div>
+<div id=w51density class=smallheading align=right> Densities in W51 </div>
 W51 is <a href="http://adsabs.harvard.edu/abs/2014MNRAS.437.1791U">the most
     actively star-forming complex in the Galactic plane</a>, <a class=norm
     href=http://adsabs.harvard.edu/abs/2012ApJ...758L..29G>containing two of
@@ -176,7 +208,7 @@ class=norm>publicly available</a>.
 
 <tr><td>
 <a href="http://irsa.ipac.caltech.edu/data/BOLOCAM_GPS/"><img align="right" src="images/gc/gc_winner_800x800.jpg" title="The central region of our Milky Way Galaxy is a mysterious and complex place. Pictured here in radio and infrared light, the galaxy's central square degree is highlighted in fine detail. The region is known as the Central Molecular Zone. While much of the extended emission is due to dense gas laced with molecules, also seen are emission nebulas lit up by massive young stars, glowing supernova remnants, and the curving Galactic Center Radio Arc in purple. The identity and root cause for many other features remains unknown. Besides a massive black hole named Sgr A*, the Galactic Center houses the galaxy's most active star forming region." width="375"/></a>
-<div class=smallheading> The Bolocam Galactic Plane Survey </div>
+<div id="bgps" class=smallheading> The Bolocam Galactic Plane Survey </div>
     I played an integral role in the 
     <a class="norm" href="http://milkyway.colorado.edu/bgps/">Bolocam Galactic Plane Survey</a>.
     The BGPS is a 1.1mm survey of the northern Galactic plane using the Bolocam
@@ -213,7 +245,7 @@ class=norm>publicly available</a>.
 <br/>
 <br/>
 <a href="iras05358.htm"><img align="left" src="iras05358/mosaicHA_fullfield_simbadlabels_crop.png" title="IRAS 05358+3543, AKA Sharpless 233 IR, is a small (~500 solar masses) clump forming a cluster of stars.  In the center, there is a Hypercompact HII region, an object suspected to be a massive star still accreting material.  This small region contains a dozen resolved outflows." width="375"/></a>
-<div class=smallheading align=right> IRAS 05358+3543 </div>
+<div id="IRAS05358" class=smallheading align=right> IRAS 05358+3543 </div>
     My first accepted paper was a NIR/mm study of the high-mass star forming
     region <a class="norm" href="iras05358.htm">IRAS 05358+3543</a>.  We
     identified additional outflows and suggested that there may be a ~10
@@ -232,7 +264,7 @@ class=norm>publicly available</a>.
 <br/>
 <br/>
 <a href="http://eta.colorado.edu/w5_public.htm"><img align="right" src="w5/w5mos_enhancedCO_crop.png" title="The W3 and W5 star forming complexes in the outer galaxy are suspected to be triggered by supernovae that blasted a hole in the Galactic disk 10-20 million years ago.  The radio continuum emission (purple) shows gas heated by a new generation of massive stars, while the infrared (orange) and millimeter CO emission (green) show gas that will soon form stars or be dispersed." width="375"/></a>
-<div class=smallheading align=left> Outflows in W5 and L111 </div>
+<div id="w5" class=smallheading align=left> Outflows in W5 and L111 </div>
     I have studied the W5 and L111 massive star forming complexes in the outer
     galaxy using the James Clerk Maxwell Telescope's HARP heterodyne array and
     the Bolocam Galactic Plane Survey.  We <a href="http://adsabs.harvard.edu/abs/2011MNRAS.418.2121G" class="norm">discovered many outflows</a>
@@ -254,7 +286,7 @@ class=norm>publicly available</a>.
 <br/>
 <br/>
 <a href="http://casa.colorado.edu/~battersb/Research.html"><img align="left" src="images/irdc_example.jpg" title="Infrared dark clouds are blobs of gas seen in silhouette against a bright background of smooth emission from heated gas within the Galactic Plane.  They range in size from tiny to enormous, but the larger ones are suspected to be the future homes of massive O-type stars of the sort that eventualyl die in massive supernova." width="375"/></a>
-<div class=smallheading align=right> IRDCs </div>
+<div id=irdcs class=smallheading align=right> IRDCs </div>
     I collaborated on a project led by <a class="norm" href="http://casa.colorado.edu/~battersb/">Cara Battersby</a> 
     to <a class="norm" href="http://casa.colorado.edu/~battersb/Research.html">study the physical properties of Infrared Dark Clouds (IRDCs)</a>.
     The <a class="norm" href="http://arxiv.org/abs/1008.0871">first publication</a> 
@@ -279,7 +311,7 @@ class=norm>publicly available</a>.
 <br/>
 <br/>
 <img align="right" src="images/G35.20-1.74_overlays.png" title="A sample spectrum of an ultracompact HII region in our pilot survey.  These spectra contain a great deal of information about the physical properties, specifically the density, of the gas that is surrounding and possibly falling on to young massive stars." width="375"/>
-<div class=smallheading align=left> H<sub>2</sub>CO </div>
+<div id=H2CO class=smallheading align=left> H<sub>2</sub>CO </div>
     I am leading a study of the density of molecular "clumps" in the Galactic plane using the
     <a class="norm" href="http://casa.colorado.edu/~zeigerb/formaldehyde/index.html">formaldehyde densitometer</a>
     with collaborators
@@ -307,7 +339,7 @@ A detailed analysis of this process allowed us to make <a
 <br/>
 <br/>
 <img align="left" src="images/pcyg_highcontrast.png" title="A coronagraphic image of P Cygni taken in the 1.644 micron [Fe II] filter using NICFPS at the Apache Point Observatory" width="375"/>
-<div class=smallheading align=right> LBVs </div>
+<div id=lbvs class=smallheading align=right> LBVs </div>
 I like studying Luminous Blue Variable stars and their ejecta.  However, I
 don't do much with them professionally at the moment.
     <br/>
@@ -320,7 +352,7 @@ don't do much with them professionally at the moment.
 <tr><td>
 <br/>
 <br/>
-<div class=smallheading align=left> Software Development </div>
+<div id=software class=smallheading align=left> Software Development </div>
     I am interested in software development for public use.  My
     personal <a class=norm href="software.htm">software page</a> lists some of my
     projects, but more can be found at <a class="norm"

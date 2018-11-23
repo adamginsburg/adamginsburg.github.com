@@ -16,6 +16,10 @@ li {
     padding: 8px;
     }
 
+.smallpad {
+    line-height: 0.5;
+    }
+
 li.nopad {
     padding: 0px;
 }
