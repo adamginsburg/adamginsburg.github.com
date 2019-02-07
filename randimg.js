@@ -35,6 +35,8 @@ function random_imglink(){
     //myimages[15]="images/berthoudjump.jpg"
     //myimages[6]="http://farm9.staticflickr.com/8181/8018405587_39fc025da3_c.jpg"
     myimages[21]="https://lh3.googleusercontent.com/-tryyxY3TFvY/VXST971sXyI/AAAAAAAAVqc/joyLVU61PLM/w2236-h1258-no/20150605_101014.jpg"
+    myimages[22]="https://cdn.eso.org/images/screen/eso1711a.jpg"
+    myimages[23]="https://www.aanda.org/images/stories/highlight/vol579-1/25073Bally.gif"
 
 
     //specify corresponding links below
@@ -67,6 +69,8 @@ function random_imglink(){
     //imagelinks[15]="http://picasaweb.google.com/keflavich/BerthoudPass12312008/"
     imagelinks[6]="http://www.flickr.com/photos/31267019@N06/sets/72157631612868259/"
     imagelinks[21]="https://lh3.googleusercontent.com/-tryyxY3TFvY/VXST971sXyI/AAAAAAAAVqc/joyLVU61PLM/w2236-h1258-no/20150605_101014.jpg"
+    imagelinks[22]="https://www.eso.org/public/news/eso1711/"
+    imagelinks[23]="https://www.aanda.org/highlights/2015-highlights/1132-the-orion-fingers-near-ir-adaptive-optics-imaging-of-an-explosive-protostellar-outflow-bally-et-al"
 
     var ry=Math.floor(Math.random()*myimages.length);
     while (myimages[ry] == undefined) {
