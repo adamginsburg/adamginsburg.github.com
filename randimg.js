@@ -36,7 +36,7 @@ function random_imglink(){
     //myimages[6]="http://farm9.staticflickr.com/8181/8018405587_39fc025da3_c.jpg"
     myimages[21]="https://lh3.googleusercontent.com/-tryyxY3TFvY/VXST971sXyI/AAAAAAAAVqc/joyLVU61PLM/w2236-h1258-no/20150605_101014.jpg"
     myimages[22]="images/eso1711a.jpg"
-    myimages[23]="https://www.aanda.org/images/stories/highlight/vol579-1/25073Bally.gif"
+    myimages[23]="images/25073Bally.gif"
 
 
     //specify corresponding links below
