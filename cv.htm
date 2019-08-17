@@ -22,6 +22,13 @@ function httpGet(theUrl)
     return xmlHttp.responseText;
 }
 
+// var npapers=JSON.parse(httpGet("https://api.adsabs.harvard.edu/v1/biblib/libraries/CFJYpXQMRTqHEAe0jOL3VQ"));
+// 
+// function set_npapers(){
+//     document.getElementById('npapers').innerHTML = npapers;
+// }
+
+
 var nrepos=JSON.parse(httpGet("https://api.github.com/users/keflavich"))['public_repos'];
 
 function set_nrepos(){
@@ -67,11 +74,11 @@ function set_nrepos(){
 <!--<br> A summary of these publications and my contributions to them is on <a class="norm" href="http://adamginsburg.blogspot.com/search/label/publication">adamginsburg.blogspot.com</a>-->
 <br/><span class="paperheaders">First author: total 16 papers (January 22, 2019)</span>
             <ol>
-                <li><a class="norm" href="http://adsabs.harvard.edu/abs/2019arXiv190104489G">
-                    <b class="myname">Ginsburg, Adam</b> McGuire, B., Plambeck, R., Bally, J., Goddi, C., Wright, M.</a> ApJ, accepted
+                <li><a class="norm" href="http://adsabs.harvard.edu/abs/2019ApJ...872...54G">
+                    <b class="myname">Ginsburg, Adam</b> McGuire, B., Plambeck, R., Bally, J., Goddi, C., Wright, M.</a> ApJ, 872, 54
                     <br> Orion Source I's disk is salty
-                <li><a class="norm" href="http://adsabs.harvard.edu/abs/2019arXiv190104520G">
-                    <b class="myname">Ginsburg, Adam</b> and the astroquery team</a> ApJ, accepted
+                <li><a class="norm" href="https://ui.adsabs.harvard.edu/abs/2019AJ....157...98G">
+                    <b class="myname">Ginsburg, Adam</b> and the astroquery team</a> AJ, 157, 98
                     <br> Astroquery: An Astronomical Web-Querying Package in Python
                 <li><a class="norm" href="http://adsabs.harvard.edu/abs/2018ApJ...864L..17G">
                     <b class="myname">Ginsburg, Adam</b> ; Kruijssen, J.M.D. </a> 2018 ApJL, 864, L17
