@@ -1,0 +1,133 @@
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<body>
+
+    <div class=header style='margin:auto; max-width:70%;'>
+        <center>
+        <h2> Gallery of AST3722 Spring 2020 images </h2>
+        Click on the figures to open the gallery browser, then use the left and
+        right arrow keys to switch between them.
+        </center>
+    </div>
+
+    <script>
+        var filenames = ["1.png", "11.png", "13.png", "15.png", "17.png",
+            "19.png", "20.png", "22.png", "24.png", "26.jpg", "28.gif",
+            "3.png", "5.png", "7.png", "9.png",  "10.png", "12.png", "14.png",
+            "16.png", "18.png", "2.png", "21.png", "23.png", "25.jpg",
+            "27.jpg", "29.jpeg", "4.png", "6.png", "8.png"];
+    </script>
+
+    <br>
+
+    <div style="max-width:80%; margin: auto;">
+
+        <div class="row">
+
+            <script>
+                filenames.forEach(function(entry, ii) {
+                    document.write('<div class="column">\n<img class="hover-shadow" style="width:90%" src="gallery/' + entry + '" onclick="openModal();currentSlide(' + ii + ')">\n</div>');
+                });
+            </script>
+
+
+        </div>
+    </div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+
+
+    <script>
+        filenames.forEach(function(entry, ii) {
+            document.write('<div class="mySlides">\n<div class="numbertext">' + ii + '</div>\n<img class="demo" style="width:100%" src="gallery/' + entry + '">\n</div>');
+        });
+    </script>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <script>
+        filenames.forEach(function(entry, ii) {
+            document.write('<div class="column">\n<img class="demo" style="width:60%" src="gallery/' + entry + '" onclick="currentSlide(' + ii + ')">\n</div>');
+        });
+    </script>
+
+  </div>
+</div>
+
+
+</body>
+
+    <script>
+// Open the Modal
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+document.addEventListener('keydown', moveSlide);
+
+function moveSlide(e) {
+  // e stands for "event" - the event is the keypress 
+  // e.key means the key that was pressed
+
+  switch (e.key) {
+
+    // left arrow pressed
+    case "ArrowLeft":
+      plusSlides(-1);
+      break;
+      // up arrow pressed
+    case "ArrowRight":
+      plusSlides(1);
+      break;
+  }
+};
+
+</script>
+</html>
