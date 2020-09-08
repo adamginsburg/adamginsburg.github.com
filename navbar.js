@@ -6,6 +6,9 @@ function navbar () {
 <a class="navbar" href="index.htm">Home</a> \
 </li> \
 <li> \
+<a class="navbar" href="researchgroup.htm">Research Group</a> \
+</li> \
+<li> \
 <a class="navbar" href="interests.htm">Research</a> \
 </li> \
 <li> \
