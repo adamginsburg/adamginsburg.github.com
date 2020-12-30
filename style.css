@@ -1,6 +1,5 @@
 
 /* ---- Ginsburg's Stylesheet ---- */
-/* Wow, I'm awesome */
 
 /* Default Style */
 body {
@@ -191,7 +190,6 @@ code {color:#66DD88}
 
 
 /* custom link styles */
-/* I don't think it should be possible to view my stylesheet from the 'net, but if you can, these are fun */
 a.hidden:link		{ color:white; text-shadow: none }
 a.hidden:visited	{ color:white }
 a.hidden:hover		{ color:white }
@@ -260,7 +258,6 @@ a.norm:active	{ color:#FF3300; }
 }
 
 /* custom link styles */
-/* I don't think it should be possible to view my stylesheet from the 'net, but if you can, these are fun */
 a.hidden:link		{ color:white; text-shadow:none }
 a.hidden:visited	{ color:white }
 a.hidden:hover		{ color:white }
