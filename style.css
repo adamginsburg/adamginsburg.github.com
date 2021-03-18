@@ -2,7 +2,7 @@
 /* ---- Ginsburg's Stylesheet ---- */
 
 /* Default Style */
-body {
+body, pre {
 	background-color: #111111;
 	color: #CCC;
 	font-style: normal;
