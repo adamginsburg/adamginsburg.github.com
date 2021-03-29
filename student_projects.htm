@@ -42,6 +42,37 @@ Several project variants are always available:
 
 </td></tr>
 
+
+<tr><td>
+            <br>
+<h3> Line Radiative Transfer Modeling: What effect does turbulence have on observed lines? </h3>
+Much of what we know of the interstellar medium and of star formation derives
+from properties we measure using spectral line intensities and line ratios.
+The standard tools for interpreting lines and line ratios are <b>local
+thermodynamic equilibrium (LTE)</b> models and <b>large velocity gradient (LVG)</b>
+models.  In both cases, the radiative excitation and transfer is simplified
+to a <i>one-zone models</i> that reduce the entire line of sight to a single
+assumed state.  This assumption is wrong (e.g., <a
+    href="https://ui.adsabs.harvard.edu/abs/2017ApJ...835..217L/abstract"
+    class=norm>Leroy+ 2017</a>).
+
+To solve this, we will apply radiative transfer models using both LTE and LVG
+to individual cells in a simulation, but will then do ray-tracing radiative transfer
+through different viewing angles to see what the effects of varying optical
+depth and excitation are.  This will be done using <a class=norm
+href="https://www.ita.uni-heidelberg.de/~dullemond/software/radmc-3d/">RADMC-3D</a>,
+and the initial simulations used will be the <a href="https://www.mhdturbulence.com/" class=norm>CATS</a>
+database.  We will post-process these simulations to produce synthetic line emission maps,
+and we will analyze them as if the whole simulation box were a single zone.  
+We will derive a mapping from the simulation physical conditions (linewidth,
+moments of the density, column density, and velocity fields, etc) to line ratios
+and determine whether they follow a trend that will allow inversion of line ratio
+to inferred physical properties.  This work will also produce, as a side effect,
+synthetic image for other types of analysis.
+
+</td></tr>
+
+
 <tr><td>
             <br>
 <h3> Radio Continuum Imaging & Measurement for the ALMA-IMF project </h3>
