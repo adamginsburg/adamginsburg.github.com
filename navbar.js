@@ -18,13 +18,16 @@ function navbar () {
 <a class="navbar" href="software.htm">Software</a> \
 </li> \
 <li> \
+<a class="navbar" href="https://keflavich.github.io/talks/">Talks</a> \
+</li> \
+<li> \
 <a class="navbar" href="contact.htm">Contact Me</a> \
 </li> \
 <li> \
 <a class="navbar" href="cv.htm">CV</a> \
 </li> \
 <li> \
-<a class="navbar" href="http://keflavich.github.io/blog/">Research Blog</a> \
+<a class="navbar" href="https://keflavich.github.io/blog/">Research Blog</a> \
 </li> \
 </ul> \
 </nav>'
