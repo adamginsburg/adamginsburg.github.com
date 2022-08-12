@@ -75,21 +75,6 @@ synthetic image for other types of analysis.
 </td></tr>
 
 
-<tr><td>
-            <br>
-<h3 id="almaimf_radio_continuum"> Radio Continuum Imaging & Measurement for the ALMA-IMF project </h3>
-The ALMA-IMF program is a large project to survey to image high-mass star
-forming regions and count the number of forming new stars of each mass.  This
-measurement of the proto-initial-mass-function (proto-IMF, sometimes core mass
-function, CMF) is one of the two key ingredients of star formation theory, and
-if we find environmental variation, it will have profound impact on application
-of these models in the context of both simulations and extragalactic
-observations.  This sub-project is to measure the "free-free contamination" in
-our millimeter continuum observations to help get accurate masses toward the
-highest-mass stars.  It will involve imaging radio continuum data from the
-JVLA, and maybe poking at those same data sets to look for some interesting
-lines.  
-</td></tr>
 
 <tr><td>
             <br>
@@ -120,6 +105,28 @@ around protostars.
 </tr></td>
 
 
+<tr><td>
+            <br>
+        <h3>Train Machine Learning algorithms to find stars in HII regions</h3>
+Stellar photometry on complex backgrounds - like HII regions and PDRs - is
+difficult.  Commonly-used algorithms (e.g., those in photutils) fail because
+they are unable to distinguish substructure in the background from stars.
+However, it's easy to tell by eye which objects are stars and which are not, at
+least up to a point.  That suggests that machine learning algorithms may be
+well-suited to solving this problem.
+<br>
+<br>
+This project would involve creating training sets and testing algorithms against
+those training sets.  The training sets will come from a few samples of "pure background"
+images: radio continuum images of HII regions, simulations of HII regions and turbulent clouds,
+and far-infrared images of parts of the Galactic plane.  We will add simulated stars
+to the image using realistic PSFs (e.g., for JWST - WebbPSF) to train the algorithm.
+After proving the tools on simulated data, we will apply them to real JWST data to
+obtain more complete catalogs of stars in HII regions.
+
+
+<br>
+</tr></td>
 
 
 
@@ -304,6 +311,25 @@ developed SCOUSE.
         and which source(s) drive them.  This project will involve comparison
         between the VLA data and similar high-resolution data sets from ALMA.
 </td></tr>
+
+<tr><td>
+            <br>
+<h3 id="almaimf_radio_continuum"> Radio Continuum Imaging & Measurement for the ALMA-IMF project </h3>
+In collaboration with Roberto Galvan-Madrid
+<br>
+The ALMA-IMF program is a large project to survey to image high-mass star
+forming regions and count the number of forming new stars of each mass.  This
+measurement of the proto-initial-mass-function (proto-IMF, sometimes core mass
+function, CMF) is one of the two key ingredients of star formation theory, and
+if we find environmental variation, it will have profound impact on application
+of these models in the context of both simulations and extragalactic
+observations.  This sub-project is to measure the "free-free contamination" in
+our millimeter continuum observations to help get accurate masses toward the
+highest-mass stars.  It will involve imaging radio continuum data from the
+JVLA, and maybe poking at those same data sets to look for some interesting
+lines.  
+</td></tr>
+
 </table>
 
 
