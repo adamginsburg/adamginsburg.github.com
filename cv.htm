@@ -3,7 +3,7 @@ function togglecolor()
 {
     var ss = document.getElementById("stylesheet");
     var button = document.getElementById("togglecolor");
-    if (/blankstyle.css/.match(ss.href)) {
+    if (/blankstyle.css/.test(ss.href)) {
         ss.href="style.css";
         button.innerHTML = "Toggle Colorscheme (black to white)";
     } else {
