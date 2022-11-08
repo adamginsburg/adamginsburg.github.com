@@ -39,6 +39,7 @@ function random_imglink(){
     myimages[23]="images/25073Bally.gif"
     myimages[24]="images/APEX_IMG_8797.JPG"
     myimages[25]="images/ALMA_20150605_100955.jpg"
+    myimages[26]="images/adam_observing_eclipse.jpg"
 
 
     //specify corresponding links below
@@ -75,6 +76,7 @@ function random_imglink(){
     imagelinks[23]="https://www.aanda.org/highlights/2015-highlights/1132-the-orion-fingers-near-ir-adaptive-optics-imaging-of-an-explosive-protostellar-outflow-bally-et-al"
     imagelinks[24]=""
     imagelinks[25]=""
+    imagelinks[26]=""
 
     var ry=Math.floor(Math.random()*myimages.length);
     while (myimages[ry] == undefined) {
