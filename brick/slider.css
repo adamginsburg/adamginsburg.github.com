@@ -71,20 +71,58 @@ background-image: url('BrickJWST_merged_longwave_narrowband_withstars.png');
   cursor: pointer;
   left: calc(50% + 18px);
 }
+
+@media screen and (max-width: 540px) {
+    .container .slider-button {
+      pointer-events: none;
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: white;
+      left: calc(50% - 33px);
+      top: calc(50% - 18px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 25;
+    }
+
+    .container .slider-button:after {
+      content: "";
+      padding: 5px;
+      display: inline-block;
+      border: solid #5D5D5D;
+      border-width: 0 4px 4px 0;
+      transform: rotate(-45deg);
+      z-index: 25;
+    }
+    .container .slider-button:before {
+      content: "";
+      padding: 5px;
+      display: inline-block;
+      border: solid #5D5D5D;
+      border-width: 0 4px 4px 0;
+      transform: rotate(135deg);
+      z-index: 26;
+    }
+}
+
 .container .slider-button {
   pointer-events: none;
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: white;
-  left: calc(50% - 33px);
+  left: calc(50% - 18px);
   top: calc(50% - 18px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 25;
 }
+
 .container .slider-button:after {
   content: "";
   padding: 3px;
