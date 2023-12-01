@@ -99,11 +99,17 @@ updateContainerSize();
 </script>
 <script>
 $("#slider").on("input change", (e)=>{
+  var sliderOffset = "15px";
   const sliderPos = e.target.value;
   // Update the width of the foreground image
   $('.foreground-img').css('width', `${sliderPos}%`)
   // Update the position of the slider button
-  $('.slider-button').css('left', `calc(${sliderPos}% - 34px)`)
+    if (window.innerWidth < 720) {
+        sliderOffset = "34px";
+    } else {
+        sliderOffset = "15px";
+    }
+    $('.slider-button').css('left', `calc(${sliderPos}% - ${sliderOffset})`)
 });
 </script>
 </html>
