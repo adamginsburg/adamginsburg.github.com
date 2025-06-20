@@ -22,22 +22,22 @@ the desktop,  navigate to the "Tools" menu, and click "Terminal."
 <br/> To make downloading a large number of files simpler, we put them into a tar
 archive file.  "tarballs" are similar to zip files on windows and are an
 effective way to put a whole folder into a single file.  To extract a tar file,
-use the command 
+use the command
 <br/> tar -xf (filename)
 <br/>If there is a .tgz or .tar.gz file, you
-can use the command 
-<br/> tar -xzf (filename.tar.gz) 
-<br/>or 
+can use the command
+<br/> tar -xzf (filename.tar.gz)
+<br/>or
 <br/> gunzip (filename.tar.gz)
 <br/> tar -xf (filename.tar)
 <br/>
 <br/><h3> General UNIX instructions </h3>
 <br/>
-<br/> Amy Bender included some UNIX introductions on her ASTR 3510 page: 
-<br/> <a class="norm" href="http://casa.colorado.edu/~benderan/teaching/astr3510/unix.pdf">Brian Keeney's Introduction to Unix (pdf)</a>
-<br/> <a class="norm" href="http://casa.colorado.edu/~benderan/teaching/astr3510/unixintro.ps">Amy Bender's Introduction to Unix (ps) </a>
+<br/> Amy Bender included some UNIX introductions on her ASTR 3510 page:
+<br/> Brian Keeney's Introduction to Unix (pdf) - <em>link no longer available</em>
+<br/> Amy Bender's Introduction to Unix (ps) - <em>link no longer available</em>
 <br/>
-<br/> I'm also a fan of <a class="norm" href="http://www.ifa.hawaii.edu/~joshw/classes/UNIXintro.pdf">Josh Walawender's Introduction to Unix (pdf)</a>
+<br/> I'm also a fan of Josh Walawender's Introduction to Unix (pdf) - <em>link no longer available</em>
 <br/>
 <br/> <br/>
 <h3 id="sed"> Understanding SED:</h3>
@@ -53,12 +53,12 @@ beginner programming language - it is relatively tolerant of being imprecise.
  The <tt>!</tt> at the beginning of the line means that the command is being run in the unix terminal instead of IRAF
 <br/> <tt>sed</tt> is the command
 <br/> <tt>-e</tt> is an optional parameter that is not strictly necessary in this case, it allows you to specify an <tt>e</tt>xpression
-<br/> <tt>'s/\.FIT/\.fits/g'</tt> is the meat of the code, it is a <a class="norm" href="http://en.wikipedia.org/wiki/Regular_expression">regular expression</a>.
+<br/> <tt>'s/\.FIT/\.fits/g'</tt> is the meat of the code, it is a <a class="norm" href="https://en.wikipedia.org/wiki/Regular_expression">regular expression</a>.
 <ol>
   <tt>s</tt> means "substitute" the second string for the first
-<br/>  <tt>/\.FIT/</tt> specifies the first string.  
+<br/>  <tt>/\.FIT/</tt> specifies the first string.
 <br/>  The <tt>/</tt>'s specify the boundary of the expression. <tt>\</tt> is the <a href="http://xkcd.com/234/">escape</a> operation, it is needed because <tt>.</tt> is treated as a wildcard otherwise
-<br/>  Similarly,<tt>/\.fits/</tt> specifies the second string.  
+<br/>  Similarly,<tt>/\.fits/</tt> specifies the second string.
 <br/>  <tt>g</tt> means every occurence of the first string on the line will be replaced, not just the first occurrence
 </ol>
  <tt>list_fit</tt> is your original file with .FIT images listed

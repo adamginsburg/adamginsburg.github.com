@@ -2,16 +2,16 @@
 <h1><center> <h1> CLEAN algorithm </h1></center></h1>
 <br/>
 <table align="center" width="800"><tr><td>
-<br/> <a href="http://setiathome.berkeley.edu/~aparsons/">Aaron Parsons</a>
+<br/> Aaron Parsons
 wrote an implementation of the Hogbom clean algorithm in Python, and since it
-didn't exist yet in IDL (to the best of my knowledge), I translated his <a class="norm" href="http://setiathome.berkeley.edu/~aparsons/python/aipy.html">code</a> for use in the BGPS pipeline.
+didn't exist yet in IDL (to the best of my knowledge), I translated his code for use in the BGPS pipeline.
 <pre>
-;    """This is an implementation of the standard Hoegbom clean deconvolution 
+;    """This is an implementation of the standard Hoegbom clean deconvolution
 ;    algorithm, which operates on the assumption that the image is composed of
-;    point sources.  This makes it a poor choice for images with distributed 
-;    flux.  The algorithm works by iteratively constructing a model.  Each 
-;    iteration, a point is added to this model at the location of the maximum 
-;    residual, with a fraction (specified by 'gain') of the magnitude.  The 
+;    point sources.  This makes it a poor choice for images with distributed
+;    flux.  The algorithm works by iteratively constructing a model.  Each
+;    iteration, a point is added to this model at the location of the maximum
+;    residual, with a fraction (specified by 'gain') of the magnitude.  The
 ;    convolution of that point is removed from the residual, and the process
 ;    repeats.  Termination happens after 'maxiter' iterations, or when the
 ;    clean loops starts increasing the magnitude of the residual.
@@ -22,7 +22,7 @@ didn't exist yet in IDL (to the best of my knowledge), I translated his <a class
 ;        low, clean takes unnecessarily long.  If it is too high, clean does
 ;        a poor job of deconvolving.
 ;    maxiter: The maximum number of iterations performed before terminating.
-;    chkiter: The number of iterations between when clean checks if the 
+;    chkiter: The number of iterations between when clean checks if the
 ;        residual is increasing.
 ;    verbose: If true, prints some info on how things are progressing."""
 ;    dim = im.shape[1]
