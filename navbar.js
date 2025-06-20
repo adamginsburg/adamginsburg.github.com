@@ -9,6 +9,9 @@ function navbar () {
 <a class="navbar" href="researchgroup.htm">Research Group</a> \
 </li> \
 <li> \
+<a class="navbar" href="research_highlights.htm">Research Highlights</a> \
+</li> \
+<li> \
 <a class="navbar" href="interests.htm">Research</a> \
 </li> \
 <li> \
