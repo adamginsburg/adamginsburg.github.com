@@ -57,48 +57,6 @@ Several project variants are always available:
 
 <tr><td>
         <br>
-<h3 id=sgrb2yso> Find the young stars in JWST's view of Sgr B2 </h3>
-Our <a class=norm href="https://www.stsci.edu/jwst-program-info/program/?program=5365">JWST Cycle 3
-program (GO 5365)</a> imaged Sgr B2 - the most vigorously star-forming cloud in the
-Galactic Center - in 14 filters from 1.5 to 25 &mu;m.  The
-<a class=norm href="https://arxiv.org/abs/2509.11771">first-look paper (Budaiev+ 2026)</a>
-revealed new candidate HII regions and deeply embedded massive stars, but the
-program's central goal - a complete catalog of young stellar objects - is still open.
-The project: perform crowded-field PSF photometry, classify sources with
-color-color and color-magnitude diagrams, and cross-match against our ALMA
-core catalog (<a class=norm href="https://ui.adsabs.harvard.edu/abs/2024ApJ...961....4B/abstract">Budaiev+ 2024</a>)
-and the 499 water masers we mapped with the VLA
-(<a class=norm href="https://ui.adsabs.harvard.edu/abs/2025arXiv250609115B/abstract">Budaiev+ 2025</a>).
-The end goal is a measurement of the star formation rate of our Galaxy's most
-extreme cloud.
-<br><br>
-<i>Scope: undergrad - photometry and classification in one filter pair or one
-subregion; masters - the full YSO catalog and star formation rate.</i>
-</td></tr>
-
-<tr><td>
-        <br>
-<h3 id=w51jwstalma> Cross-match the JWST and ALMA views of W51 </h3>
-We have both exquisite JWST imaging
-(<a class=norm href="https://www.stsci.edu/jwst-program-info/program/?program=6151">GO 6151</a>;
-<a class=norm href="https://arxiv.org/abs/2602.00229">Yoo+ 2026</a>, featured in a
-<a class=norm href="https://news.ufl.edu/2026/03/jwst-images/">UF press release</a>)
-and complete millimeter maps (<a class=norm href="https://www.almaimf.com/">ALMA-IMF</a>,
-including the <a class=norm href="https://arxiv.org/abs/2509.06749">W51 core fragmentation study, Yoo+ 2025</a>)
-of the W51 protocluster, one of the most massive star factories in the Galaxy.
-Which millimeter cores have infrared counterparts, and what does that tell us
-about their evolutionary states?  This project cross-matches the JWST point
-source catalogs against the ALMA core and VLA source catalogs, measures which
-protostars are seen (or missed) at each wavelength, and builds the
-completeness corrections needed for the initial mass function measurement.
-<br><br>
-<i>Scope: undergrad - matched catalog and color analysis for one field
-(W51-E or W51-IRS2); masters - luminosity functions with completeness
-corrections from synthetic star tests.</i>
-</td></tr>
-
-<tr><td>
-        <br>
 <h3 id=icemaps> Map the ices of the Galactic Center with photometry </h3>
 In <a class=norm href="https://astro.theoj.org/article/163469-the-colors-of-ices-measuring-ice-column-density-through-photometry">The
 Colors of Ices</a>, we showed that JWST photometry alone - no spectroscopy
@@ -106,55 +64,15 @@ needed - can measure CO, H<sub>2</sub>O, and CO<sub>2</sub> ice columns toward
 tens of thousands of stars, and we released the open-source
 <a class=norm href="https://github.com/keflavich/icemodels">icemodels</a> package.
 The technique has so far been applied to
-<a class=norm href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...36G/abstract">The Brick</a>
-and <a class=norm href="https://arxiv.org/abs/2509.21763">a 3-kpc-arm filament (Gramze+ 2025)</a>,
-but most JWST fields with the right filters - Sgr C, Cloud C, and the upcoming
-143-hour <a class=norm href="https://www.stsci.edu/jwst-program-info/program/?program=10678">JWST
-Galactic Center legacy survey (GO 10678)</a> - remain unmapped.  Ice maps
-constrain the cosmic ray ionization rate and even the metallicity of the
+<a class=norm href="https://ui.adsabs.harvard.edu/abs/2023ApJ...959...36G/abstract">The Brick</a>,
+Cloud C, and <a class=norm href="https://arxiv.org/abs/2509.21763">a 3-kpc-arm filament (Gramze+ 2025)</a>;
+Sgr C is the natural next target among the JWST fields with the right filters.
+Ice maps constrain the cosmic ray ionization rate and even the metallicity of the
 Galactic Center.
 <br><br>
-<i>Scope: undergrad - ice column measurements for one cloud, or (for the
+<i>Scope: undergrad - ice column measurements for Sgr C, or (for the
 software-inclined) extending icemodels with new laboratory ice constants and
-filter sets; masters - a CMZ-wide CO ice atlas.</i>
-</td></tr>
-
-<tr><td>
-        <br>
-<h3 id=acescatalog> Mine the ACES data release: compact sources and MUBLO hunting </h3>
-The <a class=norm href="https://almascience.eso.org/almadata/lp/ACES/">ACES science-ready
-data were released in February 2026</a>, covering the entire Central Molecular
-Zone at ~2" resolution in continuum
-(<a class=norm href="https://arxiv.org/abs/2602.20240">Ginsburg+ 2026</a>) and
-&gt;70 spectral lines.  No comprehensive compact-source catalog exists yet.
-This project builds one from the 3 mm continuum mosaics (using, e.g.,
-<a class=norm href="https://dendrocat.readthedocs.io/">dendrocat</a> or getsf),
-classifies the sources (dust cores vs. HII regions vs. something else), and
-then searches the spectrum of each source for anomalies - like the
-<a class=norm href="https://ui.adsabs.harvard.edu/abs/2024ApJ...968L..11G/abstract">MUBLO</a>,
-the mystery broad-line object we found in these data whose nature is
-still unknown.  Are there more?
-<br><br>
-<i>Scope: undergrad - catalog one subfield and re-detect the MUBLO as
-validation; masters - the full-CMZ catalog and a systematic anomaly search.</i>
-</td></tr>
-
-<tr><td>
-        <br>
-<h3 id=acessio> Where are the shocks in the CMZ?  An ACES SiO catalog </h3>
-SiO traces shocked gas: protostellar outflows, cloud-cloud collisions, and
-material crashing into the CMZ from the dust lanes.  The
-<a class=norm href="https://arxiv.org/abs/2602.20445">ACES SiO 2-1 cubes</a>
-cover the whole CMZ, but no shock catalog has been extracted from them.
-This project catalogs the SiO-emitting structures, separates compact
-(outflow) from extended (collision) shocks, and compares the outflow
-population against the ~300 SiO outflows we cataloged in the Galactic disk
-with <a class=norm href="https://ui.adsabs.harvard.edu/abs/2024ApJ...960...48T/abstract">ALMA-IMF
-(Towner+ 2024)</a>: does the extreme CMZ environment change how protostars
-drive outflows?
-<br><br>
-<i>Scope: undergrad - one cloud (e.g., Sgr C or the 20 km/s cloud);
-masters - the CMZ-wide catalog with energetics.</i>
+filter sets; masters - a multi-cloud ice atlas.</i>
 </td></tr>
 
 <tr><td>
@@ -171,22 +89,6 @@ tests how many young HII regions the radio surveys missed.
 <br><br>
 <i>Scope: undergrad - a catalog with fluxes and inferred ionizing photon
 rates; masters - a complete CMZ star formation rate measurement.</i>
-</td></tr>
-
-<tr><td>
-        <br>
-<h3 id=aces3d> Put the CMZ's clouds in 3D </h3>
-The <a class=norm href="https://ui.adsabs.harvard.edu/abs/2024arXiv241017334B/abstract">3D CMZ
-paper series (Battersby+ 2025)</a> published near-side/far-side constraints for
-the Galactic Center clouds, and ACES provides uniform kinematics for all of
-them.  Combining the two - cloud by cloud - tests the competing orbital models
-of the CMZ (open stream vs. closed ring) and determines where each cloud sits
-relative to Sgr A*.  This is the modern, data-rich successor to our earlier
-H<sub>2</sub>CO absorption geometry work, and it connects directly to the
-question of why some CMZ clouds form stars and others don't.
-<br><br>
-<i>Scope: masters-level, though an undergrad can start with a single-cloud
-case study (e.g., the Brick or Sgr B2).</i>
 </td></tr>
 
 <tr><td>
