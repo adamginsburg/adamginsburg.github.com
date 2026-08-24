@@ -19,6 +19,15 @@
     projects too, such as "reduce and analyze the ALMA-IMF large program",
     but I haven't gotten around to writing those up.  Many of these have
     been started, but not all!</p>
+    <p style="max-width: 800px; text-align: left"> The first group of projects are pieces of four
+    programs I'm running now:
+    the <a class=norm href="#jwgcs">JWST Treasury Survey of the Galactic Center</a>,
+    a <a class=norm href="#roman3d">Roman program to map the inner Galaxy in 3D</a>,
+    the <a class=norm href="#pantarei">Panta Rei ALMA Large Program</a> and its
+    <a class=norm href="#corestostars">long-baseline follow-ups</a>, and
+    a <a class=norm href="#orionsalts">five-band ALMA program on the salts in the Orion Source I
+    disk</a>.  The data for these are either in hand or scheduled, and each has a team behind
+    it.</p>
 
 <table align="center" width="800px">
 
@@ -39,8 +48,314 @@ Several project variants are always available:
         any <a href="https://www.astropy.org/" class="norm">astropy</a> or
         <a href="https://radio-astro-tools.github.io/" class="norm">radio-astro-tools</a>
         functionality </li>
+    <li> Build interactive, zoomable
+        <a class="norm" href="https://aladin.cds.unistra.fr/AladinLite/">Aladin Lite</a> tours of
+        our data sets (see our <a class="norm" href="ACES_tour.html">ACES tour</a> for an example),
+        and help write the tooling to turn a FITS cube into a HiPS cube.  This is part of the
+        outreach component of my current NSF grant. </li>
 </ul>
 
+</td></tr>
+
+
+<tr><td>
+        <br>
+<h2 id="largeprograms">Projects within currently-running programs</h2>
+The projects in this section are small pieces of four programs I'm running now.
+Each one is sized so that a student can finish it in a summer, but each sits inside a
+larger effort with a team and a data set that already exists or is arriving on a
+known schedule.
+</td></tr>
+
+<tr><td>
+        <br>
+<h2 id="jwgcs">JWST Treasury Survey of the Galactic Center (GO 10678)</h2>
+We are mapping the inner Central Molecular Zone with JWST/NIRCam in F212N (2.12 &mu;m)
+and F480M (4.8 &mu;m), observed in parallel.  Galactic center stars have nearly identical
+intrinsic F212N&minus;F480M colors (&lt;0.05 mag), so the observed color gives the extinction
+to each star individually.  Most of the projects below start from that measurement.
+Observations run through 2026-2027.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="jwgcs_extinction"> Extinction mapping of a single Galactic center cloud </h3>
+Extinction toward the Galactic center is large (A<sub>V</sub> ~ 30-100 mag) and varies by up
+to 0.5 mag over a few arcseconds at 2 &mu;m, so it has to be measured star-by-star rather than
+assumed.
+<br>
+<br>
+This project is to take one cloud, use the F212N&minus;F480M color of each star around and behind
+it to make an extinction map, and compare that map to the dust emission column density from
+Herschel and from the ACES continuum data.  The two need not agree: emission depends on the dust
+temperature and on the assumed opacity, and absorption only counts dust in front of the stars we
+can detect.  Sorting out where and why they differ for one cloud is a self-contained project.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="jwgcs_ysoinject"> How complete are our protostar counts? </h3>
+The star formation rate measured in the CMZ is 1-2 orders of magnitude lower than dense gas
+star formation relations predict.  Counting young stellar objects is the most direct test of
+this, but the counts are only useful if we know the completeness and the contamination rate.
+<br>
+<br>
+This project is to take spectral energy distributions of nearby Class 0 and Class I protostars,
+redden them to Galactic center extinctions, inject them into public JWST images of CMZ clouds,
+and measure what fraction are recovered as a function of luminosity and local crowding.  The
+result is a completeness curve that converts source counts into a star formation rate, plus an
+estimate of how many reddened giants get mistaken for protostars.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="jwgcs_saturation"> Photometry of saturated stars </h3>
+The Galactic center contains both the faintest stars we want to count and some of the brightest
+stars in the Galaxy, and NIRCam saturates on the latter.  JWST reads its detectors
+non-destructively up the ramp, though, so the first few groups of a saturated exposure still
+have usable signal.
+<br>
+<br>
+This project is to build and validate a saturation-recovery photometry pipeline: measure bright
+stars from the earliest groups, then calibrate against unsaturated measurements of the same
+stars in shorter exposures.  The globular clusters M92, M4, and NGC 6397, observed with the same
+instrument setup, are uncrowded testbeds with well-known stellar populations.  This is mostly a
+software project.  The result is a catalog with several magnitudes more dynamic range than the
+standard pipeline produces.
+</td></tr>
+
+<tr><td>
+        <br>
+<h2 id="roman3d">3D structure of the inner Galaxy with Roman (program 19008)</h2>
+Kinematic distances don't work toward the Galactic center: the bar drives non-circular motions,
+and all circular orbits pile up at v<sub>LSR</sub> = 0 km/s toward &#8467; = 0&deg;.  Existing
+3D dust maps stop at 1-4 kpc.  We are using the Roman Galactic Plane Survey and the Galactic
+Bulge Time Domain Survey to measure where the inner Galaxy's gas and dust are, using three
+independent distance indicators: proper motions compared to stellar orbit models, red clump
+extinction jumps, and RR Lyrae.  Roman data are a few months off, and each of these methods can be
+prototyped right now on VVV, GALACTICNUCLEUS, HST, and JWST data.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="roman_rrlyrae"> Finding RR Lyrae in the inner Galaxy </h3>
+RR Lyrae are standard candles good to ~5% through the period-luminosity-metallicity relation,
+and there should be ~500 per square degree along the inner Galaxy sightlines.  Roman will produce
+light curves for ~10<sup>7</sup> candidate stars, and we need a pipeline that can pick the RR
+Lyrae out of them in a regime where crowding and variable extinction are both problems.
+<br>
+<br>
+This project is to build that pipeline and test it on existing data (VVV light curves plus
+injected synthetic RR Lyrae), measuring the completeness and false positive rate as a function of
+crowding and amplitude.  The student will learn period-finding algorithms (Lomb-Scargle and its
+variants) and light curve template fitting.
+<br>
+<br>
+We may do this in collaboration with Q. Daniel Wang and collaborators, who have a Roman program to
+use nuclear bulge RR Lyrae to constrain its assembly history (<a class=norm
+href="https://roman.ipac.caltech.edu/cycle1-approved-programs/19024">Roman program 19024</a>).
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="roman_redclump"> Cloud distances from red clump extinction jumps </h3>
+Stars in front of a molecular cloud are lightly reddened and stars behind it are heavily
+reddened.  The transition shows up as a jump in a color-magnitude diagram and gives the cloud's
+distance.  The red clump works well for this because it is intrinsically narrow in luminosity for
+the old populations that dominate the inner Galaxy.
+<br>
+<br>
+This project is to pick one cloud along the Galactic center line of sight - there are many with
+unknown distances between 300 pc and 5 kpc - measure its extinction jump with existing near-IR
+photometry, and cross-match the extinction structure against dense gas emission
+(H<sup>13</sup>CO<sup>+</sup>, and CO surveys like SEDIGISM and CHIMPS) to assign it a velocity
+and a spatial extent.  One cloud is a few-month project; the same method applies to the hundreds
+of clouds Roman will reach.
+</td></tr>
+
+<tr><td>
+        <br>
+<h2 id="pantarei">Panta Rei: gas flow from clouds to cores (ALMA Large Program 2025.1.00383.L)</h2>
+<i>Panta rei</i> means "everything flows".  This program is mapping 259 star-forming clumps at
+2.5-5 kpc in 3 mm lines: N<sub>2</sub>H<sup>+</sup>(1-0) and H<sup>13</sup>CO<sup>+</sup>(1-0) for
+optically thin kinematics, HCO<sup>+</sup>(1-0) and HNC(1-0) for infall, and SiO(2-1) for
+outflows.  The clumps span the full evolutionary sequence (luminosity-to-mass ratio from 0.1 to
+100) and all of them have larger-scale cloud data (SEDIGISM, OGHReS) and smaller-scale core data
+(ALMAGAL) already.  Data started arriving in October 2025.
+<br>
+<br>
+Project selection here will be done in coordination with the Panta Rei PIs, so talk to me before
+settling on one of these.  With 259 clumps, almost any per-clump measurement makes a reasonable
+student project: do a few clumps carefully, and the method scales to the rest of the sample.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="pantarei_n2hp"> Velocity fields from N<sub>2</sub>H<sup>+</sup> hyperfine fitting </h3>
+N<sub>2</sub>H<sup>+</sup>(1-0) is split into hyperfine components with different optical depths,
+so a single fit gives the centroid velocity, the line width, and the optical depth (and therefore
+the column density) at each pixel.  Over a full mosaic that means fitting hundreds of thousands
+of spectra.
+<br>
+<br>
+This project is to fit a few Panta Rei clumps with <a class=norm
+href="https://pyspeckit.readthedocs.io/">pyspeckit</a> and compare against the other codes the
+team uses (mwydyn, BTS): where do they agree, where do they disagree, and what does the
+disagreement say about how much of the structure is real?  From the fitted cubes, build velocity
+dispersion profiles as a function of radius and look for the drop that marks where the clump has
+decoupled from its parent cloud.  This project will involve some pyspeckit debugging and
+development.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="pantarei_infall"> Infall signatures in HCO<sup>+</sup> </h3>
+An optically thick line toward a contracting cloud shows a blue-asymmetric, self-absorbed
+profile, and HCO<sup>+</sup>(1-0) has been used this way for decades.  Simulations show that
+collapsing clumps can also produce red-asymmetric profiles depending on the excitation, though,
+so the standard interpretation needs testing on a large sample.
+<br>
+<br>
+This project is to build an automated line asymmetry classifier, run it on a subset of Panta Rei
+clumps, and see whether the fraction of clumps with infall signatures changes with evolutionary
+stage.  The classifications can then be checked against the resolved velocity fields from the
+optically thin lines, which the analytic infall models never had.  This one pairs well with the
+N<sub>2</sub>H<sup>+</sup> project above.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="pantarei_sio"> SiO outflows across the clump evolutionary sequence </h3>
+SiO is released into the gas phase by shocks, so it traces protostellar outflows selectively and
+is much less confused than CO.  We detect ~300 SiO outflows across the 15 ALMA-IMF regions;
+Panta Rei covers 259 clumps in SiO(2-1), from starless to feedback-dominated.
+<br>
+<br>
+This project is to catalog outflows in a subset of clumps, by hand first (as we did in ALMA-IMF)
+and then with an automated structure-finding routine trained on the hand-made catalog.  Once the
+outflows are identified, measure their masses, momenta, and energy injection rates, and ask
+whether outflows ever inject enough momentum to reverse the inflow.  See also the
+<a class=norm href="#siooutflows">CO/SiO outflow fraction project</a> below.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="pantarei_temperature"> Three ways to measure a clump's temperature </h3>
+Gas temperature sets the Jeans mass and therefore controls fragmentation, so it matters for
+interpreting core masses.  Panta Rei's spectral setup gives three thermometers: the
+HNC(1-0)/HCN(1-0) ratio, the optically thinner HN<sup>13</sup>C/H<sup>13</sup>CN ratio, and
+CH<sub>3</sub>CCH(6-5) K-ladder fitting.  They are sensitive to different density layers, so
+they won't agree exactly.
+<br>
+<br>
+This project is to make temperature maps with all three methods for a set of clumps and work out
+where and why they differ.  The result is a calibration of three widely used tracers, plus a set
+of temperature maps that the rest of the program needs.  The student will learn about excitation
+and line ratio diagnostics and will work with <a class=norm
+href="https://spectral-cube.readthedocs.io/">spectral-cube</a>.
+</td></tr>
+
+<tr><td>
+        <br>
+<h2 id="corestostars">From cores to massive stars: long-baseline ALMA (DIHCA, MAGMAR, HIPPOS)</h2>
+Panta Rei covers tens of parsecs down to ~0.1 pc, and ALMAGAL reaches ~1000 AU.  Getting from
+1000 AU cores to ~100 AU disks takes ALMA's longest baselines.  DIHCA, MAGMAR, and HIPPOS have
+observed more than 50 sites of ongoing high-mass star formation at &lt;0.2" (in some cases
+0.04") resolution, and 52 of their targets overlap with the larger-scale programs.  These are the
+scales at which we can see whether an inflow ends up in one star or many.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="fragmentation"> Fragmentation at 100 AU: how many stars is a core making? </h3>
+At 100 AU resolution, ALMA continuum is very sensitive to dust mass: a 5&sigma; detection at 0.5
+mJy is ~0.3 M<sub>&#9737;</sub> at 5 kpc.  We detect hundreds of individual young stellar objects
+per high-mass star-forming region.  The number of fragments at each scale - cloud, clump, core,
+disk - is the quantity that separates hierarchical from monolithic collapse in the analytic
+frameworks now available.
+<br>
+<br>
+This project is to measure the fragmentation in a handful of regions: build continuum catalogs at
+the highest available resolution, count sources as a function of scale, and place the results in
+the fragmentation rate parameter space where different star formation theories make different
+predictions.  There is already a hint that more massive cores fragment more, which is not what a
+simple thermal Jeans argument predicts.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="dynamicalmass"> Dynamical masses of massive protostars </h3>
+The most direct way to measure a stellar mass is from the kinematics of orbiting material: find a
+line that traces the disk, extract a position-velocity diagram along the disk major axis, and fit
+the rotation curve.  We have done this for ~30 sources, and the long-baseline surveys contain
+many more candidates.
+<br>
+<br>
+This project would work through a set of candidate disks systematically: identify which lines
+trace the disk rather than the envelope or the outflow, fit the PV structure, and propagate the
+uncertainties from inclination, distance, and the disk's own mass.  These masses calibrate the
+much cheaper millimeter-flux-based mass estimates we have to use for the rest of the sample.
+Salt lines (see below) are among the better disk tracers for these sources.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="streamers"> Streamers: late-stage accretion onto forming stars </h3>
+Streamers are asymmetric flows of gas falling onto the outskirts of protoplanetary disks long
+after the star was supposed to have finished accreting.  They matter for planet formation:
+cosmochemistry indicates that the early solar system accreted at least two distinct generations
+of material, and streamers are one way to deliver thermally processed material from elsewhere in
+the parent cloud.
+<br>
+<br>
+This project is to search the long-baseline data for streamer candidates around high-mass
+protostars, check whether their kinematics are consistent with infalling trajectories in the
+star's potential, and estimate how much mass they deliver.  With SiO and hot core tracers we can
+also ask whether the accreted material has been processed by other stars' outflows, which is not
+possible in the low-mass studies.
+</td></tr>
+
+<tr><td>
+        <br>
+<h2 id="orionsalts">What excites the salts in the Orion Source I disk?</h2>
+NaCl and KCl are the only molecules we know of that trace <i>only</i> the disks around high-mass
+young stellar objects; they are absent from the surrounding hot core and outflow because Na and K
+stay locked in dust grains except where it is hot enough (&gt;500 K) to put them back into the
+gas.  That makes them a useful tool, but we do not understand their excitation: in Orion Source I
+the vibrational temperature (1200-3300 K) is far above the rotational temperature (120-150 K),
+and nobody knows why.  We have a new five-band ALMA program (2026.1.00197.S; Bands 3, 4, 6, 7,
+and 8; 88-420 GHz; 0.02-0.06" resolution) to measure rotational level populations across a range of vibrational
+states and settle it, along with the companion programs 2025.1.00236.S and 2025.1.00274.S.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="saltdiagrams"> Rotation-vibration diagrams for NaCl and KCl </h3>
+The new observations cover more than a dozen NaCl and KCl transitions per band, spanning v=0
+through v=5 and J from below 11 up to ~40.  Each one needs its flux measured, which includes
+deblending from the other lines in these spectral scans and accounting for the bright dust
+continuum.
+<br>
+<br>
+This project is to measure those fluxes and build the population diagrams.  A turnover at low J
+favors mid-infrared pumping; a knee at high J favors UV/optical pumping; suppression of the
+high-frequency lines instead points to dust hiding the deeper disk layers.
+</td></tr>
+
+<tr><td>
+            <br>
+<h3 id="saltmodeling"> Modeling salt excitation: infrared pumping, UV pumping, or dust? </h3>
+Each of the three explanations for the salt excitation makes a different, calculable prediction
+for the level populations, but producing those predictions requires a radiative
+transfer calculation with a realistic radiation field: a stellar photosphere, a warm disk, and,
+for the mid-IR model, a strong emission feature near 29 &mu;m for NaCl and 37 &mu;m for KCl.
+<br>
+<br>
+This project is to build that model and produce the predicted rotation-vibration diagrams under
+each hypothesis, so that the observations have something quantitative to be compared against.
+The same machinery applies to the other refractory species covered by the observations - AlO,
+FeO, and AlCl - which appear in the outflow rather than the disk.  The student will learn
+statistical equilibrium and radiative transfer.
 </td></tr>
 
 <tr><td>
@@ -131,7 +446,7 @@ a library to enable fair comparison.
 
 <tr><td>
             <br>
-<h3> What fraction of molecular outflows have SiO? </h3>
+<h3 id="siooutflows"> What fraction of molecular outflows have SiO? </h3>
 We detect ~300 SiO outflows in ALMA-IMF.  We haven't really cataloged CO outflows.
 I'd like to answer the question in the title, but we could ask the inverse too - what
 are the CO properties of SiO-emitting outflows?
